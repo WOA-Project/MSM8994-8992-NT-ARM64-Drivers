@@ -1,0 +1,115 @@
+;
+; LumiaNull.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Null
+ClassGuid   = {84bcdf85-adb1-420a-a40f-cd71df4b0ccd}
+Provider    = %ManufacturerName%
+CatalogFile = LumiaNull.cat
+DriverVer   = 10/06/2018,18.13.19.793
+
+[DestinationDirs]
+DefaultDestDir                         = 12
+LumiaNull_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg = SampleClassReg
+
+[SampleClassReg]
+HKR,,,0   ,%ClassName%
+HKR,,Icon,,-15
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+LumiaNull.sys     = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTARM64
+
+[Standard.NTARM64]
+%TouchTestNull.DeviceDesc%  = LumiaNull_Device, {1ED875DA-D851-42BE-9DFD-527D97178147}\TOUCH_TEST
+%TouchTestNull.DeviceDesc%  = LumiaNull_Device, {1ed875da-d851-42be-9dfd-527d97178147}\Touch_Test
+%TouchNull.DeviceDesc%      = LumiaNull_Device, {3A0AC59A-4D8A-4875-B7EA-304771FF9B9A}\NOKIATOUCH
+%TouchNull.DeviceDesc%      = LumiaNull_Device, {3a0ac59a-4d8a-4875-b7ea-304771ff9b9a}\NokiaTouch
+%hdmidpiNull.DeviceDesc%    = LumiaNull_Device, ACPI\MSHW1007
+%NokiaAttsNull.DeviceDesc%  = LumiaNull_Device, ACPI\NOKIA_ATTS
+%OddtRegNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_REG
+%OddtVibNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_VIB
+%OddtCpuNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_CPU
+%EnoGpioNull_DeviceDesc%    = LumiaNull_Device, ACPI\ENOGPIO
+%EnoEmNull_DeviceDesc%      = LumiaNull_Device, ACPI\NOKIA_ENOEM
+%WPCrasherNull_DeviceDesc%  = LumiaNull_Device, ACPI\WP_CRASHER
+%QcGPUNull_DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
+%TouchPowerNull_DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
+
+[LumiaNull_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+LumiaNull.sys
+
+;-------------- Service installation
+[LumiaNull_Device.NT.Services]
+AddService = LumiaNull,%SPSVCINST_ASSOCSERVICE%, LumiaNull_Service_Inst
+
+; -------------- LumiaNull driver install sections
+[LumiaNull_Service_Inst]
+DisplayName    = %LumiaNull.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\LumiaNull.sys
+
+;
+;--- LumiaNull_Device Coinstaller installation ------
+;
+
+[LumiaNull_Device.NT.CoInstallers]
+AddReg=LumiaNull_Device_CoInstaller_AddReg
+CopyFiles=LumiaNull_Device_CoInstaller_CopyFiles
+
+[LumiaNull_Device_CoInstaller_AddReg]
+;
+
+
+[LumiaNull_Device_CoInstaller_CopyFiles]
+;
+
+
+[LumiaNull_Device.NT.Wdf]
+KmdfService =  LumiaNull, LumiaNull_wdfsect
+[LumiaNull_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE    = 0x00000002
+ManufacturerName          = "Lumia Community"
+ClassName                 = "Nulled devices"
+DiskName                  = "LumiaNull Installation Disk"
+LumiaNull.DeviceDesc      = "LumiaNull Device"
+LumiaNull.SVCDESC         = "LumiaNull Service"
+
+TouchTestNull.DeviceDesc  = "Touch Driver Test Interface Device"
+TouchNull.DeviceDesc      = "Touch Driver Interface Device"
+hdmidpiNull.DeviceDesc    = "HDMI to Displayport driver"
+QcGPUNull.DeviceDesc      = "Qualcomm GPU Device"
+NokiaAttsNull.DeviceDesc  = "Nokia ATTS Device"
+OddtRegNull.DeviceDesc    = "Nokia Care Diagnostic ODDT Register Device"
+OddtVibNull.DeviceDesc    = "Nokia Care Diagnostic ODDT Vibration Device"
+OddtCpuNull.DeviceDesc    = "Nokia Care Diagnostic ODDT CPU Device"
+EnoGpioNull.DeviceDesc    = "Nokia Care Diagnostic ENO GPIO Device"
+EnoEmNull.DeviceDesc      = "Nokia Care Diagnostic ENO EM Device"
+WPCrasherNull.DeviceDesc  = "Nokia Windows Phone Crasher Device"
+TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"

@@ -1,0 +1,355 @@
+; 
+; Copyright (c) 2011-2015 Qualcomm Technologies, Inc. All Rights Reserved.
+; Qualcomm Technologies Proprietary and Confidential.
+;
+; Module Name:
+;
+;    qcdx8994.inf
+;
+; Abstract:
+;
+;    Inf file for Qualcomm WDDM DirectX drivers for Windows
+;
+[Version]
+Signature   = "$Windows NT$"
+Class       = Display
+ClassGUID   = {4d36e968-e325-11ce-bfc1-08002be10318}
+Provider    = %QC%
+DriverVer   = 07/02/2015,11.19.1067.0000
+CatalogFile = qcdx_ffu8994.cat
+
+[DestinationDirs]
+; 12 = drivers
+; 11 = system32
+; 10 = Windows
+
+QCDX.Files.NTarm_12   = 12
+QCDX.Files.NTarm_11   = 11
+QCDX.Files.NTarm_10   = 10, SysArm32
+
+[SourceDisksNames]
+0 = %DiskDesc%
+
+[SourceDisksFiles]
+qcdxkm8994.sys                   = 0,,
+qchdcpumd8994.dll                = 0,,
+qcvss8994.mbn                    = 0,,
+
+qcvidencarm64um8994.dll          = 0,,
+qcvidencarm32um8994.dll          = 0,,
+
+qcviddecarm64mft8994.dll         = 0,,
+qcviddecarm32mft8994.dll         = 0,,
+
+qcvidencarm64mfth2638994.dll     = 0,,
+qcvidencarm32mfth2638994.dll     = 0,,
+
+qcvidencarm64mfth2648994.dll     = 0,,
+qcvidencarm32mfth2648994.dll     = 0,,
+
+qcvidencarm64mfthevc8994.dll     = 0,,
+qcvidencarm32mfthevc8994.dll     = 0,,
+
+qcvidencarm64mftmpeg48994.dll    = 0,,
+qcvidencarm32mftmpeg48994.dll    = 0,,
+
+qcdx11arm64um8994.dll            = 0,,
+qcdx11arm32um8994.dll            = 0,,
+
+qcdx11arm64compiler8994.dll      = 0,,
+qcdx11arm32compiler8994.dll      = 0,,
+
+QcWicArm64Encoder8994.dll        = 0,,
+QcWicArm32Encoder8994.dll        = 0,,
+
+msvcarm64p120.dll                = 0,,
+msvcarm64r120.dll                = 0,,
+
+msvcarm32p120.dll                = 0,,
+msvcarm32r120.dll                = 0,,
+
+[SignatureAttributes]
+qcdx11arm64um8994.dll            = SignatureAttributes.PETrust
+qcdx11arm32um8994.dll            = SignatureAttributes.PETrust
+
+qcdx11arm64compiler8994.dll      = SignatureAttributes.PETrust
+qcdx11arm32compiler8994.dll      = SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust = true
+
+[Manufacturer]
+%QC% = QC, NTARM64
+
+[QC.NTARM64]
+%QC_Device% = QCDX_Inst, ACPI\QCOM246F
+
+[QCDX_Inst.NT]
+FeatureScore = D1
+CopyFiles    = QCDX.Files.NTarm_12,QCDX.Files.NTarm_11,QCDX.Files.NTarm_10
+AddReg       = QCDX_SoftwareDeviceSettings, QCDX_MftRegistration
+Reboot
+
+[QCDX_MftRegistration]
+; system32
+; qcvidencarm64mfth2648994.dll
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1},                                                                    ,,%QC_ENCODE_H264%
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\qcvidencmfth2648994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 ,,%QC_ENCODE_H264%
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,34,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,dd,e9,0c,5d,17,98,da,49,bd,fd,f5,f5,b9,8f,18,a6
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,32,00,36,00,34,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,16,ee,90,77,e3,08,6d,42,aa,da,f9,67,74,30,8e,a1,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\7790ee16-08e3-426d-aada-f96774308ea1, ,,
+
+; qcvidencarm64mfth2638994.dll
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718},                                                                    ,,%QC_ENCODE_H263%
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\qcvidencmfth2638994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 ,,%QC_ENCODE_H263%
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,32,00,36,00,33,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,d4,88,0e,67,8a,b1,3a,48,8e,0f,65,a0,27,83,87,18,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\670E88D4-B18A-483A-8E0F-65A027838718, ,,
+
+; qcvidencarm64mfthevc8994.dll
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D},                                                                    ,,%QC_ENCODE_HEVC%
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\qcvidencmfthevc8994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 ,,%QC_ENCODE_HEVC%
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,45,56,43,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,e6,0f,fe,3c,c4,05,dc,47,9d,70,4b,db,29,59,72,0f
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,45,00,56,00,43,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,75,fe,af,5a,a4,4e,4c,42,89,e3,4a,1e,3f,9a,57,0d,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D, ,,
+
+; qcvidencarm64mftmpeg48994.dll
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3},                                                                    ,,%QC_ENCODE_MPEG4%
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\qcvidencmftmpeg48994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 ,,%QC_ENCODE_MPEG4%
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2e,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b6,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c8,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,ca,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,da,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,db,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,4d,00,50,00,45,00,47,00,34,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,dc,87,b7,8e,b6,d1,1d,42,88,a0,22,53,9f,9f,12,c3,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\8EB787DC-D1B6-421D-88A0-22539F9F12C3, ,,
+
+; qcviddecarm64mft8994.dll
+HKLM, SOFTWARE\Microsoft\Windows Media Foundation\HardwareMFT,                                                                          EnableDecoders,%REG_DWORD%,"0x01"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69},                                                                    ,,%QC_VID_DECODE%
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\qcviddecmft8994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4DecLogMsgMask,%REG_DWORD%,"0x18"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4DecLogFileMask,%REG_DWORD%,"0x18"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4HostDecParamsDump,%REG_DWORD%,"0x00"
+HKLM, SOFTWARE\Classes\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4BitStreamDump,%REG_DWORD%,"0x00"
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 ,,%QC_VID_DECODE%
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,50,34,56,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,6d,70,34,76,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,6d,34,73,32,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,56,34,50,4d,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,76,34,70,6d,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,68,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0b,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,36,00,00,00,68,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,9e,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,08,00,00,00,b0,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,b8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,c8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,c9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,4d,00,50,00,45,00,47,00,34,00,20,00,50,00,61,00,72,00,74,00,20,00,32,00,20,00,44,00,65,00,63,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,64,73,00,00,10,00,fa,dd,20,df,19,0d,3a,46,ab,46,e5,d8,ef,6e,fd,69,76,4b,2d,c0,d6,33,68,b4,45,97,1a,05,a4,b0,4b,ab,91
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 MFTFlags,%REG_DWORD%,00000006
+HKLM, SOFTWARE\Classes\MediaFoundation\Transforms\Categories\d6c02d4b-6833-45b4-971a-05a4b04bab91\df20ddfa-0d19-463a-ab46-e5d8ef6efd69, ,,
+
+; QcWicarm64Encoder8994.dll
+HKLM, SOFTWARE\Classes\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C},                                                                    ,,%QC_WIC_JPEG%
+HKLM, SOFTWARE\Classes\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\QcWicEncoder8994.dll"
+HKLM, SOFTWARE\Classes\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C}\InprocServer32,                                                     ThreadingModel,,"Both"
+
+; sysarm32
+; qcvidencmfth2648994.dll
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1},                                                                    ,,%QC_ENCODE_H264%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\qcvidencmfth2648994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{7790EE16-08E3-426d-AADA-F96774308EA1}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 ,,%QC_ENCODE_H264%
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,34,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,dd,e9,0c,5d,17,98,da,49,bd,fd,f5,f5,b9,8f,18,a6
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,32,00,36,00,34,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,16,ee,90,77,e3,08,6d,42,aa,da,f9,67,74,30,8e,a1,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\7790ee16-08e3-426d-aada-f96774308ea1,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\7790ee16-08e3-426d-aada-f96774308ea1, ,,
+
+; qcvidencmfth2638994.dll
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718},                                                                    ,,%QC_ENCODE_H263%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\qcvidencmfth2638994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{670E88D4-B18A-483A-8E0F-65A027838718}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 ,,%QC_ENCODE_H263%
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,32,00,36,00,33,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,d4,88,0e,67,8a,b1,3a,48,8e,0f,65,a0,27,83,87,18,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\670E88D4-B18A-483A-8E0F-65A027838718,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\670E88D4-B18A-483A-8E0F-65A027838718, ,,
+
+; qcvidencmfthevc8994.dll
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D},                                                                    ,,%QC_ENCODE_HEVC%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\qcvidencmfthevc8994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 ,,%QC_ENCODE_HEVC%
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,45,56,43,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,e6,0f,fe,3c,c4,05,dc,47,9d,70,4b,db,29,59,72,0f
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2c,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b4,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c6,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,c8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,d8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,d9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,48,00,45,00,56,00,43,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,75,fe,af,5a,a4,4e,4c,42,89,e3,4a,1e,3f,9a,57,0d,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\5AAFFE75-4EA4-424C-89E3-4A1E3F9A570D, ,,
+
+; qcvidencmftmpeg48994.dll
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3},                                                                    ,,%QC_ENCODE_MPEG4%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\qcvidencmftmpeg48994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     Error,,"1"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     HIGH,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     MED,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{8EB787DC-D1B6-421D-88A0-22539F9F12C3}\InprocServer32,                                                     LOW,,"0"
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 ,,%QC_ENCODE_MPEG4%
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4e,56,31,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0c,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,2e,00,00,00,88,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,b6,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,02,00,00,00,c8,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,ca,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,da,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,db,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,93,90,4b,f3,e0,05,16,4b,99,3d,3e,2a,2c,de,6a,d3,15,00,00,00,00,00,00,00,00,00,00,00,8f,03,5d,07,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,4d,00,50,00,45,00,47,00,34,00,20,00,45,00,6e,00,63,00,6f,00,64,00,65,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,dc,87,b7,8e,b6,d1,1d,42,88,a0,22,53,9f,9f,12,c3,76,7d,ac,9e,f7,45,e5,87,43,bd,ee,d6,47,d7,bd,e4,2a
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\8EB787DC-D1B6-421D-88A0-22539F9F12C3,                                                 MFTFlags,%REG_DWORD%,00000004
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\Categories\f79eac7d-e545-4387-bdee-d647d7bde42a\8EB787DC-D1B6-421D-88A0-22539F9F12C3, ,,
+
+; qcviddecmft8994.dll
+HKLM, SOFTWARE\WowAA32Node\Microsoft\Windows Media Foundation\HardwareMFT,                                                                          EnableDecoders,%REG_DWORD%,"0x01"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69},                                                                    ,,%QC_VID_DECODE%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\qcviddecmft8994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     ThreadingModel,,"Both"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4DecLogMsgMask,%REG_DWORD%,"0x18"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4DecLogFileMask,%REG_DWORD%,"0x18"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4HostDecParamsDump,%REG_DWORD%,"0x00"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{df20ddfa-0d19-463a-ab46-e5d8ef6efd69}\InprocServer32,                                                     Mpeg4BitStreamDump,%REG_DWORD%,"0x00"
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 ,,%QC_VID_DECODE%
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 InputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,50,34,56,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,6d,70,34,76,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,6d,34,73,32,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,56,34,50,4d,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,76,34,70,6d,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,68,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,48,32,36,33,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 OutputTypes,%REG_BINARY%,76,69,64,73,00,00,10,00,80,00,00,aa,00,38,9b,71,4d,34,53,32,00,00,10,00,80,00,00,aa,00,38,9b,71
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 Attributes,%REG_BINARY%,41,46,4d,49,0b,00,00,00,c8,4f,6b,20,f9,fc,51,4c,af,e3,97,64,36,9e,33,a0,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,ac,66,b8,2f,78,b0,42,49,ab,6c,00,3d,05,cd,a6,74,1f,00,00,00,00,00,00,00,36,00,00,00,68,01,00,00,cc,b0,ec,3a,5b,03,cc,4b,81,85,2b,8d,55,1e,f3,af,1f,00,00,00,00,00,00,00,12,00,00,00,9e,01,00,00,b1,c9,76,42,9d,75,f3,4b,9c,d0,0d,72,3d,13,8f,96,11,10,00,00,00,00,00,00,08,00,00,00,b0,01,00,00,11,6a,47,53,13,3f,fb,49,ac,42,ee,27,33,c9,67,41,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,2b,c4,21,68,a4,65,82,4e,99,bc,9a,88,20,5e,cd,0c,48,00,00,00,00,00,00,00,10,00,00,00,b8,01,00,00,15,cb,a7,88,07,7b,34,4a,91,28,e6,4c,67,03,c4,d3,13,00,00,00,00,00,00,00,07,00,00,00,00,00,00,00,f3,8c,ae,8e,4f,a4,06,43,ba,5c,bf,5d,da,24,28,18,11,10,00,00,00,00,00,00,01,00,00,00,c8,01,00,00,49,ba,ab,ce,6d,50,57,47,a6,ff,66,c1,84,98,7e,4e,48,00,00,00,00,00,00,00,10,00,00,00,c9,01,00,00,6b,6d,66,e5,22,34,b6,4e,a4,21,da,7d,b1,f8,e2,07,13,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,9a,69,1a,f8,9a,64,7d,49,8c,73,29,f8,fe,d6,ad,7a,13,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,51,00,43,00,20,00,4d,00,50,00,45,00,47,00,34,00,20,00,50,00,61,00,72,00,74,00,20,00,32,00,20,00,44,00,65,00,63,00,20,00,48,00,57,00,2d,00,4d,00,46,00,54,00,00,00,56,00,45,00,4e,00,5f,00,51,00,43,00,4f,00,4d,00,00,00,76,69,64,73,00,00,10,00,fa,dd,20,df,19,0d,3a,46,ab,46,e5,d8,ef,6e,fd,69,76,4b,2d,c0,d6,33,68,b4,45,97,1a,05,a4,b0,4b,ab,91
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\df20ddfa-0d19-463a-ab46-e5d8ef6efd69,                                                 MFTFlags,%REG_DWORD%,00000006
+HKLM, SOFTWARE\Classes\WowAA32Node\MediaFoundation\Transforms\Categories\d6c02d4b-6833-45b4-971a-05a4b04bab91\df20ddfa-0d19-463a-ab46-e5d8ef6efd69, ,,
+
+; QcWicEncoder8994.dll
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C},                                                                    ,,%QC_WIC_JPEG%
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C}\InprocServer32,                                                     ,%REG_EXPAND_SZ%,"%%SystemRoot%%\SysArm32\QcWicEncoder8994.dll"
+HKLM, SOFTWARE\Classes\WowAA32Node\CLSID\{68ED5C62-F534-4979-B2B3-686A12B2B34C}\InprocServer32,                                                     ThreadingModel,,"Both"
+
+HKLM, SYSTEM\CurrentControlSet\Services\qcSubsystemLoad\{A5FA4C42-185D-48E8-BF69-50CEAA8E0D82}, MemoryReservation,  %REG_DWORD%,0x00500000
+HKLM, SYSTEM\CurrentControlSet\Services\qcSubsystemLoad\{A5FA4C42-185D-48E8-BF69-50CEAA8E0D82}, MemoryAlignment,    %REG_DWORD%,0x00000000
+
+[WDTFSOCDeviceCategory]
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+
+[QCDX_Inst.NT.Services]
+AddService = QCDX,0x00000002,QCDX_Service,
+
+[QCDX_Service]
+DisplayName   = %ServiceName%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_IGNORE%
+ServiceBinary = %13%\qcdxkm8994.sys
+
+[QCDX_Inst.NT.Wdf]
+KmdfService =  QCDX, QCDX_wdfsect
+
+[QCDX_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[QCDX_SoftwareDeviceSettings]
+HKR,, InstalledDisplayDrivers,     %REG_MULTI_SZ%, qcdx11um8994, qcdx11um8994, qcdx11um8994
+HKR,, VgaCompatible,               %REG_DWORD%, 0
+HKR,, UserModeDriverName,          %REG_MULTI_SZ%, <>, %11%\qcdx11um8994.dll, %11%\qcdx11um8994.dll, %11%\qcdx11um8994.dll
+HKR,, UserModeDriverNameWow2,      %REG_MULTI_SZ%, <>, %10%\SysArm32\qcdx11um8994.dll, %10%\SysArm32\qcdx11um8994.dll, %10%\SysArm32\qcdx11um8994.dll
+HKR,, ContentProtectionDriverName, %REG_SZ%,       qchdcpumd8994.dll
+
+; Drivers
+[QCDX.Files.NTarm_12]
+qcdxkm8994.sys
+
+; System32
+[QCDX.Files.NTarm_11]
+qcdx11um8994.dll, qcdx11arm64um8994.dll                 ,,0x00004000
+qcdx11compiler8994.dll, qcdx11arm64compiler8994.dll     ,,0x00004000
+qcvidencum8994.dll, qcvidencarm64um8994.dll             ,,0x00004000
+qcvidencmfth2638994.dll, qcvidencarm64mfth2638994.dll   ,,0x00004000
+qcvidencmfth2648994.dll, qcvidencarm64mfth2648994.dll   ,,0x00004000
+qcvidencmfthevc8994.dll, qcvidencarm64mfthevc8994.dll   ,,0x00004000
+qcvidencmftmpeg48994.dll, qcvidencarm64mftmpeg48994.dll ,,0x00004000
+qcviddecmft8994.dll, qcviddecarm64mft8994.dll           ,,0x00004000
+qchdcpumd8994.dll,                                      ,,0x00004000
+QcWicEncoder8994.dll, QcWicArm64Encoder8994.dll         ,,0x00004000
+qcvss8994.mbn,                                          ,,0x00004000
+
+msvcp120.dll, msvcarm64p120.dll                         ,,0x00004000
+msvcr120.dll, msvcarm64r120.dll                         ,,0x00004000
+
+; SysArm32
+[QCDX.Files.NTarm_10]
+qcdx11um8994.dll, qcdx11arm32um8994.dll                 ,,0x00004000
+qcdx11compiler8994.dll, qcdx11arm32compiler8994.dll     ,,0x00004000
+qcvidencum8994.dll, qcvidencarm32um8994.dll             ,,0x00004000
+qcvidencmfth2638994.dll, qcvidencarm32mfth2638994.dll   ,,0x00004000
+qcvidencmfth2648994.dll, qcvidencarm32mfth2648994.dll   ,,0x00004000
+qcvidencmfthevc8994.dll, qcvidencarm32mfthevc8994.dll   ,,0x00004000
+qcvidencmftmpeg48994.dll, qcvidencarm32mftmpeg48994.dll ,,0x00004000
+qcviddecmft8994.dll, qcviddecarm32mft8994.dll           ,,0x00004000
+QcWicArm32Encoder8994.dll, QcWicArm32Encoder8994.dll    ,,0x00004000
+
+msvcp120.dll, msvcarm32p120.dll                         ,,0x00004000
+msvcr120.dll, msvcarm32r120.dll                         ,,0x00004000
+
+[Strings]
+
+;  *******Localizable Strings*******
+QC               = "Qualcomm Incorporated"
+DiskDesc         = "Qualcomm Adreno Graphics"
+QC_Device        = "Qualcomm Adreno 430"
+ServiceName      = "Qualcomm Adreno Graphics"
+
+QC_WIC_JPEG      = "Qualcomm WIC JPEG Encoder"
+QC_ENCODE_H264   = "QCOM Hardware Encoder - H264"
+QC_ENCODE_MPEG4  = "QCOM Hardware Encoder - MPEG4"
+QC_ENCODE_H263   = "QCOM Hardware Encoder - H263"
+QC_ENCODE_HEVC   = "QCOM Hardware Encoder - HEVC"
+QC_VID_DECODE    = "MPEG-4 Decoder"
+
+;  *******Non Localizable Strings*******
+
+SERVICE_BOOT_START   = 0
+SERVICE_SYSTEM_START = 1
+SERVICE_AUTO_START   = 2
+SERVICE_DEMAND_START = 3
+SERVICE_DISABLED     = 4
+
+SERVICE_KERNEL_DRIVER  = 0x1
+SERVICE_ERROR_IGNORE   = 0x0
+SERVICE_ERROR_NORMAL   = 0x1
+SERVICE_ERROR_SEVERE   = 0x2
+SERVICE_ERROR_CRITICAL = 0x3
+
+REG_SZ        = 0x00000000
+REG_MULTI_SZ  = 0x00010000
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001

@@ -1,0 +1,84 @@
+;
+; QcXhciFilterOnly.inf
+;
+; Copyright (C) 2010-2011,2014-2015 Qualcomm Technologies, Inc. All Rights Reserved.
+;
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = USB
+ClassGuid   = {88BAE032-5A81-49f0-BC3D-A4FF138216D6}
+Provider    = %Company%
+DriverVer   = 07/02/2015,1.0.1067.0000
+CatalogFile = QcXhciFilterOnly8994.cat
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[DestinationDirs]
+QcXhciFilter.CopyFile = 12
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[SourceDisksFiles]
+QcXhciFilter8994.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[DefaultInstall.NTARM64]
+;Include MS driver
+Include=usbxhci.inf
+Needs=Generic_NoDebug.Install.NT
+CopyFiles=QcXhciFilter.CopyFile
+FeatureScore=80 ; required for XHCI driver from usbxhci.inf
+
+[DefaultInstall.NTARM64.Services]
+Include=usbxhci.inf
+Needs=Generic_NoDebug.Install.NT.Services
+AddService = QcXhciFilter,, QcXhciFilter_Service_Inst
+[QcXhciFilter.CopyFile]
+QcXhciFilter8994.sys
+
+[QcXhciFilter.NT.HW]
+AddReg=QcXhciFilter_AddReg
+AddReg=QcXhciFilter_SDDLString
+
+[QcXhciFilter_AddReg]
+HKR,,"LowerFilters",0x00010000,QcXhciFilter
+
+[QcXhciFilter_SDDLString]
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)" ; Allow Generic Access to Builtin Admins and System
+
+[QcXhciFilter_Service_AddReg]
+HKR,,BootFlags,0x00010003,4  ; CM_SERVICE_USB_DISK_BOOT_LOAD
+
+; -------------- QcXhciFilter driver install sections
+[QcXhciFilter_Service_Inst]
+DisplayName    = %Filter.SvcDesc% 
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+Group          = filter          ; Needed for boot-critical loading per ServiceGroupOrder
+ServiceBinary  = %12%\QcXhciFilter8994.sys
+AddReg=QcXhciFilter_Service_AddReg
+
+[Strings]
+Company                  = "Qualcomm Technologies, Inc."                                      
+StdMfg                   = "(Standard system devices)"
+DiskId1                  = "XHCI PEP Filter Installation Disk #1"
+Standard.DeviceDesc      = "Qualcomm USB XHCI Filter Driver"
+Filter.SvcDesc           = "Qualcomm USB XHCI Filter Driver"
+DiskName                 = "Data"
+
+REG_SZ         = 0x00000000
+REG_BINARY     = 0x00000001
+REG_M_SZ       = 0x00010000
+REG_DWORD      = 0x00010001
+REG_QWORD      = 0x000B0001
