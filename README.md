@@ -16,7 +16,7 @@ This pack is a work in progress and may be getting updates at a later time.
   Selling a device with an extra fee also ruins the work of others that worked on this project. While we can't enforce this policy,
   we decided to put this notice here in the hopes of some people understanding the morality of this.
 
-## Contributors
+### Contributors
 
 We would like to thank the following people that helped:
 
