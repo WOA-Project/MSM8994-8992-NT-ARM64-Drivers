@@ -1,10 +1,9 @@
-
-#Microsoft Mobile ARM64 Windows Driver pack for
-#Lumia 950 (incomplete), Lumia 950 XL, RX-130/id310-1 (EB0.X/EB1.X/EB2.X)
+# Microsoft Mobile ARM64 Windows Driver pack for
+## Lumia 950 (incomplete), Lumia 950 XL, RX-130/id310-1 (EB0.X/EB1.X/EB2.X)
 
 This pack is a work in progress and may be getting updates at a later time.
 
-##Disclaimers and end of user license agreement
+## Disclaimers and end of user license agreement
 
 - By installing this driver pack, you agree that any damage done to your phone or any loss of data is your entire responsability
   and we cannot be taken responsible for data loss if it ever happens.
@@ -17,7 +16,7 @@ This pack is a work in progress and may be getting updates at a later time.
   Selling a device with an extra fee also ruins the work of others that worked on this project. While we can't enforce this policy,
   we decided to put this notice here in the hopes of some people understanding the morality of this.
 
-##Contributors
+## Contributors
 
 We would like to thank the following people that helped:
 
@@ -45,7 +44,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-##Project Status
+## Project Status
 
 The following items are not functional yet on specific devices, reason when available is specified:
 
@@ -93,7 +92,7 @@ Talkman:
    - HDMI out via USB-C
 
 
-#Readme
+# Readme
 
 - Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994
 - Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992
@@ -107,7 +106,7 @@ Talkman:
 - After the Out of box experience, you'll have to instal drivers in Post-OOBE via device manager.
 
 
-#Usb for Lumia 950 and Lumia 950 XL
+# Usb for Lumia 950 and Lumia 950 XL
 
 - You may have to manually right click the xHCI device in device manager
   properties -> update driver -> pick the qualcomm xhci driver
@@ -115,7 +114,7 @@ Talkman:
 - The USB driver provided requires you to provide external power to the device (or use a Dock)
 
 
-#GPU Testing
+# GPU Testing
 
 - Install from Supplemental\GPU:
   The correct Panel driver for your device (Hapanero, Cityman..)
@@ -129,7 +128,7 @@ Talkman:
   For 950/950 XL, please use the TrEE driver with NV services, you can find it under suplemental.
 
 
-#USB Debugging
+# USB Debugging
 
 - It is advised to not install LumiaUSBKm when using USB debugging (it is under Device Specifics/DeviceName/USB)
 - In order to enable USB debugging, you must have your phone put in mass storage mode and have access to the WoA ESP desktop
@@ -140,6 +139,7 @@ Talkman:
   bcdedit /store BCD /dbgsettings usb TARGETNAME:WOATARGET
   bcdedit /store BCD /set {default} debug on
 
+# Changelog
 
 1/17/2019:
 
