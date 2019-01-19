@@ -76,7 +76,6 @@ Cityman:
    - USB VBus (USB will work with externally provided power source)
    - Audio volume control for Speakers (stuck at 100%)
    - Vibration motor
-   - WLAN (requires UEFI PCIe bring up)
    - HDMI out via USB-C
 
 Talkman:
