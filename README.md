@@ -1,5 +1,5 @@
-# Microsoft Mobile ARM64 Windows Driver pack for
-## Lumia 950 (incomplete), Lumia 950 XL, RX-130/id310-1 (EB0.X/EB1.X/EB2.X)
+# Microsoft Mobile ARM64 Windows Driver pack
+## For Lumia 950 (incomplete), Lumia 950 XL, RX-130/id310-1 (EB0.X/EB1.X/EB2.X)
 
 This pack is a work in progress and may be getting updates at a later time.
 
@@ -105,7 +105,7 @@ Talkman:
 - After the Out of box experience, you'll have to instal drivers in Post-OOBE via device manager.
 
 
-## Usb for Lumia 950 and Lumia 950 XL
+## USB for Lumia 950 and Lumia 950 XL
 
 - You may have to manually right click the xHCI device in device manager
   properties -> update driver -> pick the qualcomm xhci driver
