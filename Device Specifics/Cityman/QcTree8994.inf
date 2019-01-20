@@ -73,7 +73,7 @@ HKR,%TPMService.RegKey%,MajorVersion,%REG_DWORD%,1
 HKR,%TPMService.RegKey%,MinorVersion,%REG_DWORD%,1
 HKR,%TPMService.RegKey%,OSDependencies,%REG_MULTI_SZ%,%RpmbOsService%,%ClockOsService%
 
-HKR,%EFIVarService.RegKey%,Enabled,%REG_DWORD%,0
+HKR,%EFIVarService.RegKey%,Enabled,%REG_DWORD%,1
 HKR,%EFIVarService.RegKey%,MajorVersion,%REG_DWORD%,1
 HKR,%EFIVarService.RegKey%,MinorVersion,%REG_DWORD%,0
 HKR,%EFIVarService.RegKey%,OSDependencies,%REG_MULTI_SZ%,%RpmbOsService%,%ClockOsService%
