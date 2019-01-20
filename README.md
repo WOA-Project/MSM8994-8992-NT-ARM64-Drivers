@@ -131,6 +131,9 @@ Talkman:
 1/20/2019:
 
 - FIX:
+  Random reboots on Cityman fixed with a PEP update.
+  
+- FIX:
   TrEE UEFI runtime services now set as read-only.
 
 - FIX:
