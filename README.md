@@ -115,6 +115,19 @@ Talkman:
 - The USB driver provided requires you to provide external power to the device (or use a Dock)
 
 
+## GPU Testing
+
+- Install from Supplemental\GPU:
+  The correct Panel driver for your device (Hapanero, Cityman..)
+  Screen may go black, after installing oempanel, it's recomended to use RDP to install those drivers
+  Note: a patch is coming to ACPI tables to avoid this issue in a future UEFI update.
+
+  Install Supplemental\GPU\Display into the Microsoft Generic Display adapter device and reboot
+
+  Important notes:
+  x86 / CHPE DirectX support is missing.
+
+
 ## USB Debugging
 
 - It is advised to not install LumiaUSBKm when using USB debugging (it is under Device Specifics/DeviceName/USB)
@@ -136,8 +149,6 @@ Talkman:
 - FIX:
   TrEE UEFI runtime services now set as read-only.
 
-- FIX:
-  GPU available even in the OOBE boot.
 
 1/17/2019:
 
