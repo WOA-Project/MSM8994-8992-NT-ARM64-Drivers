@@ -62,12 +62,6 @@ qcdx11arm32compiler8994.dll      = 0,,
 QcWicArm64Encoder8994.dll        = 0,,
 QcWicArm32Encoder8994.dll        = 0,,
 
-msvcarm64p120.dll                = 0,,
-msvcarm64r120.dll                = 0,,
-
-msvcarm32p120.dll                = 0,,
-msvcarm32r120.dll                = 0,,
-
 [SignatureAttributes]
 qcdx11arm64um8994.dll            = SignatureAttributes.PETrust
 qcdx11arm32um8994.dll            = SignatureAttributes.PETrust
@@ -302,9 +296,6 @@ qchdcpumd8994.dll,                                      ,,0x00004000
 QcWicEncoder8994.dll, QcWicArm64Encoder8994.dll         ,,0x00004000
 qcvss8994.mbn,                                          ,,0x00004000
 
-msvcp120.dll, msvcarm64p120.dll                         ,,0x00004000
-msvcr120.dll, msvcarm64r120.dll                         ,,0x00004000
-
 ; SysArm32
 [QCDX.Files.NTarm_10]
 qcdx11um8994.dll, qcdx11arm32um8994.dll                 ,,0x00004000
@@ -316,9 +307,6 @@ qcvidencmfthevc8994.dll, qcvidencarm32mfthevc8994.dll   ,,0x00004000
 qcvidencmftmpeg48994.dll, qcvidencarm32mftmpeg48994.dll ,,0x00004000
 qcviddecmft8994.dll, qcviddecarm32mft8994.dll           ,,0x00004000
 QcWicArm32Encoder8994.dll, QcWicArm32Encoder8994.dll    ,,0x00004000
-
-msvcp120.dll, msvcarm32p120.dll                         ,,0x00004000
-msvcr120.dll, msvcarm32r120.dll                         ,,0x00004000
 
 [Strings]
 
