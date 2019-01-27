@@ -49,10 +49,10 @@ LumiaNull.sys     = 1,,
 %OddtVibNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_VIB
 %OddtCpuNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_CPU
 %EnoGpioNull_DeviceDesc%    = LumiaNull_Device, ACPI\ENOGPIO
-%EnoEmNull_DeviceDesc%      = LumiaNull_Device, ACPI\NOKIA_ENOEM
-%WPCrasherNull_DeviceDesc%  = LumiaNull_Device, ACPI\WP_CRASHER
-%QcGPUNull_DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
-%TouchPowerNull_DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
+%EnoEmNull.DeviceDesc%      = LumiaNull_Device, ACPI\NOKIA_ENOEM
+%WPCrasherNull.DeviceDesc%  = LumiaNull_Device, ACPI\WP_CRASHER
+%QcGPUNull.DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
+%TouchPowerNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
 
 [LumiaNull_Device.NT]
 CopyFiles=Drivers_Dir
