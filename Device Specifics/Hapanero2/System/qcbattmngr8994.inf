@@ -88,9 +88,6 @@ HKR,"Jeita", "TemperatureJeitaZone3", 0x10001, 0x30
 HKR,"Jeita", "TotalTempZone", 0x10001, 0x3
 HKR,"Jeita", "VoltageJeitaZone1", 0x10001, 0x1004
 HKR,"Jeita", "VoltageJeitaZone3", 0x10001, 0x1004
-HKR,"Parameters\Wdf", "WdfMajorVersion", 0x10001, 0x1
-HKR,"Parameters\Wdf", "WdfMinorVersion", 0x10001, 0xf
-HKR,"Parameters\Wdf", "TimeOfLastTelemetryLog", 0xB0001, 65,85,16,b5,7e,7a,d1,01
 HKR,"Platform", "AFPTriggerMaxBattTemp", 0x10001, 0x4b
 HKR,"Platform", "AFPTriggerMinBattTemp", 0x10001, 0xffffffec
 HKR,"Platform", "BCLLowBattPerc", 0x10001, 0xf
