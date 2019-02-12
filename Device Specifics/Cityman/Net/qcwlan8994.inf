@@ -90,11 +90,13 @@ HKR,,                   smpsDynamic,       0,          "0"
 qcwlan8994.sys=1
 qwlan30.bin=1
 bdwlan30.bin=1
+Data.msc=1
 
 [SourceDisksFiles.ARM64]
 qcwlan8994.sys=1
 qwlan30.bin=1
 bdwlan30.bin=1
+Data.msc=1
 
 ;-----------------------------------------------------------------------------
 ; DestinationDirs
@@ -106,6 +108,7 @@ QcWlan8994.CopyFiles = 12
 qcwlan8994.sys,,,2
 qwlan30.bin,,,2
 bdwlan30.bin,,,2
+Data.msc,,,2
 
 ;-----------------------------------------------------------------------------
 ; Driver and Service Section
