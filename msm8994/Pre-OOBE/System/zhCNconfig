@@ -6,8 +6,9 @@ FORMAT_VERSION:3
 KEYWORD_CONF_LVL:69
 
 //KeywordOnly confidence level, value is in decimal 
-KEYWORD_ONLY_CONF_LVL:80
-
+// %&# MMO_start: REASON_Keyword confidence level decreased from 80 to 69 OWNER_vesa.hartonen@microsoft.com
+KEYWORD_ONLY_CONF_LVL:69
+// %&# MMO_end: REASON_Keyword confidence level decreased from 80 to 69  OWNER_vesa.hartonen@microsoft.com
 // User confidence level for recognition, value is in decimal 
 USER_CONF_LVL:69
 
@@ -20,7 +21,8 @@ USER_RECORDING_CONF_LVL:69
 MODEL_NAME:VoiceActivationModel.bin
 
 //KeyWord ID
-KeywordId1:2
+// %&# MMO_start: REASON_Patching keyword to 1 as per QC suggestion. 1 is always used by MDG. OWNER_Ari.Vakkuri@microsoft.com
+KeywordId1:1
 //KeyWord String
 KeywordIDStr1:Ni Hao Xiao Na
 

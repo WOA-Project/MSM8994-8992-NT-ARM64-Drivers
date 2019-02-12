@@ -5,12 +5,12 @@ FORMAT_VERSION:3
 // Keyword confidence level for recognition, value is in decimal 
 KEYWORD_CONF_LVL:69
 
-//KeywordOnly confidence level, value is in decimal 
-KEYWORD_ONLY_CONF_LVL:80
-
+//KeywordOnly confidence level, value is in decimal
+// %&# MMO_start: REASON_Keyword confidence level decreased from 80 to 69 OWNER_vesa.hartonen@microsoft.com
+KEYWORD_ONLY_CONF_LVL:69
+// %&# MMO_end: REASON_Keyword confidence level decreased from 80 to 69  OWNER_vesa.hartonen@microsoft.com
 // User confidence level for recognition, value is in decimal 
 USER_CONF_LVL:69
-
 // User Recording Confidence Level, value is in decimal 
 USER_RECORDING_CONF_LVL:69
 
