@@ -1,9 +1,13 @@
+
 # Microsoft Mobile ARM64 Windows Driver pack
 ## For Lumia 950 (incomplete), Lumia 950 XL, RX-130/id310-1 (EB0.X/EB1.X/EB2.X)
 
 This pack is a work in progress and may be getting updates at a later time.
 
-## Disclaimers and end of user license agreement
+## Copryright, License, Disclaimers and end of user license agreement
+
+
+**Below notice must be present in all redistributed portions of this software**
 
 - By installing this driver pack, you agree that any damage done to your phone or any loss of data is your entire responsability
   and we cannot be taken responsible for data loss if it ever happens.
@@ -16,7 +20,7 @@ This pack is a work in progress and may be getting updates at a later time.
   Selling a device with an extra fee also ruins the work of others that worked on this project. While we can't enforce this policy,
   we decided to put this notice here in the hopes of some people understanding the morality of this.
 
-### Contributors
+**Contributors**
 
 We would like to thank the following people that helped:
 
@@ -50,40 +54,39 @@ The following items are not functional yet on specific devices, reason when avai
 
 Hapanero:
    - Fingerprint reader (missing drivers)
-   - Cameras
+   - Cameras (missing drivers)
    - Any kind of sensor (except ALS)
-   - USB (bug with USBFnSS)
    - Audio volume control for Speakers (stuck at 100%)
-   - Shutdown (Reboots instead)
    - Vibration motor
    - x86 DirectX support is missing.
+   - Cellular (Desktop doesn't have a RIL stack and is missing EMB)
 
 Hapanero (EB0.x and EB1.x):
    - GPU and display
    - Fingerprint reader (missing drivers)
-   - Cameras
+   - Cameras (missing drivers)
    - Any kind of sensor (except ALS)
-   - USB (bug with USBFnSS)
-   - Audio volume control for Speakers (stuck at 100%)
    - Audio
    - Microphones
    - Shutdown (Reboots instead)
    - Vibration motor
+   - Cellular (Desktop doesn't have a RIL stack and is missing EMB)
 
 Cityman:
    - Iris biometric sensor (missing drivers)
-   - Cameras
+   - Cameras (missing drivers)
    - Any kind of sensor (except ALS)
    - USB VBus (USB will work with externally provided power source)
    - Audio volume control for Speakers (stuck at 100%)
    - Vibration motor
    - HDMI out via USB-C
    - x86 DirectX support is missing.
+   - Cellular (Desktop doesn't have a RIL stack and is missing EMB)
 
 Talkman:
    - GPU and display
    - Iris biometric sensor (missing drivers)
-   - Cameras
+   - Cameras (missing drivers)
    - Any kind of sensor (except ALS)
    - USB VBus (USB will work with externally provided power source)
    - Audio
@@ -91,13 +94,14 @@ Talkman:
    - Vibration motor
    - WLAN (requires UEFI PCIe bring up)
    - HDMI out via USB-C
+   - Cellular (Desktop doesn't have a RIL stack and is missing EMB)
 
 
 ## Readme
 
 - Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994
 - Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992
-- RX-130       -> Install everything under Device Specifics\Hapanero and msm8994
+- RX-130       -> Install everything under Device Specifics\Hapanero (or Hapanero2 if you're using Lumia950XLPkg) and msm8994
 - RX-130-EB0/1 -> See Supplemental\Hapanero EB1 - ARM64
 
 - To install drivers, you'll need to follow the usual Dism procedure before first boot of the operating system.
@@ -105,6 +109,7 @@ Talkman:
   nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
 
 - After the Out of box experience, you'll have to instal drivers in Post-OOBE via device manager.
+- **Note** Those Post-OOBE drivers only work in 17134 currently.
 
 
 ## USB for Lumia 950 and Lumia 950 XL
@@ -115,7 +120,7 @@ Talkman:
 - The USB driver provided requires you to provide external power to the device (or use a Dock)
 
 
-## GPU Testing
+## GPU Testing for Hapanero (not Hapaneros with Lumia950XLPkg)
 
 - Install from Supplemental\GPU:
   The correct Panel driver for your device (Hapanero, Cityman..)
@@ -139,137 +144,11 @@ Talkman:
   bcdedit /store BCD /dbgsettings usb TARGETNAME:WOATARGET
   bcdedit /store BCD /set {default} debug on
 
+## Hapanero setup
+It is highly recommended you do not install the leaked ARM64 firmware on hapanero devices. This firmware is really buggy and is prone to lots of overheating problems and may ultimately damage your device.
+Instead, please install Lumia950XLPkg like on Citymans and Talkmans, on a RnD firmware specifically made for Hapanero (like 10586, 10240) and use the Hapanero2 drivers.
+
 ## Changelog
 
-1/20/2019:
-
-- FIX:
-  Random reboots on Cityman fixed with a PEP update.
-  
-- FIX:
-  TrEE UEFI runtime services now set as read-only.
-
-
-1/17/2019:
-
-- NEW:
-  Talkman OEMPanel
-
-- FIX:
-  CamTuningData
-
-
-1/16/2019:
-
-- NEW:
-  GPU Driver is here!
-
-- NEW:
-  New converged null/bin device driver
-
-- NEW:
-  Re-ordered talkman drivers
-
-- NEW:
-  Hapanero EB0/1 Support
-
-- NEW:
-  Right click support for Hapanero
-
-- FIX:
-  Bluetooth errata fix, errata fix for oempanel as well
-
-- FIX:
-  Microphones
-
-- FIX:
-  Fixed some issues in general with driver INFs.
-
-
-7/8/2018:
-
-- NEW:
-  Null Driver for hdmidpi instead of a ""fake"" kmdf one
-
-- NEW:
-  oeminfo inf files
-
-- REMOVAL:
-  8992 PEP
-
-- BUG:
-  Extensive power draw is noticed on some devices and configurations which prevents the device from charging
-
-
-7/5/2018:
-
-- NEW:
-  CITYMAN/TALKMAN: Added Experimental/hdmidpifake/KmdfFake (HDMI to Displayport driver)
-
-- NEW:
-  8992: Added 8994 PEP with disabled features (Power management, Micropep)
-  THIS IS 100% UNTESTED BUT IN THEORY SHOULD WORK FOR BASIC USE
-  (8992 needs testing)
-
-
-- FIX:
-  Cleaned up inf files (alignment, versioning, comments...)
-
-- FIX:
-  Fixed reported device name by the DirectX driver
-
-- FIX:
-  Fixed a tiny issue with the 8998 DirectX driver
-
-- FIX:
-  Attempted to fix qcgnss inf file using a different configuration
-
-- FIX:
-  Added USB driver for Lumia 950 XL in this Driver pack
-
-- FIX:
-  Fixed an issue with the camera tuning inf file, not placing the calibration files where they should be
-
-
-- BUG:
-  Some infs may still have incorrect configurations
-
-- BUG:
-  WPSensorsCx still needs to be backported (wouldn't actually fix sensors either)
-
-- BUG:
-  DirectX driver crashes
-
-- BUG:
-  Missing driver infs for Camera Stream, Services, etc...
-
-- BUG:
-  Als driver won't copy the dll file for some reason
-
-- BUG:
-  Microphones are unreliable
-
-- BUG:
-  Speaker volume level can't be adjusted in some cases
-
-- BUG:
-  HAPANERO: USBFnSS Filter driver won't load due to signature
-
-- BUG:
-  8992: PEP, SUBSYS, Camera stack
-
-Added 7/7/2018:
-
-- BUG:
-  Attempting to install USBFnSS (PostOOBE) into Hapaneros may result in a bugcheck
-
-- BUG:
-  Some Phones may report issues with one Broadband adapter
-  This is because in fairness your phone only has one Broadband adapter and the ACPI tables seem to be for dual sim lumias
-
-- BUG:
-  Some Phones may report issues with qcgnss, but not all, investigating...
-
-- BUG:
-  950s won't have WLAN working via bootshim/uefi currently. This requires an update to the UEFI to support PCIe,
-  nonetheless the drivers are provided.
+You can find the changelog for releases before this repository in CHANGELOG_LEGACY.md
+For current changelogs, please see the commit history.
