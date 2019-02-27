@@ -104,6 +104,14 @@ HKR,%SdkSecAppService.RegKey%,MajorVersion,%REG_DWORD%,1
 HKR,%SdkSecAppService.RegKey%,MinorVersion,%REG_DWORD%,0
 HKR,%SdkSecAppService.RegKey%,OSDependencies,%REG_MULTI_SZ%,%RpmbOsService%,%ClockOsService%
 
+HKR,%IsswAppService.RegKey%,Enabled,%REG_DWORD%,0
+HKR,%IsswAppService.RegKey%,SecureApp,%REG_DWORD%,1
+HKR,%IsswAppService.RegKey%,LoadApp,%REG_DWORD%,0
+HKR,%IsswAppService.RegKey%,AppName,,"tz.issw"
+HKR,%IsswAppService.RegKey%,MajorVersion,%REG_DWORD%,1
+HKR,%IsswAppService.RegKey%,MinorVersion,%REG_DWORD%,0
+HKR,%IsswAppService.RegKey%,OSDependencies,%REG_MULTI_SZ%,%IsswRelatedService%,%ClockOsService%
+
 HKR,%OsServices.RegKey%,,%REG_KEY_ONLY%,
 
 [SourceDisksNames]
@@ -126,9 +134,11 @@ EFIVarService.RegKey      = "Parameters\SecureServices\{699AA2F1-A42E-40DF-BABE-
 WinSecAppService.RegKey   = "Parameters\SecureServices\{16A1AB50-7413-4875-893D-2E5AA0B79888}"
 PlayReadyService.RegKey   = "Parameters\SecureServices\{F4637010-03C3-42CD-B932-B48ADF3A6A54}"
 SdkSecAppService.RegKey   = "Parameters\SecureServices\{B6902B2E-44C7-43C5-B840-FF3A406B08FA}"
+IsswAppService            = "Parameters\SecureServices\{77A02A29-7F29-4307-9F76-2ADC1F8B6C1D}"
 OsServices.RegKey         = "Parameters\OsServices"
 RpmbOsService             = "{27447C21-BCC3-4D07-A05B-A3395BB4EEE7}"
 ClockOsService            = "{48BCEDD3-171C-4FA5-B039-5971CF188746}"
+IsswRelatedService        = "{05272F96-AD1A-4497-97C2-16B965B197B3}"
 REG_DWORD = 0x00010001
 REG_MULTI_SZ = 0x00010008
 REG_KEY_ONLY = 0x00000010
