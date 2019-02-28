@@ -1,4 +1,4 @@
-;
+﻿;
 ; LumiaNull.inf
 ;
 
@@ -60,6 +60,7 @@ LumiaNull.sys     = 1,,
 %1008Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1008
 %1010Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1010
 %1011Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1011
+%1015Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1015
 %1019Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1019
 %101CNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101C
 %101DNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101D
@@ -136,6 +137,7 @@ TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 1008Null.DeviceDesc = "Microsoft Eno gpio Driver"
 1010Null.DeviceDesc = "Icaros Extra Sensory Perception Driver"
 1011Null.DeviceDesc = "Icaros_KMD_ESP_Thermal Device"
+1015Null.DeviceDesc = "hall_kmd Device"
 1019Null.DeviceDesc = "MMO VisaST Device"
 101CNull.DeviceDesc = "MMO Activity Detection driver"
 101DNull.DeviceDesc = "MMO Step Counter driver"
