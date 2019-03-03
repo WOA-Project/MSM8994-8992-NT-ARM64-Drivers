@@ -1,0 +1,65 @@
+﻿;
+; oeminfo.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SYSTEM
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QCOM%
+DriverVer   = 09/09/2015,1.0.1077.0000
+CatalogFile = oeminfo.cat
+
+[DestinationDirs]
+; 10 = Windows
+Workaround.Files = 10
+
+[SourceDisksNames]
+0=%DiskId1%
+
+[SourceDisksFiles]
+
+[Manufacturer]
+%QC%=QC, NTARM64
+
+[QC.NTARM64]
+"OEMInfo" = OEMInfo_Inst, 
+
+;*****************************************
+; oeminfo  Install Section
+;*****************************************
+
+[OEMInfo_Inst]
+CopyFiles=Workaround.Files
+Addreg=OEMInfoReg
+
+; System32
+[Workaround.Files]
+
+[OEMInfoReg]
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneBootLoaderVersion", 0x0, "3.10.150701.1067.M8994RELTTNWZA1067"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneFirmwareRevision", 0x0, "1067.0000.14822.0"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneFriendlyName", 0x0, "Windows phone"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneHardwareRevision", 0x0, "0"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneHardwareVariant", 0x0, "CHI"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturer", 0x0, "MDG"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturerModelName", 0x0, "Chi"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneMobileOperatorDisplayName", 0x0, "Operator"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneMobileOperatorName", 0x0, "000-88"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneModelName", 0x0, "Hapanero"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneOEMSupportLink", 0x0, "https://microsoft.sharepoint.com/teams/osg_core_sigma/siplat/QualcommPages/Hapanero.aspx"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneRadioHardwareRevision", 0x0, "0"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneRadioSoftwareRevision", 0x0, "0096.0004"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneROMLanguage", 0x0, "0"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneROMVersion", 0x0, "0"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSOCVersion", 0x0, "8994"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSupportLink", 0x0, "https://microsoft.sharepoint.com/teams/osg_core_sigma/siplat/QualcommPages/Hapanero.aspx"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSupportPhoneNumber", 0x0, "0"
+
+[Strings]
+REG_SZ=0x00000000
+SPSVCINST_ASSOCSERVICE= 0x00000002
+QCOM                  = "Qualcomm"
+QC                    = "Qualcomm Technologies, INC"
+DiskId1               = "OEMInfo Installation Disk #1"
+TUNINGDATA.DeviceDesc = "OEMInfo settings Package"

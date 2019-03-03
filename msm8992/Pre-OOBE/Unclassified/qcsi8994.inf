@@ -1,0 +1,51 @@
+﻿;
+; qcsi.inf
+;
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SYSTEM
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QCOM%
+DriverVer   = 09/09/2015,1.0.1077.0000
+CatalogFile = qcsi8994.cat
+
+[DestinationDirs]
+; 11 = system32
+; 10 = Windows
+
+qcsi.Files.NTarm_11   = 11
+qcsi.Files.NTarm_10   = 10, SysArm32
+
+[SourceDisksNames]
+0=%DiskId1%
+
+[SourceDisksFiles]
+qcsiarm64um8994.dll                = 0,,
+qcsiarm32um8994.dll                = 0,,
+
+;*****************************************
+; sium  Install Section
+;*****************************************
+
+[DefaultInstall.NTARM64]
+CopyFiles=qcsi.Files.NTarm_11,qcsi.Files.NTarm_10
+
+; System32
+[qcsi.Files.NTarm_11]
+qcsium8994.dll, qcsiarm64um8994.dll                 ,,0x00004000
+
+; System32
+[qcsi.Files.NTarm_10]
+qcsium8994.dll, qcsiarm32um8994.dll                 ,,0x00004000
+
+;-------------- Service installation
+[qcsi_Device.Services]
+AddService =  ,%SPSVCINST_ASSOCSERVICE%; 
+
+[Strings]
+REG_SZ=0x00000000
+SPSVCINST_ASSOCSERVICE= 0x00000002
+QCOM                  = "Qualcomm"
+QC                    = "Qualcomm Technologies, INC"
+DiskId1               = "QCSI Installation Disk #1"
+QCSI.DeviceDesc       = "QCSI Library Package"

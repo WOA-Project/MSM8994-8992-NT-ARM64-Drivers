@@ -33,6 +33,11 @@
           <CommandLine>powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25</CommandLine>
           <Description>Slider hack for ARM </Description>
         </SynchronousCommand>
+        <SynchronousCommand action="add">
+          <Order>7</Order>
+          <CommandLine>REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f</CommandLine>
+          <Description>Disable fastboot for ARM </Description>
+        </SynchronousCommand>
       </FirstLogonCommands>
       <OOBE>
         <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
