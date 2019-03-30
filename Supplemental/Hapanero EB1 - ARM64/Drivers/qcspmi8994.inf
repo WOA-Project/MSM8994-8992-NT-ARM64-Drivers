@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -19,34 +19,34 @@ CatalogFile = qcspmi8994.cat
 PnpLockDown = 1
 
 [DestinationDirs]
-DefaultDestDir = 12 
+DefaultDestDir = 12
                                     
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-qcspmi8994.sys  = 1,,
+qcspmi8994.sys = 1,,
 
 ;*****************************************
 ; Install Section
 ;*****************************************
 
 [Manufacturer]
-%QUALCOMM%=Standard,NTarm64
+%QUALCOMM% = Standard,NTarm64
 
 [Standard.NTarm64]
-%qcspmi.DeviceDesc%=qcspmi_Device, ACPI\QCOM2404
+%qcspmi.DeviceDesc% = qcspmi_Device, ACPI\QCOM2404
 
 [qcspmi_Device.NT]
-CopyFiles=Drivers_Dir
-AddProperty=WDTFSOCDeviceCategory
+CopyFiles   = Drivers_Dir
+AddProperty = WDTFSOCDeviceCategory
 Reboot
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 2
 
 [Drivers_Dir]
 qcspmi8994.sys
@@ -66,20 +66,21 @@ LoadOrderGroup = Filter
 Tag            = 2
 
 [qcspmi_Device.NT.Wdf]
-KmdfService =  qcspmi, qcspmi_wdfsect
+KmdfService = qcspmi, qcspmi_wdfsect
 
 [qcspmi_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
 ;Localizable Strings
-QUALCOMM          = "Qualcomm Inc."
-DiskName          = "Qualcomm SPMI Device Installation Disk"
-qcspmi.DeviceDesc = "Qualcomm SPMI Device"
-qcspmi.SVCDESC    = "Qualcomm SPMI Driver"
+QUALCOMM               = "Qualcomm Inc."
+DiskName               = "Qualcomm SPMI Device Installation Disk"
+qcspmi.DeviceDesc      = "Qualcomm SPMI Device"
+qcspmi.SVCDESC         = "Qualcomm SPMI Driver"
 
 ;Non-localizable Strings
 SPSVCINST_ASSOCSERVICE = 0x00000002
 SERVICE_KERNEL_DRIVER  = 1
 SERVICE_BOOT_START     = 0
-SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_NORMAL   = 1
+

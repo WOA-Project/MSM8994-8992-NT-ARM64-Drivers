@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -32,31 +32,31 @@ DefaultDestDir = 12
 qcabd8994.sys = 1
 
 [Manufacturer]
-%QC%=QC, NTarm64
+%QC% = QC, NTarm64
 
 [QC.NTarm64]
-%ABD.DeviceDesc%=ABD_Device, ACPI\QCOM2431
+%ABD.DeviceDesc% = ABD_Device, ACPI\QCOM2431
 
 [ABD_Device.NT]
-CopyFiles=Drivers_Dir
-AddReg=AbdReg
-AddProperty=WDTFSOCDeviceCategory
+CopyFiles   = Drivers_Dir
+AddReg      = AbdReg
+AddProperty = WDTFSOCDeviceCategory
 Reboot
 
 [AbdReg]
-HKLM, System\CurrentControlSet\Control\ACPIEX, ComplianceFlags, %REG_DWORD%, 0x7
+HKLM, System\CurrentControlSet\Control\ACPIEX, ComplianceFlags, %REG_DWORD%,  0x7
 
 [ABD_Device.NT.HW]
-Addreg=AbdACL
+Addreg = AbdACL
 
 [AbdACL]
-HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)"
 
 [Drivers_Dir]
 qcabd8994.sys
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 2
 
 [ControlFlags]
 ExcludeFromSelect = *
@@ -67,22 +67,23 @@ AddService = qcABD,%SPSVCINST_ASSOCSERVICE%, ABD_Service_Inst
 
 ; -------------- ABD driver install sections
 [ABD_Service_Inst]
-DisplayName    = %ABD.SVCDESC%
-ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START 
-ErrorControl   = 0               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\qcabd8994.sys
+DisplayName   = %ABD.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 0               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\qcabd8994.sys
 
 ; Checks for compatibility with KMDF version
 [ABD_Device.NT.Wdf]
-KmdfService =  qcABD, ABD_wdfsect
+KmdfService = qcABD, ABD_wdfsect
 [ABD_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QC             = "Qualcomm Technologies Inc."
-ABD.DeviceDesc = "Qualcomm ACPI Bridge Device"
-ABD.SVCDESC    = "Qualcomm ACPI Bridge Driver"
-REG_DWORD      = 0x00010001
-DiskId         = "Qualcomm ACPI Bridge Driver Installation Disk"
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QC                     = "Qualcomm Technologies Inc."
+ABD.DeviceDesc         = "Qualcomm ACPI Bridge Device"
+ABD.SVCDESC            = "Qualcomm ACPI Bridge Driver"
+REG_DWORD              = 0x00010001
+DiskId                 = "Qualcomm ACPI Bridge Driver Installation Disk"
+

@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;   Copyright (c) 2011-2013 Qualcomm Technologies, Inc.
 ;               All Rights Reserved.
@@ -30,16 +30,16 @@ qcepmadc8994.sys = 1
 DefaultDestDir = 12
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 [Manufacturer]
-%QUALCOMM%=QC, NTARM64
+%QUALCOMM% = QC, NTARM64
 
 [QC.NTARM64]
-%EPMADC.DeviceDesc%=EPMADC_Device, ACPI\QCOM2411
+%EPMADC.DeviceDesc% = EPMADC_Device, ACPI\QCOM2411
 
 [EPMADC_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [Drivers_Dir]
 qcepmadc8994.sys
@@ -48,29 +48,29 @@ qcepmadc8994.sys
 AddService = EPMADC,%SPSVCINST_ASSOCSERVICE%, EPMADC_Service_Inst
 
 [EPMADC_Device.NT.HW]
-addreg=EPMADCSD
+addreg = EPMADCSD
 
 [EPMADCSD]
-HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)"
+HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)"
 
 [EPMADC_Service_Inst]
-DisplayName    = %EPMADC.SVCDESC%
-ServiceType    = %SERVICE_KERNEL_DRIVER%
-StartType      = %SERVICE_DEMAND_START%
-ErrorControl   = %SERVICE_ERROR_NORMAL%
-ServiceBinary  = %12%\qcepmadc8994.sys
+DisplayName   = %EPMADC.SVCDESC%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\qcepmadc8994.sys
 
 [EPMADC_Device.NT.Wdf]
-KmdfService =  EPMADC, EPMADC_wdfsect
+KmdfService = EPMADC, EPMADC_wdfsect
 [EPMADC_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
 ;Localizable Strings
-QUALCOMM          = "Qualcomm Inc."
-DiskId1           = "Qualcomm EPM ADC Installation Disk"
-EPMADC.DeviceDesc = "Qualcomm EPM ADC Device"
-EPMADC.SVCDESC    = "Qualcomm EPM ADC Driver"
+QUALCOMM               = "Qualcomm Inc."
+DiskId1                = "Qualcomm EPM ADC Installation Disk"
+EPMADC.DeviceDesc      = "Qualcomm EPM ADC Device"
+EPMADC.SVCDESC         = "Qualcomm EPM ADC Driver"
 
 ;Non-localizable Strings
 SPSVCINST_ASSOCSERVICE = 0x00000002
@@ -78,3 +78,4 @@ SERVICE_KERNEL_DRIVER  = 1
 SERVICE_DEMAND_START   = 3
 SERVICE_ERROR_IGNORE   = 0
 SERVICE_ERROR_NORMAL   = 1
+

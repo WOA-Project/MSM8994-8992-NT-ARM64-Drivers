@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (C) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -25,16 +25,16 @@ DefaultDestDir = 12
 1 = %DiskId1%,,,""
 
 [SourceDisksFiles]
-qcremoteat8994.sys  = 1,,
+qcremoteat8994.sys = 1,,
 
 [Manufacturer]
-%QCOM% = QCOM, NTARM64 
+%QCOM% = QCOM, NTARM64
 
 [QCOM.NTARM64]
-%RemoteAt.DeviceDesc%=RemoteAt_Device, ACPI\QCOM2155
+%RemoteAt.DeviceDesc% = RemoteAt_Device, ACPI\QCOM2155
 
 [RemoteAt_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [Drivers_Dir]
 qcremoteat8994.sys
@@ -48,19 +48,20 @@ AddService = RemoteAt,%SPSVCINST_ASSOCSERVICE%, RemoteAt_Service_Inst
 [RemoteAt_Service_Inst]
 DisplayName    = %RemoteAt.SVCDESC%
 ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START 
+StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
 ServiceBinary  = %12%\qcremoteat8994.sys
 LoadOrderGroup = Extended Base
 
 [RemoteAt_Device.NT.Wdf]
-KmdfService =  RemoteAt, RemoteAt_wdfsect
+KmdfService = RemoteAt, RemoteAt_wdfsect
 [RemoteAt_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM                = "Qualcomm Incorporated" 
-DiskId1             = "Qualcomm Modembridge Driver Disk"
-RemoteAt.DeviceDesc = "Qualcomm Win8 Remote AT Command Processor Device"
-RemoteAt.SVCDESC    = "Qualcomm Win8 Remote AT Command Processor Service"
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm Incorporated"
+DiskId1                = "Qualcomm Modembridge Driver Disk"
+RemoteAt.DeviceDesc    = "Qualcomm Win8 Remote AT Command Processor Device"
+RemoteAt.SVCDESC       = "Qualcomm Win8 Remote AT Command Processor Service"
+

@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2012-2013  Qualcomm Technologies, Inc.
 ;
@@ -25,7 +25,7 @@ CatalogFile = qcacsp8994.cat
 Drivers_Dir_24 = 11
 
 [SourceDisksNames]
-1=%DiskId1%
+1 = %DiskId1%
 
 [SourceDisksFiles]
 Bluetooth_cal_8994.acdb = 1
@@ -41,16 +41,16 @@ Speaker_cal_8994.acdb   = 1
 ; ACSP  Install Section
 ;*****************************************
 [Manufacturer]
-%StdMfg%=Standard,NTARM64
+%StdMfg% = Standard,NTARM64
 
 ; Decorated model section take precedence over undecorated 
 ; ones on XP and later.
 [Standard.NTARM64]
-%ACSP.DeviceDesc%= ACSP_Device, ACPI\QCOM2460
+%ACSP.DeviceDesc% = ACSP_Device, ACPI\QCOM2460
 
 [ACSP_Device]
-Addreg=ACSPReg
-CopyFiles=Drivers_Dir_24
+Addreg    = ACSPReg
+CopyFiles = Drivers_Dir_24
 
 
 [Drivers_Dir_24]
@@ -64,35 +64,36 @@ Headset_cal_8994.acdb
 Speaker_cal_8994.acdb
 
 [ACSPReg]
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath1, %REG_SZ%, "\SystemRoot\system32\Bluetooth_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath2, %REG_SZ%, "\SystemRoot\system32\Codec_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath3, %REG_SZ%, "\SystemRoot\system32\General_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath4, %REG_SZ%, "\SystemRoot\system32\Global_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath5, %REG_SZ%, "\SystemRoot\system32\Handset_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath6, %REG_SZ%, "\SystemRoot\system32\Hdmi_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath7, %REG_SZ%, "\SystemRoot\system32\Headset_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath8, %REG_SZ%, "\SystemRoot\system32\Speaker_cal_8994.acdb"
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath9, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath10, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath11, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath12, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath13, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath14, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath15, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath16, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath17, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath18, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath19, %REG_SZ%, ""
-HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath20, %REG_SZ%, ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath1 , %REG_SZ%,  "\SystemRoot\system32\Bluetooth_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath2 , %REG_SZ%,  "\SystemRoot\system32\Codec_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath3 , %REG_SZ%,  "\SystemRoot\system32\General_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath4 , %REG_SZ%,  "\SystemRoot\system32\Global_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath5 , %REG_SZ%,  "\SystemRoot\system32\Handset_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath6 , %REG_SZ%,  "\SystemRoot\system32\Hdmi_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath7 , %REG_SZ%,  "\SystemRoot\system32\Headset_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath8 , %REG_SZ%,  "\SystemRoot\system32\Speaker_cal_8994.acdb"
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath9 , %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath10, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath11, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath12, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath13, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath14, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath15, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath16, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath17, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath18, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath19, %REG_SZ%,  ""
+HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath20, %REG_SZ%,  ""
 
 ;-------------- Service installation
 [ACSP_Device.Services]
-AddService =  ,%SPSVCINST_ASSOCSERVICE%; 
+AddService = ,%SPSVCINST_ASSOCSERVICE%;
 
 [Strings]
-REG_SZ=0x00000000
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM            = "Qualcomm"
-StdMfg          = "Qualcomm Technologies, INC"
-DiskId1         = "ACSP Installation Disk #1"
-ACSP.DeviceDesc = "Audio Calibration Settings Package"
+REG_SZ                 = 0x00000000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+StdMfg                 = "Qualcomm Technologies, INC"
+DiskId1                = "ACSP Installation Disk #1"
+ACSP.DeviceDesc        = "Audio Calibration Settings Package"
+

@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2013 by Qualcomm Technologies, Inc. All Rights Reserved.
 ;
@@ -30,38 +30,38 @@ DefaultDestDir = 12,UMDF
 1 = %MediaDescription%,,,""
 
 [SourceDisksFiles]
-qcgnss.dll=1,,
+qcgnss.dll = 1,,
 
 [Manufacturer]
-%ManufacturerName%=qcgnss_Device,NTarm64
+%ManufacturerName% = qcgnss_Device,NTarm64
 
 ;*******************************
 ; qcgnss Install Section
 ;*******************************
 
 [qcgnss_Device.NTarm64]
-%DevDesc%=qcgnss_Inst, ACPI\QCOM24B4
+%DevDesc% = qcgnss_Inst, ACPI\QCOM24B4
 
 
 ;---------------- copy files
 
 [qcgnss_Inst.NT]
-CopyFiles=qcgnssCopy
-AddReg=QCGNSSReg
+CopyFiles = qcgnssCopy
+AddReg    = QCGNSSReg
 
 [qcgnssCopy]
 qcgnss.dll
 
 [qcgnss_Inst.NT.HW]
-AddReg=qcgnss_Inst_SecurityAddReg
+AddReg = qcgnss_Inst_SecurityAddReg
 
 ;-------------- Service installation
 [qcgnss_Inst.NT.Services]
 AddService = WUDFRd,0x000001fa,WUDFRD_ServiceInstall
 
 [qcgnss_Inst.NT.CoInstallers]
-CopyFiles=qcgnssCopy
-AddReg=CoInstallers_AddReg
+CopyFiles = qcgnssCopy
+AddReg    = CoInstallers_AddReg
 
 
 [WUDFRD_ServiceInstall]
@@ -227,7 +227,7 @@ HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\qcgnss\SAPConfi
 ; 0 - Use non-emergency PDN for Emergency SUPL
 HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\qcgnss\Parameters",UseEmergencyPdnForEmergencySupl,0x0000000,"1"
 [CoInstallers_AddReg]
-HKR,,CoInstallers32,0x00010000,"WUDFCoinstaller.dll"
+HKR, , CoInstallers32, 0x00010000, "WUDFCoinstaller.dll"
 
 ;-------------- WDF specific section
 
@@ -239,18 +239,19 @@ UmdfFileObjectPolicy     = AllowNullAndUnknownFileObjects
 
 [qcgnss_Install]
 
-UmdfLibraryVersion       = 2.0
-ServiceBinary            = %12%\UMDF\qcgnss.dll
+UmdfLibraryVersion = 2.0
+ServiceBinary      = %12%\UMDF\qcgnss.dll
 
 [qcgnss_Inst_SecurityAddReg]
-HKR,,DeviceCharacteristics,0x10001,0x00000100       ; FILE_DEVICE_SECURE_OPEN
+HKR, , DeviceCharacteristics, 0x10001, 0x00000100       ; FILE_DEVICE_SECURE_OPEN
 
 [Strings]
-MediaDescription         = "Qualcomm qcgnss Collection Installation Media"
-ManufacturerName         = "Qualcomm"
-DevDesc                  = "Qualcomm qcgnss Collection"
-WudfRdDisplayName        = "Windows Driver Foundation - User-mode Driver Framework Reflector"
+MediaDescription      = "Qualcomm qcgnss Collection Installation Media"
+ManufacturerName      = "Qualcomm"
+DevDesc               = "Qualcomm qcgnss Collection"
+WudfRdDisplayName     = "Windows Driver Foundation - User-mode Driver Framework Reflector"
 
-SERVICE_KERNEL_DRIVER    = 1
-SERVICE_DEMAND_START     = 3
-SERVICE_ERROR_NORMAL     = 1
+SERVICE_KERNEL_DRIVER = 1
+SERVICE_DEMAND_START  = 3
+SERVICE_ERROR_NORMAL  = 1
+

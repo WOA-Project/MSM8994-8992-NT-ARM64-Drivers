@@ -1,4 +1,4 @@
-﻿;-------------------------------------------------------------------------
+;-------------------------------------------------------------------------
 ;   Copyright (c) 2012 QUALCOMM Incorporated. All Rights Reserved.
 ;
 ;   Module Name:
@@ -44,44 +44,45 @@ Reboot
 QCDiagBridge8994.sys
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,0
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 0
 
 [QCDiagBridge_Device.NT.HW]
 AddReg = QCDiagBridge_HW_AddReg
 
-[QCDiagBridge_HW_AddReg]                            
-HKR,,DeviceCharacteristics,0x00010001,0x00000100    ; FILE_DEVICE_SECURE_OPEN
-HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GA;;;BA)"        ; Allow generic-all access to Local System and Built-in Administrators
+[QCDiagBridge_HW_AddReg]
+HKR, , DeviceCharacteristics, 0x00010001, 0x00000100    ; FILE_DEVICE_SECURE_OPEN
+HKR, , Security             ,           , "D:P(A;;GA;;;SY)(A;;GA;;;BA)"        ; Allow generic-all access to Local System and Built-in Administrators
 
 [QCDiagBridge_Device.NT.Services]
 AddService = QCDiagBridge,%SPSVCINST_ASSOCSERVICE%, QCDiagBridge_Service_Inst
 
 [QCDiagBridge_Service_Inst]
-DisplayName     = %QCDiagBridge.SVCDESC%
-ServiceType     = 1 ; SERVICE_KERNEL_DRIVER
-StartType       = 3 ; SERVICE_DEMAND_START
-ErrorControl    = 1 ; SERVICE_ERROR_NORMAL
-ServiceBinary   = %12%\QCDiagBridge8994.sys
-AddReg          = QCDiagBridge_Service_AddReg
+DisplayName   = %QCDiagBridge.SVCDESC%
+ServiceType   = 1 ; SERVICE_KERNEL_DRIVER
+StartType     = 3 ; SERVICE_DEMAND_START
+ErrorControl  = 1 ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\QCDiagBridge8994.sys
+AddReg        = QCDiagBridge_Service_AddReg
 
 [QCDiagBridge_Service_AddReg]
-HKR,,LocalPort,0x00010001,0x9C4
-HKR,,EventIDs,0x00000000,""
-HKR,,LogCodes,0x00000000,""
-HKR,,MessageLevels,0x00000000,""
+HKR, , LocalPort    , 0x00010001, 0x9C4
+HKR, , EventIDs     , 0x00000000, ""
+HKR, , LogCodes     , 0x00000000, ""
+HKR, , MessageLevels, 0x00000000, ""
 
 [QCDiagBridge_Device.NT.Wdf]
-KmdfService =  QCDiagBridge, QCDiagBridge_wdfsect
+KmdfService = QCDiagBridge, QCDiagBridge_wdfsect
 
 [QCDiagBridge_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
 ;Localizable Strings
-ManufacturerName        = "Qualcomm Incorporated"                                      
+ManufacturerName        = "Qualcomm Incorporated"
 DiskName                = "Qualcomm Diagnostic Bridge Installation Disk"
 QCDiagBridge.DeviceDesc = "Qualcomm Diagnostic Bridge Device"
 QCDiagBridge.SVCDESC    = "Qualcomm Diagnostic Bridge Driver"
 
 ;Non-localizable Strings
 SPSVCINST_ASSOCSERVICE  = 0x00000002
+

@@ -1,4 +1,4 @@
-﻿;
+;
 ; LumiaNull.inf
 ;
 
@@ -20,14 +20,14 @@ LumiaNull_Device_CoInstaller_CopyFiles = 11
 Addreg = SampleClassReg
 
 [SampleClassReg]
-HKR,,,0   ,%ClassName%
-HKR,,Icon,,-15
+HKR, ,     , 0, %ClassName%
+HKR, , Icon,  , -15
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-LumiaNull.sys     = 1,,
+LumiaNull.sys = 1,,
 ;
 
 
@@ -54,25 +54,25 @@ LumiaNull.sys     = 1,,
 %QcGPUNull.DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
 %TouchPowerNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
 
-%1001Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1001
-%1002Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1002
-%1006Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1006
-%1008Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1008
-%1010Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1010
-%1011Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1011
-%1015Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1015
-%1019Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1019
-%101CNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101C
-%101DNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101D
-%101ENull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101E
-%101FNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW101F
-%1020Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1020
-%1021Null.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1021
+%1001Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1001
+%1002Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1002
+%1006Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1006
+%1008Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1008
+%1010Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1010
+%1011Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1011
+%1015Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1015
+%1019Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1019
+%101CNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101C
+%101DNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101D
+%101ENull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101E
+%101FNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101F
+%1020Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1020
+%1021Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1021
 
 
 
 [LumiaNull_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [Drivers_Dir]
 LumiaNull.sys
@@ -83,19 +83,19 @@ AddService = LumiaNull,%SPSVCINST_ASSOCSERVICE%, LumiaNull_Service_Inst
 
 ; -------------- LumiaNull driver install sections
 [LumiaNull_Service_Inst]
-DisplayName    = %LumiaNull.SVCDESC%
-ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START
-ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\LumiaNull.sys
+DisplayName   = %LumiaNull.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\LumiaNull.sys
 
 ;
 ;--- LumiaNull_Device Coinstaller installation ------
 ;
 
 [LumiaNull_Device.NT.CoInstallers]
-AddReg=LumiaNull_Device_CoInstaller_AddReg
-CopyFiles=LumiaNull_Device_CoInstaller_CopyFiles
+AddReg    = LumiaNull_Device_CoInstaller_AddReg
+CopyFiles = LumiaNull_Device_CoInstaller_CopyFiles
 
 [LumiaNull_Device_CoInstaller_AddReg]
 ;
@@ -106,7 +106,7 @@ CopyFiles=LumiaNull_Device_CoInstaller_CopyFiles
 
 
 [LumiaNull_Device.NT.Wdf]
-KmdfService =  LumiaNull, LumiaNull_wdfsect
+KmdfService = LumiaNull, LumiaNull_wdfsect
 [LumiaNull_wdfsect]
 KmdfLibraryVersion = 1.15
 
@@ -131,17 +131,18 @@ EnoEmNull.DeviceDesc      = "Nokia Care Diagnostic ENO EM Device"
 WPCrasherNull.DeviceDesc  = "Nokia Windows Phone Crasher Device"
 TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 
-1001Null.DeviceDesc = "mmo security driver"
-1002Null.DeviceDesc = "Origa2Auth Device"
-1006Null.DeviceDesc = "ice5lp_2k Device"
-1008Null.DeviceDesc = "Microsoft Eno gpio Driver"
-1010Null.DeviceDesc = "Icaros Extra Sensory Perception Driver"
-1011Null.DeviceDesc = "Icaros_KMD_ESP_Thermal Device"
-1015Null.DeviceDesc = "hall_kmd Device"
-1019Null.DeviceDesc = "MMO VisaST Device"
-101CNull.DeviceDesc = "MMO Activity Detection driver"
-101DNull.DeviceDesc = "MMO Step Counter driver"
-101ENull.DeviceDesc = "MMO Gesture Recognition driver"
-101FNull.DeviceDesc = "Sensor Algorithm Control driver"
-1020Null.DeviceDesc = "Activity Driver"
-1021Null.DeviceDesc = "Pedometer Driver"
+1001Null.DeviceDesc       = "mmo security driver"
+1002Null.DeviceDesc       = "Origa2Auth Device"
+1006Null.DeviceDesc       = "ice5lp_2k Device"
+1008Null.DeviceDesc       = "Microsoft Eno gpio Driver"
+1010Null.DeviceDesc       = "Icaros Extra Sensory Perception Driver"
+1011Null.DeviceDesc       = "Icaros_KMD_ESP_Thermal Device"
+1015Null.DeviceDesc       = "hall_kmd Device"
+1019Null.DeviceDesc       = "MMO VisaST Device"
+101CNull.DeviceDesc       = "MMO Activity Detection driver"
+101DNull.DeviceDesc       = "MMO Step Counter driver"
+101ENull.DeviceDesc       = "MMO Gesture Recognition driver"
+101FNull.DeviceDesc       = "Sensor Algorithm Control driver"
+1020Null.DeviceDesc       = "Activity Driver"
+1021Null.DeviceDesc       = "Pedometer Driver"
+

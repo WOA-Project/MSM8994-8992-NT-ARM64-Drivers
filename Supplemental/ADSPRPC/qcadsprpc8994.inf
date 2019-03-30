@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2010-2012  QualComm Inc
 ;
@@ -18,26 +18,26 @@ Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcadsprpc8994.cat   
-PnpLockDown = 1   
+CatalogFile = qcadsprpc8994.cat
+PnpLockDown = 1
 
 [DestinationDirs]
-DefaultDestDir = 12                 
+DefaultDestDir = 12
                                     
 [SourceDisksNames]
 1 = %DiskId1%
 
 [SourceDisksFiles]
-qcadsprpc8994.sys  = 1
+qcadsprpc8994.sys = 1
 
 [Manufacturer]
-%QC%=QC,NTARM64
+%QC% = QC,NTARM64
 
 [QC.NTARM64]                           ; NTARM is set to ARM/ARM64 at runtime. Its needed to generate correct inf file.
-%ADSPRPC.DeviceDesc%=ADSPRPC_Device, ACPI\QCOM248A
+%ADSPRPC.DeviceDesc% = ADSPRPC_Device, ACPI\QCOM248A
 
 [ADSPRPC_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [ControlFlags]
 ExcludeFromSelect = *
@@ -66,11 +66,12 @@ LoadOrderGroup = Extended Base
 
 [Strings]
 ;Localizable Strings
-QC                 = "Qualcomm Technologies, Inc."                                      
-DiskId1            = "ADSPRPC Installation Disk"
-ADSPRPC.DeviceDesc = "Qualcomm ADSP RPC Subsystem Driver"
-ADSPRPC.SVCDESC    = "Qualcomm ADSP RPC Subsystem Driver"
+QC                     = "Qualcomm Technologies, Inc."
+DiskId1                = "ADSPRPC Installation Disk"
+ADSPRPC.DeviceDesc     = "Qualcomm ADSP RPC Subsystem Driver"
+ADSPRPC.SVCDESC        = "Qualcomm ADSP RPC Subsystem Driver"
 
 ;Non-localizable Strings
 SPSVCINST_ASSOCSERVICE = 0x00000002
+
 

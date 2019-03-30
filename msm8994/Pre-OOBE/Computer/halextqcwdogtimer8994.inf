@@ -1,4 +1,4 @@
-﻿; Copyright (C) 2012 Qualcomm Technologies, Inc.
+; Copyright (C) 2012 Qualcomm Technologies, Inc.
 ; All Rights Reserved. QUALCOMM Proprietary and Confidential.
 ;
 ; Module Name:
@@ -11,31 +11,31 @@
 ;
 
 [Version]
-Signature="$WINDOWS NT$"
-Class=Computer
-ClassGuid={4d36e966-e325-11ce-bfc1-08002be10318}
-Provider=%QC%
-DriverVer = 07/02/2015,1.0.1067.0
-PnPLockdown=1
-CatalogFile="HalExtQCWdogTimer.cat"
+Signature   = "$WINDOWS NT$"
+Class       = Computer
+ClassGuid   = {4d36e966-e325-11ce-bfc1-08002be10318}
+Provider    = %QC%
+DriverVer   = 07/02/2015,1.0.1067.0
+PnPLockdown = 1
+CatalogFile = "HalExtQCWdogTimer.cat"
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 [DestinationDirs]
 DefaultDestDir = 11 ; DIRID_SYSTEM
 
 [SourceDisksNames]
-1=%DISK_ID%
+1 = %DISK_ID%
 
 [SourceDisksFiles]
-HalExtQCWdogTimer.dll   = 1
+HalExtQCWdogTimer.dll = 1
 
 [SignatureAttributes]
-HalExtQCWdogTimer.dll=SignatureAttributes.HalExt
+HalExtQCWdogTimer.dll = SignatureAttributes.HalExt
 
 [SignatureAttributes.HalExt]
-HalExt=true
+HalExt = true
 
 [Manufacturer]
 %MFGNAME% = DeviceList, NTARM64
@@ -43,14 +43,14 @@ HalExt=true
 [DeviceList.NTARM64]
 
 [QC_TIMERS]
-AddReg = QC_TIMERS_AddReg
+AddReg    = QC_TIMERS_AddReg
 CopyFiles = QC_TIMERS_CopyFiles
 
 [QC_TIMERS_AddReg]
-HKLM,"%OSEDB%\VEN_QCOM&DEV_100B","HALExtension",,"HalExtQCWdogTimer.dll"
+HKLM, "%OSEDB%\VEN_QCOM&DEV_100B", "HALExtension", , "HalExtQCWdogTimer.dll"
 
 [QC_TIMERS_CopyFiles]
-HalExtQCWdogTimer.dll,,,0x00001000
+HalExtQCWdogTimer.dll, , , 0x00001000,
 
 [QC_TIMERS.Services]
 AddService = , %SPSVCINST_ASSOCSERVICE%
@@ -59,10 +59,11 @@ AddService = , %SPSVCINST_ASSOCSERVICE%
 
 ;Non-localizable
 SPSVCINST_ASSOCSERVICE = 0x00000002
-OSEDB = "SYSTEM\CurrentControlSet\Control\OSExtensionDatabase"
+OSEDB                  = "SYSTEM\CurrentControlSet\Control\OSExtensionDatabase"
 
 ;Localizable
-QC          = "Qualcomm Technologies, Inc."                                      
-MFGNAME     = "Qualcomm Incorporated"                                      
-QC_TIMERS   = "Qualcomm System Manager Device"
-DISK_ID     = "Qualcomm QTIMER HAL Extension Installation Disk"
+QC                     = "Qualcomm Technologies, Inc."
+MFGNAME                = "Qualcomm Incorporated"
+QC_TIMERS              = "Qualcomm System Manager Device"
+DISK_ID                = "Qualcomm QTIMER HAL Extension Installation Disk"
+

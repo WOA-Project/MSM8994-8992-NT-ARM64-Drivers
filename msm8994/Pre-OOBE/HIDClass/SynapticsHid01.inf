@@ -1,4 +1,4 @@
-﻿;
+;
 ; SynapticsHid01.inf
 ;
 [Version]
@@ -10,21 +10,21 @@ DriverVer   = 05/13/2016,21.30.10.0064
 CatalogFile = SynapticsHid01.cat
  
 [Manufacturer]
-%VENDOR%=MSFT, NTARM64
+%VENDOR% = MSFT, NTARM64
  
 [MSFT.NTARM64]
-%MSFT_Touch%       = MSFT_Touch_Inst.NT,      HID\MSHW1003&Col01
+%MSFT_Touch% = MSFT_Touch_Inst.NT,      HID\MSHW1003&Col01
 
 [MSFT_Touch_Inst.NT.Interfaces]
-AddInterface={4D1E55B2-F16F-11CF-88CB-001111000030},,MSFT_Touch.AddInterface
+AddInterface = {4D1E55B2-F16F-11CF-88CB-001111000030},,MSFT_Touch.AddInterface
  
 [MSFT_Touch.AddInterface]
-AddProperty=MSFT_Touch.AddInterface.AddProperty
+AddProperty = MSFT_Touch.AddInterface.AddProperty
  
 [MSFT_Touch.AddInterface.AddProperty]
-{026E516E-B814-414B-83CD-856D6FEF4822},0006,0x11,,0
-{CBF38310-4A17-4310-A1EB-247F0B67593B},0008,0x11,,0
- 
+{026E516E-B814-414B-83CD-856D6FEF4822}, 0006, 0x11, , 0
+{CBF38310-4A17-4310-A1EB-247F0B67593B}, 0008, 0x11, , 0
+
 [MSFT_Touch_Inst.NT.Services]
 AddService = ,%SPSVCINST_ASSOCSERVICE%
 
@@ -33,9 +33,10 @@ DefaultDestDir = 10,system32
 
 [Strings]
 ;Non-localizable
-SPSVCINST_ASSOCSERVICE   = 0x00000002
+SPSVCINST_ASSOCSERVICE = 0x00000002
  
 ;Localizable
-VENDOR         = "MSFT"
-MSFT_Touch     = "MSFT Touch Hid Col1"
+VENDOR                 = "MSFT"
+MSFT_Touch             = "MSFT Touch Hid Col1"
+
 

@@ -1,4 +1,4 @@
-﻿; 
+; 
 ; Copyright (C) 2012 QUALCOMM Incorporated.
 ; All Rights Reserved. QUALCOMM Proprietary and Confidential.
 ;
@@ -22,29 +22,29 @@ CatalogFile = qcwifinotifiersrvc8994.cat
 WifiNotifierSrvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 
 [SourceDisksNames]
-0="Disk"
+0 = "Disk"
 
 [SourceDisksFiles]
-qcwifinotifiersrvc8994.dll=0,,
+qcwifinotifiersrvc8994.dll = 0,,
 
 [Manufacturer]
-%QC%=QC,NTARM,NTARM64
+%QC% = QC,NTARM,NTARM64
 
 [QC.NTARM]
-"WifiNotifierSrvc" = WifiNotifierSrvc_Inst, 
+"WifiNotifierSrvc" = WifiNotifierSrvc_Inst,
 
 [QC.NTARM64]
-"WifiNotifierSrvc" = WifiNotifierSrvc_Inst, 
+"WifiNotifierSrvc" = WifiNotifierSrvc_Inst,
 
 [DefaultInstall.NTARM]
-"WifiNotifierSrvc" = WifiNotifierSrvc_Inst, 
+"WifiNotifierSrvc" = WifiNotifierSrvc_Inst,
 
 [DefaultInstall.NTARM64]
-"WifiNotifierSrvc" = WifiNotifierSrvc_Inst, 
+"WifiNotifierSrvc" = WifiNotifierSrvc_Inst,
 
 [WifiNotifierSrvc_Inst]
 CopyFiles = WifiNotifierSrvc.Files
-AddReg = WifiNotifierSrvc_Reg
+AddReg    = WifiNotifierSrvc_Reg
 
 [WifiNotifierSrvc_Inst.Services]
 AddService = WifiNotifierSrvc,0x00000000,WifiNotifierSrvc_Service,
@@ -57,32 +57,33 @@ AddService = WifiNotifierSrvc,0x00000000,WifiNotifierSrvc_Service,
 ;The startup program logs the error in the event log but continues the startup operation.
 
 [WifiNotifierSrvc_Service]
-DisplayName    = "WifiNotifierSrvc"  
-Description    = "Qualcomm WifiNotifier Command Processor Service"
-ServiceType    = 0x110
-StartType      = 2
-ErrorControl   = 1
-ServiceBinary  = "%%systemroot%%\system32\svchost.exe -k IhvSvcGrp"
+DisplayName   = "WifiNotifierSrvc"
+Description   = "Qualcomm WifiNotifier Command Processor Service"
+ServiceType   = 0x110
+StartType     = 2
+ErrorControl  = 1
+ServiceBinary = "%%systemroot%%\system32\svchost.exe -k IhvSvcGrp"
 
 [WifiNotifierSrvc_Reg]
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, DisplayName, %REG_SZ%, "WifiNotifierSrvc"  
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, Description, %REG_SZ%, "Qualcomm Wifi Notifier Command Processor Service"
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, ObjectName, %REG_SZ%, "LocalSystem"
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, ImagePath, %REG_EXPAND_SZ%, "%%systemroot%%\system32\svchost.exe -k IhvSvcGrp"
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, Type, %REG_DWORD%, 0x0110
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, Start, %REG_DWORD%, 0x0002
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc, ErrorControl, %REG_DWORD%, 0x0001
-HKLM, System\ControlSet001\Services\WifiNotifierSrvc\Parameters, ServiceDll, %REG_EXPAND_SZ%, "%%SystemRoot%%\System32\qcwifinotifiersrvc8994.dll"
-HKLM, Software\Microsoft\Windows NT\CurrentVersion\Svchost, IhvSvcGrp, %REG_MULTI_SZ%, "WifiNotifierSrvc"
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , DisplayName , %REG_SZ%       ,  "WifiNotifierSrvc"
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , Description , %REG_SZ%       ,  "Qualcomm Wifi Notifier Command Processor Service"
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , ObjectName  , %REG_SZ%       ,  "LocalSystem"
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , ImagePath   , %REG_EXPAND_SZ%,  "%%systemroot%%\system32\svchost.exe -k IhvSvcGrp"
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , Type        , %REG_DWORD%    ,  0x0110
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , Start       , %REG_DWORD%    ,  0x0002
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc           , ErrorControl, %REG_DWORD%    ,  0x0001
+HKLM, System\ControlSet001\Services\WifiNotifierSrvc\Parameters, ServiceDll  , %REG_EXPAND_SZ%,  "%%SystemRoot%%\System32\qcwifinotifiersrvc8994.dll"
+HKLM, Software\Microsoft\Windows NT\CurrentVersion\Svchost     , IhvSvcGrp   , %REG_MULTI_SZ% ,  "WifiNotifierSrvc"
 
 [WifiNotifierSrvc.Files]
 qcwifinotifiersrvc8994.dll
 
 [Strings]
-QC = "Qualcomm"
+QC            = "Qualcomm"
 
-REG_SZ          = 0x00000000
-REG_MULTI_SZ    = 0x00010000
-REG_EXPAND_SZ   = 0x00020000
-REG_DWORD       = 0x00010001
-REG_BINARY      = 0x00000001
+REG_SZ        = 0x00000000
+REG_MULTI_SZ  = 0x00010000
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001
+REG_BINARY    = 0x00000001
+

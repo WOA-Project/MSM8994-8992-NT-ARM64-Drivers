@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (C) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -26,16 +26,16 @@ DefaultDestDir = 12
 1 = %DiskId1%,,,""
 
 [SourceDisksFiles]
-qcrmnetbridge8994.sys  = 1,,
+qcrmnetbridge8994.sys = 1,,
 
 [Manufacturer]
 %QCOM% = QCOM, NTARM64
 
 [QCOM.NTARM64]
-%RMNBRG.DeviceDesc%=RMNBRG_Device, ACPI\QCOM2148
+%RMNBRG.DeviceDesc% = RMNBRG_Device, ACPI\QCOM2148
 
 [RMNBRG_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [Drivers_Dir]
 qcrmnetbridge8994.sys
@@ -53,16 +53,17 @@ StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
 ServiceBinary  = %12%\qcrmnetbridge8994.sys
 LoadOrderGroup = Extended Base
-Tag            =   10
+Tag            = 10
 
 [RMNBRG_Device.NT.Wdf]
-KmdfService =  RMNBRG, RMNBRG_wdfsect
+KmdfService = RMNBRG, RMNBRG_wdfsect
 [RMNBRG_wdfsect]
 KmdfLibraryVersion = 1.15
 
 [Strings]
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM              = "Qualcomm Incorporated"
-DiskId1           = "Qualcomm rmnetbridge Driver Disk"
-RMNBRG.DeviceDesc = "Qualcomm Win8 rmnetbridge Device"
-RMNBRG.SVCDESC    = "Qualcomm Win8 rmnetbridge Service"
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm Incorporated"
+DiskId1                = "Qualcomm rmnetbridge Driver Disk"
+RMNBRG.DeviceDesc      = "Qualcomm Win8 rmnetbridge Device"
+RMNBRG.SVCDESC         = "Qualcomm Win8 rmnetbridge Service"
+

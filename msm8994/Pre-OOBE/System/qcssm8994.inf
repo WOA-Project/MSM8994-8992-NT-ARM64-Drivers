@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2014-2015  Qualcomm Technologies Incs
 ;
@@ -29,16 +29,16 @@ DefaultDestDir = 12                                        ; This is a directory
 1 = %DiskId1%,,,""
 
 [SourceDisksFiles]
-QCSSM8994.sys  = 1,,
+QCSSM8994.sys = 1,,
 
 [Manufacturer]
-%StdMfg%=Standard,NTARM64                                  ; QCOM drivers may need to follow same process here?
+%StdMfg% = Standard,NTARM64                                  ; QCOM drivers may need to follow same process here?
 
 [Standard.NTARM64]                                         ; Decorated model section take precedence over undecorated
-%SSM.DeviceDesc%=Ssm_Device, ACPI\QCOM2414
+%SSM.DeviceDesc% = Ssm_Device, ACPI\QCOM2414
 
 [Ssm_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 
 [Drivers_Dir]
@@ -65,16 +65,17 @@ ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
 ServiceBinary  = %12%\QCSSM8994.sys
 LoadOrderGroup = Extended Base
 Tag            = 10
-AddReg=SsmReg
+AddReg         = SsmReg
 
 [SsmReg]
-HKR,,TzappName,0x00000000,"SsmApp"
+HKR, , TzappName, 0x00000000, "SsmApp"
 
 [Strings]
 SPSVCINST_ASSOCSERVICE = 0x00000002
-QUALCOMM       = "Qualcomm, Inc."
-StdMfg         = "(Standard system devices)"
-DiskId1        = "Ssm Installation Disk #1"
-SSM.DeviceDesc = "Ssm Driver"
-SSM.SVCDESC    = "Qualcomm Ssm Service"
-ClassName      = "System"
+QUALCOMM               = "Qualcomm, Inc."
+StdMfg                 = "(Standard system devices)"
+DiskId1                = "Ssm Installation Disk #1"
+SSM.DeviceDesc         = "Ssm Driver"
+SSM.SVCDESC            = "Qualcomm Ssm Service"
+ClassName              = "System"
+

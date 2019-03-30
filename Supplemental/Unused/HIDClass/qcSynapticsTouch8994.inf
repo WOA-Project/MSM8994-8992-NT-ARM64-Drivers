@@ -1,4 +1,4 @@
-﻿; qcSynapticsTouch.INF
+; qcSynapticsTouch.INF
 ; Copyright (c) 2000,2011 Microsoft Corporation
 ; Copyright (c) 2012,2013 Qualcomm Technologies Inc
 ;
@@ -39,7 +39,7 @@ CopyFiles = TchDriver_Device.NT.CopyFiles
 
 [TchDriver_Device.NT.CopyFiles]
 
-qcSynapticsTouch8994.sys,,,0x100
+qcSynapticsTouch8994.sys, , , 0x100,
 
 [TchDriver_Device.NT.HW]
 AddReg = FilterInst.NT.HW.AddReg
@@ -49,29 +49,29 @@ AddReg = Configuration.NT.HW.AddReg
 AddReg = DriverInst.NT.HW.AddReg
 
 [DriverInst.NT.HW.AddReg]
-HKR,Touch Config,"FwForcedUpgrade",%REG_SZ%,"0"
+HKR, Touch Config, "FwForcedUpgrade", %REG_SZ%, "0"
 
 [FilterInst.NT.HW.AddReg]
-HKR,,"UpperFilters",    %REG_MULTI_SZ%, %HIDKMDF_Service%
-HKR,,"MultiportDevice", %REG_DWORD%,    0
+HKR, , "UpperFilters"   , %REG_MULTI_SZ%,  %HIDKMDF_Service%
+HKR, , "MultiportDevice", %REG_DWORD%   ,     0
 
 [PowerConfig.NT.HW.AddReg]
-HKR,,"EnhancedPowerManagementEnabled",    %REG_DWORD%, 1
-HKR,,"EnhancedPowerManagementUseMonitor", %REG_DWORD%, 1
-HKR,,"EnhancedPowerManagementNoDelay",    %REG_DWORD%, 1
+HKR, , "EnhancedPowerManagementEnabled"   , %REG_DWORD%,  1
+HKR, , "EnhancedPowerManagementUseMonitor", %REG_DWORD%,  1
+HKR, , "EnhancedPowerManagementNoDelay"   , %REG_DWORD%,  1
 
 [Configuration.NT.HW.AddReg]
-HKR,%Configuration%, "PepRemovesVoltageInD3",   %REG_DWORD%, 0x0 
-HKR,%Configuration%, "SleepMode",               %REG_DWORD%, 0x0
-HKR,%Configuration%, "NoSleep",                 %REG_DWORD%, 0x0
-HKR,%Configuration%, "ChargerConnected",        %REG_DWORD%, 0x0    
-HKR,%Configuration%, "ReportRate",              %REG_DWORD%, 0x0
-HKR,%Configuration%, "Configured",              %REG_DWORD%, 0x1
-HKR,%Configuration%, "InterruptEnable",         %REG_DWORD%, 0x7f
+HKR, %Configuration%, "PepRemovesVoltageInD3", %REG_DWORD%,  0x0
+HKR, %Configuration%, "SleepMode"            , %REG_DWORD%,  0x0
+HKR, %Configuration%, "NoSleep"              , %REG_DWORD%,  0x0
+HKR, %Configuration%, "ChargerConnected"     , %REG_DWORD%,  0x0
+HKR, %Configuration%, "ReportRate"           , %REG_DWORD%,  0x0
+HKR, %Configuration%, "Configured"           , %REG_DWORD%,  0x1
+HKR, %Configuration%, "InterruptEnable"      , %REG_DWORD%,  0x7f
 
 
 [EmulateKeyArray.NT.HW.AddReg]
-HKR,%key_array_emulation%,"IsKeyArrayEmulationEnabled",%REG_DWORD%, 0
+HKR, %key_array_emulation%, "IsKeyArrayEmulationEnabled", %REG_DWORD%,  0
 ;-------------- Service installation
 [TchDriver_Device.NT.Services]
 AddService = %TchDriver_Service%, %SPSVCINST_ASSOCSERVICE%, TchDriver_Service_Inst
@@ -88,28 +88,29 @@ Tag            = 17
 
 ; ------------- Strings section
 [Strings]
-QCOM                    = "QCOM"
-Manufacturer_Name       = "Synaptics"
-Installation_Disk       = "Touch Driver Installation Disk"
-TchDriver_Device_Desc   = "Touch Driver"
-TchDriver_Service       = "qcSynapticsTouch"
-TchDriver_Service_Desc  = "Synaptics Touch Driver Service"
-HIDKMDF_Service         = "mshidkmdf"
-Configuration           = "Settings"
-ScreenProps             = "SYSTEM\TOUCH\SCREENPROPERTIES"
-DisplaySize             = "SYSTEM\TOUCH\DISPLAYPROPERTIES"
-key_array_emulation     = "EmulateKeyArray"
+QCOM                   = "QCOM"
+Manufacturer_Name      = "Synaptics"
+Installation_Disk      = "Touch Driver Installation Disk"
+TchDriver_Device_Desc  = "Touch Driver"
+TchDriver_Service      = "qcSynapticsTouch"
+TchDriver_Service_Desc = "Synaptics Touch Driver Service"
+HIDKMDF_Service        = "mshidkmdf"
+Configuration          = "Settings"
+ScreenProps            = "SYSTEM\TOUCH\SCREENPROPERTIES"
+DisplaySize            = "SYSTEM\TOUCH\DISPLAYPROPERTIES"
+key_array_emulation    = "EmulateKeyArray"
 
 ; ------------- non-localizable strings
-SPSVCINST_ASSOCSERVICE  = 0x00000002
-SERVICE_KERNEL_DRIVER   = 1
-SERVICE_BOOT_START      = 0
-SERVICE_SYSTEM_START    = 1
-SERVICE_DEMAND_START    = 3
-SERVICE_ERROR_NORMAL    = 1
-SERVICE_ERROR_IGNORE    = 0
-SERVICE_ERROR_CRITICAL  = 3
-REG_EXPAND_SZ           = 0x00020000
-REG_MULTI_SZ            = 0x00010000
-REG_DWORD               = 0x00010001
-REG_SZ                  = 0x00000000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_BOOT_START     = 0
+SERVICE_SYSTEM_START   = 1
+SERVICE_DEMAND_START   = 3
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_CRITICAL = 3
+REG_EXPAND_SZ          = 0x00020000
+REG_MULTI_SZ           = 0x00010000
+REG_DWORD              = 0x00010001
+REG_SZ                 = 0x00000000
+

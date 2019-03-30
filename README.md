@@ -87,7 +87,7 @@ Talkman:
 - Audio
 - Microphones
 - Vibration motor
-- WLAN (requires UEFI PCIe bring up)
+- WLAN (requires UEFI PCIe and UART/PEP bring up)
 - HDMI out via USB-C
 - Cellular (Desktop doesn't have a RIL stack and is missing EMB)
 

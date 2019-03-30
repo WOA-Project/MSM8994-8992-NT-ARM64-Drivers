@@ -1,4 +1,4 @@
-﻿;
+;
 ; deviceinfo.inf
 ;
 [Version]
@@ -13,47 +13,48 @@ CatalogFile = deviceinfo.cat
 DefaultDestDir = 11, OEM
 
 [SourceDisksNames]
-0=%DiskId1%
+0 = %DiskId1%
 
 [SourceDisksFiles]
-MMO.bmp=0,,
+MMO.bmp = 0,,
 
 [Manufacturer]
-%QC%=QC, NTARM64
+%QC% = QC, NTARM64
 
 [QC.NTARM64]
-"Deviceinfo" = Deviceinfo_Inst, 
+"Deviceinfo" = Deviceinfo_Inst,
 
 ;*****************************************
 ; Deviceinfo  Install Section
 ;*****************************************
 
 [Deviceinfo_Inst]
-Addreg=DeviceinfoReg
-CopyFiles=Drivers_Dir_24
+Addreg    = DeviceinfoReg
+CopyFiles = Drivers_Dir_24
 
 [Drivers_Dir_24]
 MMO.bmp
 
 [DeviceinfoReg]
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","Manufacturer",%REG_SZ%,"Microsoft"
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","Model",%REG_SZ%,"Microsoft Lumia 950"
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","SupportHours",%REG_SZ%,"0"
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","SupportPhone",%REG_SZ%,"0"
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","SupportURL",%REG_SZ%,"http://lumia.linkmicrosoft.com/device/entry/van/nsupport"
-HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation","Logo",%REG_SZ%,"C:\Windows\System32\OEM\MMO.bmp"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Manufacturer", %REG_SZ%, "Microsoft"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Model"       , %REG_SZ%, "Microsoft Lumia 950"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportHours", %REG_SZ%, "0"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportPhone", %REG_SZ%, "0"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportURL"  , %REG_SZ%, "http://lumia.linkmicrosoft.com/device/entry/van/nsupport"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Logo"        , %REG_SZ%, "C:\Windows\System32\OEM\MMO.bmp"
 
 [Strings]
-MSFT = "Microsoft Mobile"
+MSFT                   = "Microsoft Mobile"
 
-REG_SZ          = 0x00000000
-REG_MULTI_SZ    = 0x00010000
-REG_EXPAND_SZ   = 0x00020000
-REG_DWORD       = 0x00010001
-REG_BINARY      = 0x00000001
+REG_SZ                 = 0x00000000
+REG_MULTI_SZ           = 0x00010000
+REG_EXPAND_SZ          = 0x00020000
+REG_DWORD              = 0x00010001
+REG_BINARY             = 0x00000001
 
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM                  = "Qualcomm"
-QC                    = "Qualcomm Technologies, INC"
-DiskId1               = "DeviceInfo Installation Disk #1"
-DeviceInfo.DeviceDesc = "DeviceInfo Settings Package"
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+QC                     = "Qualcomm Technologies, INC"
+DiskId1                = "DeviceInfo Installation Disk #1"
+DeviceInfo.DeviceDesc  = "DeviceInfo Settings Package"
+

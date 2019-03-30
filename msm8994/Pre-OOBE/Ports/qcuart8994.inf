@@ -1,4 +1,4 @@
-﻿;
+;
 ; Copyright (c) 2012-2014 by Qualcomm Technologies Incorporated.  All Rights Reserved.
 ;
 
@@ -53,3 +53,4 @@ Manufacturer_Name  = "Qualcomm Technologies, Inc."
 Disk_Description   = "Qualcomm UART Device Installation Disk"
 Device_Description = "Qualcomm UART Device"
 Service_Name       = "Qualcomm UART Driver"
+

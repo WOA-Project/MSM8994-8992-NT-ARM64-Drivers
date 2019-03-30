@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2011 Qualcomm Inc All rights Reserved
 ;
@@ -30,57 +30,58 @@ qcpmicgpio8994.sys = 1
 DefaultDestDir = 12
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 ;*****************************************
 ; pmio client driver Install Section
 ;*****************************************
 
 [Manufacturer]
-%COMP%=Qualcomm,NTarm64
+%COMP% = Qualcomm,NTarm64
 
 [Qualcomm.NTarm64]
-%DeviceDesc%=PMIO_Inst,ACPI\QCOM2458
+%DeviceDesc% = PMIO_Inst,ACPI\QCOM2458
 
 [PMIO_Inst.NT]
-Copyfiles = PMIOCopyFiles
+Copyfiles   = PMIOCopyFiles
 AddProperty = WDTFSOCDeviceCategory
 Reboot
 
 [PMIO_Inst.NT.HW]
-Addreg=PMICGPIOACL
+Addreg = PMICGPIOACL
 
 [PMICGPIOACL]
-HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)" ;built in admin and local sys access
+HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)" ;built in admin and local sys access
 
 [PMIOCopyFiles]
 qcpmicgpio8994.sys
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 2
 
 [PMIO_Inst.NT.Services]
 AddService = qcpmgpio,%SPSVCINST_ASSOCSERVICE%,PMIO_Service_Inst
 
 [PMIO_Service_Inst]
-DisplayName    = %PMIO.SvcDesc%
-ServiceType    = %SERVICE_KERNEL_DRIVER%
-StartType      = %SERVICE_DEMAND_START%
-ErrorControl   = %SERVICE_ERROR_NORMAL%
-ServiceBinary  = %12%\qcpmicgpio8994.sys
+DisplayName   = %PMIO.SvcDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\qcpmicgpio8994.sys
 
 [Strings]
 ;Localizable Strings
-COMP         = "Qualcomm Inc."
-PMIO.SvcDesc = "Qualcomm PMIC GPIO Client Driver"
-DeviceDesc   = "Qualcomm PMIC GPIO Client Device"
-DiskId       = "Qualcomm PMIC GPIO Client Driver Installation Disk"
+COMP                   = "Qualcomm Inc."
+PMIO.SvcDesc           = "Qualcomm PMIC GPIO Client Driver"
+DeviceDesc             = "Qualcomm PMIC GPIO Client Device"
+DiskId                 = "Qualcomm PMIC GPIO Client Driver Installation Disk"
 
 ;Non-Localizable Strings
 SPSVCINST_ASSOCSERVICE = 0x00000002
 SERVICE_KERNEL_DRIVER  = 1
 SERVICE_DEMAND_START   = 3
 SERVICE_ERROR_NORMAL   = 1
+
 
 
 

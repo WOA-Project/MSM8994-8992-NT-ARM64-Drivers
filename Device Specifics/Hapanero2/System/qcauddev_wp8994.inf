@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2015 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -40,7 +40,7 @@ Sys32_Dir   = 11
 ;*****************************************
 
 [Manufacturer]
-%StdMfg%=Standard,NTARM64
+%StdMfg% = Standard,NTARM64
 
 [Standard.NTARM64]
 %AUDD.DeviceDesc% = AUDIODEVICE,ADCM\QCOM242E
@@ -64,7 +64,7 @@ AddService = qcauddev,%SPSVCINST_ASSOCSERVICE%,AUDD_Service_Inst
 [AUDD_Service_Inst]
 DisplayName    = %AUDD.SvcDesc%
 ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START 
+StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
 ServiceBinary  = %12%\qcauddev8994.sys
 Tag            = 10
@@ -72,40 +72,41 @@ AddReg         = AUDDSpkrProtReg,CPEPathReg
 LoadOrderGroup = Extended Base
 
 [AUDDSpkrProtReg]
-HKR,Parameters,"SpeakerID0",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"R00",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"T00",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"SpeakerID1",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"R01",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"T01",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"SpeakerID2",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"R02",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"T02",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"SpeakerID3",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"R03",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"T03",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"SpeakerID4",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"R04",%REG_DWORD%,0x7fffffff
-HKR,Parameters,"T04",%REG_DWORD%,0x7fffffff
+HKR, Parameters, "SpeakerID0", %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "R00"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "T00"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "SpeakerID1", %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "R01"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "T01"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "SpeakerID2", %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "R02"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "T02"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "SpeakerID3", %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "R03"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "T03"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "SpeakerID4", %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "R04"       , %REG_DWORD%, 0x7fffffff
+HKR, Parameters, "T04"       , %REG_DWORD%, 0x7fffffff
 
 [CPEPathReg]
 ;CPE Default Image Path
-HKR,Parameters,"CpeImagePath",%REG_SZ%,"\SystemRoot\system32\"
+HKR, Parameters, "CpeImagePath"       , %REG_SZ%   , "\SystemRoot\system32\"
 ;CPE Default Image Name - can take string with regular expression
-HKR,Parameters,"CpeImageName",%REG_SZ%,"qccpe????.mbn"
+HKR, Parameters, "CpeImageName"       , %REG_SZ%   , "qccpe????.mbn"
 ;CPESSR RamDump collection enable flag, By default it is disabled.
-HKR,Parameters,"EnableCPESSRRamDump",%REG_DWORD%,0x0
-;CPESSR Restart enable flag, By default it is disabled. 
-HKR,Parameters,"EnableCPERestart",%REG_DWORD%,0x0
+HKR, Parameters, "EnableCPESSRRamDump", %REG_DWORD%, 0x0
+;CPESSR Restart enable flag, By default it is disabled.
+HKR, Parameters, "EnableCPERestart"   , %REG_DWORD%, 0x0
 
 [Strings]
-REG_SZ= 0x00000000
-REG_DWORD=0x00010001
-SPSVCINST_ASSOCSERVICE=0x00000002
-QCOM            = "Qualcomm"
-StdMfg          = "(Standard system devices)"
-AUDD.DeviceDesc = "Qualcomm Audio Device"
-MBHC.DeviceDesc = "Qualcomm Multi Button Headset Controller"
-AUDD.SvcDesc    = "Qualcomm Audio Device Driver"
-DiskId1         = "Qualcomm Audio Device Installation Disk"
+REG_SZ                 = 0x00000000
+REG_DWORD              = 0x00010001
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+StdMfg                 = "(Standard system devices)"
+AUDD.DeviceDesc        = "Qualcomm Audio Device"
+MBHC.DeviceDesc        = "Qualcomm Multi Button Headset Controller"
+AUDD.SvcDesc           = "Qualcomm Audio Device Driver"
+DiskId1                = "Qualcomm Audio Device Installation Disk"
+
 

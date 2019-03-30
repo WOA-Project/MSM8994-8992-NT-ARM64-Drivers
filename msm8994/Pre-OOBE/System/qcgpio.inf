@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -25,50 +25,50 @@ PnpLockDown = 1
 DefaultDestDir = 12
 
 [SourceDisksNames]
-1=%DiskId%
+1 = %DiskId%
 
 [SourceDisksFiles]
 qcgpio.sys = 1
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 ;*****************************************
 ; qcgpio client driver Install Section
 ;*****************************************
 
 [Manufacturer]
-%COMP%=QcGpioComp,NTarm64
+%COMP% = QcGpioComp,NTarm64
 
 [QcGpioComp.NTarm64]
-%GPIO.DeviceDesc%=GPIO_Inst,ACPI\QCOM2405
+%GPIO.DeviceDesc% = GPIO_Inst,ACPI\QCOM2405
 
 [GPIO_Inst.NT]
-Copyfiles = GPIOCopyFiles
-AddProperty=WDTFSOCDeviceCategory
+Copyfiles   = GPIOCopyFiles
+AddProperty = WDTFSOCDeviceCategory
 
 [GPIOCopyFiles]
-qcgpio.sys,,,0x100
+qcgpio.sys, , , 0x100,
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 2
 
 [GPIO_Inst.NT.Services]
 AddService = qcgpio,%SPSVCINST_ASSOCSERVICE%,GPIO_Service_Inst
 
 [GPIO_Service_Inst]
-DisplayName    = %GPIO.SvcDesc%
-ServiceType    = %SERVICE_KERNEL_DRIVER%
-StartType      = %SERVICE_DEMAND_START%
-ErrorControl   = %SERVICE_ERROR_NORMAL%
-ServiceBinary  = %12%\qcgpio.sys
+DisplayName   = %GPIO.SvcDesc%
+ServiceType   = %SERVICE_KERNEL_DRIVER%
+StartType     = %SERVICE_DEMAND_START%
+ErrorControl  = %SERVICE_ERROR_NORMAL%
+ServiceBinary = %12%\qcgpio.sys
 
 [Strings]
 ;Localizable Strings
-COMP            = "CompanyName"
-GPIO.SvcDesc    = "GPIO Client Device"
-GPIO.DeviceDesc = "GPIO Client Device"
-DiskId          = "Qualcomm GPIO Client Device Driver Installation Disk"
+COMP                   = "CompanyName"
+GPIO.SvcDesc           = "GPIO Client Device"
+GPIO.DeviceDesc        = "GPIO Client Device"
+DiskId                 = "Qualcomm GPIO Client Device Driver Installation Disk"
 
 ;Non-Localizable Strings
 SPSVCINST_TAGTOFRONT   = 0x00000003
@@ -83,3 +83,4 @@ SERVICE_ERROR_CRITICAL = 3
 REG_EXPAND_SZ          = 0x00020000
 REG_DWORD              = 0x00010001
 REG_SZ                 = 0x00000000
+

@@ -1,4 +1,4 @@
-﻿;
+;
 ; oled.inf
 ;
 
@@ -15,34 +15,35 @@ CatalogFile = oled.cat
 Workaround.Files = 10
 
 [SourceDisksNames]
-0=%DiskId1%
+0 = %DiskId1%
 
 [SourceDisksFiles]
 
 [Manufacturer]
-%QC%=QC, NTARM64
+%QC% = QC, NTARM64
 
 [QC.NTARM64]
-"Oled" = Oled_Inst, 
+"Oled" = Oled_Inst,
 
 ;*****************************************
 ; oeminfo  Install Section
 ;*****************************************
 
 [Oled_Inst]
-CopyFiles=Workaround.Files
-Addreg=OledReg
+CopyFiles = Workaround.Files
+Addreg    = OledReg
 
 ; System32
 [Workaround.Files]
 
 [OledReg]
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "UseOLEDTaskbarTransparency", 0x00010001, 0x1
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "UseOLEDTaskbarTransparency", 0x00010001,  0x1
 
 [Strings]
-REG_SZ=0x00000000
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM                  = "Qualcomm"
-QC                    = "Qualcomm Technologies, INC"
-DiskId1               = "Oled Installation Disk #1"
-TUNINGDATA.DeviceDesc = "Oled settings Package"
+REG_SZ                 = 0x00000000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+QC                     = "Qualcomm Technologies, INC"
+DiskId1                = "Oled Installation Disk #1"
+TUNINGDATA.DeviceDesc  = "Oled settings Package"
+

@@ -5,38 +5,23 @@
       <FirstLogonCommands>
         <SynchronousCommand action="add">
           <Order>1</Order>
-          <CommandLine>REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v UseOLEDTaskbarTransparency /t REG_DWORD /d 1 /f</CommandLine>
-          <Description>Taskbar Transparency </Description>
+          <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 264 /f</CommandLine>
+          <Description>275% DPI Scaling </Description>
         </SynchronousCommand>
         <SynchronousCommand action="add">
           <Order>2</Order>
-          <CommandLine>REG ADD "HKLM\SOFTWARE\WowAA32Node\Microsoft\Windows\CurrentVersion\Internet Settings\Configuration" /v PartnerSearchCode /t REG_SZ /d NOKMSB /f</CommandLine>
-          <Description>Jumpstart PartnerSearchCode for ARM </Description>
+          <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</CommandLine>
+          <Description>Enable DPI Scaling </Description>
         </SynchronousCommand>
         <SynchronousCommand action="add">
           <Order>3</Order>
-          <CommandLine>powercfg /setdcvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 50</CommandLine>
-          <Description>Slider hack for ARM </Description>
+          <CommandLine>\Windows\OEM\devcon.exe restart ACPI\MSHW1003</CommandLine>
+          <Description>Touch care </Description>
         </SynchronousCommand>
         <SynchronousCommand action="add">
           <Order>4</Order>
-          <CommandLine>powercfg /setacvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 33</CommandLine>
-          <Description>Slider hack for ARM </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>5</Order>
-          <CommandLine>powercfg /setdcvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 33</CommandLine>
-          <Description>Slider hack for ARM </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>6</Order>
-          <CommandLine>powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25</CommandLine>
-          <Description>Slider hack for ARM </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>7</Order>
-          <CommandLine>REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f</CommandLine>
-          <Description>Disable fastboot for ARM </Description>
+          <CommandLine>\Windows\OEM\devcon.exe install \Windows\OEM\oempanel.inf ACPI\MSHW1004</CommandLine>
+          <Description>OemPanel </Description>
         </SynchronousCommand>
       </FirstLogonCommands>
       <OOBE>
@@ -46,12 +31,9 @@
         <ThemeName>MMO Theme</ThemeName>
         <WindowColor>0xFF0078D4</WindowColor>
         <DefaultThemesOff>false</DefaultThemesOff>
-        <DesktopBackground>C:\Windows\Web\Wallpaper\MMO\MMO_wallpaper.png</DesktopBackground>
+        <DesktopBackground>C:\Windows\Web\Wallpaper\MMO\09_1280x720_DenisTwerenbold.jpg</DesktopBackground>
         <UWPAppsUseLightTheme>false</UWPAppsUseLightTheme>
       </Themes>
-      <Display>
-        <DPI>300</DPI>
-      </Display>
     </component>
     <component name="Microsoft-Windows-Deployment" processorArchitecture="ARM64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <DeviceForm>1</DeviceForm>
@@ -75,6 +57,45 @@
     </component>
     <component name="Microsoft-Windows-Internet-Browser-Configuration" processorArchitecture="ARM64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <PartnerSearchCode>NOKMSB</PartnerSearchCode>
+    </component>
+    <component name="Microsoft-Windows-Deployment" processorArchitecture="ARM64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <RunSynchronous>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>1</Order>
+          <Path>REG ADD "HKLM\SOFTWARE\WowAA32Node\Microsoft\Windows\CurrentVersion\Internet Settings\Configuration" /v PartnerSearchCode /t REG_SZ /d NOKMSB /f</Path>
+          <Description>Jumpstart PartnerSearchCode for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>2</Order>
+          <Path>powercfg /setdcvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 50</Path>
+          <Description>Slider hack for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>3</Order>
+          <Path>powercfg /setacvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 33</Path>
+          <Description>Slider hack for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>4</Order>
+          <Path>powercfg /setdcvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 33</Path>
+          <Description>Slider hack for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>5</Order>
+          <Path>powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25</Path>
+          <Description>Slider hack for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>6</Order>
+          <Path>REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f</Path>
+          <Description>Disable fastboot for ARM </Description>
+        </RunSynchronousCommand>
+        <RunSynchronousCommand wcm:action="add">
+          <Order>7</Order>
+          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop\WindowMetrics" /v AppliedDPI /t REG_DWORD /d 264 /f</Path>
+          <Description>DPI Scaling for all users for ARM </Description>
+        </RunSynchronousCommand>
+      </RunSynchronous>
     </component>
   </settings>
   <settings pass="auditSystem">

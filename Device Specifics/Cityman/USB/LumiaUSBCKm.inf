@@ -1,4 +1,4 @@
-﻿;
+;
 ; LumiaUSBCKm.inf
 ;
 
@@ -11,14 +11,14 @@ CatalogFile = LumiaUSBCKm.cat
 DriverVer   = 06/27/2018,18.36.44.231
 
 [DestinationDirs]
-DefaultDestDir = 12
+DefaultDestDir                           = 12
 LumiaUSBCKm_Device_CoInstaller_CopyFiles = 11
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-LumiaUSBCKm.sys  = 1,,
+LumiaUSBCKm.sys = 1,,
 ;
 
 
@@ -27,13 +27,13 @@ LumiaUSBCKm.sys  = 1,,
 ;*****************************************
 
 [Manufacturer]
-%ManufacturerName%=Standard,NTARM64
+%ManufacturerName% = Standard,NTARM64
 
 [Standard.NTARM64]
-%LumiaUSBCKm.DeviceDesc%=LumiaUSBCKm_Device, ACPI\LUMI0001
+%LumiaUSBCKm.DeviceDesc% = LumiaUSBCKm_Device, ACPI\LUMI0001
 
 [LumiaUSBCKm_Device.NT]
-CopyFiles=Drivers_Dir
+CopyFiles = Drivers_Dir
 
 [Drivers_Dir]
 LumiaUSBCKm.sys
@@ -44,19 +44,19 @@ AddService = LumiaUSBCKm,%SPSVCINST_ASSOCSERVICE%, LumiaUSBCKm_Service_Inst
 
 ; -------------- LumiaUSBCKm driver install sections
 [LumiaUSBCKm_Service_Inst]
-DisplayName    = %LumiaUSBCKm.SVCDESC%
-ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START
-ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\LumiaUSBCKm.sys
+DisplayName   = %LumiaUSBCKm.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\LumiaUSBCKm.sys
 
 ;
 ;--- LumiaUSBCKm_Device Coinstaller installation ------
 ;
 
 [LumiaUSBCKm_Device.NT.CoInstallers]
-AddReg=LumiaUSBCKm_Device_CoInstaller_AddReg
-CopyFiles=LumiaUSBCKm_Device_CoInstaller_CopyFiles
+AddReg    = LumiaUSBCKm_Device_CoInstaller_AddReg
+CopyFiles = LumiaUSBCKm_Device_CoInstaller_CopyFiles
 
 [LumiaUSBCKm_Device_CoInstaller_AddReg]
 ;
@@ -67,7 +67,7 @@ CopyFiles=LumiaUSBCKm_Device_CoInstaller_CopyFiles
 
 
 [LumiaUSBCKm_Device.NT.Wdf]
-KmdfService =  LumiaUSBCKm, LumiaUSBCKm_wdfsect
+KmdfService = LumiaUSBCKm, LumiaUSBCKm_wdfsect
 [LumiaUSBCKm_wdfsect]
 KmdfLibraryVersion = 1.15
 
@@ -77,3 +77,4 @@ ManufacturerName       = "<Your manufacturer name>" ;TODO: Replace with your man
 DiskName               = "LumiaUSBCKm Installation Disk"
 LumiaUSBCKm.DeviceDesc = "LumiaUSBCKm Device (Vbus=off, Pol=1, iteration=10)"
 LumiaUSBCKm.SVCDESC    = "LumiaUSBCKm Service"
+

@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2012 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -19,7 +19,7 @@ CatalogFile = qcpmic8994.cat
 PnPLockdown = 1
 
 [SourceDisksNames]
-1=%DiskId1%
+1 = %DiskId1%
 
 [SourceDisksFiles]
 qcpmic8994.sys = 1
@@ -29,34 +29,34 @@ qcpmic8994.sys = 1
 DefaultDestDir = 12
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 ;*****************************************
 ; qcpmic client driver Install Section
 ;*****************************************
 
 [Manufacturer]
-%QC%=Qualcomm,NTarm64
+%QC% = Qualcomm,NTarm64
 
 [Qualcomm.NTarm64]
-%DeviceDesc%=PMIC_Inst,ACPI\QCOM2455
+%DeviceDesc% = PMIC_Inst,ACPI\QCOM2455
 
 [PMIC_Inst.NT]
-Copyfiles = PMICCopyFiles
+Copyfiles   = PMICCopyFiles
 AddProperty = WDTFSOCDeviceCategory
 Reboot
 
 [PMIC_Inst.NT.HW]
-Addreg=PMICACL
+Addreg = PMICACL
 
 [PMICACL]
-HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)" ;built in admin and local sys access
+HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)" ;built in admin and local sys access
 
 [PMICCopyFiles]
 qcpmic8994.sys
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,2
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 2
 
 [PMIC_Inst.NT.Services]
 AddService = qcpmic,%SPSVCINST_ASSOCSERVICE%,PMIC_Service_Inst
@@ -78,14 +78,15 @@ KmdfLibraryVersion = 1.15
 
 [Strings]
 ;Localizable Strings
-QC               = "Qualcomm Inc."
-DiskId1          = "Qualcomm PMIC WDF Driver Installation Disk"
-PMIC.SvcDesc     = "Qualcomm PMIC Driver"
-DeviceDesc       = "Qualcomm PMIC Device"
+QC                     = "Qualcomm Inc."
+DiskId1                = "Qualcomm PMIC WDF Driver Installation Disk"
+PMIC.SvcDesc           = "Qualcomm PMIC Driver"
+DeviceDesc             = "Qualcomm PMIC Device"
 
 ;Non-Localizable Strings
 SPSVCINST_ASSOCSERVICE = 0x00000002
 SERVICE_KERNEL_DRIVER  = 1
 SERVICE_BOOT_START     = 0
-SERVICE_ERROR_NORMAL  = 1
+SERVICE_ERROR_NORMAL   = 1
+
 

@@ -1,4 +1,4 @@
-﻿;/++
+;/++
 ;
 ;Module Name:
 ;
@@ -27,25 +27,25 @@ DefaultDestDir = 12
 1 = %DiskId1%,,,""
 
 [SourceDisksFiles]
-qcfmsltransport8994.sys  = 1,,
+qcfmsltransport8994.sys = 1,,
 
 
 [ControlFlags]
-ExcludeFromSelect=*
+ExcludeFromSelect = *
 
 [Manufacturer]
-%StdMfg%=VendorModels,NTARM64
+%StdMfg% = VendorModels,NTARM64
 
 ;*****************************************
 ; Serial bus driver install Section
 ;*****************************************
 
 [VendorModels.NTARM64]
-%Bus.DeviceDesc%=Bus_Vendor, ACPI\QCOM24B1
+%Bus.DeviceDesc% = Bus_Vendor, ACPI\QCOM24B1
 
 [Bus_Vendor.NT]
-CopyFiles=Bus.CopyFiles
-AddProperty=WDTFSOCDeviceCategory
+CopyFiles   = Bus.CopyFiles
+AddProperty = WDTFSOCDeviceCategory
 
 [WDTFSOCDeviceCategory]
 
@@ -53,12 +53,12 @@ AddProperty=WDTFSOCDeviceCategory
 qcfmsltransport8994.sys
 
 [Bus_Vendor.NT.HW]
-AddReg=Bus_Vendor.NT.AddReg
+AddReg = Bus_Vendor.NT.AddReg
 
 [Bus_Vendor.NT.AddReg]
 ; Reference: http://msdn.microsoft.com/en-us/library/ff546320.aspx
-HKR,,DeviceCharacteristics,0x10001,0x0100      ; Use same security checks on relative opens
-HKR,,Exclusive,0x10001,0x1      ; exlusive device, only one handle can be opened
+HKR, , DeviceCharacteristics, 0x10001, 0x0100      ; Use same security checks on relative opens
+HKR, , Exclusive            , 0x10001, 0x1      ; exlusive device, only one handle can be opened
 
 ;-------------- Service installation
 [Bus_Vendor.NT.Services]
@@ -66,34 +66,35 @@ AddService = qcfmsltransport,%SPSVCINST_ASSOCSERVICE%, Bus_Service_Inst
 
 ; -------------- statbus driver install sections
 [Bus_Service_Inst]
-DisplayName    = %Bus.SVCDESC%
-ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START 
-ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\qcfmsltransport8994.sys
-AddReg	       = WPPReg
+DisplayName   = %Bus.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\qcfmsltransport8994.sys
+AddReg        = WPPReg
 
 [WPPReg]
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,Start,%REG_DWORD%,0x0
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,Guid,%REG_SZ%,"{AF99D770-21CB-40D8-9150-AC77601FE63A}"
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,Status,%REG_DWORD%,0x0
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,LogFileMode,%REG_DWORD%,0x100
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,BufferSize,%REG_DWORD%,0x3e8
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM,FlushTimer,%REG_DWORD%,0xa
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A},Enabled,%REG_DWORD%,0x1
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A},EnableFlags,%REG_DWORD%,0xFFFF
-HKLM,SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A},EnableLevel,%REG_DWORD%,0x5
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , Start      , %REG_DWORD%, 0x0
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , Guid       , %REG_SZ%   , "{AF99D770-21CB-40D8-9150-AC77601FE63A}"
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , Status     , %REG_DWORD%, 0x0
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , LogFileMode, %REG_DWORD%, 0x100
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , BufferSize , %REG_DWORD%, 0x3e8
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM                                       , FlushTimer , %REG_DWORD%, 0xa
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A}, Enabled    , %REG_DWORD%, 0x1
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A}, EnableFlags, %REG_DWORD%, 0xFFFF
+HKLM, SYSTEM\CurrentControlSet\Control\WMI\Autologger\FM\{AF99D770-21CB-40D8-9150-AC77601FE63A}, EnableLevel, %REG_DWORD%, 0x5
 
 [Strings]
 ;Non-Localizable
 
-SPSVCINST_ASSOCSERVICE= 0x00000002
+SPSVCINST_ASSOCSERVICE = 0x00000002
 
 ;Localizable
-QC             = "Qualcomm Inc."
-StdMfg         = "(Standard system devices)"
-DiskId1        = "QUALCOMM FM Transport Driver Disk #1"
-Bus.DeviceDesc = "QUALCOMM FM Transport Driver "
-Bus.SVCDESC    = "QUALCOMM FM Transport Driver"
-REG_DWORD          = 0x00010001
-REG_SZ             = 0x00000000
+QC                     = "Qualcomm Inc."
+StdMfg                 = "(Standard system devices)"
+DiskId1                = "QUALCOMM FM Transport Driver Disk #1"
+Bus.DeviceDesc         = "QUALCOMM FM Transport Driver "
+Bus.SVCDESC            = "QUALCOMM FM Transport Driver"
+REG_DWORD              = 0x00010001
+REG_SZ                 = 0x00000000
+

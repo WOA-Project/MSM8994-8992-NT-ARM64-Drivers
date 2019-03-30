@@ -1,4 +1,4 @@
-﻿;/*++
+;/*++
 ;
 ;Copyright (c) 2013 by QUALCOMM, Incorporated.  All Rights Reserved.
 ;
@@ -26,7 +26,7 @@ DefaultDestDir = 12
 1 = %DiskId1%
 
 [SourceDisksFiles]
-qcadcm8994.sys  = 1
+qcadcm8994.sys = 1
 
 
 ;*****************************************
@@ -34,40 +34,40 @@ qcadcm8994.sys  = 1
 ;*****************************************
 
 [Manufacturer]
-%QCOM%=Standard,NTARM64
+%QCOM% = Standard,NTARM64
 
 [Standard.NTARM64]
-%ADCM.DeviceDesc%=ADCM_Device, SLM1\QCOM242D
+%ADCM.DeviceDesc% = ADCM_Device, SLM1\QCOM242D
 
 [ADCM_Device.NT]
-CopyFiles=Drivers_Dir
-AddProperty=WDTFSOCDeviceCategory
+CopyFiles   = Drivers_Dir
+AddProperty = WDTFSOCDeviceCategory
 
 [Drivers_Dir]
 qcadcm8994.sys
 
 [WDTFSOCDeviceCategory]
-{5D078032-6378-437B-8DA5-9B32B7CA3FDD},2,7,,1
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 1
 
 ;-------------- Service installation
 [ADCM_Device.NT.Services]
 AddService = qcadcm,%SPSVCINST_ASSOCSERVICE%, ADCM_Service_Inst
 
 [ADCMReg_Service]
-HKR,,SOSLog,,"FALSE"
-HKR,,EnableTxDataLogging,,"FALSE"
-HKR,,EnableRxDataLogging,,"FALSE"
+HKR, , SOSLog             , , "FALSE"
+HKR, , EnableTxDataLogging, , "FALSE"
+HKR, , EnableRxDataLogging, , "FALSE"
 
 ; -------------- ADCM driver install sections
 [ADCM_Service_Inst]
-DisplayName    = %ADCM.SVCDESC%
-ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
-StartType      = 3               ; SERVICE_DEMAND_START 
-ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\qcadcm8994.sys
+DisplayName   = %ADCM.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\qcadcm8994.sys
 ;Tag            = 4
 ;LoadOrderGroup = Extended Base
-Addreg=ADCMReg_Service     
+Addreg        = ADCMReg_Service
 
 ;[ADCM_Device.NT.Wdf]
 ;KmdfService =  ADCM, ADCM_wdfsect
@@ -76,11 +76,12 @@ Addreg=ADCMReg_Service
 
 [Strings]
 ;Localizable Strings
-QCOM            = "Qualcomm Inc."
-StdMfg          = "(Standard system devices)"
-DiskId1         = "ADCM Installation Disk"
-ADCM.DeviceDesc = "Qualcomm Audio DSP and Calibration Manager Device"
-ADCM.SVCDESC    = "Qualcomm Audio DSP and Calibration Manager"
+QCOM                   = "Qualcomm Inc."
+StdMfg                 = "(Standard system devices)"
+DiskId1                = "ADCM Installation Disk"
+ADCM.DeviceDesc        = "Qualcomm Audio DSP and Calibration Manager Device"
+ADCM.SVCDESC           = "Qualcomm Audio DSP and Calibration Manager"
 
 ;Non-Localizable Strings
-SPSVCINST_ASSOCSERVICE= 0x00000002
+SPSVCINST_ASSOCSERVICE = 0x00000002
+

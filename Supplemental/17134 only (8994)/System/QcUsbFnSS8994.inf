@@ -1,0 +1,117 @@
+;/*++
+;
+;Copyright (C) 2013-2014 by Qualcomm Technologies, Inc.  All Rights Reserved.
+;
+;Module Name:
+;    qcusbfnss.inx
+;
+;Abstract:
+;    INF file for installing the Driver Frameworks QCUSBFN Superspeed Driver
+;
+;--*/
+
+;----- Version section
+[Version] 
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider    = %Company%
+DriverVer   = 01/01/1997,4.47.37.0218
+CatalogFile = qcusbfnss8994.cat
+PnpLockDown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+qcusbfnss8994.sys = 1,,
+
+;----- Manufacturer section
+[Manufacturer] 
+%Company% = QCOM, NTARM64
+
+;----- Models section
+[QCOM.NTARM64]
+%DeviceDesc% = QCUSBFN_Device, ACPI\QCOM2484
+
+[QCUSBFN_Device.NT] ; DDInstall section
+CopyFiles = Drivers_Dir
+AddReg    = QCUSBFN_Device_AddReg
+
+[QCUSBFN_Device.NT.HW] ; DDInstall.HW section
+AddReg = QcUsbFnSSFilter_AddReg
+
+[Drivers_Dir]
+qcusbfnss8994.sys
+
+;-----  DDInstall.Services section
+[QCUSBFN_Device.NT.Services] 
+AddService = %ServiceName%,%SPSVCINST_ASSOCSERVICE%, QCUSBFN_Service_Inst
+
+;----- DDInstall.Service install section
+[QCUSBFN_Service_Inst] 
+DisplayName    = %ServiceDesc%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\qcusbfnss8994.sys
+LoadOrderGroup = Extended Base
+Tag            = 10
+AddReg         = QCUSBFN_SERVICE_ADDREG
+
+[QCUSBFN_SERVICE_ADDREG]
+HKR, Parameters, "EnableU1U2", %REG_DWORD%, 1
+HKR, Parameters, "HVDCP"     , %REG_DWORD%, 0
+HKR, Parameters, "bMaxBurst" , %REG_DWORD%, 0
+
+;----- Registry Updates
+[QcUsbFnSSFilter_AddReg]
+HKR, , "LowerFilters", %REG_M_SZ%, QcUsbFnSSFilter
+
+[QCUSBFN_Device_AddReg]
+;Root, SubPath,                Name,                   Type,        Values (little-endian)
+
+;Adding Autologging of WPP debug messages
+;HKLM,"System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn", LogFileMode, %REG_DWORD%, 0x10080100         ; RealTime, KDFilter, SingleBuffer
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , LogFileMode    , %REG_DWORD%,  0x10000022          ; Preallocated, Circular LogFile, SingleBuffer
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , BufferSize     , %REG_DWORD%,  0x00000100
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , MaximumFileSize, %REG_DWORD%,  0x00000001      ; 1MB
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , FileMax        , %REG_DWORD%,  0x00000003
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , FileName       , %REG_SZ%   ,  "C:\Data\SystemData\ETW\USBFn\QcUsbFnSs.etl"
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , FlushTimer     , %REG_DWORD%,  0x00000001
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , Guid           , %REG_SZ%   ,  {7b431b06-d6a3-4f82-b307-bc6b28f7ab94}
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , MaximumBuffers , %REG_DWORD%,  0x00000004
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , MinimumBuffers , %REG_DWORD%,  0x00000004
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , ClockType      , %REG_DWORD%,  0x00000001
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn"                                       , Start          , %REG_DWORD%,  0x00000001
+;USBFn driver log
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{82D869FE-8FFA-4AAD-B4F9-86160083CC68}", Enabled        , %REG_DWORD%,  0x00000001
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{82D869FE-8FFA-4AAD-B4F9-86160083CC68}", EnableFlags    , %REG_DWORD%,  0xFFFFFFFF
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{82D869FE-8FFA-4AAD-B4F9-86160083CC68}", MatchAnyKeyword, %REG_DWORD%,  0xFFFFFFFF
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{82D869FE-8FFA-4AAD-B4F9-86160083CC68}", EnableLevel    , %REG_DWORD%,  0x00000003
+;Ufnserialclass driver log
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{D5393B53-8AAE-40B1-938B-C207E999605F}", Enabled        , %REG_DWORD%,  0x00000001
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableFlags    , %REG_DWORD%,  0xFFFFFFFF
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{D5393B53-8AAE-40B1-938B-C207E999605F}", MatchAnyKeyword, %REG_DWORD%,  0xFFFFFFFF
+HKLM, "System\CurrentControlSet\Control\WMI\Autologger\SnpsUsbFn\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableLevel    , %REG_DWORD%,  0x00000003
+
+
+ ;----- String translations
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+Company                = "Qualcomm Technologies, Inc."
+SerialNum              = "Unassigned"
+DiskId1                = "Qualcomm USBFn Driver Disk"
+DeviceDesc             = "Qualcomm USBFn Device"
+ServiceDesc            = "Qualcomm USBFn Service"
+ServiceName            = "USBFN"
+
+REG_SZ                 = 0x00000000
+REG_BINARY             = 0x00000001
+REG_M_SZ               = 0x00010000
+REG_DWORD              = 0x00010001
+REG_DWORD_NOC          = 0x00010003
+

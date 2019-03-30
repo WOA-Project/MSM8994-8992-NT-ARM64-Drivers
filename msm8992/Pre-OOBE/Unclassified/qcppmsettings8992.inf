@@ -1,4 +1,4 @@
-﻿;
+;
 ; qcppmsettings.inf
 ;
 [Version]
@@ -14,7 +14,7 @@ CatalogFile = qcppmsettings8992.cat
 qcppmsettings.Files.NTarm = 10,Provisioning\Packages
 
 [SourceDisksNames]
-0=%DiskId1%
+0 = %DiskId1%
 
 [SourceDisksFiles]
 PPMSettings-8992Profiles.ppkg = 0,,
@@ -24,7 +24,7 @@ PPMSettings-8992Profiles.ppkg = 0,,
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles=qcppmsettings.Files.NTarm
+CopyFiles = qcppmsettings.Files.NTarm
 
 ; System32
 [qcppmsettings.Files.NTarm]
@@ -32,12 +32,13 @@ PPMSettings-8992Profiles.ppkg
 
 ;-------------- Service installation
 [qcppmsettings_Device.Services]
-AddService =  ,%SPSVCINST_ASSOCSERVICE%; 
+AddService = ,%SPSVCINST_ASSOCSERVICE%;
 
 [Strings]
-REG_SZ=0x00000000
-SPSVCINST_ASSOCSERVICE= 0x00000002
-QCOM                  = "Qualcomm"
-QC                    = "Qualcomm Technologies, INC"
-DiskId1               = "PPMSettings Installation Disk #1"
-MSVC120.DeviceDesc    = "PPMSettings Library Package"
+REG_SZ                 = 0x00000000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+QC                     = "Qualcomm Technologies, INC"
+DiskId1                = "PPMSettings Installation Disk #1"
+MSVC120.DeviceDesc     = "PPMSettings Library Package"
+
