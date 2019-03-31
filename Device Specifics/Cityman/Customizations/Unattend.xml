@@ -13,21 +13,6 @@
           <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</CommandLine>
           <Description>Enable DPI Scaling </Description>
         </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>3</Order>
-          <CommandLine>\Windows\OEM\devcon.exe restart ACPI\MSHW1003</CommandLine>
-          <Description>Touch care </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>4</Order>
-          <CommandLine>\Windows\OEM\devcon.exe install \Windows\OEM\oempanel.inf ACPI\MSHW1004</CommandLine>
-          <Description>OemPanel </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>5</Order>
-          <CommandLine>\Windows\OEM\devcon.exe update \Windows\OEM\ChargeArbitration.inf Root\CAD</CommandLine>
-          <Description>CAD </Description>
-        </SynchronousCommand>
       </FirstLogonCommands>
       <OOBE>
         <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
