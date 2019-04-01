@@ -105,7 +105,6 @@ chargearbitration.inf_             = 0,,
 CAD.sys                            = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
-SetupComplete.cmd                  = 0,,
 
 [Manufacturer]
 %QC% = QC, NTARM64
@@ -131,7 +130,6 @@ Unattend.xml
 
 [PreOobe.Files]
 Oobe.cmd
-SetupComplete.cmd
 
 ; Windows/OEM
 [PstDrv.Files]
