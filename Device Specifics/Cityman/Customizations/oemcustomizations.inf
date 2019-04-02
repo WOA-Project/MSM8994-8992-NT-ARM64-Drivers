@@ -17,7 +17,6 @@ Panther.Files = 10,Panther
 PstDrv.Files  = 10,OEM
 PreOobe.Files = 10,Setup\Scripts
 MMO.Files     = 10,Web\Wallpaper\MMO
-Cat.Files     = 10,System32\CatRoot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}
 
 [SourceDisksNames]
 0 = %DiskId1%
@@ -114,7 +113,7 @@ TaskbarLayoutModification.xml      = 0,,
 ;*****************************************
 
 [oemcustomizations_Inst]
-CopyFiles = Panther.Files,MMO.Files,PstDrv.Files,PreOobe.Files,Cat.Files
+CopyFiles = Panther.Files,MMO.Files,PstDrv.Files,PreOobe.Files
 AddReg    = oemcustomizations_reg
 
 [oemcustomizations_reg]
@@ -127,9 +126,6 @@ Unattend.xml
 
 [PreOobe.Files]
 Oobe.cmd
-
-[Cat.Files]
-chargearbitration.cat, chargearbitration.cat_, , 0x00004000,
 
 ; Windows/OEM
 [PstDrv.Files]
