@@ -13,11 +13,6 @@
           <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</CommandLine>
           <Description>Enable DPI Scaling </Description>
         </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>3</Order>
-          <CommandLine>CMD /c \Windows\OEM\PostInstall.cmd</CommandLine>
-          <Description>Post Install </Description>
-        </SynchronousCommand>
       </FirstLogonCommands>
       <OOBE>
         <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
@@ -89,16 +84,6 @@
           <Order>7</Order>
           <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop\WindowMetrics" /v AppliedDPI /t REG_DWORD /d 264 /f</Path>
           <Description>DPI Scaling for all users for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>8</Order>
-          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 264 /f</Path>
-          <Description>275% DPI Scaling </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>9</Order>
-          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</Path>
-          <Description>Enable DPI Scaling </Description>
         </RunSynchronousCommand>
       </RunSynchronous>
     </component>
