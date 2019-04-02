@@ -13,11 +13,6 @@
           <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</CommandLine>
           <Description>Enable DPI Scaling </Description>
         </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>3</Order>
-          <CommandLine>shutdown /r /t 0 /f</CommandLine>
-          <Description>Reboot </Description>
-        </SynchronousCommand>
       </FirstLogonCommands>
       <OOBE>
         <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
