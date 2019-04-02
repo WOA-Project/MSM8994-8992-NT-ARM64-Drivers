@@ -103,9 +103,9 @@ oempanel_etw.dll                   = 0,,
 chargearbitration.cat_             = 0,,
 chargearbitration.inf_             = 0,,
 CAD.sys                            = 0,,
+Touch.xml                          = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
-SetupComplete.cmd                  = 0,,
 
 [Manufacturer]
 %QC% = QC, NTARM64
@@ -131,7 +131,6 @@ Unattend.xml
 
 [PreOobe.Files]
 Oobe.cmd
-SetupComplete.cmd
 
 ; Windows/OEM
 [PstDrv.Files]
@@ -143,6 +142,7 @@ oempanel_etw.dll, oempanel_etw.dll      , , 0x00004000,
 chargearbitration.cat, chargearbitration.cat_, , 0x00004000,
 ChargeArbitration.inf, ChargeArbitration.inf_, , 0x00004000,
 CAD.sys, CAD.sys                 , , 0x00004000,
+Touch.xml, Touch.xml             , , 0x00004000,
 devcon.exe, devcon.exe           , , 0x00004000,
 
 ; Windows/Web/Wallpaper/MMO
