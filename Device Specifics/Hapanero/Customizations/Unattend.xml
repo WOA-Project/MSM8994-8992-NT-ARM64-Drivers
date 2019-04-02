@@ -2,18 +2,6 @@
 <unattend xmlns="urn:schemas-microsoft-com:unattend">
   <settings pass="oobeSystem">
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="ARM64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <FirstLogonCommands>
-        <SynchronousCommand action="add">
-          <Order>1</Order>
-          <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 264 /f</CommandLine>
-          <Description>275% DPI Scaling </Description>
-        </SynchronousCommand>
-        <SynchronousCommand action="add">
-          <Order>2</Order>
-          <CommandLine>REG ADD "HKCU\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</CommandLine>
-          <Description>Enable DPI Scaling </Description>
-        </SynchronousCommand>
-      </FirstLogonCommands>
       <OOBE>
         <HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
       </OOBE>
