@@ -99,6 +99,7 @@ devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 TaskbarLayoutModification.xml      = 0,,
 OobeProvisioner.exe                = 0,,
+vcruntime140.dll                   = 0,,
 
 [Manufacturer]
 %QC% = QC, NTARM64
@@ -130,6 +131,7 @@ Oobe.cmd
 devcon.exe, devcon.exe           , , 0x00004000,
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 OobeProvisioner.exe, OobeProvisioner.exe, , 0x00004000,
+vcruntime140.dll, vcruntime140.dll, , 0x00004000,
 
 ; Windows/Web/Wallpaper/MMO
 [MMO.Files]
