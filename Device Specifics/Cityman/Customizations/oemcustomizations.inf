@@ -101,7 +101,6 @@ CAD.sys                            = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 TaskbarLayoutModification.xml      = 0,,
-OobeProvisioner.exe                = 0,,
 
 [Manufacturer]
 %QC% = QC, NTARM64
@@ -135,7 +134,6 @@ ChargeArbitration.inf, ChargeArbitration.inf_, , 0x00004000,
 CAD.sys, CAD.sys                 , , 0x00004000,
 devcon.exe, devcon.exe           , , 0x00004000,
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
-OobeProvisioner.exe, OobeProvisioner.exe, , 0x00004000,
 
 ; Windows/Web/Wallpaper/MMO
 [MMO.Files]
