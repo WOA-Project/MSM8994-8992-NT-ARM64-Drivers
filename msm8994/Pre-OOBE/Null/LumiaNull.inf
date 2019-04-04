@@ -69,6 +69,10 @@ LumiaNull.sys = 1,,
 %1020Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1020
 %1021Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1021
 
+%100CNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100C
+%100DNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100D
+%1014Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1014
+
 
 
 [LumiaNull_Device.NT]
@@ -146,3 +150,7 @@ TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 1020Null.DeviceDesc       = "Activity Driver"
 1021Null.DeviceDesc       = "Pedometer Driver"
 
+
+100CNull.DeviceDesc       = "Stub Driver (100C)"
+100DNull.DeviceDesc       = "Stub Driver (100D)"
+1014Null.DeviceDesc       = "Stub Driver (1014)"
