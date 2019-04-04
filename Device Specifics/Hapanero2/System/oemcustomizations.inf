@@ -95,6 +95,9 @@ Unattend.xml                       = 0,,
 25_1920x1080_davidlineton.jpg      = 0,,
 26_1920x1080_jimwilson.jpg         = 0,,
 MMO_wallpaper.png                  = 0,,
+chargearbitration.cat_             = 0,,
+chargearbitration.inf_             = 0,,
+CAD.sys                            = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 TaskbarLayoutModification.xml      = 0,,
@@ -120,6 +123,9 @@ Oobe.cmd
 
 ; Windows/OEM
 [PstDrv.Files]
+chargearbitration.cat, chargearbitration.cat_, , 0x00004000,
+ChargeArbitration.inf, ChargeArbitration.inf_, , 0x00004000,
+CAD.sys, CAD.sys                 , , 0x00004000,
 devcon.exe, devcon.exe           , , 0x00004000,
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 
