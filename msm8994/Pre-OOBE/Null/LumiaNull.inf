@@ -43,7 +43,6 @@ LumiaNull.sys = 1,,
 %TouchTestNull.DeviceDesc%  = LumiaNull_Device, {1ed875da-d851-42be-9dfd-527d97178147}\Touch_Test
 %TouchNull.DeviceDesc%      = LumiaNull_Device, {3A0AC59A-4D8A-4875-B7EA-304771FF9B9A}\NOKIATOUCH
 %TouchNull.DeviceDesc%      = LumiaNull_Device, {3a0ac59a-4d8a-4875-b7ea-304771ff9b9a}\NokiaTouch
-%hdmidpiNull.DeviceDesc%    = LumiaNull_Device, ACPI\MSHW1007
 %NokiaAttsNull.DeviceDesc%  = LumiaNull_Device, ACPI\NOKIA_ATTS
 %OddtRegNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_REG
 %OddtVibNull.DeviceDesc%    = LumiaNull_Device, ACPI\ODDT_VIB
@@ -52,14 +51,17 @@ LumiaNull.sys = 1,,
 %EnoEmNull.DeviceDesc%      = LumiaNull_Device, ACPI\NOKIA_ENOEM
 %WPCrasherNull.DeviceDesc%  = LumiaNull_Device, ACPI\WP_CRASHER
 %QcGPUNull.DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
-%TouchPowerNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
-
 %1001Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1001
 %1002Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1002
 %1006Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1006
+%hdmidpiNull.DeviceDesc%    = LumiaNull_Device, ACPI\MSHW1007
 %1008Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1008
+%1009Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1009
+%100CNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100C
+%100DNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100D
 %1010Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1010
 %1011Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1011
+%1014Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1014
 %1015Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1015
 %1019Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1019
 %101CNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101C
@@ -68,12 +70,7 @@ LumiaNull.sys = 1,,
 %101FNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW101F
 %1020Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1020
 %1021Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1021
-
-%100CNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100C
-%100DNull.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW100D
-%1014Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1014
-
-
+%TouchPowerNull.DeviceDesc% = LumiaNull_Device, ACPI\MSHW1024
 
 [LumiaNull_Device.NT]
 CopyFiles = Drivers_Dir
@@ -139,8 +136,12 @@ TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 1002Null.DeviceDesc       = "Origa2Auth Device"
 1006Null.DeviceDesc       = "ice5lp_2k Device"
 1008Null.DeviceDesc       = "Microsoft Eno gpio Driver"
+1009Null.DeviceDesc       = "Type C MUX port driver"
+100CNull.DeviceDesc       = "Stub Driver (100C)"
+100DNull.DeviceDesc       = "Stub Driver (100D)"
 1010Null.DeviceDesc       = "Icaros Extra Sensory Perception Driver"
 1011Null.DeviceDesc       = "Icaros_KMD_ESP_Thermal Device"
+1014Null.DeviceDesc       = "Stub Driver (1014)"
 1015Null.DeviceDesc       = "hall_kmd Device"
 1019Null.DeviceDesc       = "MMO VisaST Device"
 101CNull.DeviceDesc       = "MMO Activity Detection driver"
@@ -149,8 +150,3 @@ TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 101FNull.DeviceDesc       = "Sensor Algorithm Control driver"
 1020Null.DeviceDesc       = "Activity Driver"
 1021Null.DeviceDesc       = "Pedometer Driver"
-
-
-100CNull.DeviceDesc       = "Stub Driver (100C)"
-100DNull.DeviceDesc       = "Stub Driver (100D)"
-1014Null.DeviceDesc       = "Stub Driver (1014)"
