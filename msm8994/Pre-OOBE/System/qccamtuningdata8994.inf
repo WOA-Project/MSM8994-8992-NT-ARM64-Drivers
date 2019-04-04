@@ -50,19 +50,13 @@ chromatix_imx214_video_hdr_cpp.dat    = 0,,
 lc898122_camcorder.dat                = 0,,
 lc898122_camera.dat                   = 0,,
 
-[Manufacturer]
-%QC% = QC, NTARM64
-
-[QC.NTARM64]
-"Tuning" = Tuning_Inst,
-
 ;*****************************************
 ; Tuning Data  Install Section
 ;*****************************************
 
-[Tuning_Inst]
-Addreg    = TUNINGDATAReg
+[DefaultInstall.NTARM64]
 CopyFiles = Drivers_Dir_24
+Addreg    = TUNINGDATAReg
 
 [Drivers_Dir_24]
 chromatix_imx214_common.dat

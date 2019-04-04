@@ -19,17 +19,11 @@ Workaround.Files = 10
 
 [SourceDisksFiles]
 
-[Manufacturer]
-%QC% = QC, NTARM64
-
-[QC.NTARM64]
-"phonent" = phonent_Inst,
-
 ;*****************************************
 ; phonent  Install Section
 ;*****************************************
 
-[phonent_Inst]
+[DefaultInstall.NTARM64]
 CopyFiles = Workaround.Files
 Addreg    = phonentReg
 

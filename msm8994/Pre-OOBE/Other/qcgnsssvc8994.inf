@@ -27,15 +27,6 @@ QcGnssSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 QcGnssSvc.dll = 0,,
 
-[Manufacturer]
-%QC% = QC,NTARM,NTARM64
-
-[QC.NTARM]
-"QcGnssSvc" = QcGnssSvc_Inst,
-
-[QC.NTARM64]
-"QcGnssSvc" = QcGnssSvc_Inst,
-
 [DefaultInstall.NTARM]
 "QcGnssSvc" = QcGnssSvc_Inst,
 

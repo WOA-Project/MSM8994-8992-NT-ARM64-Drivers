@@ -40,15 +40,15 @@ Speaker_cal_8994.acdb   = 1
 ;*****************************************
 ; ACSP  Install Section
 ;*****************************************
-[Manufacturer]
-%StdMfg% = Standard,NTARM64
+;[Manufacturer]
+;%StdMfg% = Standard,NTARM64
 
 ; Decorated model section take precedence over undecorated 
 ; ones on XP and later.
-[Standard.NTARM64]
-%ACSP.DeviceDesc% = ACSP_Device, ACPI\QCOM2460
+;[Standard.NTARM64]
+;%ACSP.DeviceDesc% = ACSP_Device, ACPI\QCOM2460
 
-[ACSP_Device]
+[DefaultInstall.NTARM64]
 Addreg    = ACSPReg
 CopyFiles = Drivers_Dir_24
 

@@ -27,15 +27,6 @@ libadsprpc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 libadsprpc.dll = 0,,
 
-[Manufacturer]
-%QC% = QC,NTARM,NTARM64
-
-[QC.NTARM]
-"libadsprpc" = libadsprpc_Inst,
-
-[QC.NTARM64]
-"libadsprpc" = libadsprpc_Inst,
-
 [DefaultInstall.NTARM]
 "libadsprpc" = libadsprpc_Inst,
 

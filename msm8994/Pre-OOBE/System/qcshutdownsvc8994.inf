@@ -27,15 +27,6 @@ ShutdownSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 QcShutdownSvc8994.dll = 0,,
 
-[Manufacturer]
-%QC% = QC,NTARM,NTARM64
-
-[QC.NTARM]
-"ShutdownSvc" = ShutdownSvc_Inst,
-
-[QC.NTARM64]
-"ShutdownSvc" = ShutdownSvc_Inst,
-
 [DefaultInstall.NTARM]
 "ShutdownSvc" = ShutdownSvc_Inst,
 

@@ -19,17 +19,11 @@ Workaround.Files = 10
 
 [SourceDisksFiles]
 
-[Manufacturer]
-%QC% = QC, NTARM64
-
-[QC.NTARM64]
-"OEMInfo" = OEMInfo_Inst,
-
 ;*****************************************
 ; oeminfo  Install Section
 ;*****************************************
 
-[OEMInfo_Inst]
+[DefaultInstall.NTARM64]
 CopyFiles = Workaround.Files
 Addreg    = OEMInfoReg
 
