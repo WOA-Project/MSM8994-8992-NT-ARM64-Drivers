@@ -70,10 +70,6 @@ LumiaNull.sys = 1,,
 %1021Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1021
 
 
-%1009Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1009
-%1016Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1016
-
-
 
 [LumiaNull_Device.NT]
 CopyFiles = Drivers_Dir
@@ -150,6 +146,3 @@ TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
 1020Null.DeviceDesc       = "Activity Driver"
 1021Null.DeviceDesc       = "Pedometer Driver"
 
-
-1009Null.DeviceDesc       = "Power Stub (1009) Driver"
-1016Null.DeviceDesc       = "Power Stub (1016) Driver"
