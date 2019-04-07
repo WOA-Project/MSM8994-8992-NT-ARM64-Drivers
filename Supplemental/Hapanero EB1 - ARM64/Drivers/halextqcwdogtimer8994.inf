@@ -37,12 +37,7 @@ HalExtQCWdogTimer.dll = SignatureAttributes.HalExt
 [SignatureAttributes.HalExt]
 HalExt = true
 
-[Manufacturer]
-%MFGNAME% = DeviceList, NTARM64
-
-[DeviceList.NTARM64]
-
-[QC_TIMERS]
+[DefaultInstall.NTARM64]
 AddReg    = QC_TIMERS_AddReg
 CopyFiles = QC_TIMERS_CopyFiles
 
