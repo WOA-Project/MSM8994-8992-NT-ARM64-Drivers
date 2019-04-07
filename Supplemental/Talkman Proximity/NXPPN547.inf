@@ -126,4 +126,5 @@ MSNfcI2C547.dll, , , 0x100,
 NXP                      = "NXP Semiconductors"
 NXPPN547_HWID.DeviceDesc = "NXP PN547 NFC I2C Transport Driver"
 MediaDescription         = "NXP PN547 NFC Installation Media"
+WudfRdDisplayName        = "Windows Driver Foundation - User-mode Driver Framework Reflector"
 

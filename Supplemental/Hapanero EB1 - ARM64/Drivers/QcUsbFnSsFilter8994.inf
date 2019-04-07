@@ -7,7 +7,7 @@
 
 [Version]
 Signature   = "$WINDOWS NT$"
-Class       = USB
+Class       = USBDevice
 ClassGuid   = {88BAE032-5A81-49f0-BC3D-A4FF138216D6}
 Provider    = %Company%
 DriverVer   = 07/02/2015,1.0.1067.0000

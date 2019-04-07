@@ -15,7 +15,7 @@ Signature   = "$Windows NT$"
 Class       = SYSTEM
 ClassGUID   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
-DriverVer   = 03/02/2012,0.0.0000.0
+DriverVer   = 03/02/2012,1.0.1067.0000
 CatalogFile = "QCListenSoundModel.cat"
 
 [DestinationDirs]

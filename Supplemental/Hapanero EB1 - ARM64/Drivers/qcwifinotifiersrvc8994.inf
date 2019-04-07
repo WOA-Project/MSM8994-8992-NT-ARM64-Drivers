@@ -13,9 +13,9 @@
 [Version]
 Signature   = "$Windows NT$"
 Class       = SYSTEM
-ClassGUID   = {4d36e968-e325-11ce-bfc1-08002be10318}
+ClassGUID   = {4D36E97D-E325-11CE-BFC1-08002BE10318}
 Provider    = %QC%
-DriverVer   = 03/01/2013,0.0.0.0000
+DriverVer   = 03/01/2013,1.0.1067.0000
 CatalogFile = "qcwifinotifiersrvc8994.cat"
 
 [DestinationDirs]

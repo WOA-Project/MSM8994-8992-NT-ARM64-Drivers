@@ -13,7 +13,7 @@
 [Version]
 Signature   = "$Windows NT$"
 Class       = SYSTEM
-ClassGUID   = {4d36e968-e325-11ce-bfc1-08002be10318}
+ClassGUID   = {4D36E97D-E325-11CE-BFC1-08002BE10318}
 Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = "libadsprpc.cat"

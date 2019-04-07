@@ -20,7 +20,8 @@ PnpLockDown = 1
 
 [DestinationDirs]
 ;12 == Windows\System32\Drivers\UMDF
-DefaultDestDir = 12,UMDF
+SensorDriverCopy = 12,UMDF
+ConfDriverCopy   = 11
 
 [SourceDisksNames]
 1 = %MediaDescription%,,,""
@@ -53,10 +54,6 @@ qcSensors8994.dll
 [ConfDriverCopy]
 qcSensor1UM8994.dll
 qcSensorsDefaults_CHI.conf
-
-[DestinationDirs]
-SensorDriverCopy = 12,UMDF
-ConfDriverCopy   = 11
 
 [Sensor_Inst.NT.HW]
 AddReg = Sensor_Inst_SecurityAddReg
