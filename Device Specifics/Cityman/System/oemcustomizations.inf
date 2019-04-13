@@ -101,9 +101,6 @@ CAD.sys                            = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 TaskbarLayoutModification.xml      = 0,,
-qcmbb8994.cat_                     = 0,,
-qcmbb.wp8994.inf_                  = 0,,
-qcmbb8994.sys                      = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
@@ -126,14 +123,11 @@ Oobe.cmd
 
 ; Windows/OEM
 [PstDrv.Files]
-chargearbitration.cat, chargearbitration.cat_               , , 0x00004000,
-ChargeArbitration.inf, ChargeArbitration.inf_               , , 0x00004000,
-CAD.sys, CAD.sys                                            , , 0x00004000,
-devcon.exe, devcon.exe                                      , , 0x00004000,
+chargearbitration.cat, chargearbitration.cat_, , 0x00004000,
+ChargeArbitration.inf, ChargeArbitration.inf_, , 0x00004000,
+CAD.sys, CAD.sys                 , , 0x00004000,
+devcon.exe, devcon.exe           , , 0x00004000,
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
-qcmbb8994.cat, qcmbb8994.cat_                               , , 0x00004000,
-qcmbb.wp8994.inf, qcmbb.wp8994.inf_                         , , 0x00004000,
-qcmbb8994.sys, qcmbb8994.sys                                , , 0x00004000,
 
 ; Windows/Web/Wallpaper/MMO
 [MMO.Files]
