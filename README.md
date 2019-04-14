@@ -51,7 +51,7 @@ Hapanero:
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - x86 DirectX support is missing.
-- Cellular (Desktop doesn't have a RIL stack and is missing EMB)
+- Cellular (Account not activated)
 
 Hapanero (EB0.x and EB1.x):
 
@@ -63,7 +63,7 @@ Hapanero (EB0.x and EB1.x):
 - Microphones
 - Shutdown (Reboots instead)
 - Vibration motor
-- Cellular (Desktop doesn't have a RIL stack and is missing EMB)
+- Cellular
 
 Cityman:
 
@@ -75,7 +75,7 @@ Cityman:
 - Vibration motor
 - HDMI out via USB-C
 - x86 DirectX support is missing.
-- Cellular (Desktop doesn't have a RIL stack and is missing EMB)
+- Cellular (Account not activated)
 
 Talkman:
 
@@ -89,21 +89,19 @@ Talkman:
 - Vibration motor
 - WLAN (requires UEFI PCIe and UART/PEP bring up)
 - HDMI out via USB-C
-- Cellular (Desktop doesn't have a RIL stack and is missing EMB)
+- Cellular
 
 ## Readme
 
-- Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994
-- Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992
-- RX-130       -> Install everything under Device Specifics\Hapanero (or Hapanero2 if you're using Lumia950XLPkg) and msm8994
-- RX-130-EB0/1 -> See Supplemental\Hapanero EB1 - ARM64
+- Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994 and Device Specifics\MMO
+                  Select between CitymanSS and CitymanDS depending on Single SIM/Dual SIM
+- Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992 and Device Specifics\MMO
+- RX-130       -> Install everything under Device Specifics\Hapanero (or Hapanero2 if you're using Lumia950XLPkg) and msm8994 and Device Specifics\MMO
+- RX-130-EB0/1 -> See Supplemental\Hapanero EB1 - ARM64 and Device Specifics\MMO
 
 - To install drivers, you'll need to follow the usual Dism procedure before first boot of the operating system.
   ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
   nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
-
-- After the Out of box experience, you'll have to install drivers in Post-OOBE via device manager.
-- **Note** Those Post-OOBE drivers only work in 17134 currently.
 
 ## USB for Lumia 950 and Lumia 950 XL
 
