@@ -96,6 +96,7 @@ Talkman:
 - Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994 and Device Specifics\MMO
                   Select between CitymanSS and CitymanDS depending on Single SIM/Dual SIM
 - Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992 and Device Specifics\MMO
+                  Select between TalkmanSS and TalkmanDS depending on Single SIM/Dual SIM
 - RX-130       -> Install everything under Device Specifics\Hapanero (or Hapanero2 if you're using Lumia950XLPkg) and msm8994 and Device Specifics\MMO
 - RX-130-EB0/1 -> See Supplemental\Hapanero EB1 - ARM64 and Device Specifics\MMO
 
