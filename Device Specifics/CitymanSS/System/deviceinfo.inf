@@ -31,7 +31,7 @@ MMO.bmp
 
 [DeviceinfoReg]
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Manufacturer", %REG_SZ%, "Microsoft"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Model"       , %REG_SZ%, "Microsoft Lumia 950 XL Dual SIM"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Model"       , %REG_SZ%, "Microsoft Lumia 950 XL"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportHours", %REG_SZ%, "0"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportPhone", %REG_SZ%, "0"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportURL"  , %REG_SZ%, "http://lumia.linkmicrosoft.com/device/entry/van/nsupport"
