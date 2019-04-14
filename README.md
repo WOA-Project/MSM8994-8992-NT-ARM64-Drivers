@@ -72,7 +72,6 @@ Cityman:
 - Iris biometric sensor (missing drivers)
 - Cameras (missing drivers)
 - Any kind of sensor (except ALS)
-- USB VBus (USB will work with externally provided power source)
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - HDMI out via USB-C
@@ -85,7 +84,6 @@ Talkman:
 - Iris biometric sensor (missing drivers)
 - Cameras (missing drivers)
 - Any kind of sensor (except ALS)
-- USB VBus (USB will work with externally provided power source)
 - Audio
 - Microphones
 - Vibration motor
