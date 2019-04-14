@@ -32,8 +32,8 @@ MMO.bmp
 [DeviceinfoReg]
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Manufacturer", %REG_SZ%, "Microsoft"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Model"       , %REG_SZ%, "Microsoft Lumia 950 XL Dual SIM"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportHours", %REG_SZ%, "0"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportPhone", %REG_SZ%, "0"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportHours", %REG_SZ%, "Monday through Friday, 5:00 AM - 9:00 PM Pacific Time and Saturday and Sunday, 6:00 AM - 3:00 PM Pacific Time"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportPhone", %REG_SZ%, "1-800-Microsoft (642-7676), TTY: 1-800-892-5234"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportURL"  , %REG_SZ%, "http://lumia.linkmicrosoft.com/device/entry/van/nsupport"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Logo"        , %REG_SZ%, "C:\Windows\System32\OEM\MMO.bmp"
 
