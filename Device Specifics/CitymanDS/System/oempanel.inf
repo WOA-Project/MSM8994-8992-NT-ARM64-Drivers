@@ -1,0 +1,240 @@
+;/*++
+;
+; Copyright (c) 2012-2013 Qualcomm Technologies, Inc.  All Rights Reserved.
+; Qualcomm Technologies Proprietary and Confidential
+;
+;Module Name:
+;    oempanel.INF
+;
+;Abstract:
+;    INF file for installing the OEM Class Extension Driver
+;
+;Installation Notes: 
+;    Using Devcon: Type "devcon update oempanel.inf ACPI\MSHW1004" to install
+;
+;--*/
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QC%
+DriverVer   = 03/24/2010, 07.14.2.8061
+CatalogFile = oempanel.cat
+
+[SourceDisksNames]
+1 = %%DiskId1%%
+
+[SourceDisksFiles]
+oempanel.sys     = 1
+ColorData.bin    = 1
+oempanel_etw.dll = 1
+
+;12 == Windows\System32\Drivers
+[DestinationDirs]
+DefaultDestDir = 12
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;*****************************************
+; oem panel client driver Install Section
+;*****************************************
+
+[Manufacturer]
+%QC% = QC,NTARM64
+
+[QC.NTARM64]
+%OEM.DeviceDesc% = OEM_Inst, ACPI\MSHW1004
+
+[OEM_Inst.NT]
+Copyfiles = OEMCopyFiles
+AddReg    = OEM_Settings
+
+[OEM_Settings]
+HKLM, SOFTWARE\Microsoft\AutoBrightness                                                                 , ABSMonitorControl                       , 0x00010001, 0x00000001
+HKLM, SOFTWARE\Microsoft\AutoBrightness                                                                 , ABSAutoMaxBrightness                    , 0x00010001, 0x00000032
+HKLM, SOFTWARE\Microsoft\AutoBrightness                                                                 , ABSManualBrightness                     , 0x00010001, 0x00000032
+
+HKLM, SOFTWARE\Microsoft\Shell\OEM\Brightness                                                           , HideAutoBrightness                      , 0x00010001, 0x00000000
+
+HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{F0048AD1-2A42-48C0-9797-AAFB768A6ECC}, Enabled                                 , 0x00010001, 0x00000001
+HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{F0048AD1-2A42-48C0-9797-AAFB768A6ECC}, ResourceFileName                        , 0x00000000, "C:\windows\System32\drivers\oempanel_etw.dll"
+HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{F0048AD1-2A42-48C0-9797-AAFB768A6ECC},                                         , 0x00000000, "Nokia-OemPanel"
+HKLM, SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{F0048AD1-2A42-48C0-9797-AAFB768A6ECC}, MessageFileName                         , 0x00000000, "C:\windows\System32\drivers\oempanel_etw.dll"
+
+HKLM, SOFTWARE\OEM\AutoBrightness                                                                       , DimBrightness                           , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\AutoBrightness                                                                       , ABSPercentIntensityMapping              , 0x00010000, "50","51"
+HKLM, SOFTWARE\OEM\AutoBrightness                                                                       , TransitionDelay                         , 0x00010001, 0x00000000
+HKLM, SOFTWARE\OEM\AutoBrightness                                                                       , ABSRangeMilliLuxMapping                 , 0x00010000, "1","MAX"
+
+HKLM, SOFTWARE\OEM\Nokia\BrightnessInterface                                                            , APIVersion                              , 0x00000000, "1.1"
+HKLM, SOFTWARE\OEM\Nokia\BrightnessInterface                                                            , BrightnessPct                           , 0x00010001, 0x00000064
+
+HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , APIVersion                              , 0x00000000, "1.1"
+HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , BatteryChargePercent                    , 0x00010001, 0x00000064
+HKLM, SOFTWARE\OEM\Nokia\Display                                                                        , PowerSaveState                          , 0x00010001, 0x00000000
+
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetGreenY            , 0x00000000, "0.7152"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingNoBrightnessSettings         , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetWhiteX            , 0x00000000, "0.95015469"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetGreenX            , 0x00000000, "0.3576"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingSreEnabled                   , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingBsmDimmingEnabled            , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingFingerFilterEnabled          , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingAtomicUpdate                 , 0x00010001, 0x00000000
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingWhitePoint                   , 0x00010001, 0x00000032
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingUiStarted                    , 0x00010001, 0x00000000
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorSaturationPA            , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , APIVersion                              , 0x00000000, "1.9"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorSaturation              , 0x00010001, 0x00000032
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetWhiteZ            , 0x00000000, "1.08825906"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetBlueZ             , 0x00000000, "0.9505"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetGreenZ            , 0x00000000, "0.1192"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetRedY              , 0x00000000, "0.2126"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorSaturationMatrix        , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingAppVersion                   , 0x00000000, "3.0"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingKeyLightsScalerPct           , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingBrightConditionBrightness    , 0x00010001, 0x00000032
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingDarkConditionBrightness      , 0x00010001, 0x00000032
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetBlueX             , 0x00000000, "0.1805"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetBlueY             , 0x00000000, "0.0722"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetRedX              , 0x00000000, "0.4124"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetWhiteY            , 0x00000000, "1.0"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorSaturationSupportedSteps, 0x00010001, 0x00000064
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingWhitePointSupportedSteps     , 0x00010001, 0x00000064
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingKeyLightsEnabled             , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLight                                                          , UserSettingColorTargetRedZ              , 0x00000000, "0.0193"
+
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEBlueY                   , 0x00000000, "0.0722"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEBlueX                   , 0x00000000, "0.1805"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , OsAutomaticallyAdjustEnabled            , 0x00010001, 0x00000001
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationCIEMid                        , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIERedZ                    , 0x00000000, "0.0193"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationPAHigh                        , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationMatrixMid                     , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIERedX                    , 0x00000000, "0.4124"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationPAMid                         , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , AmbientLightValue                       , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , UserSettingDisplayCurrentBrightnessPct  , 0x00010001, 0xFFFFFFFF
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationMatrixLow                     , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEGreenX                  , 0x00000000, "0.3576"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationMatrixHigh                    , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEGreenZ                  , 0x00000000, "0.1192"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , DisplayId                               , 0x00010001, 0x00000000
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIERedY                    , 0x00000000, "0.2126"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationCIEHigh                       , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEGreenY                  , 0x00000000, "0.7152"
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationPALow                         , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , SaturationCIELow                        , 0x00010001, 0x00000100
+HKLM, SOFTWARE\OEM\Nokia\Display\ColorAndLightProperties                                                , MaxSaturationCIEBlueZ                   , 0x00000000, "0.9505"
+
+HKLM, SOFTWARE\OEM\Nokia\Display\LPM                                                                    , OPR_Low                                 , 0x00010001, 0x0000005F
+HKLM, SOFTWARE\OEM\Nokia\Display\LPM                                                                    , APIVersion                              , 0x00000000, "1.0"
+HKLM, SOFTWARE\OEM\Nokia\Display\LPM                                                                    , OPR_Med                                 , 0x00010001, 0x00000190
+
+[OEMCopyFiles]
+oempanel.sys
+ColorData.bin
+oempanel_etw.dll
+
+[OEM_Inst.NT.Services]
+AddService = MmoPanel, %SPSVCINST_ASSOCSERVICE%, OEM_Service_Inst
+
+[OEM_Service_Inst]
+DisplayName    = %OEM.SvcDesc%
+ServiceType    = %SERVICE_KERNEL_DRIVER%
+StartType      = %SERVICE_DEMAND_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\oempanel.sys
+LoadOrderGroup = Extended Base
+AddReg         = OEM_ServiceReg
+
+[OEM_ServiceReg]
+HKR, PARAMETERS\SETTINGS, LIGHT_LedGroup3_Pct                 , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitLow_Vendor_0          , 0x00010001, 0xE3004E20
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitHigh_Vendor_0         , 0x00010001, 0x0000C350
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_NitOut0             , 0x00010001, 0x0000000A
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut2             , 0x00010001, 0x00000044
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn8              , 0x00010001, 0x00000DAC
+HKR, PARAMETERS\SETTINGS, Flags                               , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut6             , 0x00010001, 0x000000F0
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn1              , 0x00010001, 0x00000002
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn4              , 0x00010001, 0x00000064
+HKR, PARAMETERS\SETTINGS, LIGHT_LedSearchButton               , 0x00010001, 0x0000000F
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn7              , 0x00010001, 0x000003E8
+HKR, PARAMETERS\SETTINGS, COLOR_GoldenPhone                   , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, EsdInterval                         , 0x00010001, 0x00001388
+HKR, PARAMETERS\SETTINGS, AD_CalibrationB                     , 0x00010001, 0x0000005F
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_LuxIn0              , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, AD_RegsInUse                        , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_LuxIn3              , 0x00010001, 0x00000064
+HKR, PARAMETERS\SETTINGS, LIGHT_LedGroup0_Pct                 , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut4             , 0x00010001, 0x00000090
+HKR, PARAMETERS\SETTINGS, LIGHT_SmartCoverWindowScalerPct     , 0x00010001, 0x00000065
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut8             , 0x00010001, 0x00000190
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut11            , 0x00010001, 0x00000320
+HKR, PARAMETERS\SETTINGS, LIGHT_LedGroup2_Pct                 , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, HwPlatform                          , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, AD_CalibrationD                     , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitLow_Vendor_1          , 0x00010001, 0xC1004E20
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitHigh_Vendor_1         , 0x00010001, 0x0000C350
+HKR, PARAMETERS\SETTINGS, LIGHT_LedWinButton                  , 0x00010001, 0x0000000F
+HKR, PARAMETERS\SETTINGS, EsdFailLimit                        , 0x00010001, 0x00000003
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitMed_Vendor_0          , 0x00010001, 0x0000C350
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn10             , 0x00010001, 0x0000C350
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn0              , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn3              , 0x00010001, 0x00000028
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_NitOut3             , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_CAbcLevel_Vendor_0            , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_LuxIn2              , 0x00010001, 0x00000060
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut3             , 0x00010001, 0x00000068
+HKR, PARAMETERS\SETTINGS, LIGHT_GlassDampingCompensationFactor, 0x00010001, 0x00000064
+HKR, PARAMETERS\SETTINGS, EsdEnabled                          , 0x00010001, 0x00000001
+HKR, PARAMETERS\SETTINGS, AD_TFilterControl                   , 0x00010001, 0x00000005
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_NitOut1             , 0x00010001, 0x00000032
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut1             , 0x00010001, 0x00000024
+HKR, PARAMETERS\SETTINGS, LIGHT_CAbcLevel_Vendor_1            , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut5             , 0x00010001, 0x000000C8
+HKR, PARAMETERS\SETTINGS, LIGHT_ThermalMaxDeg                 , 0x00010001, 0xFFFFFFFF
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut9             , 0x00010001, 0x000001E0
+HKR, PARAMETERS\SETTINGS, LIGHT_LedGroup1_Pct                 , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, AD_CalibrationA                     , 0x00010001, 0x00000012
+HKR, PARAMETERS\SETTINGS, LIGHT_LedBackButton                 , 0x00010001, 0x0000000F
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn9              , 0x00010001, 0x00003A98
+HKR, PARAMETERS\SETTINGS, AD_CalibrationC                     , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn2              , 0x00010001, 0x0000000A
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut10            , 0x00010001, 0x0000028A
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn5              , 0x00010001, 0x000000FA
+HKR, PARAMETERS\SETTINGS, LIGHT_SRELimitMed_Vendor_1          , 0x00010001, 0x0000C350
+HKR, PARAMETERS\SETTINGS, AD_MaxIterations                    , 0x00010001, 0x00000040
+HKR, PARAMETERS\SETTINGS, AD_StrengthLimit                    , 0x00010001, 0x00000080
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_LuxIn1              , 0x00010001, 0x0000001E
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn6              , 0x00010001, 0x000001F4
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_LuxIn11             , 0x00010001, 0x000186A0
+HKR, PARAMETERS\SETTINGS, LIGHT_LedBoostBrightness_1          , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_GlanceBrightness_Pct          , 0x00010001, 0x00000007
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitK_NitOut2             , 0x00010001, 0x00000064
+HKR, PARAMETERS\SETTINGS, IsUpsideDown                        , 0x00010001, 0x00000000
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut0             , 0x00010001, 0x0000000C
+HKR, PARAMETERS\SETTINGS, LIGHT_LuxToNitD_NitOut7             , 0x00010001, 0x00000118
+
+[OEM_Inst.NT.Wdf]
+KmdfService = MmoPanel, OEM_wdfsect
+
+[OEM_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+;Localizable Strings
+QC                     = "Nokia"
+OEM.SvcDesc            = "Nokia Panel Driver Service"
+OEM.DeviceDesc         = "Nokia Panel Driver"
+
+;Non-Localizable Strings
+SPSVCINST_ASSOCSERVICE = 0x00000002
+SERVICE_KERNEL_DRIVER  = 1
+SERVICE_DEMAND_START   = 3
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_NORMAL   = 1
+

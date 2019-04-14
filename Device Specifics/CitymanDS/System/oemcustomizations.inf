@@ -1,0 +1,214 @@
+;
+; oemcustomizations.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SYSTEM
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QCOM%
+DriverVer   = 09/09/2015,1.0.1077.0000
+CatalogFile = oemcustomizations.cat
+
+[DestinationDirs]
+; 10 = Windows
+; 12 = Drivers
+Panther.Files = 10,Panther
+PstDrv.Files  = 10,OEM
+PreOobe.Files = 10,Setup\Scripts
+MMO.Files     = 10,Web\Wallpaper\MMO
+
+[SourceDisksNames]
+0 = %DiskId1%
+
+[SourceDisksFiles]
+Unattend.xml                       = 0,,
+01_1280x720_PeiChiHsieh.jpg        = 0,,
+01_1920x1080_ElsaRusi.jpg          = 0,,
+01_1920x1080_jimwilson.jpg         = 0,,
+02_1280x720_PeiChiHsieh.jpg        = 0,,
+02_1920x1080_jimwilson.jpg         = 0,,
+02_1920x1080_SarahJun.jpg          = 0,,
+03_1280x720_PeiChiHsieh.jpg        = 0,,
+03_1920x1080_jonathanfleetwood.jpg = 0,,
+03_1920x1080_LengWen.jpg           = 0,,
+04_1280x720_PeiChiHsieh.jpg        = 0,,
+04_1920x1080_AkseliValmunen.jpg    = 0,,
+04_1920x1080_jimwilson.jpg         = 0,,
+05_1280x720_PeiChiHsieh.jpg        = 0,,
+05_1920x1080_jimwilson.jpg         = 0,,
+05_1920x1080_SarahJun.jpg          = 0,,
+06_1280x720_PeiChiHsieh.jpg        = 0,,
+06_1920x1080_davidlineton.jpg      = 0,,
+06_1920x1080_SarahJun.jpg          = 0,,
+07_1280x720_ZhangChao.jpg          = 0,,
+07_1920x1080_danielweill.jpg       = 0,,
+07_1920x1080_ZhangChao.jpg         = 0,,
+08_1280x720_DenisTwerenbold.jpg    = 0,,
+08_1920x1080_JonnePaulaSippola.jpg = 0,,
+08_1920x1080_lluisoliver.jpg       = 0,,
+09_1280x720_DenisTwerenbold.jpg    = 0,,
+09_1920x1080_jimwilson.jpg         = 0,,
+09_1920x1080_ZhangChao.jpg         = 0,,
+10_1280x720_DenisTwerenbold.jpg    = 0,,
+10_1920x1080_MiikkaBjorninen.jpg   = 0,,
+10_1920x1080_yassinyassin.jpg      = 0,,
+11_1280x720_ShomwatalaShivute.jpg  = 0,,
+11_1920x1080_LacyKiernan.jpg       = 0,,
+11_1920x1080_lluisoliver.jpg       = 0,,
+12_1280x720_AndrewJuries.jpg       = 0,,
+12_1920x1080_keunyoungpark.jpg     = 0,,
+12_1920x1080_LiYanCi.jpg           = 0,,
+13_1280x720_AndrewOgterop.jpg      = 0,,
+13_1920x1080_martinoneill.jpg      = 0,,
+13_1920x1080_SarahJun.jpg          = 0,,
+14_1280x720_SurayaPelser.jpg       = 0,,
+14_1920x1080_jeanti.jpg            = 0,,
+14_1920x1080_SarahJun.jpg          = 0,,
+15_1280x720_AkseliValmunen.jpg     = 0,,
+15_1920x1080_autumnwhitehurst.jpg  = 0,,
+15_1920x1080_JonnePaulaSippola.jpg = 0,,
+16_1280x720_NarinaNaidoo.jpg       = 0,,
+16_1920x1080_GongZhe.jpg           = 0,,
+16_1920x1080_joecruz.jpg           = 0,,
+17_1280x720_ThulileGamedze.jpg     = 0,,
+17_1920x1080_jimwilson.jpg         = 0,,
+17_1920x1080_JonnePaulaSippola.jpg = 0,,
+18_1280x720_KyleSpringgate.jpg     = 0,,
+18_1920x1080_AdrianoHultmann.jpg   = 0,,
+18_1920x1080_jimwilson.jpg         = 0,,
+19_1280x720_JimWilson.jpg          = 0,,
+19_1920x1080_DenisTwerenbold.jpg   = 0,,
+19_1920x1080_jimwilson.jpg         = 0,,
+20_1280x720_WuthigraiSiriphon.jpg  = 0,,
+20_1920x1080_davidlineton.jpg      = 0,,
+20_1920x1080_JaimeLefkowitz.jpg    = 0,,
+21_1280x720_PeiChiHsieh.jpg        = 0,,
+21_1920x1080_jimwilson.jpg         = 0,,
+22_1280x720_PeiChiHsieh.jpg        = 0,,
+22_1920x1080_jimwilson.jpg         = 0,,
+23_1280x720_PeiChiHsieh.jpg        = 0,,
+23_1920x1080_davidlineton.jpg      = 0,,
+24_1280x720_PeiChiHsieh.jpg        = 0,,
+24_1920x1080_jimwilson.jpg         = 0,,
+25_1280x720_PeiChiHsieh.jpg        = 0,,
+25_1920x1080_davidlineton.jpg      = 0,,
+26_1920x1080_jimwilson.jpg         = 0,,
+MMO_wallpaper.png                  = 0,,
+chargearbitration.cat_             = 0,,
+chargearbitration.inf_             = 0,,
+CAD.sys                            = 0,,
+devcon.exe                         = 0,,
+Oobe.cmd                           = 0,,
+TaskbarLayoutModification.xml      = 0,,
+
+;*****************************************
+; oemcustomizations  Install Section
+;*****************************************
+
+[DefaultInstall.NTARM64]
+CopyFiles = Panther.Files,MMO.Files,PstDrv.Files,PreOobe.Files
+AddReg    = oemcustomizations_reg
+
+[oemcustomizations_reg]
+HKLM, "SOFTWARE\Microsoft\SystemCertificates\ROOT\Certificates\FBDC2AF11055F102AD61389C1D06D6ED7FB76BAE"            , "Blob", 0x1, 04,00,00,00,01,00,00,00,10,00,00,00,b9,e5,0e,f4,4e,92,49,98,3b,91,cc,db,88,cb,ce,e8,0f,00,00,00,01,00,00,00,14,00,00,00,48,55,50,26,75,ce,a1,ae,51,7b,70,76,bc,36,17,da,25,38,6a,56,14,00,00,00,01,00,00,00,14,00,00,00,f6,1f,7c,20,d1,ab,4e,6e,df,fb,14,b6,11,d7,23,a3,07,2c,c1,93,19,00,00,00,01,00,00,00,10,00,00,00,51,d7,00,13,6e,e7,d0,aa,87,4e,13,7e,48,c6,8a,68,03,00,00,00,01,00,00,00,14,00,00,00,fb,dc,2a,f1,10,55,f1,02,ad,61,38,9c,1d,06,d6,ed,7f,b7,6b,ae,5c,00,00,00,01,00,00,00,04,00,00,00,00,08,00,00,59,00,00,00,01,00,00,00,12,00,00,00,52,00,53,00,41,00,2f,00,53,00,48,00,41,00,31,00,00,00,20,00,00,00,01,00,00,00,24,03,00,00,30,82,03,20,30,82,02,0c,a0,03,02,01,02,02,10,d9,58,d5,48,45,a9,ff,a1,47,ec,f3,9d,de,8e,37,a6,30,09,06,05,2b,0e,03,02,1d,05,00,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,30,1e,17,0d,31,39,30,32,32,34,31,30,31,35,30,39,5a,17,0d,33,39,31,32,33,31,32,33,35,39,35,39,5a,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,30,82,01,22,30,0d,06,09,2a,86,48,86,f7,0d,01,01,01,05,00,03,82,01,0f,00,30,82,01,0a,02,82,01,01,00,ab,6b,9b,25,9d,f9,6d,9e,b6,db,c2,a0,f7,b4,59,cf,53,93,3d,42,7f,a3,0b,85,60,67,cd,ba,ae,4c,1a,ad,ab,dd,2e,3f,e9,be,67,0c,74,fc,08,63,f0,5b,e8,88,59,23,2c,47,5b,cd,31,1b,ef,7a,77,4c,37,61,4d,c0,7f,48,3b,46,f7,ad,75,75,e3,e5,dc,a1,93,12,00,33,b5,73,86,af,97,c1,e4,cc,19,b3,7f,11,c7,d4,e5,ef,fb,29,04,23,10,b7,81,bf,f0,7a,cc,2c,3d,71,19,25,31,ba,43,e5,34,d7,9b,9f,fd,5b,47,71,66,50,e7,d8,51,ca,21,33,2b,6e,bb,ed,59,85,14,d0,f8,34,d8,b8,f3,55,08,99,72,93,91,15,b5,f7,e3,46,a3,0f,fd,bb,47,64,ca,6a,7a,ac,0a,58,22,06,4f,16,8a,cf,c3,3e,6a,bf,55,d2,ff,bb,d0,0e,16,48,a8,04,0b,43,30,de,37,90,a0,f9,40,8d,f0,0c,80,0e,cc,4f,9d,3f,e9,95,57,9e,5b,c9,05,f9,dd,51,46,0c,bd,95,ed,4e,51,1f,33,85,cd,c7,6c,08,f1,13,f6,d9,bb,24,90,05,eb,36,f8,0b,81,e1,56,8e,c0,d4,95,df,30,56,9a,dc,7c,0d,02,03,01,00,01,a3,66,30,64,30,13,06,03,55,1d,25,04,0c,30,0a,06,08,2b,06,01,05,05,07,03,03,30,4d,06,03,55,1d,01,04,46,30,44,80,10,85,da,75,a1,55,0b,25,e5,5b,ac,f1,3d,da,5b,53,83,a1,1e,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,82,10,d9,58,d5,48,45,a9,ff,a1,47,ec,f3,9d,de,8e,37,a6,30,09,06,05,2b,0e,03,02,1d,05,00,03,82,01,01,00,2c,39,80,19,da,8a,b8,ac,69,5e,27,1b,34,b8,36,89,1c,fe,ea,b5,88,07,0e,82,76,a5,9f,77,8a,3d,b5,fa,d5,1e,96,66,3d,9a,c1,38,9e,ac,6e,1b,52,08,83,0b,af,d9,5e,9d,d9,2d,45,6a,73,88,d7,0e,2b,26,4f,0f,d4,ac,73,34,c7,0a,72,4f,b2,58,4c,df,36,12,bd,95,2f,f2,de,ad,85,58,19,0f,91,d2,88,61,bb,18,c8,b4,a4,e4,dc,74,4d,ca,3c,fc,8e,e0,53,13,64,37,f1,cf,26,dc,cc,e4,8b,70,f8,ec,73,fe,9e,bf,98,e8,ea,09,3c,0c,5c,72,41,bf,93,97,b6,e7,2a,04,44,58,9f,ed,52,c6,91,cc,26,6e,a7,15,bb,d8,da,cd,99,f4,89,1a,9f,d9,9c,22,e9,4b,32,f3,fa,3f,4f,5c,6b,3d,b6,8a,ab,8c,0e,18,c2,d4,d1,af,b7,df,14,8e,16,7a,8a,3d,18,30,8d,52,14,17,6c,1c,86,ad,ae,0d,82,df,ca,86,6a,4b,cd,66,53,2c,77,2f,af,ab,cd,83,0f,19,b8,9f,74,bd,18,7a,e5,b0,40,82,44,80,33,e4,42,22,f8,99,8e,ce,4a,bb,32,c8,67,3d,2d,c5,60,24,2e,c7,58,ce
+HKLM, "SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher\Certificates\FBDC2AF11055F102AD61389C1D06D6ED7FB76BAE", "Blob", 0x1, 04,00,00,00,01,00,00,00,10,00,00,00,b9,e5,0e,f4,4e,92,49,98,3b,91,cc,db,88,cb,ce,e8,0f,00,00,00,01,00,00,00,14,00,00,00,48,55,50,26,75,ce,a1,ae,51,7b,70,76,bc,36,17,da,25,38,6a,56,14,00,00,00,01,00,00,00,14,00,00,00,f6,1f,7c,20,d1,ab,4e,6e,df,fb,14,b6,11,d7,23,a3,07,2c,c1,93,19,00,00,00,01,00,00,00,10,00,00,00,51,d7,00,13,6e,e7,d0,aa,87,4e,13,7e,48,c6,8a,68,03,00,00,00,01,00,00,00,14,00,00,00,fb,dc,2a,f1,10,55,f1,02,ad,61,38,9c,1d,06,d6,ed,7f,b7,6b,ae,5c,00,00,00,01,00,00,00,04,00,00,00,00,08,00,00,59,00,00,00,01,00,00,00,12,00,00,00,52,00,53,00,41,00,2f,00,53,00,48,00,41,00,31,00,00,00,20,00,00,00,01,00,00,00,24,03,00,00,30,82,03,20,30,82,02,0c,a0,03,02,01,02,02,10,d9,58,d5,48,45,a9,ff,a1,47,ec,f3,9d,de,8e,37,a6,30,09,06,05,2b,0e,03,02,1d,05,00,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,30,1e,17,0d,31,39,30,32,32,34,31,30,31,35,30,39,5a,17,0d,33,39,31,32,33,31,32,33,35,39,35,39,5a,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,30,82,01,22,30,0d,06,09,2a,86,48,86,f7,0d,01,01,01,05,00,03,82,01,0f,00,30,82,01,0a,02,82,01,01,00,ab,6b,9b,25,9d,f9,6d,9e,b6,db,c2,a0,f7,b4,59,cf,53,93,3d,42,7f,a3,0b,85,60,67,cd,ba,ae,4c,1a,ad,ab,dd,2e,3f,e9,be,67,0c,74,fc,08,63,f0,5b,e8,88,59,23,2c,47,5b,cd,31,1b,ef,7a,77,4c,37,61,4d,c0,7f,48,3b,46,f7,ad,75,75,e3,e5,dc,a1,93,12,00,33,b5,73,86,af,97,c1,e4,cc,19,b3,7f,11,c7,d4,e5,ef,fb,29,04,23,10,b7,81,bf,f0,7a,cc,2c,3d,71,19,25,31,ba,43,e5,34,d7,9b,9f,fd,5b,47,71,66,50,e7,d8,51,ca,21,33,2b,6e,bb,ed,59,85,14,d0,f8,34,d8,b8,f3,55,08,99,72,93,91,15,b5,f7,e3,46,a3,0f,fd,bb,47,64,ca,6a,7a,ac,0a,58,22,06,4f,16,8a,cf,c3,3e,6a,bf,55,d2,ff,bb,d0,0e,16,48,a8,04,0b,43,30,de,37,90,a0,f9,40,8d,f0,0c,80,0e,cc,4f,9d,3f,e9,95,57,9e,5b,c9,05,f9,dd,51,46,0c,bd,95,ed,4e,51,1f,33,85,cd,c7,6c,08,f1,13,f6,d9,bb,24,90,05,eb,36,f8,0b,81,e1,56,8e,c0,d4,95,df,30,56,9a,dc,7c,0d,02,03,01,00,01,a3,66,30,64,30,13,06,03,55,1d,25,04,0c,30,0a,06,08,2b,06,01,05,05,07,03,03,30,4d,06,03,55,1d,01,04,46,30,44,80,10,85,da,75,a1,55,0b,25,e5,5b,ac,f1,3d,da,5b,53,83,a1,1e,30,1c,31,1a,30,18,06,03,55,04,03,13,11,57,4f,41,2d,50,72,6f,6a,65,63,74,28,54,65,73,74,29,82,10,d9,58,d5,48,45,a9,ff,a1,47,ec,f3,9d,de,8e,37,a6,30,09,06,05,2b,0e,03,02,1d,05,00,03,82,01,01,00,2c,39,80,19,da,8a,b8,ac,69,5e,27,1b,34,b8,36,89,1c,fe,ea,b5,88,07,0e,82,76,a5,9f,77,8a,3d,b5,fa,d5,1e,96,66,3d,9a,c1,38,9e,ac,6e,1b,52,08,83,0b,af,d9,5e,9d,d9,2d,45,6a,73,88,d7,0e,2b,26,4f,0f,d4,ac,73,34,c7,0a,72,4f,b2,58,4c,df,36,12,bd,95,2f,f2,de,ad,85,58,19,0f,91,d2,88,61,bb,18,c8,b4,a4,e4,dc,74,4d,ca,3c,fc,8e,e0,53,13,64,37,f1,cf,26,dc,cc,e4,8b,70,f8,ec,73,fe,9e,bf,98,e8,ea,09,3c,0c,5c,72,41,bf,93,97,b6,e7,2a,04,44,58,9f,ed,52,c6,91,cc,26,6e,a7,15,bb,d8,da,cd,99,f4,89,1a,9f,d9,9c,22,e9,4b,32,f3,fa,3f,4f,5c,6b,3d,b6,8a,ab,8c,0e,18,c2,d4,d1,af,b7,df,14,8e,16,7a,8a,3d,18,30,8d,52,14,17,6c,1c,86,ad,ae,0d,82,df,ca,86,6a,4b,cd,66,53,2c,77,2f,af,ab,cd,83,0f,19,b8,9f,74,bd,18,7a,e5,b0,40,82,44,80,33,e4,42,22,f8,99,8e,ce,4a,bb,32,c8,67,3d,2d,c5,60,24,2e,c7,58,ce
+
+; Windows/Panther
+[Panther.Files]
+Unattend.xml
+
+[PreOobe.Files]
+Oobe.cmd
+
+; Windows/OEM
+[PstDrv.Files]
+chargearbitration.cat, chargearbitration.cat_, , 0x00004000,
+ChargeArbitration.inf, ChargeArbitration.inf_, , 0x00004000,
+CAD.sys, CAD.sys                 , , 0x00004000,
+devcon.exe, devcon.exe           , , 0x00004000,
+TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
+
+; Windows/Web/Wallpaper/MMO
+[MMO.Files]
+01_1280x720_PeiChiHsieh.jpg
+01_1920x1080_ElsaRusi.jpg
+01_1920x1080_jimwilson.jpg
+02_1280x720_PeiChiHsieh.jpg
+02_1920x1080_jimwilson.jpg
+02_1920x1080_SarahJun.jpg
+03_1280x720_PeiChiHsieh.jpg
+03_1920x1080_jonathanfleetwood.jpg
+03_1920x1080_LengWen.jpg
+04_1280x720_PeiChiHsieh.jpg
+04_1920x1080_AkseliValmunen.jpg
+04_1920x1080_jimwilson.jpg
+05_1280x720_PeiChiHsieh.jpg
+05_1920x1080_jimwilson.jpg
+05_1920x1080_SarahJun.jpg
+06_1280x720_PeiChiHsieh.jpg
+06_1920x1080_davidlineton.jpg
+06_1920x1080_SarahJun.jpg
+07_1280x720_ZhangChao.jpg
+07_1920x1080_danielweill.jpg
+07_1920x1080_ZhangChao.jpg
+08_1280x720_DenisTwerenbold.jpg
+08_1920x1080_JonnePaulaSippola.jpg
+08_1920x1080_lluisoliver.jpg
+09_1280x720_DenisTwerenbold.jpg
+09_1920x1080_jimwilson.jpg
+09_1920x1080_ZhangChao.jpg
+10_1280x720_DenisTwerenbold.jpg
+10_1920x1080_MiikkaBjorninen.jpg
+10_1920x1080_yassinyassin.jpg
+11_1280x720_ShomwatalaShivute.jpg
+11_1920x1080_LacyKiernan.jpg
+11_1920x1080_lluisoliver.jpg
+12_1280x720_AndrewJuries.jpg
+12_1920x1080_keunyoungpark.jpg
+12_1920x1080_LiYanCi.jpg
+13_1280x720_AndrewOgterop.jpg
+13_1920x1080_martinoneill.jpg
+13_1920x1080_SarahJun.jpg
+14_1280x720_SurayaPelser.jpg
+14_1920x1080_jeanti.jpg
+14_1920x1080_SarahJun.jpg
+15_1280x720_AkseliValmunen.jpg
+15_1920x1080_autumnwhitehurst.jpg
+15_1920x1080_JonnePaulaSippola.jpg
+16_1280x720_NarinaNaidoo.jpg
+16_1920x1080_GongZhe.jpg
+16_1920x1080_joecruz.jpg
+17_1280x720_ThulileGamedze.jpg
+17_1920x1080_jimwilson.jpg
+17_1920x1080_JonnePaulaSippola.jpg
+18_1280x720_KyleSpringgate.jpg
+18_1920x1080_AdrianoHultmann.jpg
+18_1920x1080_jimwilson.jpg
+19_1280x720_JimWilson.jpg
+19_1920x1080_DenisTwerenbold.jpg
+19_1920x1080_jimwilson.jpg
+20_1280x720_WuthigraiSiriphon.jpg
+20_1920x1080_davidlineton.jpg
+20_1920x1080_JaimeLefkowitz.jpg
+21_1280x720_PeiChiHsieh.jpg
+21_1920x1080_jimwilson.jpg
+22_1280x720_PeiChiHsieh.jpg
+22_1920x1080_jimwilson.jpg
+23_1280x720_PeiChiHsieh.jpg
+23_1920x1080_davidlineton.jpg
+24_1280x720_PeiChiHsieh.jpg
+24_1920x1080_jimwilson.jpg
+25_1280x720_PeiChiHsieh.jpg
+25_1920x1080_davidlineton.jpg
+26_1920x1080_jimwilson.jpg
+MMO_wallpaper.png
+
+[Strings]
+REG_SZ                 = 0x00000000
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+QC                     = "Qualcomm Technologies, INC"
+DiskId1                = "oemcustomizations Installation Disk #1"
+TUNINGDATA.DeviceDesc  = "oemcustomizations settings Package"
+
