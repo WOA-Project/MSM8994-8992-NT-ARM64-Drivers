@@ -53,7 +53,7 @@ Hapanero:
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - x86 DirectX support is missing.
-- Cellular (Account not activated)
+- Cellular (GSM: OK - LTE: NOK)
 
 Hapanero (EB0.x and EB1.x):
 
@@ -76,7 +76,7 @@ Cityman:
 - Vibration motor
 - HDMI out via USB-C
 - x86 DirectX support is missing.
-- Cellular (Account not activated)
+- Cellular (GSM: OK - LTE: NOK)
 
 Talkman:
 
