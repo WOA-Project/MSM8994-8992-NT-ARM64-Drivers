@@ -54,6 +54,14 @@ HKLM, System\ControlSet001\Services\RILAdaptation           , PreshutdownTimeout
 HKLM, System\ControlSet001\Services\RILAdaptation           , ServiceSidType, %REG_DWORD%, 0x00000001
 HKLM, System\ControlSet001\Services\RILAdaptation           , RequiredPrivileges, %REG_MULTI_SZ%, SeShutdownPrivilege, SeTcbPrivilege, SeTakeOwnershipPrivilege, SeImpersonatePrivilege, SeLoadDriverPrivilege, SeBackupPrivilege, SeRestorePrivilege, SeDebugPrivilege, SeAssignPrimaryTokenPrivilege, SeLockMemoryPrivilege, SeSecurityPrivilege, SeCreatePagefilePrivilege, SeCreatePermanentPrivilege, SeIncreaseQuotaPrivilege, SeManageVolumePrivilege, SeSystemEnvironmentPrivilege, SeCreateSymbolicLinkPrivilege, SeChangeNotifyPrivilege, SeIncreaseWorkingSetPrivilege, SeCreateGlobalPrivilege
 
+HKLM, "SYSTEM\Versions", "Builder", 0x0, "winpbld"
+HKLM, "SYSTEM\Versions", "BuildNumber", 0x0, "318"
+HKLM, "SYSTEM\Versions", "Label", 0x0, "TH2_RELEASE"
+HKLM, "SYSTEM\Versions", "MajorVersion", 0x0, "10"
+HKLM, "SYSTEM\Versions", "MinorVersion", 0x0, "0"
+HKLM, "SYSTEM\Versions", "ParentBranchBuild", 0x0, "13169"
+HKLM, "SYSTEM\Versions", "QFELevel", 0x0, "13169"
+HKLM, "SYSTEM\Versions", "TimeStamp", 0x0, "20160505-1801"
 
 [RILAdaptation.Files]
 RILAdaptationService.exe
