@@ -60,23 +60,23 @@ HKLM, SOFTWARE\Qualcomm\Ril\Driver0\Timeout\Request, QMI_UIM_DEPERSONALIZATION_R
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MessageHoldTimeout, %REG_DWORD%, 0x0000001e
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MSRilInstances, %REG_DWORD%, 0x00000001
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxCreateTimeout, %REG_DWORD%, 0x0001d4c0
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxDeviceName, %REG_SZ%, "\\??\\ModemMuxDevice"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxFileName, %REG_SZ%, "\\\\.\\ModemMuxDevice"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxHardwareId, %REG_SZ%, "MODEM\\MUX"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxDeviceName, %REG_SZ%, "\??\ModemMuxDevice"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxFileName, %REG_SZ%, "\\.\ModemMuxDevice"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, MuxHardwareId, %REG_SZ%, "MODEM\MUX"
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters, WatchdogTimeout, %REG_DWORD%, 0x0000000a
 
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, MsrilDeviceId, %REG_SZ%, "MODEM\\MSRIL"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, MsrilDeviceName, %REG_SZ%, "\\??\\MSRil1"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, MsrilDeviceId, %REG_SZ%, "MODEM\MSRIL"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, MsrilDeviceName, %REG_SZ%, "\??\MSRil1"
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, MsrilInstanceId, %REG_SZ%, "0001"
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, QueueNumber, %REG_DWORD%, 0x00000001
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, RILInitIndex, %REG_DWORD%, 0x00000000
 HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, RILPath, %REG_SZ%, "WMRil.dll"
 
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 0, %REG_SZ%, "C:\\windows\\System32\\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 1, %REG_SZ%, "C:\\windows\\System32\\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 2, %REG_SZ%, "C:\\windows\\System32\\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 3, %REG_SZ%, "C:\\windows\\System32\\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 4, %REG_SZ%, "C:\\windows\\System32\\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 0, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 1, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 2, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 3, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 4, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
 
 [WMRil.Files]
 WMRil.dll
