@@ -113,6 +113,8 @@ HKR, , OSVer, 0x00010001 , 0x01 ;  0x01 = Apollo, 0x00
 
 ; IPV6
 HKR, , IPV6EHRPDMEDIANOTIFY, 0x00010001 , 0x01
+HKR, , MTUDATASIZE, 0x00010001 , 0x00000578
+HKR, , SuppressNwPSDetach, 0x00010001 , 0x01
 
 ; Wake on pattern match (standardized keyword)
 HKR, ,                                          *WakeOnPattern,           0, "1"
