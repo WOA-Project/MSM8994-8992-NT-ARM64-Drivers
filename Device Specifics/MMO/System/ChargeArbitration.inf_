@@ -4,27 +4,17 @@
 Signature   = "$WINDOWS NT$"
 Class       = SYSTEM
 ClassGuid   = {4D36E97D-E325-11CE-BFC1-08002BE10318}
-
 CatalogFile = ChargeArbitration.cat
-Provider    = %MSFT%
+Provider    = %LMCM%
 DriverVer   = 03/05/2019,10.0.42069.1337
 
 [DestinationDirs]
 DefaultDestDir = 12
 
 [Manufacturer]
-%StdMfg% = CAD_Device, NTARM, NTx86, NTARM64, NTAMD64
-
-[CAD_Device.NTARM]
-%CAD_DevDesc% = CAD_Inst, Root\CAD
+%StdMfg% = CAD_Device, NTARM64
 
 [CAD_Device.NTARM64]
-%CAD_DevDesc% = CAD_Inst, Root\CAD
-
-[CAD_Device.NTx86]
-%CAD_DevDesc% = CAD_Inst, Root\CAD
-
-[CAD_Device.NTAMD64]
 %CAD_DevDesc% = CAD_Inst, Root\CAD
 
 [CAD_Inst.NT]
@@ -59,7 +49,7 @@ ServiceBinary = %12%\CAD.sys
 [Strings]
 CAD_DevDesc = "Charge Arbitration Driver"
 DiskId1     = "Windows Charge Arbitration Driver Installation Disk #1"
-MSFT        = "Microsoft"
+LMCM        = "Lumia Community"
 StdMfg      = "(Standard system devices)"
 
 REG_SZ      = 0x00000000
