@@ -138,7 +138,7 @@ Talkman:
 It is highly recommended you do not install the leaked ARM64 firmware on Hapanero devices. This firmware is really buggy and is prone to lots of overheating problems and may ultimately damage your device.
 Instead, please install Lumia950XLPkg like on Citymans and Talkmans, on a RnD firmware specifically made for Hapanero (like 10586, 10240) and use the Hapanero2 drivers.
 
-On Hapanero EB1 devices, you'll currently have to use the leaked ARM64 firmware. The ARM64 Windows 10 Mobile present will not boot, and will crash in qcsubsys.
+On Hapanero pre-EB2 devices, you'll currently have to use the leaked ARM64 firmware. The ARM64 Windows 10 Mobile present will not boot, and will crash in qcsubsys.
 
 ## Changelog
 
