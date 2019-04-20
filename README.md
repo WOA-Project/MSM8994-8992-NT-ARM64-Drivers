@@ -100,13 +100,21 @@ Packages below are 'cumulative', you can stack them if applicable.
 - For Qualcomm Snapdragon 810 devices, install everything under MSM8994
 - For Qualcomm Snapdragon 808 devices, install everything under MSM8992
 
+---
+
 - For Microsoft Mobile Oy Devices, install everything under Device Specifics\MMO
+
+---
 
 - For Microsoft Lumia 950 XL Devices, install everything under Device Specifics\Cityman\Common
 - For Microsoft Lumia 950 Devices, install everything under Device Specifics\Talkman\Common
 
+---
+
 - For Microsoft Lumia 950 XL Single SIM Devices, install everything under Device Specifics\Cityman\SingleSIM
 - For Microsoft Lumia 950 XL Dual SIM Devices, install everything under Device Specifics\Cityman\DualSIM
+
+---
 
 - For Microsoft Lumia 950 Single SIM Devices, install everything under Device Specifics\Talkman\SingleSIM
 - For Microsoft Lumia 950 Dual SIM Devices, install everything under Device Specifics\Talkman\DualSIM
