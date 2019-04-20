@@ -28,10 +28,10 @@ CopyFiles = NvUpdaterSvc.Files
 AddReg    = NvUpdaterSvc_Reg
 
 [DefaultInstall.NTARM.Services]
-AddService = NcsdPluginSvc,0x00000000,NvUpdaterSvc_Service,
+AddService = NvUpdater,0x00000000,NvUpdaterSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
-AddService = NcsdPluginSvc,0x00000000,NvUpdaterSvc_Service,
+AddService = NvUpdater,0x00000000,NvUpdaterSvc_Service,
 
 ;ServiceType = 0x110
 ;A Win32 program that runs in a process by itself (like Type16) and that can interact with users.
