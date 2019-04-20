@@ -53,6 +53,7 @@ Hapanero:
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - x86 DirectX support is missing.
+- Cellular (Some devices fully work, most don't)
 
 Hapanero (EB0.x and EB1.x):
 
@@ -92,12 +93,25 @@ Talkman:
 
 ## Readme
 
-- Lumia 950 XL -> Install everything under Device Specifics\Cityman and msm8994 and Device Specifics\MMO
-                  Select between CitymanSS and CitymanDS depending on Single SIM/Dual SIM
-- Lumia 950    -> Install everything under Device Specifics\Talkman and msm8992 and Device Specifics\MMO
-                  Select between TalkmanSS and TalkmanDS depending on Single SIM/Dual SIM
-- RX-130       -> Install everything under Device Specifics\Hapanero (or Hapanero2 if you're using Lumia950XLPkg) and msm8994 and Device Specifics\MMO
-- RX-130-EB0/1 -> See Supplemental\Hapanero EB1 - ARM64 and Device Specifics\MMO
+### Packages
+
+Packages below are 'cumulative', you can stack them if applicable.
+
+- For Qualcomm Snapdragon 810 devices, install everything under MSM8994
+- For Qualcomm Snapdragon 808 devices, install everything under MSM8992
+
+- For Microsoft Mobile Oy Devices, install everything under Device Specifics\MMO
+
+- For Microsoft Lumia 950 XL Devices, install everything under Device Specifics\Cityman\Common
+- For Microsoft Lumia 950 Devices, install everything under Device Specifics\Talkman\Common
+
+- For Microsoft Lumia 950 XL Single SIM Devices, install everything under Device Specifics\Cityman\SingleSIM
+- For Microsoft Lumia 950 XL Dual SIM Devices, install everything under Device Specifics\Cityman\DualSIM
+
+- For Microsoft Lumia 950 Single SIM Devices, install everything under Device Specifics\Talkman\SingleSIM
+- For Microsoft Lumia 950 Dual SIM Devices, install everything under Device Specifics\Talkman\DualSIM
+
+### Notes
 
 - To install drivers, you'll need to follow the usual Dism procedure before first boot of the operating system.
   ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
