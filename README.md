@@ -125,10 +125,9 @@ Packages below are 'cumulative', you can stack them if applicable.
   ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
   nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
   
-### Cellular disclaimers
+## Cellular disclaimers
 
-Currently cellular connectivity only works properly on engineering devices properly provisioned for modem.
-The reason is, retail devices have a nv item called halt_subscription set to 1, which enforces carrier personalization to be handled by the Operating System, and not the modem itself.
+Currently cellular connectivity only works properly on engineering devices properly provisioned for modem due to apperso halt_subscription.
 
 We've also been telling people on engineering devices to make backups, this is especially true here.
 Flashing an entire eMMC img on an engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
