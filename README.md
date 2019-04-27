@@ -124,6 +124,16 @@ Packages below are 'cumulative', you can stack them if applicable.
 - To install drivers, you'll need to follow the usual Dism procedure before first boot of the operating system.
   ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
   nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
+  
+### Cellular disclaimers
+
+Currently cellular connectivity only works properly on engineering devices properly provisioned for modem.
+The reason is, retail devices have a nv item called halt_subscription set to 1, which enforces carrier personalization to be handled by the Operating System, and not the modem itself.
+
+We've also been telling people on engineering devices to make backups, this is especially true here.
+Flashing an entire eMMC img on an engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
+Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
+You have been warned.
 
 ## USB for Lumia 950 and Lumia 950 XL
 
