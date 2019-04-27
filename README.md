@@ -5,7 +5,7 @@ This pack is a work in progress and may be getting updates at a later time.
 
 If you are deploying this driver pack using WOA Deployer for Lumia, make sure WOA Deployer version is greater or equal than 2.5.
 
-## Copryright, License, Disclaimers and end of user license agreement
+## Copyright, License, Disclaimers and end of user license agreement
 
 **Below notice must be present in all redistributed portions of this software**
 
@@ -130,7 +130,7 @@ Packages below are 'cumulative', you can stack them if applicable.
 Currently cellular connectivity only works properly on engineering devices properly provisioned for modem due to apperso halt_subscription.
 
 We've also been telling people on engineering devices to make backups, this is especially true here.
-Flashing an entire eMMC img on an engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
+Flashing an entire eMMC img on engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
 
