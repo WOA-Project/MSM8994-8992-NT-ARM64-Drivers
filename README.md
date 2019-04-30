@@ -53,7 +53,7 @@ Hapanero:
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - x86 DirectX support is missing.
-- Cellular (Some devices fully work, most don't)
+- FM Radio
 
 Hapanero (EB0.x and EB1.x):
 
@@ -66,6 +66,7 @@ Hapanero (EB0.x and EB1.x):
 - Shutdown (Reboots instead)
 - Vibration motor
 - Cellular
+- FM Radio
 
 Cityman:
 
@@ -76,7 +77,8 @@ Cityman:
 - Vibration motor
 - HDMI out via USB-C
 - x86 DirectX support is missing.
-- Cellular (GSM: OK - LTE: NOK)
+- Cellular (No Nokia Security Simlock support for retail devices, disable halt_subscription feature on engineering modems)
+- FM Radio
 
 Talkman:
 
@@ -90,6 +92,7 @@ Talkman:
 - WLAN (requires UEFI PCIe and UART/PEP bring up)
 - HDMI out via USB-C
 - Cellular
+- FM Radio
 
 ## Readme
 
