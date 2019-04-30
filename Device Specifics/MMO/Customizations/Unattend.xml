@@ -40,53 +40,8 @@
       <RunSynchronous>
         <RunSynchronousCommand wcm:action="add">
           <Order>1</Order>
-          <Path>REG ADD "HKLM\SOFTWARE\WowAA32Node\Microsoft\Windows\CurrentVersion\Internet Settings\Configuration" /v PartnerSearchCode /t REG_SZ /d NOKMSB /f</Path>
-          <Description>Jumpstart PartnerSearchCode for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>2</Order>
-          <Path>powercfg /setdcvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 50</Path>
-          <Description>Slider hack for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>3</Order>
-          <Path>powercfg /setacvalueindex OVERLAY_SCHEME_HIGH SUB_PROCESSOR PERFEPP 33</Path>
-          <Description>Slider hack for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>4</Order>
-          <Path>powercfg /setdcvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 33</Path>
-          <Description>Slider hack for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>5</Order>
-          <Path>powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25</Path>
-          <Description>Slider hack for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>6</Order>
-          <Path>REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f</Path>
-          <Description>Disable fastboot for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>7</Order>
-          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop\WindowMetrics" /v AppliedDPI /t REG_DWORD /d 216 /f</Path>
-          <Description>DPI Scaling for all users for ARM </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>8</Order>
-          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 216 /f</Path>
-          <Description>225% DPI Scaling </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>9</Order>
-          <Path>REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f</Path>
-          <Description>Enable DPI Scaling </Description>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>10</Order>
-          <Path>powershell.exe -command "cd \;Import-StartLayout -LayoutPath '\Windows\OEM\TaskbarLayoutModification.xml' -MountPath $env:SystemDrive"</Path>
-          <Description>Taskbar layout </Description>
+          <Path>cmd.exe /c \Windows\OEM\SpecializeCommands.cmd</Path>
+          <Description>Commands </Description>
         </RunSynchronousCommand>
       </RunSynchronous>
     </component>

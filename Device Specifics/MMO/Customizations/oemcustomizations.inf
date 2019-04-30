@@ -96,6 +96,7 @@ Unattend.xml                       = 0,,
 MMO_wallpaper.png                  = 0,,
 cellular.jpg                       = 0,,
 TaskbarLayoutModification.xml      = 0,,
+SpecializeCommands.cmd             = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
@@ -116,6 +117,7 @@ Unattend.xml
 ; Windows/OEM
 [PstDrv.Files]
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
+SpecializeCommands.cmd
 
 ; Windows/Web/Wallpaper/MMO
 [MMO.Files]
