@@ -101,6 +101,7 @@ Talkman:
 Packages below are 'cumulative', you can stack them if applicable.
 
 - For Qualcomm Snapdragon 810 devices, install everything under MSM8994
+- For Qualcomm Snapdragon 810 (Rev 1) devices, install everything under MSM8994AA
 - For Qualcomm Snapdragon 808 devices, install everything under MSM8992
 
 ---
@@ -121,6 +122,14 @@ Packages below are 'cumulative', you can stack them if applicable.
 
 - For Microsoft Lumia 950 Single SIM Devices, install everything under Device Specifics\Talkman\SingleSIM
 - For Microsoft Lumia 950 Dual SIM Devices, install everything under Device Specifics\Talkman\DualSIM
+
+---
+
+- For Microsoft Hapanero EB2.0+ Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg
+- For Microsoft Hapanero EB2.0+ Devices running Lumia950XlPkg UEFI, install everything under Device Specifics\Hapanero\Lumia950XlPkg
+- For Microsoft Hapanero EB0.5+ (< EB2.0) Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\EB1
+
+---
 
 ### Notes
 
