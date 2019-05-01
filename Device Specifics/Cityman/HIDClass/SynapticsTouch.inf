@@ -7,7 +7,7 @@ Signature   = "$WINDOWS NT$"
 Class       = HIDClass
 ClassGUID   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
 Provider    = %Provider_Name%
-DriverVer   = 05/01/2019,4.5.7.776
+DriverVer   = 08/04/2018,20.42.12.425
 CatalogFile = SynapticsTouch.cat
 
 [DestinationDirs]
@@ -24,7 +24,6 @@ SynapticsTouch.sys = 1,,
 
 [Standard.NTARM64]
 %TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\MSHW1003
-%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\NOKIA_TOUCH
 
 ;*****************************************
 ; TchDriver client driver Install Section
@@ -58,10 +57,10 @@ LoadOrderGroup = Base
 
 ; ------------- Strings section
 [Strings]
-Provider_Name          = "LumiaWoA authors"
+Provider_Name          = "Little Moe LLC"
 Manufacturer_Name      = "Synaptics"
-Installation_Disk      = "Synaptics Touch Driver Installation Disk"
-TchDriver_Device_Desc  = "Synaptics Touch Driver"
+Installation_Disk      = "Touch Driver Installation Disk"
+TchDriver_Device_Desc  = "Touch Driver"
 TchDriver_Service_Desc = "Synaptics Touch Driver Service"
 
 ; ------------- non-localizable strings
