@@ -26,6 +26,7 @@ SynaFWVendor2.img  = 1,,
 
 [Standard.NTarm64]
 %TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\MSHW1003
+%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\NOKIA_TOUCH
 
 ;*****************************************
 ; TchDriver client driver Install Section

@@ -84,14 +84,15 @@ Cityman:
 
 Talkman:
 
-- GPU and display
+- PEP (root cause of every difference with other devices right now)
+- GPU
 - Iris biometric sensor (missing drivers)
 - Cameras (missing drivers)
 - Any kind of sensor (except ALS)
 - Audio
 - Microphones
 - Vibration motor
-- WLAN (requires UEFI PCIe and UART/PEP bring up)
+- WLAN (requires PEP)
 - HDMI out via USB-C
 - Cellular
 - FM Radio
