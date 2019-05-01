@@ -7,7 +7,7 @@ Signature   = "$WINDOWS NT$"
 Class       = HIDClass
 ClassGUID   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
 Provider    = %Provider_Name%
-DriverVer   = 05/01/2019,4.5.7.776
+DriverVer = 05/01/2019,6.25.57.445
 CatalogFile = SynapticsTouch.cat
 
 [DestinationDirs]
@@ -17,7 +17,7 @@ DefaultDestDir = 12
 1 = %Installation_Disk%,,,""
 
 [SourceDisksFiles]
-SynapticsTouch.sys = 1,,
+SynapticsTouch.sys  = 1,,
 
 [Manufacturer]
 %Manufacturer_Name% = Standard,NTARM64
@@ -40,8 +40,8 @@ SynapticsTouch.sys
 AddReg = FilterInst.NT.HW.AddReg
 
 [FilterInst.NT.HW.AddReg]
-HKR, , "UpperFilters"   , %REG_MULTI_SZ%,  mshidkmdf
-HKR, , "MultiportDevice", %REG_DWORD%   ,     0
+HKR,,"UpperFilters",    %REG_MULTI_SZ%, mshidkmdf
+HKR,,"MultiportDevice", %REG_DWORD%,    0
 
 ;-------------- Service installation
 [TchDriver_Device.NT.Services]
@@ -58,27 +58,26 @@ LoadOrderGroup = Base
 
 ; ------------- Strings section
 [Strings]
-Provider_Name          = "LumiaWoA authors"
-Manufacturer_Name      = "Synaptics"
-Installation_Disk      = "Synaptics Touch Driver Installation Disk"
-TchDriver_Device_Desc  = "Synaptics Touch Driver"
-TchDriver_Service_Desc = "Synaptics Touch Driver Service"
+Provider_Name           = "LumiaWoA authors"
+Manufacturer_Name       = "Synaptics"
+Installation_Disk       = "Synaptics Touch Driver Installation Disk"
+TchDriver_Device_Desc   = "Synaptics RMI4 F12 Digitizer Device"
+TchDriver_Service_Desc  = "Synaptics RMI4 F12 Digitizer Driver Service"
 
 ; ------------- non-localizable strings
-Configuration          = "Settings"
-ScreenProps            = "SYSTEM\TOUCH\SCREENPROPERTIES"
-DisplaySize            = "SYSTEM\TOUCH\DISPLAYPROPERTIES"
-SPSVCINST_ASSOCSERVICE = 0x00000002
-SERVICE_KERNEL_DRIVER  = 1
-SERVICE_BOOT_START     = 0
-SERVICE_SYSTEM_START   = 1
-SERVICE_DEMAND_START   = 3
-SERVICE_ERROR_NORMAL   = 1
-SERVICE_ERROR_IGNORE   = 0
-SERVICE_ERROR_CRITICAL = 3
-REG_EXPAND_SZ          = 0x00020000
-REG_MULTI_SZ           = 0x00010000
-REG_DWORD              = 0x00010001
-REG_SZ                 = 0x00000000
-
+Configuration           = "Settings"
+ScreenProps             = "SYSTEM\TOUCH\SCREENPROPERTIES"
+DisplaySize             = "SYSTEM\TOUCH\DISPLAYPROPERTIES"
+SPSVCINST_ASSOCSERVICE  = 0x00000002
+SERVICE_KERNEL_DRIVER   = 1
+SERVICE_BOOT_START      = 0
+SERVICE_SYSTEM_START    = 1
+SERVICE_DEMAND_START    = 3
+SERVICE_ERROR_NORMAL    = 1
+SERVICE_ERROR_IGNORE    = 0
+SERVICE_ERROR_CRITICAL  = 3
+REG_EXPAND_SZ           = 0x00020000
+REG_MULTI_SZ            = 0x00010000
+REG_DWORD               = 0x00010001
+REG_SZ                  = 0x00000000
 
