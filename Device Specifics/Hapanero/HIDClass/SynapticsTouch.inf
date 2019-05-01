@@ -1,15 +1,13 @@
 ; SynapticsTouch.INF
 ; Copyright (c) 2000,2011 Microsoft Corporation
-;
-; Sample code. Dealpoint ID #843729.
-;
+; Copyright (c) 2018,2019 Bingxing Wang
 
 [Version]
 Signature   = "$WINDOWS NT$"
 Class       = HIDClass
 ClassGUID   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
 Provider    = %MSFT%
-DriverVer   = 05/22/2015,11.17.25.280
+DriverVer   = 05/01/2019,4.5.7.776
 CatalogFile = SynapticsTouch.cat
 
 [DestinationDirs]
@@ -180,10 +178,10 @@ LoadOrderGroup = Base
 
 ; ------------- Strings section
 [Strings]
-MSFT                   = "MSFT"
+MSFT                   = "LumiaWoA authors"
 Manufacturer_Name      = "Synaptics"
-Installation_Disk      = "Touch Driver Installation Disk"
-TchDriver_Device_Desc  = "Touch Driver"
+Installation_Disk      = "Synaptics Touch Driver Installation Disk"
+TchDriver_Device_Desc  = "Synaptics Touch Driver"
 TchDriver_Service      = "SynapticsTouch"
 TchDriver_Service_Desc = "Synaptics Touch Driver Service"
 HIDKMDF_Service        = "mshidkmdf"
