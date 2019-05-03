@@ -21,4 +21,5 @@ REM Taskbar layout
 powershell.exe -command "cd \;Import-StartLayout -LayoutPath '\Windows\OEM\TaskbarLayoutModification.xml' -MountPath $env:SystemDrive"
 
 REM System apps
-dism.exe /Add-ProvisioningPackage /PackagePath:C:\Windows\Provisioning\Packages\OEMApps.ppkg
+dism.exe /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
+dism.exe /Add-ProvisionedAppxPackage /PackagePath:%SystemDrive%\Windows\OEM\CommsPhone.appxbundle /SkipLicense

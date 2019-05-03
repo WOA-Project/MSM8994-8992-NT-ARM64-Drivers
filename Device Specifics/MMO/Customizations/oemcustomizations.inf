@@ -97,6 +97,7 @@ MMO_wallpaper.png                  = 0,,
 cellular.jpg                       = 0,,
 TaskbarLayoutModification.xml      = 0,,
 SpecializeCommands.cmd             = 0,,
+CommsPhone.appxbundle              = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
@@ -118,6 +119,7 @@ Unattend.xml
 [PstDrv.Files]
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 SpecializeCommands.cmd
+CommsPhone.appxbundle
 
 ; Windows/Web/Wallpaper/MMO
 [MMO.Files]
