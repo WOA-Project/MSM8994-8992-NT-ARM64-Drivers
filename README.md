@@ -5,7 +5,7 @@
 
 This pack is a work in progress and may be getting updates at a later time.
 
-If you are deploying this driver pack using WOA Deployer for Lumia, make sure WOA Deployer version is greater or equal than 2.5.
+If you are deploying this driver pack using WOA Deployer for Lumia, make sure WOA Deployer version is greater or equal than 2.6.
 
 ## Copryright, License, Disclaimers and end of user license agreement
 
