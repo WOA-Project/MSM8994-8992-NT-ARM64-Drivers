@@ -9,7 +9,7 @@
         <ThemeName>MMO Theme</ThemeName>
         <WindowColor>0xFF0078D4</WindowColor>
         <DefaultThemesOff>false</DefaultThemesOff>
-        <DesktopBackground>C:\Windows\Web\Wallpaper\MMO\17_1920x1080_jimwilson.jpg</DesktopBackground>
+        <DesktopBackground>C:\Windows\Web\Wallpaper\Windows\img0.jpg</DesktopBackground>
         <UWPAppsUseLightTheme>false</UWPAppsUseLightTheme>
       </Themes>
     </component>
