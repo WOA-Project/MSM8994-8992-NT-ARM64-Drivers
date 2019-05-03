@@ -15,89 +15,17 @@ CatalogFile = oemcustomizations.cat
 ; 12 = Drivers
 Panther.Files = 10,Panther
 PstDrv.Files  = 10,OEM
-MMO.Files     = 10,Web\Wallpaper\MMO
 
 [SourceDisksNames]
 0 = %DiskId1%
 
 [SourceDisksFiles]
 Unattend.xml                       = 0,,
-01_1280x720_PeiChiHsieh.jpg        = 0,,
-01_1920x1080_ElsaRusi.jpg          = 0,,
-01_1920x1080_jimwilson.jpg         = 0,,
-02_1280x720_PeiChiHsieh.jpg        = 0,,
-02_1920x1080_jimwilson.jpg         = 0,,
-02_1920x1080_SarahJun.jpg          = 0,,
-03_1280x720_PeiChiHsieh.jpg        = 0,,
-03_1920x1080_jonathanfleetwood.jpg = 0,,
-03_1920x1080_LengWen.jpg           = 0,,
-04_1280x720_PeiChiHsieh.jpg        = 0,,
-04_1920x1080_AkseliValmunen.jpg    = 0,,
-04_1920x1080_jimwilson.jpg         = 0,,
-05_1280x720_PeiChiHsieh.jpg        = 0,,
-05_1920x1080_jimwilson.jpg         = 0,,
-05_1920x1080_SarahJun.jpg          = 0,,
-06_1280x720_PeiChiHsieh.jpg        = 0,,
-06_1920x1080_davidlineton.jpg      = 0,,
-06_1920x1080_SarahJun.jpg          = 0,,
-07_1280x720_ZhangChao.jpg          = 0,,
-07_1920x1080_danielweill.jpg       = 0,,
-07_1920x1080_ZhangChao.jpg         = 0,,
-08_1280x720_DenisTwerenbold.jpg    = 0,,
-08_1920x1080_JonnePaulaSippola.jpg = 0,,
-08_1920x1080_lluisoliver.jpg       = 0,,
-09_1280x720_DenisTwerenbold.jpg    = 0,,
-09_1920x1080_jimwilson.jpg         = 0,,
-09_1920x1080_ZhangChao.jpg         = 0,,
-10_1280x720_DenisTwerenbold.jpg    = 0,,
-10_1920x1080_MiikkaBjorninen.jpg   = 0,,
-10_1920x1080_yassinyassin.jpg      = 0,,
-11_1280x720_ShomwatalaShivute.jpg  = 0,,
-11_1920x1080_LacyKiernan.jpg       = 0,,
-11_1920x1080_lluisoliver.jpg       = 0,,
-12_1280x720_AndrewJuries.jpg       = 0,,
-12_1920x1080_keunyoungpark.jpg     = 0,,
-12_1920x1080_LiYanCi.jpg           = 0,,
-13_1280x720_AndrewOgterop.jpg      = 0,,
-13_1920x1080_martinoneill.jpg      = 0,,
-13_1920x1080_SarahJun.jpg          = 0,,
-14_1280x720_SurayaPelser.jpg       = 0,,
-14_1920x1080_jeanti.jpg            = 0,,
-14_1920x1080_SarahJun.jpg          = 0,,
-15_1280x720_AkseliValmunen.jpg     = 0,,
-15_1920x1080_autumnwhitehurst.jpg  = 0,,
-15_1920x1080_JonnePaulaSippola.jpg = 0,,
-16_1280x720_NarinaNaidoo.jpg       = 0,,
-16_1920x1080_GongZhe.jpg           = 0,,
-16_1920x1080_joecruz.jpg           = 0,,
-17_1280x720_ThulileGamedze.jpg     = 0,,
-17_1920x1080_jimwilson.jpg         = 0,,
-17_1920x1080_JonnePaulaSippola.jpg = 0,,
-18_1280x720_KyleSpringgate.jpg     = 0,,
-18_1920x1080_AdrianoHultmann.jpg   = 0,,
-18_1920x1080_jimwilson.jpg         = 0,,
-19_1280x720_JimWilson.jpg          = 0,,
-19_1920x1080_DenisTwerenbold.jpg   = 0,,
-19_1920x1080_jimwilson.jpg         = 0,,
-20_1280x720_WuthigraiSiriphon.jpg  = 0,,
-20_1920x1080_davidlineton.jpg      = 0,,
-20_1920x1080_JaimeLefkowitz.jpg    = 0,,
-21_1280x720_PeiChiHsieh.jpg        = 0,,
-21_1920x1080_jimwilson.jpg         = 0,,
-22_1280x720_PeiChiHsieh.jpg        = 0,,
-22_1920x1080_jimwilson.jpg         = 0,,
-23_1280x720_PeiChiHsieh.jpg        = 0,,
-23_1920x1080_davidlineton.jpg      = 0,,
-24_1280x720_PeiChiHsieh.jpg        = 0,,
-24_1920x1080_jimwilson.jpg         = 0,,
-25_1280x720_PeiChiHsieh.jpg        = 0,,
-25_1920x1080_davidlineton.jpg      = 0,,
-26_1920x1080_jimwilson.jpg         = 0,,
-MMO_wallpaper.png                  = 0,,
-cellular.jpg                       = 0,,
 TaskbarLayoutModification.xml      = 0,,
 SpecializeCommands.cmd             = 0,,
+FirstLogonCommands.cmd             = 0,,
 CommsPhone.appxbundle              = 0,,
+FileExplorer.lnk                   = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
@@ -120,82 +48,7 @@ Unattend.xml
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 SpecializeCommands.cmd
 CommsPhone.appxbundle
-
-; Windows/Web/Wallpaper/MMO
-[MMO.Files]
-01_1280x720_PeiChiHsieh.jpg
-01_1920x1080_ElsaRusi.jpg
-01_1920x1080_jimwilson.jpg
-02_1280x720_PeiChiHsieh.jpg
-02_1920x1080_jimwilson.jpg
-02_1920x1080_SarahJun.jpg
-03_1280x720_PeiChiHsieh.jpg
-03_1920x1080_jonathanfleetwood.jpg
-03_1920x1080_LengWen.jpg
-04_1280x720_PeiChiHsieh.jpg
-04_1920x1080_AkseliValmunen.jpg
-04_1920x1080_jimwilson.jpg
-05_1280x720_PeiChiHsieh.jpg
-05_1920x1080_jimwilson.jpg
-05_1920x1080_SarahJun.jpg
-06_1280x720_PeiChiHsieh.jpg
-06_1920x1080_davidlineton.jpg
-06_1920x1080_SarahJun.jpg
-07_1280x720_ZhangChao.jpg
-07_1920x1080_danielweill.jpg
-07_1920x1080_ZhangChao.jpg
-08_1280x720_DenisTwerenbold.jpg
-08_1920x1080_JonnePaulaSippola.jpg
-08_1920x1080_lluisoliver.jpg
-09_1280x720_DenisTwerenbold.jpg
-09_1920x1080_jimwilson.jpg
-09_1920x1080_ZhangChao.jpg
-10_1280x720_DenisTwerenbold.jpg
-10_1920x1080_MiikkaBjorninen.jpg
-10_1920x1080_yassinyassin.jpg
-11_1280x720_ShomwatalaShivute.jpg
-11_1920x1080_LacyKiernan.jpg
-11_1920x1080_lluisoliver.jpg
-12_1280x720_AndrewJuries.jpg
-12_1920x1080_keunyoungpark.jpg
-12_1920x1080_LiYanCi.jpg
-13_1280x720_AndrewOgterop.jpg
-13_1920x1080_martinoneill.jpg
-13_1920x1080_SarahJun.jpg
-14_1280x720_SurayaPelser.jpg
-14_1920x1080_jeanti.jpg
-14_1920x1080_SarahJun.jpg
-15_1280x720_AkseliValmunen.jpg
-15_1920x1080_autumnwhitehurst.jpg
-15_1920x1080_JonnePaulaSippola.jpg
-16_1280x720_NarinaNaidoo.jpg
-16_1920x1080_GongZhe.jpg
-16_1920x1080_joecruz.jpg
-17_1280x720_ThulileGamedze.jpg
-17_1920x1080_jimwilson.jpg
-17_1920x1080_JonnePaulaSippola.jpg
-18_1280x720_KyleSpringgate.jpg
-18_1920x1080_AdrianoHultmann.jpg
-18_1920x1080_jimwilson.jpg
-19_1280x720_JimWilson.jpg
-19_1920x1080_DenisTwerenbold.jpg
-19_1920x1080_jimwilson.jpg
-20_1280x720_WuthigraiSiriphon.jpg
-20_1920x1080_davidlineton.jpg
-20_1920x1080_JaimeLefkowitz.jpg
-21_1280x720_PeiChiHsieh.jpg
-21_1920x1080_jimwilson.jpg
-22_1280x720_PeiChiHsieh.jpg
-22_1920x1080_jimwilson.jpg
-23_1280x720_PeiChiHsieh.jpg
-23_1920x1080_davidlineton.jpg
-24_1280x720_PeiChiHsieh.jpg
-24_1920x1080_jimwilson.jpg
-25_1280x720_PeiChiHsieh.jpg
-25_1920x1080_davidlineton.jpg
-26_1920x1080_jimwilson.jpg
-cellular.jpg
-MMO_wallpaper.png
+FileExplorer.lnk
 
 [Strings]
 REG_SZ                 = 0x00000000

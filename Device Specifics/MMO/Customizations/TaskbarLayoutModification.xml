@@ -10,45 +10,43 @@
     <StartLayoutCollection>
       <defaultlayout:StartLayout GroupCellWidth="6">
         <start:Group Name="Windows">
+          <start:Folder Name="Productivity" Size="2x2" Column="0" Row="6">
+            <start:Tile Size="4x2" Column="2" Row="4" AppUserModelID="Microsoft.SkypeApp_kzf8qxf38zg5c!App" />
+            <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" />
+            <start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe!Microsoft.MicrosoftOfficeHub" />
+            <start:Tile Size="4x2" Column="0" Row="2" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
+            <start:Tile Size="4x2" Column="2" Row="0" AppUserModelID="Microsoft.Office.OneNote_8wekyb3d8bbwe!microsoft.onenoteim" />
+            <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationLinkPath="%SYSTEMROOT%\OEM\File Explorer.lnk" />
+          </start:Folder>
           <start:Tile Size="1x1" Column="2" Row="2" AppUserModelID="Microsoft.YourPhone_8wekyb3d8bbwe!App" />
-          <start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
           <start:Tile Size="1x1" Column="3" Row="2" AppUserModelID="Microsoft.BingWeather_8wekyb3d8bbwe!App" />
-          <start:Tile Size="1x1" Column="1" Row="6" AppUserModelID="Microsoft.SkypeApp_kzf8qxf38zg5c!App" />
-          <start:DesktopApplicationTile Size="1x1" Column="0" Row="7" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" />
           <start:Tile Size="1x1" Column="5" Row="6" AppUserModelID="Microsoft.ZuneVideo_8wekyb3d8bbwe!Microsoft.ZuneVideo" />
           <start:Tile Size="1x1" Column="5" Row="1" AppUserModelID="Microsoft.WindowsStore_8wekyb3d8bbwe!App" />
           <start:Tile Size="1x1" Column="4" Row="7" AppUserModelID="Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge" />
-          <start:Tile Size="2x2" Column="4" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.mail" />
           <start:Tile Size="1x1" Column="2" Row="3" AppUserModelID="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
-          <start:Tile Size="1x1" Column="5" Row="0" AppUserModelID="Microsoft.People_8wekyb3d8bbwe!x4c7a3b7dy2188y46d4ya362y19ac5a5805e5x" />
-          <start:Tile Size="1x1" Column="4" Row="1" AppUserModelID="Microsoft.Messaging_8wekyb3d8bbwe!x27e26f40ye031y48a6yb130yd1f20388991ax" />
-          <start:Tile Size="2x2" Column="4" Row="8" AppUserModelID="Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="4" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.mail" />
           <start:Tile Size="1x1" Column="4" Row="6" AppUserModelID="Microsoft.ZuneMusic_8wekyb3d8bbwe!Microsoft.ZuneMusic" />
+          <start:Tile Size="2x2" Column="4" Row="8" AppUserModelID="Microsoft.WindowsAlarms_8wekyb3d8bbwe!App" />
+          <start:Tile Size="1x1" Column="4" Row="1" AppUserModelID="Microsoft.Messaging_8wekyb3d8bbwe!x27e26f40ye031y48a6yb130yd1f20388991ax" />
+          <start:Tile Size="1x1" Column="5" Row="0" AppUserModelID="Microsoft.People_8wekyb3d8bbwe!x4c7a3b7dy2188y46d4ya362y19ac5a5805e5x" />
           <start:Tile Size="2x2" Column="2" Row="6" AppUserModelID="Microsoft.XboxApp_8wekyb3d8bbwe!Microsoft.XboxApp" />
           <start:Tile Size="2x2" Column="2" Row="8" AppUserModelID="Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe!App" />
           <start:Tile Size="1x1" Column="5" Row="7" AppUserModelID="windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel" />
-          <start:Tile Size="1x1" Column="1" Row="7" AppUserModelID="Microsoft.Office.OneNote_8wekyb3d8bbwe!microsoft.onenoteim" />
           <start:Tile Size="2x2" Column="0" Row="4" AppUserModelID="Microsoft.Windows.Photos_8wekyb3d8bbwe!App" />
           <start:Tile Size="2x2" Column="0" Row="8" AppUserModelID="Microsoft.ScreenSketch_8wekyb3d8bbwe!App" />
-          <start:Tile Size="1x1" Column="0" Row="6" AppUserModelID="Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe!Microsoft.MicrosoftOfficeHub" />
-          <start:Tile Size="1x1" Column="4" Row="0" AppUserModelID="Microsoft.CommsPhone_8wekyb3d8bbwe!App" />
           <start:Tile Size="1x1" Column="3" Row="3" AppUserModelID="Microsoft.WindowsCamera_8wekyb3d8bbwe!App" />
           <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.WindowsMaps_8wekyb3d8bbwe!App" />
           <start:Tile Size="4x2" Column="2" Row="4" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar" />
+          <start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="Microsoft.Getstarted_8wekyb3d8bbwe!App" />
+          <start:Tile Size="1x1" Column="4" Row="0" AppUserModelID="Microsoft.CommsPhone_8wekyb3d8bbwe!App" />
         </start:Group>
         <start:Group Name="Explore">
-          <start:Tile Size="2x2" Column="2" Row="2" AppUserModelID="Microsoft.Windows.SecHealthUI_cw5n1h2txyewy!SecHealthUI" />
-          <start:Tile Size="2x2" Column="4" Row="2" AppUserModelID="Microsoft.GetHelp_8wekyb3d8bbwe!App" />
-          <start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="Microsoft.Getstarted_8wekyb3d8bbwe!App" />
-          <start:Tile Size="2x2" Column="0" Row="4" AppUserModelID="Microsoft.Microsoft3DViewer_8wekyb3d8bbwe!Microsoft.Microsoft3DViewer" />
-          <start:Tile Size="4x2" Column="2" Row="4" AppUserModelID="Microsoft.MSPaint_8wekyb3d8bbwe!Microsoft.MSPaint" />
-          <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.PPIProjection_cw5n1h2txyewy!Microsoft.PPIProjection" />
-          <start:Tile Size="2x2" Column="4" Row="0" AppUserModelID="Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe!App" />
-        </start:Group>
-        <start:Group Name="News">
-          <start:Tile Size="2x2" Column="4" Row="2" AppUserModelID="Microsoft.BingSports_8wekyb3d8bbwe!AppexSports" />
-          <start:Tile Size="4x4" Column="0" Row="0" AppUserModelID="Microsoft.BingNews_8wekyb3d8bbwe!AppexNews" />
-          <start:Tile Size="2x2" Column="4" Row="0" AppUserModelID="Microsoft.BingFinance_8wekyb3d8bbwe!AppexFinance" />
+          <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.Windows.SecHealthUI_cw5n1h2txyewy!SecHealthUI" />
+          <start:Tile Size="2x2" Column="4" Row="0" AppUserModelID="Microsoft.GetHelp_8wekyb3d8bbwe!App" />
+          <start:Tile Size="2x2" Column="4" Row="4" AppUserModelID="Microsoft.Microsoft3DViewer_8wekyb3d8bbwe!Microsoft.Microsoft3DViewer" />
+          <start:Tile Size="4x2" Column="0" Row="4" AppUserModelID="Microsoft.MSPaint_8wekyb3d8bbwe!Microsoft.MSPaint" />
+          <start:Tile Size="4x2" Column="2" Row="2" AppUserModelID="Microsoft.PPIProjection_cw5n1h2txyewy!Microsoft.PPIProjection" />
+          <start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe!App" />
         </start:Group>
       </defaultlayout:StartLayout>
     </StartLayoutCollection>
