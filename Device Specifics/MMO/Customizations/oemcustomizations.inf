@@ -25,7 +25,7 @@ TaskbarLayoutModification.xml      = 0,,
 SpecializeCommands.cmd             = 0,,
 FirstLogonCommands.cmd             = 0,,
 CommsPhone.appxbundle              = 0,,
-FileExplorer.lnk                   = 0,,
+"File Explorer.lnk"                = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
@@ -48,7 +48,7 @@ Unattend.xml
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 SpecializeCommands.cmd
 CommsPhone.appxbundle
-FileExplorer.lnk
+"File Explorer.lnk"
 
 [Strings]
 REG_SZ                 = 0x00000000
