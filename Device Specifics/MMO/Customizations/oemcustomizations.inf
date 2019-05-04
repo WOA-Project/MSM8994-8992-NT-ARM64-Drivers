@@ -47,6 +47,7 @@ Unattend.xml
 [PstDrv.Files]
 TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 SpecializeCommands.cmd
+FirstLogonCommands.cmd
 CommsPhone.appxbundle
 "File Explorer.lnk"
 
