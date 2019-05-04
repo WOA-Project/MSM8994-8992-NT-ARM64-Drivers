@@ -11,7 +11,6 @@
       <defaultlayout:StartLayout GroupCellWidth="6">
         <start:Group Name="Windows">
           <start:Folder Name="Productivity" Size="2x2" Column="0" Row="6">
-            <start:Tile Size="4x2" Column="2" Row="4" AppUserModelID="Microsoft.SkypeApp_kzf8qxf38zg5c!App" />
             <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationLinkPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk" />
             <start:Tile Size="2x2" Column="0" Row="0" AppUserModelID="Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe!Microsoft.MicrosoftOfficeHub" />
             <start:Tile Size="4x2" Column="0" Row="2" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App" />
@@ -38,7 +37,7 @@
           <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.WindowsMaps_8wekyb3d8bbwe!App" />
           <start:Tile Size="4x2" Column="2" Row="4" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar" />
           <start:Tile Size="4x2" Column="0" Row="0" AppUserModelID="Microsoft.Getstarted_8wekyb3d8bbwe!App" />
-          <start:Tile Size="1x1" Column="4" Row="0" AppUserModelID="Microsoft.CommsPhone_8wekyb3d8bbwe!App" />
+          <start:Tile Size="1x1" Column="4" Row="0" AppUserModelID="Microsoft.SkypeApp_kzf8qxf38zg5c!App" />
         </start:Group>
         <start:Group Name="Explore">
           <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.Windows.SecHealthUI_cw5n1h2txyewy!SecHealthUI" />
