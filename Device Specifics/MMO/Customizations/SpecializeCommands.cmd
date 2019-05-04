@@ -1,5 +1,13 @@
 @echo off
 
+REM Put a notice
+
+title Post installation configuration
+echo.
+echo Configuring device for initial boot...
+echo Please do not close this window, this may take a while.
+echo.
+
 REM Device id configuration
 REG ADD "HKLM\SOFTWARE\WowAA32Node\Microsoft\Windows\CurrentVersion\Internet Settings\Configuration" /v PartnerSearchCode /t REG_SZ /d NOKMSB /f
 
