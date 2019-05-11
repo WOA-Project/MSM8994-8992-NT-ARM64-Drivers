@@ -47,7 +47,7 @@ SOFTWARE.
 
 The following items are not functional yet on specific devices, reason when available is specified:
 
-Hapanero:
+Hapanero (Any revision):
 
 - Fingerprint reader (missing drivers)
 - Cameras (missing drivers)
@@ -55,19 +55,6 @@ Hapanero:
 - Audio volume control for Speakers (stuck at 100%)
 - Vibration motor
 - x86 DirectX support is missing.
-- FM Radio
-
-Hapanero (EB0.x and EB1.x):
-
-- GPU and display
-- Fingerprint reader (missing drivers)
-- Cameras (missing drivers)
-- Any kind of sensor (except ALS)
-- Audio
-- Microphones
-- Shutdown (Reboots instead)
-- Vibration motor
-- Cellular
 - FM Radio
 
 Cityman:
@@ -79,7 +66,6 @@ Cityman:
 - Vibration motor
 - HDMI out via USB-C
 - x86 DirectX support is missing.
-- Cellular (No Nokia Security Simlock support for retail devices, disable halt_subscription feature on engineering modems)
 - FM Radio
 
 Talkman:
@@ -104,7 +90,6 @@ Talkman:
 Packages below are 'cumulative', you can stack them if applicable.
 
 - For Qualcomm Snapdragon 810 devices, install everything under MSM8994
-- For Qualcomm Snapdragon 810 (Rev 1) devices, install everything under MSM8994AA
 - For Qualcomm Snapdragon 808 devices, install everything under MSM8992
 
 ---
@@ -142,19 +127,10 @@ Packages below are 'cumulative', you can stack them if applicable.
   
 ## Cellular disclaimers
 
-Currently cellular connectivity only works properly on engineering devices properly provisioned for modem due to apperso halt_subscription.
-
 We've also been telling people on engineering devices to make backups, this is especially true here.
 Flashing an entire eMMC img on engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
-
-## USB for Lumia 950 and Lumia 950 XL
-
-- You may have to manually right click the xHCI device in device manager
-  properties -> update driver -> pick the qualcomm xhci driver
-
-- The USB driver provided requires you to provide external power to the device (or use a Dock)
 
 ## GPU Testing for Hapanero (not Hapaneros with Lumia950XLPkg)
 
