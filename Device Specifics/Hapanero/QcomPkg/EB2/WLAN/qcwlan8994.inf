@@ -1,0 +1,310 @@
+;-------------------------------------------------------------------------------
+; QCWLAN8994.INF
+;
+; Qualcomm Atheros AR6320 Wireless Network Adapter
+;
+; Copyright (c) Qualcomm Technologies, Inc.  All rights reserved.
+
+
+[version]
+Signature   = "$Windows NT$"
+Class       = Net
+ClassGUID   = {4d36e972-e325-11ce-bfc1-08002be10318}
+Provider    = %atheros%
+DriverVer   = 07/02/2015,1.0.1067.0000
+CatalogFile = qcwlan8994.cat
+PnpLockDown = 1
+
+[ControlFlags]
+
+
+[Manufacturer]
+%atheros% = atheros,NTarm64
+
+; For WinXP and later
+[atheros.NTarm64]
+%athr.devicedesc.6320% = ATHR_DEV_988x.ndi.NTarm64, PCI\VEN_168C&DEV_003E
+
+[ATHR_DEV_988x.ndi.NTarm64]
+Include            = netvwifibus.inf
+Needs              = VWiFiBus.CopyFiles
+*IfType            = 71		; IF_TYPE_IEEE80211
+*MediaType         = 16		; NdisMediumNative802_11
+*PhysicalMediaType = 9		; NdisPhysicalMediumNative802_11
+Characteristics    = 0x84       ; NCF_PHYSICAL | NCF_HAS_UI
+BusType            = 5
+AddReg             = QcWlan8994.Reg, QcWlan11n.reg, D0PC.reg, wowenable.reg, TxBf.reg, MAS.reg, DriverMode.Reg, pldr.reg
+DelReg             = QcWlan8994.DelReg
+CopyFiles          = QcWlan8994.CopyFiles
+AddProperty        = WDTFSOCDeviceCategory
+
+; WLAN Device category for SoCs (WLAN is of type NORMAL = 0)
+[WDTFSOCDeviceCategory]
+{5D078032-6378-437B-8DA5-9B32B7CA3FDD}, 2, 7, , 0
+
+[ATHR_DEV_988x.ndi.NTarm64.Services]
+Include    = netvwifibus.inf
+Needs      = VWiFiBus.Services
+AddService = qcwlan8994, 2, QcWlan8994.Service, QcWlan8994.EventLog
+
+[ATHR_DEV_988x.ndi.NTarm64.HW]
+Include = netvwifibus.inf
+Needs   = VWiFiBus.PnPFilterRegistration.HW
+
+
+;-----------------------------------------------------------------------------
+; Wireless Local Area Network Adaptor Common
+;-----------------------------------------------------------------------------
+[QcWlan8994.Reg]
+HKR, Ndi\Interfaces   , UpperRange       , 0         ,           "ndis5"
+HKR, Ndi\Interfaces   , LowerRange       , 0         ,           "wlan,ethernet,vwifi"
+HKR, Ndi\IHVExtensions, AdapterOUI       , 0x00010001,  0x0001E240
+HKR, Ndi\IHVExtensions, ExtensibilityDLL , 0         ,           "c:\\windows\\system32\\wlan_ihv.dll"
+HKR, Ndi              , Service          , 0         ,           %ATHR.Service.Name%
+
+HKR,                  , *ReceiveBuffers  , 0         ,           "256"
+HKR,                  , *TransmitBuffers , 0         ,           "896"
+HKR,                  , BoardDataFileName, 0         ,           "bdwlan30.bin"
+HKR,                  , D0PCEnable       , 0         ,           "1"
+HKR,                  , D3ColdSupported  , 0x00010001,  1
+HKR,                  , EnableACS        , 0         ,           "0"
+HKR,                  , FWFileName       , 0         ,           "qwlan30.bin"
+HKR,                  , PreferredSapBand , 0         ,           "0"
+HKR,                  , ProtocolPowerSave, 0x00010001,  1
+HKR,                  , roamPolicy       , 0         ,           "3"
+HKR,                  , scanTimeValid    , 0         ,           "60"
+HKR,                  , shortPreamble    , 0         ,           "1"
+HKR,                  , smpsDynamic      , 0         ,           "0"
+
+;-----------------------------------------------------------------------------
+;Source
+;-----------------------------------------------------------------------------
+[SourceDisksNames]
+;
+; diskid = description[, [tagfile] [, <unused>, subdir]]
+;
+1 = %DiskId1%,,
+
+
+[SourceDisksFiles]
+qcwlan8994.sys = 1
+qwlan30.bin    = 1
+bdwlan30.bin   = 1
+Data.msc       = 1
+
+[SourceDisksFiles.ARM64]
+qcwlan8994.sys = 1
+qwlan30.bin    = 1
+bdwlan30.bin   = 1
+Data.msc       = 1
+
+;-----------------------------------------------------------------------------
+; DestinationDirs
+;-----------------------------------------------------------------------------
+[DestinationDirs]
+QcWlan8994.CopyFiles = 12
+
+[QcWlan8994.CopyFiles]
+qcwlan8994.sys, , , 2,
+qwlan30.bin, , , 2,
+bdwlan30.bin, , , 2,
+Data.msc, , , 2,
+
+;-----------------------------------------------------------------------------
+; Driver and Service Section
+;-----------------------------------------------------------------------------
+
+[QcWlan8994.Service]
+DisplayName    = %ATHR.Service.DispName%
+ServiceType    = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType      = 3 ;%SERVICE_DEMAND_START%
+ErrorControl   = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary  = %12%\qcwlan8994.sys
+LoadOrderGroup = NDIS
+Tag            = 13
+
+
+[QcWlan11n.reg]
+HKR, Ndi\params\*ReceiveBuffers      , ParamDesc, 0,  "Receive Buffers"
+HKR, Ndi\params\*ReceiveBuffers      , default  , 0,  "256"
+HKR, Ndi\params\*ReceiveBuffers      , min      , 0,  "1"
+HKR, Ndi\params\*ReceiveBuffers      , max      , 0,  "00000512"
+HKR, Ndi\params\*ReceiveBuffers      , step     , 0,  "1"
+HKR, Ndi\params\*ReceiveBuffers      , Base     , 0,  "10"
+HKR, Ndi\params\*ReceiveBuffers      , type     , 0,  "int"
+
+HKR, Ndi\params\*TransmitBuffers     , ParamDesc, 0,  "Transmit Buffers"
+HKR, Ndi\params\*TransmitBuffers     , default  , 0,  "896"
+HKR, Ndi\params\*TransmitBuffers     , min      , 0,  "1"
+HKR, Ndi\params\*TransmitBuffers     , max      , 0,  "00001024"
+HKR, Ndi\params\*TransmitBuffers     , step     , 0,  "1"
+HKR, Ndi\params\*TransmitBuffers     , Base     , 0,  "10"
+HKR, Ndi\params\*TransmitBuffers     , type     , 0,  "int"
+
+HKR, Ndi\Params\EnableACS            , ParamDesc, 0,  "EnableACS"
+HKR, Ndi\Params\EnableACS            , Type     , 0,  "enum"
+HKR, Ndi\Params\EnableACS\enum       , "1"      , 0,  "Enable"
+HKR, Ndi\Params\EnableACS\enum       , "0"      , 0,  "Disable"
+HKR, Ndi\Params\EnableACS            , Default  , 0,  "0"
+
+HKR, Ndi\Params\PreferredSapBand     , ParamDesc, 0,  "Preferred SAP Band"
+HKR, Ndi\Params\PreferredSapBand     , Type     , 0,  "enum"
+HKR, Ndi\Params\PreferredSapBand\enum, "0"      , 0,  "1. 2.4GHz SAP"
+HKR, Ndi\Params\PreferredSapBand\enum, "1"      , 0,  "2. 5GHz SAP"
+HKR, Ndi\Params\PreferredSapBand     , Default  , 0,  "0"
+
+HKR, Ndi\Params\roamPolicy           , ParamDesc, 0,  "Roaming aggressiveness"
+HKR, Ndi\Params\roamPolicy           , Type     , 0,  "enum"
+HKR, Ndi\Params\roamPolicy\enum      , "5"      , 0,  "5.Highest"
+HKR, Ndi\Params\roamPolicy\enum      , "4"      , 0,  "4.Medium-low"
+HKR, Ndi\Params\roamPolicy\enum      , "3"      , 0,  "3.Medium"
+HKR, Ndi\Params\roamPolicy\enum      , "2"      , 0,  "2.Medium-low"
+HKR, Ndi\Params\roamPolicy\enum      , "1"      , 0,  "1.Lowest"
+HKR, Ndi\Params\roamPolicy           , Default  , 0,  "3"
+
+HKR, Ndi\params\NetworkAddress       , ParamDesc, 0,   "Network Address"
+HKR, Ndi\params\NetworkAddress       , default  , 0,   ""
+HKR, Ndi\params\NetworkAddress       , LimitText, 0,   "12"
+HKR, Ndi\params\NetworkAddress       , UpperCase, 0,   "1"
+HKR, Ndi\params\NetworkAddress       , optional , 0,   "1"
+HKR, Ndi\params\NetworkAddress       , type     , 0,   "edit"
+
+HKR, Ndi\params\shortPreamble        , ParamDesc, 0,   "802.11b Preamble"
+HKR, Ndi\params\shortPreamble        , Base     , 0,   "10"
+HKR, Ndi\params\shortPreamble        , default  , 0,   "1"
+HKR, Ndi\params\shortPreamble        , type     , 0,   "enum"
+HKR, Ndi\params\shortPreamble\enum   , "1"      , 0,   "Long and Short"
+HKR, Ndi\params\shortPreamble\enum   , "0"      , 0,   "Long only"
+
+HKR, Ndi\params\scanTimeValid        , ParamDesc, 0,   "Scan Valid Interval"
+HKR, Ndi\params\scanTimeValid        , default  , 0,   "60"
+HKR, Ndi\params\scanTimeValid        , min      , 0,   "20"
+HKR, Ndi\params\scanTimeValid        , max      , 0,   "120"
+HKR, Ndi\params\scanTimeValid        , step     , 0,   "5"
+HKR, Ndi\params\scanTimeValid        , base     , 0,   "10"
+HKR, Ndi\params\scanTimeValid        , type     , 0,   "int"
+
+HKR, Ndi\params\smpsDynamic          , ParamDesc, 0,   "Dynamic MIMO Power Save"
+HKR, Ndi\params\smpsDynamic          , Base     , 0,   "10"
+HKR, Ndi\params\smpsDynamic          , default  , 0,   "0"
+HKR, Ndi\params\smpsDynamic          , type     , 0,   "enum"
+HKR, Ndi\params\smpsDynamic\enum     , "1"      , 0,   "Enable"
+HKR, Ndi\params\smpsDynamic\enum     , "0"      , 0,   "Disable"
+
+
+[QcWlan8994.DelReg]
+HKR, Ndi\Params\tpc             ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR, Ndi\params                 ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR, Ndi\params\NetworkAddress  ,
+HKR,                            ,
+HKR, Ndi\params\*ReceiveBuffers ,
+HKR,                            ,
+HKR, Ndi\params\*TransmitBuffers,
+HKR,                            ,
+HKR, Ndi\params\EnableACS       ,
+HKR,                            ,
+HKR, Ndi\params\PreferredSapBand,
+HKR,                            ,
+HKR, Ndi\params\roamPolicy      ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR, Ndi\params\D0PCEnable      ,
+HKR, Ndi\params\*RscIPv4        ,
+HKR, Ndi\params\*RscIPv6        ,
+HKR, Ndi\params\*LsoV2IPv4      ,
+HKR, Ndi\params\*LsoV2IPv6      ,
+HKR, Ndi\params\shortPreamble   ,
+HKR, Ndi\params\scanTimeValid   ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+HKR,                            ,
+
+
+[D0PC.reg]
+HKR, NDI\params\D0PCEnable     , ParamDesc, ,           "D0 PacketCoalescing"
+HKR, NDI\params\D0PCEnable     , type     , ,                "enum"
+HKR, NDI\params\D0PCEnable     , Default  , ,             "1"
+HKR, NDI\params\D0PCEnable\enum, 0        , ,              "Disable"
+HKR, NDI\params\D0PCEnable\enum, 1        , ,              "Enable"
+
+[wowenable.reg]
+HKR, , wowEnable     , 0x00010001,   "1"
+HKR, , gAOACSupported, 0x00010001,   "1"
+
+[TxBf.reg]
+HKR, , TxBfeeEnable, 0x00010001,   "1"
+
+[MAS.reg]
+; Enable Mcc adaptive schedular
+; ----------------------------------------------------------------------------
+HKR, , AdaptiveSchedulerEnable, 0x00010001, 1
+
+; ----------------------------------------------------------------------------
+; Driver Mode (FTM mode)
+; ----------------------------------------------------------------------------
+[DriverMode.Reg]
+HKR, , DriverMode, 0x00010001, 0
+
+[pldr.reg]
+HKLM, SYSTEM\CurrentControlSet\services\WlanSvc\parameters\OEM\SystemCapabilities, WLANPlatformLevelDeviceResetSupported, 0x00010001,  "1"
+
+[QcWlan8994.EventLog]
+AddReg = QcWlan8994.AddEventLog.reg
+
+[QcWlan8994.AddEventLog.reg]
+HKR, , EventMessageFile, 0x00020000,  "%%SystemRoot%%\System32\netevent.dll"
+HKR, , TypesSupported  , 0x00010001,  7
+
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;-----------------------------------------------------------------------------
+[Strings]
+atheros               = "Atheros Communications Inc."
+athr.devicedesc.6320  = "Qualcomm Atheros AR6320 Wireless Network Adapter"
+ATHR.Service.DispName = "Atheros Extensible Wireless LAN device driver"
+ATHR.Service.Name     = "QCWLAN8994"
+DiskId1               = "Qualcomm Atheros AR6320 Wireless Network Adapter Installation Disk #1"
+
