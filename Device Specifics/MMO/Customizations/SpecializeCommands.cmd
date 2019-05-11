@@ -5,7 +5,7 @@ REM Put a notice
 title Post installation configuration
 echo.
 echo Configuring device for initial boot...
-echo Please do not close this window, this may take a while.
+echo Please do not close or tap or touch or interact with this window, this may take a while.
 echo.
 
 REM Device id configuration
@@ -25,9 +25,12 @@ REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop\WindowMetrics" /v AppliedDPI /t 
 REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 216 /f
 REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f
 
-REM Taskbar layout
-powershell.exe -command "cd \;Import-StartLayout -LayoutPath '\Windows\OEM\TaskbarLayoutModification.xml' -MountPath $env:SystemDrive"
+REM Taskbar layout (disabled for now)
+REM powershell.exe -command "cd \;Import-StartLayout -LayoutPath '\Windows\OEM\TaskbarLayoutModification.xml' -MountPath $env:SystemDrive"
 
 REM System apps
 dism.exe /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
 dism.exe /Add-ProvisionedAppxPackage /PackagePath:%SystemDrive%\Windows\OEM\CommsPhone.appxbundle /SkipLicense
+
+REM Temp mitigation for thermal issues regarding cellular (default is 3)
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\SmsRouter" /v Start /t REG_DWORD /d 4 /f
