@@ -182,9 +182,9 @@ LoadOrderGroup = Base
 MSFT                   = "LumiaWoA authors"
 Manufacturer_Name      = "Synaptics"
 Installation_Disk      = "Synaptics Touch Driver Installation Disk"
-TchDriver_Device_Desc  = "Synaptics Touch Driver"
+TchDriver_Device_Desc  = "Synaptics RMI4 F12 Digitizer Device"
 TchDriver_Service      = "SynapticsTouch"
-TchDriver_Service_Desc = "Synaptics Touch Driver Service"
+TchDriver_Service_Desc = "Synaptics RMI4 F12 Digitizer Driver Service"
 HIDKMDF_Service        = "mshidkmdf"
 
 ; ------------- non-localizable strings
