@@ -113,9 +113,9 @@ Packages below are 'cumulative', you can stack them if applicable.
 
 ---
 
-- For Microsoft Hapanero EB2.0+ Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg
-- For Microsoft Hapanero EB2.0+ Devices running Lumia950XlPkg UEFI, install everything under Device Specifics\Hapanero\Lumia950XlPkg
-- For Microsoft Hapanero EB0.5+ (< EB2.0) Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\EB1
+- For Microsoft Hapanero EB2.0+ Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg\EB2
+- For Microsoft Hapanero EB2.0+ Devices running Lumia950XlPkg UEFI, install everything under Device Specifics\Hapanero\Lumia950XlPkg\EB2
+- For Microsoft Hapanero EB0.5+ (< EB2.0) Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg\EB1
 
 ---
 
