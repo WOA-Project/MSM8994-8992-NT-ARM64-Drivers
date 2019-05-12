@@ -1,8 +1,4 @@
-Basic Windows 10 port running on EB1.0 Hapanero
-(by @never_released, December 2018)
-Thanks to Gustave M and a lot of other people who participated in the prior Windows 10 on Hapanero EB2 work.
-
-I'm not responsible in any way for whatever happens if you choose to follow this guide. 
+EB0.5/1.0 Hapanero notes:
 
 Flashing instructions (do a backup first!):
 
@@ -19,7 +15,7 @@ After that, remove the battery and use Camera + Power to get to the Developer Me
 Use diskpart to assign a letter to the EFIESP, and delete the Data partition. Enlarge MainOS until the end of the disk afterwards, and then format it.
 OS instructions (E: supposed being MainOS enlarged and S: being the EFIESP):
 
-Dism /Apply-Image /ImageFile:install.wim /index:<your preffered SKU> /ApplyDir:E:
+Dism /Apply-Image /ImageFile:install.wim /index:<your preferred SKU> /ApplyDir:E:
 Dism /Image:E: /Add-Driver /Driver:Drivers 
 S:
 cd EFI\Microsoft\Boot
@@ -28,15 +24,9 @@ bcdedit /store bcd /set {globalsettings} chargethreshold 80
 
 Note: The included firmware does *not* have FlashApp available, as such if you want to restore, you'll have to get to Emergency download mode. Refer to the BDS menu or use an emergency download cable (9008) for instructions.
 
-Limitations:
+Differences compared to EB2 Hapanero support:
 
-Only the first core cluster is enabled. The OS is unable to boot below 75% of battery.
+- You have to use the Qualcomm UEFI firmware included on this repository instead of Lumia950XlPkg.
+- Only the first cluster (4x Cortex-A53) works, the Cortex-A57 cores are disabled.
 
-Working features:
-- WiFi
-- Bluetooth
-- Touchscreen
-- Charging
-
-Not working:
-- Anything else.
+Those differences are due to the pre-release MSM8994 SoC present on those prototype devices.
