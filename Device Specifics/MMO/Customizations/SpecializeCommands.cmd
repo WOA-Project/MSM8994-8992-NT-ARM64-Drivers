@@ -20,17 +20,19 @@ powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25
 REM Disable fast startup as this is not supported by firmware and will cause issues
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f
 
-REM DPI settings currently cause isses
-REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop\WindowMetrics" /v AppliedDPI /t REG_DWORD /d 216 /f
-REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d 216 /f
-REM REG ADD "HKU\.DEFAULT\Control Panel\Desktop" /v Win8DpiScaling /t REG_DWORD /d 1 /f
-
-REM Taskbar layout (disabled for now)
-REM powershell.exe -command "cd \;Import-StartLayout -LayoutPath '\Windows\OEM\TaskbarLayoutModification.xml' -MountPath $env:SystemDrive"
-
 REM System apps
 dism.exe /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
 dism.exe /Add-ProvisionedAppxPackage /PackagePath:%SystemDrive%\Windows\OEM\CommsPhone.appxbundle /SkipLicense
 
 REM Temp mitigation for thermal issues regarding cellular (default is 3)
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\SmsRouter" /v Start /t REG_DWORD /d 4 /f
+
+echo.
+echo If you see any red warning dialog about driver signature, this is expected behavior.
+echo Please accept any dialog you see so some post sysprep devices can be installed.
+echo.
+
+cd \
+\Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
+\Windows\OEM\devcon.exe update \Windows\OEM\qcmbb.wp8994.inf QCMS\QCOM0EA0
+for /f "delims=*" %%f in ('dir /b /s \Windows\System32\DriverStore\FileRepository\qcxhcifilter*.inf') do \Windows\OEM\devcon.exe update %%f URS\QCOM24B6^&HOST

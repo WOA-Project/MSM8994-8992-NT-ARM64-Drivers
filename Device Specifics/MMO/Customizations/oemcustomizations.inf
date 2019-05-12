@@ -15,24 +15,23 @@ CatalogFile = oemcustomizations.cat
 ; 12 = Drivers
 Panther.Files = 10,Panther
 PstDrv.Files  = 10,OEM
+PreOobe.Files = 10,Setup\Scripts
 
 [SourceDisksNames]
 0 = %DiskId1%
 
 [SourceDisksFiles]
 Unattend.xml                       = 0,,
-TaskbarLayoutModification.xml      = 0,,
 SpecializeCommands.cmd             = 0,,
-FirstLogonCommands.cmd             = 0,,
-CommsPhone.appxbundle              = 0,,
-"File Explorer.lnk"                = 0,,
+devcon.exe                         = 0,,
+Oobe.cmd                           = 0,,
 
 ;*****************************************
 ; oemcustomizations  Install Section
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles = Panther.Files,MMO.Files,PstDrv.Files
+CopyFiles = Panther.Files,MMO.Files,PstDrv.Files,PreOobe.Files
 AddReg    = oemcustomizations_reg
 
 [oemcustomizations_reg]
@@ -43,13 +42,13 @@ HKLM, "SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher\Certificates\FBDC2
 [Panther.Files]
 Unattend.xml
 
+[PreOobe.Files]
+Oobe.cmd
+
 ; Windows/OEM
 [PstDrv.Files]
-TaskbarLayoutModification.xml, TaskbarLayoutModification.xml, , 0x00004000,
 SpecializeCommands.cmd
-FirstLogonCommands.cmd
-CommsPhone.appxbundle
-"File Explorer.lnk"
+devcon.exe
 
 [Strings]
 REG_SZ                 = 0x00000000

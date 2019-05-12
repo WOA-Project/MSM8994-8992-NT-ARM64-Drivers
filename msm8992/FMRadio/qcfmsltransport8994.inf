@@ -92,9 +92,9 @@ SPSVCINST_ASSOCSERVICE = 0x00000002
 ;Localizable
 QC                     = "Qualcomm Inc."
 StdMfg                 = "(Standard system devices)"
-DiskId1                = "QUALCOMM FM Transport Driver Disk #1"
-Bus.DeviceDesc         = "QUALCOMM FM Transport Driver "
-Bus.SVCDESC            = "QUALCOMM FM Transport Driver"
+DiskId1                = "Qualcomm FM Transport Driver Disk #1"
+Bus.DeviceDesc         = "Qualcomm FM Transport Driver "
+Bus.SVCDESC            = "Qualcomm FM Transport Driver"
 REG_DWORD              = 0x00010001
 REG_SZ                 = 0x00000000
 
