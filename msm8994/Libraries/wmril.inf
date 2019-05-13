@@ -17,9 +17,6 @@ WMRil.Files = 11 ; \system32 directory on Windows 2000 and later versions
 
 [SourceDisksFiles]
 WMRil.dll                = 0,,
-apperso.dll              = 0,,
-npetsec.dll              = 0,,
-;RilServiceActivation.exe = 0,,
 
 [DefaultInstall.NTARM]
 CopyFiles = WMRil.Files
@@ -74,9 +71,6 @@ HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\0000, RILPath, %REG
 
 [WMRil.Files]
 WMRil.dll
-apperso.dll
-npetsec.dll
-;RilServiceActivation.exe
 
 [Strings]
 QC            = "Qualcomm"
