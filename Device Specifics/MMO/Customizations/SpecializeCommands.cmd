@@ -25,13 +25,3 @@ dism.exe /Online /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Pro
 
 REM Temp mitigation for thermal issues regarding cellular (default is 3)
 REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\SmsRouter" /v Start /t REG_DWORD /d 4 /f
-
-echo.
-echo If you see any red warning dialog about driver signature, this is expected behavior.
-echo Please accept any dialog you see so some post sysprep devices can be installed.
-echo.
-
-cd \
-\Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
-\Windows\OEM\devcon.exe update \Windows\OEM\qcmbb.wp8994.inf QCMS\QCOM0EA0
-for /f "delims=*" %%f in ('dir /b /s \Windows\System32\DriverStore\FileRepository\qcxhcifilter*.inf') do \Windows\OEM\devcon.exe update %%f URS\QCOM24B6^&HOST
