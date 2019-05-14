@@ -23,8 +23,5 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v Hiberbo
 REM System apps
 dism.exe /Online /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
 
-REM Temp mitigation for thermal issues regarding cellular (default is 3)
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\SmsRouter" /v Start /t REG_DWORD /d 4 /f
-
 cd \
 \Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
