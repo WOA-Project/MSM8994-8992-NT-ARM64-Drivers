@@ -37,7 +37,8 @@ HWandSW.wav
 [Comms.CallsReg]
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvc", "ImagePath", 0x20000, "%%SystemRoot%%\system32\svchost.exe -k PhoneGroup -p"
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvc", "ObjectName", 0x0, "LocalSystem"
-HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost", "PhoneGroup", 0x10000, "PhoneSvc"HKLM, "SOFTWARE\Microsoft\Phone", ,0x10
+HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost", "PhoneGroup", 0x10000, "PhoneSvc"
+HKLM, "SOFTWARE\Microsoft\Phone", ,0x10
 HKLM, "SOFTWARE\Microsoft\Phone\Application", ,0x10
 HKLM, "SOFTWARE\Microsoft\Phone\PerSIMSettings", ,0x10
 HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "BrandingFlags", 0x10001, 0x2fb
