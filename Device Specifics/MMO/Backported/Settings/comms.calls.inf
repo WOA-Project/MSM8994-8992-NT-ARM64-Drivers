@@ -12,12 +12,14 @@ CatalogFile = Comms.Calls.cat
 
 [DestinationDirs]
 ; 10 = Windows
-Workaround.Files = 10
+Workaround.Files = 10, Media
 
 [SourceDisksNames]
 0 = %DiskId1%
 
 [SourceDisksFiles]
+Default.wav = 0,,
+HWandSW.wav = 0,,
 
 ;*****************************************
 ; Comms.Calls  Install Section
@@ -27,143 +29,76 @@ Workaround.Files = 10
 CopyFiles = Workaround.Files
 Addreg    = Comms.CallsReg
 
-; System32
+; Windows\Media
 [Workaround.Files]
+Default.wav
+HWandSW.wav
 
 [Comms.CallsReg]
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvc", "ImagePath", 0x20000, "%%SystemRoot%%\system32\svchost.exe -k PhoneGroup -p"
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvc", "ObjectName", 0x0, "LocalSystem"
-HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost", "PhoneGroup", 0x10000, "PhoneSvc"
-HKLM, "SOFTWARE\OEM\Cellular", ,0x10
-HKLM, "SOFTWARE\OEM\Cellular\CellManager", ,0x10
-HKLM, "SOFTWARE\OEM\Cellular\UICCDatastore", ,0x10
-HKLM, "SOFTWARE\OEM\Cellular\UICCDatastore\Private", ,0x10
-HKLM, "SOFTWARE\OEM\Cellular\UICCDatastore\Public", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Parameters", "LogToFile", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Plugins", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Plugins\ATT", "PluginPath", 0x0, "%%SystemDrive%%\Programs\HotspotHost\ATT\ATTHSPlugin.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Plugins\ATT", "PluginRank", 0x10001, 0x4
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Plugins\Generic", "PluginPath", 0x0, "%%SystemDrive%%\Programs\HotspotHost\Generic\GenericPlugin.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\HotspotOffload\Plugins\Generic", "PluginRank", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\DataCollection", ,0x10
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default", ,0x10
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", , ,"WifiAutoConnectConfig"
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "AutoConnectEnabled", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "DefaultScore", 0x0, "3.5"
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "Flags", 0x10001, 0x127
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "MinLinkQuality", 0x10001, 0x28
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "MinScore", 0x0, "1.0"
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "OverlapPercent", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "Retries", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "ScoreWeight", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\DataCollection\Default\WifiAutoConnectConfig", "SignalQualityWeight", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CellularFailover", "AllowFailover", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\Cmcspwwan", "DisableAOAC", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspIp", "Dll", 0x0, "CmCspIp.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspIp", "Order", 0x10001, 0x100
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspVpn", "Dll", 0x0, "CmCspVpn.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspVpn", "Order", 0x10001, 0x40
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspWwan", "Dll", 0x0, "CmCspWwan.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspWwan", "DynamicProtUnbind", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspWwan", "MaxTimeCntxtActInSec", 0x10001, 0xb4
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspWwan", "MaxTimeCntxtDeactInSec", 0x10001, 0xc6
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\CspsToLoad\CmCspWwan", "Order", 0x10001, 0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Policy", "{5B04B775-356B-4AA0-AAF8-6491FFEA5900}:background", 0x10001, 0x30
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Policy", "{5B04B775-356B-4AA0-AAF8-6491FFEA5900}:Interactive", 0x10001, 0x30
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Providers", ,0x10
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Providers\RspBasic", "Dll", 0x0, "RspBasic.dll"
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Providers\RspBasic\ResourceIds", "{C54DC729-87FA-48da-A1B5-479E209D9752}", 0x1, 29,c7,4d,c5,fa,87,da,48,a1,b5,47,9e,20,9d,97,52
-HKLM, "SOFTWARE\Microsoft\Windows Phone\ConnMgr\ResMgr\Providers\RspCellular", "Dll", 0x0, "RspCellular.dll"
-HKLM, "SOFTWARE\Microsoft\Connectivity", ,0x10
-HKLM, "SOFTWARE\Microsoft\Connectivity\APM", ,0x10
-HKLM, "SOFTWARE\Microsoft\Connectivity\CellularUX", ,0x10
-HKLM, "SOFTWARE\Microsoft\Connectivity\CellUXOEMConfigurable", ,0x10
-HKLM, "SOFTWARE\Microsoft\Multivariant", "AppInstallUITimeout", 0x10001, 0x927c0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "CellularClsID", 0x0, "{b6baabcf-8c41-4ccc-82e7-bc867662b833}"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "CriticalSettingsVersion", 0x0, "0.0.0.0"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "DatastoreRoot", 0x0, "\Programs\CommonFiles\ADC\Microsoft\MasterDatastore.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "DisableSIMBLD", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "EmulateMccWhenNoUicc", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Multivariant", "Enable", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Multivariant", "IccidToRegionTablePath", 0x20000, "%%windir%%\Provisioning\IccidToRegion.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "InvariantCleanupDelay", 0x10001, 0x1c20
-HKLM, "SOFTWARE\Microsoft\Multivariant", "MccTablePath_MS", 0x20000, "%%systemdrive%%\ProgramData\Microsoft\Provisioning\countrytable.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "MccTablePath_OEM", 0x20000, "%%systemdrive%%\ProgramData\Microsoft\Provisioning\OEM\countrytable.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "MccTablePath_OEM_Legacy", 0x20000, "%%systemdrive%%\programs\commonfiles\adc\OEM\countrytable.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "OOBESimUnlockTimeout", 0x10001, 0x493e0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "Override_MccTablePath_MS", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Multivariant", "PersistVariantData", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "PostVariantCleanupDelay", 0x10001, 0x10e0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "PreferredSlot", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant", "ProvisionDataCABPath", 0x0, "\Programs\CommonFiles\ADC\Microsoft\ProvisionData.cab"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "ProvisionDataCriticalSettingsCABPath", 0x0, "\Programs\CommonFiles\ADC\Microsoft\ProvisionDataCriticalSettings.cab"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "SimbldIccidTablePath", 0x20000, "%%systemdrive%%\ProgramData\Microsoft\Provisioning\OEM\SimbldIccidTable.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant", "SimbldIccidTablePath_Legacy", 0x20000, "%%systemdrive%%\programs\commonfiles\adc\OEM\SimbldIccidTable.xml"
-HKLM, "SOFTWARE\Microsoft\Multivariant\DeviceUpdate", ,0x10
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers", ,0x10
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{2D05C0A1-F85F-4830-B3E0-DC26E701D9AA}", "KeyOrder", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{2D05C0A1-F85F-4830-B3E0-DC26E701D9AA}", "name", 0x0, "Extension"
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{C77A3C40-03FD-47F9-A279-356B38F36E26}", "KeyOrder", 0x10001, 0x16
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{C77A3C40-03FD-47F9-A279-356B38F36E26}", "name", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{D2CDD0E2-BF87-41B1-A9EE-AB94C072DDF7}", "KeyOrder", 0x10001, 0xa
-HKLM, "SOFTWARE\Microsoft\Multivariant\Handlers\{D2CDD0E2-BF87-41B1-A9EE-AB94C072DDF7}", "name", 0x0, "UICC"
-HKLM, "SOFTWARE\Microsoft\Multivariant\Simulator", "Enable", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant\Simulator", "PrivateDirectory", 0x20000, "%%systemdrive%%\Data\SharedData\Multivariant\Simulator"
-HKLM, "SOFTWARE\Microsoft\Multivariant\Simulator", "PublicDirectory", 0x20000, "%%systemdrive%%\Data\Users\Public\MVSIMulator"
-HKLM, "SOFTWARE\Microsoft\Multivariant\Status", "LanguageSet", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant\Status", "OneTimeProvisioning", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Multivariant\UICC", ,0x10
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "ActivationLocationOOBETimeout", 0x10001, 0x15f90
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "BMRDownloadTimeout", 0x10001, 0x493e0
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "CustomOOBEConnReq", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "CustomOOBETimeout", 0x10001, 0x493e0
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "HideOwnershipSelection", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "MobileOperatorLiveID", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "MsaServiceTarget", 0x0, "ssl.live.com"
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "OobeCompleteTime", 0xB0001, 00,00,00,00,00,00,00,00
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "ShowLanguageSelectionUI", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Shell\OOBE", "ShowWorkAccountLink", 0x10001, 0x1
+HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost", "PhoneGroup", 0x10000, "PhoneSvc"HKLM, "SOFTWARE\Microsoft\Phone", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\Application", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\PerSIMSettings", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "BrandingFlags", 0x10001, 0x2fb
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "CDMAPriorityCallPrefix", 0x0, "*272"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "CellularBrandingImagePath", 0x0, ""
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "DisableCdmaHeuristics", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "EnablePlusCodeSupportOverride", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "IgnoreMWINotifications", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "LocationCellBroadcastActiveMCCs", 0x10000, "330","370","704","706","708","710","712","714","716","722","724","730","740","744","748"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\SupplementaryServiceCodeOverrides", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.160", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.200", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.210", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.220", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.230", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.240", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.250", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.26", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.260", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.270", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.310", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.410", 0x0, "ATTUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.490", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.560", 0x0, "ATTUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.580", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.680", 0x0, "ATTUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.800", 0x0, "TMOUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.90", 0x0, "ATTUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.980", 0x0, "ATTUS"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "CLSIDAccessor", 0x0, "{BC371B86-031F-4BD7-9E7D-FB5DF7D1D8C3}"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "CLSIDProvider", 0x0, "{C9804AB2-60B0-4AFF-8205-E30E591F145B}"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "ImapPortOverride", 0x10001, 0x8f
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "IncomingPort", 0x10001, 0x157b
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "SuppressSsl", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "TokenLogin", 0x10001, 0x1
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "ClientType", 0x0, "50"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "CLSIDAccessor", 0x0, "{BC371B86-031F-4BD7-9E7D-FB5DF7D1D8C3}"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "CLSIDProvider", 0x0, "{039B8E0E-EA5E-4801-96CD-71E7B343F03F}"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "DeviceType", 0x0, "6"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "EncryptedSmsSupported", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "IgnoreLegacyNotifications", 0x10001, 0x1
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "IncomingPort", 0x10001, 0x710
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "InitialSmsDestinationNumber", 0x0, "122"
+HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "ProtocolVariant", 0x0, "comverse"
+HKLM, "SOFTWARE\Microsoft\Phone\ServiceVolatile", ,0x10
+HKLM, "SOFTWARE\Microsoft\Phone\Settings\PhoneLineFactories", "Cellular", 0x0, "{ceec07ce-cde4-4b1b-ba82-e36910d1c465}"
+HKLM, "SOFTWARE\Microsoft\Phone\Shared", "PhoneAppLastLaunchedTickCount", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingDelay", 0x10001, 0xc8
+HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingSwitch", 0x10001, 0x1
+HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingWait", 0x10001, 0x1f4
+HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "TurnOnScreen", 0x10001, 0x1
 HKLM, "SOFTWARE\Microsoft\Cellular", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\CellManager", "ProvisioningActive0", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Cellular\IhvRilProxy", "NumberOfModems", 0x10001, 0x1
 HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\DeviceSpecific", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellData", "DisableAoAc", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellData", "LTEAttachGUIDs", 0x10000, "9476C91D-608F-47B6-856A-1D90C1BED333"
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellData", "MaxNumberOfPDPContexts", 0x10001, 0x4
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "Hide3GPP2ModeSelection", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "Hide3GPP2Selection", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "Hide3GPPNetworks", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HideAPN", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HideMMSAPN", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HideModeSelection", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HighestSpeed2G", 0x0, "2G"
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HighestSpeed3G", 0x0, "3G"
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "HighestSpeed4G", 0x0, "4G"
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "IsATTSpecific", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "LTEAttachGUID", 0x0, "9476C91D-608F-47B6-856A-1D90C1BED333"
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "ShowViewAPN", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", "ShowVoLTEToggle", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General", "AvoidStayingInManualSelection", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General", "DisableLTESupportWhenRoaming", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General", "DisableSystemTypeSupport", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General", "ExcludedSystemTypesByDefault", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General\RoamingTables", ,0x10
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General\RoamingTables\3GPPRoamingTables", "Enabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General\RoamingTables\3GPPRoamingTables\Exceptions", "000", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General\RoamingTables\3GPPRoamingTables\HomePLMN", "000", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\General\RoamingTables\3GPPRoamingTables\TargetImsi", "000", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS", ,0x10
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS\3GPP", ,0x10
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS\3GPP\IMS", "AttemptThresholdForIMS", 0x10001, 0x2
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS\Encodings", "GSM7BitEncodingPage", 0x10001, 0xd6d8
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS\Encodings", "SendUDHNLSS", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\SMS\Encodings", "UseKeyboardLanguage", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\Cellular\MVSettings\IMSISpecific\Default\CellUX", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\RIL", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\RIL\3GPP2SIDMCCMappingTable", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\RIL\3GPP2SIDMCCMappingTable\Conflict1", "MCCHighRange", 0x10001, 0x16a
@@ -211,478 +146,25 @@ HKLM, "SOFTWARE\Microsoft\Cellular\UICCDatastore", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\UICCDatastore\History", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\UICCDatastore\Private", ,0x10
 HKLM, "SOFTWARE\Microsoft\Cellular\UICCDatastore\Public", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\Application", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\PerSIMSettings", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\Service", "DefaultOutgoingPhoneLineId", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Service", "PrimaryTilePhoneLineId", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Service", "ServiceIdleTimeout", 0x10001, 0xffffffff
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "BrandingFlags", 0x10001, 0xfa
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "CDMAPriorityCallPrefix", 0x0, "*272"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "CellularBrandingImagePath", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "DisableCdmaHeuristics", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "EnablePlusCodeSupportOverride", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "IgnoreMWINotifications", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Service\PhoneProvider", "LocationCellBroadcastActiveMCCs", 0x10000, "330","370","704","706","708","710","712","714","716","722","724","730","740","744","748"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\SupplementaryServiceCodeOverrides", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.160", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.200", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.210", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.220", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.230", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.240", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.250", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.26", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.260", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.270", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.310", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.410", 0x0, "ATTUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.490", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.560", 0x0, "ATTUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.580", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.680", 0x0, "ATTUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.800", 0x0, "TMOUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.90", 0x0, "ATTUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable", "310.980", 0x0, "ATTUS"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "CLSIDAccessor", 0x0, "{BC371B86-031F-4BD7-9E7D-FB5DF7D1D8C3}"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "CLSIDProvider", 0x0, "{C9804AB2-60B0-4AFF-8205-E30E591F145B}"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "ImapPortOverride", 0x10001, 0x8f
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "IncomingPort", 0x10001, 0x157b
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "SuppressSsl", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\ATTUS", "TokenLogin", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "ClientType", 0x0, "50"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "CLSIDAccessor", 0x0, "{BC371B86-031F-4BD7-9E7D-FB5DF7D1D8C3}"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "CLSIDProvider", 0x0, "{039B8E0E-EA5E-4801-96CD-71E7B343F03F}"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "DeviceType", 0x0, "6"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "EncryptedSmsSupported", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "IgnoreLegacyNotifications", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "IncomingPort", 0x10001, 0x710
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "InitialSmsDestinationNumber", 0x0, "122"
-HKLM, "SOFTWARE\Microsoft\Phone\Service\VisualVoicemail\RegistrationTable\TMOUS", "ProtocolVariant", 0x0, "comverse"
-HKLM, "SOFTWARE\Microsoft\Phone\ServiceVolatile", ,0x10
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "AllowHomeNetworkSpecificDialStringsWhileRoaming", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "AssistedDialSetting", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "CallIDMatch", 0x10001, 0x7
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "ConferenceCallMaximumPartyCount", 0x10001, 0x6
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "ContinuousDTMFEnabled", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "HideCallForwarding", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "HomeNetworkSpecificDialStrings", 0x10000, "*71","*72","*73"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PartnerAppProvisioningFilePath", 0x0, "app://b6e3e590-9fa5-40c0-86ac-ef475de98e88/_default#/Launcher;component/MainPage.xaml"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PartnerAppTaskUri", 0x0, "app://b6e3e590-9fa5-40c0-86ac-ef475de98e88/_default#/Launcher;component/MainPage.xaml"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PartnerImmediateDialStrings", 0x10000, "##3282#","##634#","##777#","##7820#"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PartnerNonImmediateDialStrings", 0x10000, "##634","##7820","##777"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PersoUnlockCode", 0x0, "##782#"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "PreferredRecordingApplication", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "RecordingFeatureDisabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "ShowLongTones", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "UseOKForUssdDialogs", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "VideoCallingChargesMessage", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "VideoCallingChargesTitle", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "VideoCallingDescription", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "VideoCallingLabel", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings", "VoLTEAudioQualityString", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\Phone\Settings\PhoneLineFactories", "Cellular", 0x0, "{ceec07ce-cde4-4b1b-ba82-e36910d1c465}"
-HKLM, "SOFTWARE\Microsoft\Phone\Settings\PhoneLineFactories", "VoIP", 0x0, "{e0da66c1-3ac5-4346-8b18-93f5075a2a01}"
-HKLM, "SOFTWARE\Microsoft\Phone\Shared", "PhoneAppLastLaunchedTickCount", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "EnableSoftwareProximitySensorMitigation", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingDelay", 0x10001, 0xc8
-HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingSwitch", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "RingWait", 0x10001, 0x1f4
-HKLM, "SOFTWARE\Microsoft\Phone\ShellUI", "TurnOnScreen", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\Phone\Test", ,0x10
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds", "RingerVibrateState", 0x10001, 0x3
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\AchievementNotifyPopup.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Achievement\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Alarm", "Category", 0x0, "Alarm"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Alarm", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alarm-01.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BatteryCharging", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BatteryCharging", "InitVol", 0x10001, 0x4b
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BatteryCharging", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert_charging.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BatteryCharging\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BatteryCharging\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyAustralia", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyAustralia", "Script", 0x0, "apw0.375r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyAustralia", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy_425Hz_375ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCDMA", "Category", 0x0, "InCall2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCDMA", "Script", 0x0, "apr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCDMA", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\BusyCDMA.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCzech", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCzech", "Script", 0x0, "apw0.33r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyCzech", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy_425Hz_330ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyGermany", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyGermany", "Script", 0x0, "apw0.48r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyGermany", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy_425Hz_480ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyRomania", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyRomania", "Script", 0x0, "apw0.17r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyRomania", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy_450Hz_170ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyTone", "Category", 0x0, "InCall2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyTone", "Script", 0x0, "apr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyTone", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyUK", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyUK", "Script", 0x0, "apw0.375r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\BusyUK", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Busy_400Hz_375ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallDrop", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallDrop", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\calldrop.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting", "Script", 0x0, "pw3.5p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Callwait.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting\VoiceText", ,0x10
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting\VoiceText\RingerOffVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting\VoiceText\RingerOffVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting\VoiceText\RingerOnVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CallWaiting\VoiceText\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Camera", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Camera", "Locked", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CellBroadcast", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CellBroadcast", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CellBroadcast", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Clock", "Category", 0x0, "Alarm"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Clock", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alarm-01.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS", "DisabledForAudioCapture", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\CMAS.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS\RingerOffVibrateOn", "Script", 0x0, "v2w0.5v1w0.5v1w0.5v2w0.5v1w0.5v1"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS\RingerOnVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CMAS\RingerOnVibrateOn", "Script", 0x0, "v2w0.5v1w0.5v1w0.5v2w0.5v1w0.5v1p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Congestion", "Category", 0x0, "InCall2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Congestion", "Script", 0x0, "apr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Congestion", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\congestion.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CopyPaste", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\CopyPaste", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\CopyPaste.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceConnect", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceConnect", "InitVol", 0x10001, 0x4b
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceConnect", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Device_Connect.WMA"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceConnect\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceConnect\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceDisconnect", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceDisconnect", "InitVol", 0x10001, 0x4b
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceDisconnect", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Device_Disconnect.WMA"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceDisconnect\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DeviceDisconnect\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DownloadComplete", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DownloadComplete", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\DownloadComplete", "Sound", 0x0, "*none*"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf#", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf#", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmfpd.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf*", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf*", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmfast.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf0", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf0", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf0.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf1", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf1", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf1.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf2", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf2", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf2.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf3", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf3", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf3.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf4", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf4", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf4.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf5", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf5", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf5.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf6", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf6", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf6.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf7", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf7", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf7.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf8", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf8", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf8.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf9", "Category", 0x0, "DTMF"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Dtmf9", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf9.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert-08.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail\RingerOffVibrateOn", "Script", 0x0, "v0.2w0.2v0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail\RingerOnVibrateOff", "Script", 0x0, "p10"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\E-mail\RingerOnVibrateOn", "Script", 0x0, "v0.2w0.2v0.2p10"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\FindPhone", "Category", 0x0, "Alarm"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\FindPhone", "Script", 0x0, "av0pw1r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\FindPhone", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert_find_phone.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\IM", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\IM", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\IM", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert-10.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\IM\RingerOffVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\IM\RingerOnVibrateOn", "Script", 0x0, "v0.4p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary", "InitVol", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary", "Sound", 0x0, "ImeAddToDictionary.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeAddToDictionary\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV", "InitVol", 0x10001, 0x46
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV", "Sound", 0x0, "ImeBluebirdOOV.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeBluebirdOOV\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate", "InitVol", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate", "Sound", 0x0, "ImeSelectCandidate.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ImeSelectCandidate\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallBuzz", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallBuzz", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallBuzz", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\InCallBuzz.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf#", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf#", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmfpd.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf*", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf*", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmfast.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf0", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf0", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf0.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf1", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf1", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf1.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf2", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf2", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf2.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf3", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf3", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf3.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf4", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf4", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf4.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf5", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf5", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf5.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf6", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf6", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf6.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf7", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf7", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf7.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf8", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf8", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf8.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf9", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallDtmf9", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Dtmf9.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallVoiceText", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallVoiceText", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallVoiceText", "Script", 0x0, "w1.5pw0.5p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InCallVoiceText", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Callwait.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Infbeg", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Infbeg", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Infend", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Infend", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InfInt", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\InfInt", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Interrupt", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Interrupt", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
+HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement", ,0x10
+HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\BlockingApp", "DefaultBlockingAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
+HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\CallOriginApp", "ActiveCallOriginAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
+HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\CallOriginApp", "DefaultCallOriginAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "DefaultSound", 0x0, "C:\Windows\Media\default.wav"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "Directory", 0x0, "C:\Windows\Media\"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "InitVol", 0x10001, 0x55
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "Script", 0x0, "p"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "StreamClassId", 0x10001, 0x3
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "BeepMode", 0x10001, 0x1
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "BeepScript", 0x0, "p"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Category", 0x0, "SystemNotification"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Disabled", 0x10001, 0x0
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "InitVol", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\HWandSW.wav"
+HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Sound", 0x0, "C:\Windows\Media\HWandSW.wav"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\KnownCallerRing0", ,0x10
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT", "DisabledForAudioCapture", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\LAT.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT\RingerOffVibrateOn", "Script", 0x0, "v2w0.5v1w0.5v1w0.5v2w0.5v1w0.5v1"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT\RingerOnVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LAT\RingerOnVibrateOn", "Script", 0x0, "v0p2w0.5v0p1w0.5v0p1w0.5v0p2w0.5v0p1w0.5v0p1"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\LoudestInCallVolume", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery", "InitVol", 0x10001, 0x50
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert_low_battery.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Lowbattery\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Mail", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Mail", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Mail", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert-08.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Netbegin", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Netbegin", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Netend", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Netend", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NetInt", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NetInt", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NetworkDrop", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NetworkDrop", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\calldrop.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\NfcInRange.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange\RingerOffVibrateOn", "Script", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange\RingerOnVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcInRange\RingerOnVibrateOn", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\NfcPaymentFail.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail\RingerOffVibrateOff", "Script", 0x0, "v0.2w0.3v0.2w0.3v0.2w0.3v0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail\RingerOffVibrateOn", "Script", 0x0, "v0.2w0.3v0.2w0.3v0.2w0.3v0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail\RingerOnVibrateOff", "Script", 0x0, "pv0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentFail\RingerOnVibrateOn", "Script", 0x0, "pv0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange", "Sound", 0x0, "*vibrate*"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange\RingerOffVibrateOff", "Script", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange\RingerOffVibrateOn", "Script", 0x0, "v0.1w0.1v0.1w0.1v0.3"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange\RingerOnVibrateOff", "Script", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentInRange\RingerOnVibrateOn", "Script", 0x0, "v0.1w0.1v0.1w0.1v0.3"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\NfcPaymentSuccess.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess\RingerOffVibrateOff", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess\RingerOffVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess\RingerOnVibrateOff", "Script", 0x0, "pv0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcPaymentSuccess\RingerOnVibrateOn", "Script", 0x0, "pv0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\NfcTransactionComplete.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete\RingerOffVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete\RingerOnVibrateOff", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionComplete\RingerOnVibrateOn", "Script", 0x0, "v0.4p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort", "Script", 0x0, ""
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\NfcTransactionComplete.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort\RingerOffVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NfcTransactionCompleteShort\RingerOnVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Notification", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Notification", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToast", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToast", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToast", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert-05.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToast\RingerOffVibrateOn", "Script", 0x0, "v0.2w0.3v0.2w0.1v0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToast\RingerOnVibrateOn", "Script", 0x0, "v0.2w0.3v0.2w0.1v0.2p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToastLooping", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToastLooping", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToastLooping", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert-05.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToastLooping\RingerOffVibrateOn", "Script", 0x0, "v0.2pv0.3pav0.4pr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\NotificationToastLooping\RingerOnVibrateOn", "Script", 0x0, "v0.2pv0.3pav0.4pr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Password", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Password", "Sound", 0x0, "*none*"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneLocked", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneLocked", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneLocked", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\lock.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneUnlocked", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneUnlocked", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhoneUnlocked", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\unlock.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhotoScroll", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PhotoScroll", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PingRing", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\PingRing", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\PingRing.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Pip", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Pip", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\PIP.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reminder", "Category", 0x0, "Reminder"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reminder", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reminder", "Sound", 0x0, "\Programs\CommonFiles\Sounds\Lumia Calendar.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reorder", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reorder", "Script", 0x0, "apr"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Reorder", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Reorder.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Ringback", "Category", 0x0, "InCall2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Ringback", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Ringback", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\ringback.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackAustralia", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackAustralia", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackAustralia", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_400Hzx25Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackCzech", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackCzech", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackCzech", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackEU", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackEU", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackEU", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackFrance", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackFrance", "Script", 0x0, "apw3.5r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackFrance", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_440Hz_1500ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackGermany", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackGermany", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackGermany", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIndia", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIndia", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIndia", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hzx25Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIreland", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIreland", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackIreland", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_400Hz+450Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackItaly", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackItaly", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackItaly", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackMexico", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackMexico", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackMexico", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackNewZealand", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackNewZealand", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackNewZealand", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_400Hz+450Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackQatar", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackQatar", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackQatar", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_400Hz+450Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackRomania", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackRomania", "Script", 0x0, "apw4.5r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackRomania", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_450Hz_1500ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackSpain", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackSpain", "Script", 0x0, "apw3.5r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackSpain", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_425Hz_1500ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUK", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUK", "Script", 0x0, "apw0.2pw2r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUK", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_400Hz+450Hz.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUSA", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUSA", "Script", 0x0, "apw4r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingbackUSA", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ringback_440Hz+480Hz_2000ms.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Ringout", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Ringout", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Callwait.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingPreview", "Category", 0x0, "RingPreview"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingTone", "Category", 0x0, "Ring"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingTone", "Sound", 0x0, "\Programs\CommonFiles\Sounds\Microsoft Ringtone.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText", "Category", 0x0, "Ring"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Ring01.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText\RingerOnVibrateOff", "Script", 0x0, "w5.3apw0.5r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\RingVoiceText\RingerOnVibrateOn", "Script", 0x0, "w7.3apw0.5r"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ScreenOff", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ScreenOff", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\lock.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ScreenOn", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\ScreenOn", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\unlock.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Shutdown", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Shutdown", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMS", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMS", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMS", "Sound", 0x0, "\Programs\CommonFiles\Sounds\Lumia Message.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMS\RingerOffVibrateOn", "Script", 0x0, "v0.4"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMS\RingerOnVibrateOn", "Script", 0x0, "v0.4p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMSNudge", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMSNudge", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SMSNudge", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Alert_nudge.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\StartButton", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\StartButton", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemAsterisk", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemAsterisk", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemAsterisk", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemDefault", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemDefault", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemExclamation", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemExclamation", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemExclamation", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemHand", "Category", 0x0, "SystemVibrate"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemHand", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemQuestion", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemQuestion", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemStart", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\SystemStart", "Sound", 0x0, "*none*"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Toolkit", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Toolkit", "InCallCategory", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Toolkit", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\TransferComplete", "Category", 0x0, "InCall2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\TransferComplete", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\transfercomplete.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VideoTransition", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VideoTransition", "Script", 0x0, "p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VideoTransition", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Callwait.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoiceMail", "Category", 0x0, "Notification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoiceMail", "Disabled", 0x10001, 0x0
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoiceMail", "Sound", 0x0, "\Programs\CommonFiles\Sounds\Lumia Voicemail.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoiceMail\RingerOffVibrateOn", "Script", 0x0, "v0.2w0.1v0.2w0.1v0.2"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoiceMail\RingerOnVibrateOn", "Script", 0x0, "v0.2w0.1v0.2w0.1v0.2p"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoicePrivacyDrop", "Category", 0x0, "InCall"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\VoicePrivacyDrop", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\voiceprvcy.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Warning", "Category", 0x0, "System"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Warning", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\Remind.wma"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiCallDropWarning", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiCallDropWarning", "Disabled", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiCallDropWarning", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\WiFiCallDisconnect.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiConnected", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiConnected", "Disabled", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiConnected", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\WiFiConnected.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiDisconnected", "Category", 0x0, "SystemNotification"
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiDisconnected", "Disabled", 0x10001, 0x1
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\WiFiDisconnected", "Sound", 0x0, "C:\Programs\CommonFiles\Sounds\WiFiDisconnected.wav"
 
 [Strings]
 REG_SZ                 = 0x00000000
