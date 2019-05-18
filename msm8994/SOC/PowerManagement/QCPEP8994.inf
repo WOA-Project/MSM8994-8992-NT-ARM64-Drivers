@@ -75,19 +75,19 @@ HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)"
 HKR , Parameters        , BCLMode                     , 0x00010001,  0x00000001
 HKR , Parameters        , CprFlags                    , 0x00010001,  0x00000000
 HKR , Parameters        , DisableBCLLowVBattMitigation, 0x00010001,  0x00000001
-HKR , Parameters        , DisableBWMonBusDCVS         , 0x00010001,  0x00000001
+HKR , Parameters        , DisableBWMonBusDCVS         , 0x00010001,  0x00000000
 HKR , Parameters        , DisableCCI                  , 0x00010001,  0x00000000
 HKR , Parameters        , DisableCoreRotation         , 0x00010001,  0x00000000
 HKR , Parameters        , DisableCpuRet               , 0x00010001,  0x000000FF
 HKR , Parameters        , DisableCpuVdd               , 0x00010001,  0x00000000
-HKR , Parameters        , DisableCXO                  , 0x00010001,  0x00000001
+HKR , Parameters        , DisableCXO                  , 0x00010001,  0x00000000
 HKR , Parameters        , DisableL2Collapse           , 0x00010001,  0x00000000
 HKR , Parameters        , DisableL2GDHS               , 0x00010001,  0x00000003
-HKR , Parameters        , DisableL2Ret                , 0x00010001,  0x00000003
+HKR , Parameters        , DisableL2Ret                , 0x00010001,  0x00000000
 HKR , Parameters        , DisableOfflineNotification  , 0x00010001,  0x00000001
 HKR , Parameters        , DisablePCE                  , 0x00010001,  0x00000000
 HKR , Parameters        , DisablePhaseScaling         , 0x00010001,  0x00000001
-HKR , Parameters        , DisableVddMin               , 0x00010001,  0x00000001
+HKR , Parameters        , DisableVddMin               , 0x00010001,  0x00000000
 HKR , Parameters        , EapsFlags                   , 0x00010001,  0x00000210
 HKR , Parameters        , EnableIdleCrashDebug        , 0x00010001,  0x00000001
 HKR , Parameters        , EnableMicroPep              , 0x00010001,  0x00000001
@@ -131,9 +131,6 @@ HKR , Parameters\SDC2\P2, Frequency                   , 0x00010001,  0x0000C350
 HKR , Parameters\SDC2\P2, MaxUtilizationThreshold     , 0x00010001,  0x0000001E
 HKR , Parameters\SDC2\P2, MinUtilizationThreshold     , 0x00010001,  0x00000000
 HKR , Parameters\SDC2\P2, Performance                 , 0x00010001,  0x00000002
-
-HKR , Parameters        , PxoPowerCollapseLedEnable   , 0x00010001,  0x00000000
-HKR , Parameters\LED    , GPIOState                   , 0x00000000,  "0,3,2,1,2,1,2,1,0,3,2,1,2,1,2,1"
 
 [Pep_Device.NT.Copy]
 qcpep8994.sys
