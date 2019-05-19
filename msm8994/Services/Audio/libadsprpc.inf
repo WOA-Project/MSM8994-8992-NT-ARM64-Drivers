@@ -60,12 +60,11 @@ ServiceBinary = "%%systemroot%%\system32\svchost.exe -k libadsprpcGroup"
 HKLM, System\ControlSet001\Services\libadsprpc            , DisplayName    , %REG_SZ%       ,  "libadsprpc"
 HKLM, System\ControlSet001\Services\libadsprpc            , Description    , %REG_SZ%       ,  "ADSPRPC Library"
 HKLM, System\ControlSet001\Services\libadsprpc            , ObjectName     , %REG_SZ%       ,  "LocalSystem"
-HKLM, System\ControlSet001\Services\libadsprpc            , ImagePath      , %REG_EXPAND_SZ%,  "%%systemroot%%\system32\svchost.exe -k libadsprpcGroup"
+HKLM, System\ControlSet001\Services\libadsprpc            , ImagePath      , %REG_EXPAND_SZ%,  %%systemroot%%\system32\svchost.exe -k libadsprpcGroup"
 HKLM, System\ControlSet001\Services\libadsprpc            , Type           , %REG_DWORD%    ,  0x0110
 HKLM, System\ControlSet001\Services\libadsprpc            , Start          , %REG_DWORD%    ,  0x0003
 HKLM, System\ControlSet001\Services\libadsprpc            , ErrorControl   , %REG_DWORD%    ,  0x0001
 HKLM, System\ControlSet001\Services\libadsprpc\Parameters , ServiceDll     , %REG_EXPAND_SZ%,  "%%SystemRoot%%\System32\libadsprpc.dll"
-HKLM, System\ControlSet001\Services\libadsprpc\Parameters , ServiceMain     , %REG_EXPAND_SZ%,  "libadsprpcMain"
 HKLM, Software\Microsoft\Windows NT\CurrentVersion\Svchost, libadsprpcGroup, %REG_MULTI_SZ% ,  "libadsprpc"
 [libadsprpc.AddReg]
 
