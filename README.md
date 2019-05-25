@@ -87,24 +87,7 @@ Talkman:
 
 ### Packages
 
-Packages below are 'cumulative', you can stack them if applicable.
-
-- For Qualcomm Snapdragon 808 and 810 devices, install everything under msm8992-8994
-
----
-
-- For Qualcomm Snapdragon 810 devices, install everything under msm8994
-- For Qualcomm Snapdragon 808 devices, install everything under msm8992
-
----
-
-- Follow configurations\installation-notes.md for installing specific configurations matching your device
-
----
-
-- If your device is an Hapanero running QcomPkg (Qualcomm ARM64 UEFI), you want to install configurations\graphics-hapanero using Remote Desktop once Windows is fully installed since the screen will go black during installation.
-
----
+Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Installing-drivers-manually.
 
 ### Notes
 
