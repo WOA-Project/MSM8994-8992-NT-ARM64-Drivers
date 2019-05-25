@@ -119,18 +119,6 @@ Flashing an entire eMMC img on engineering devices will not only risk you damagi
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
 
-## GPU Testing for Hapanero (not Hapaneros with Lumia950XLPkg)
-
-- Install from Supplemental\GPU:
-  The correct Panel driver for your device (Hapanero, Cityman..)
-  Screen may go black, after installing oempanel, it's recommended to use RDP to install those drivers
-  Note: a patch is coming to ACPI tables to avoid this issue in a future UEFI update.
-
-  Install Supplemental\GPU\Display into the Microsoft Generic Display adapter device and reboot
-
-  Important notes:
-  x86 / CHPE DirectX support is missing.
-
 ## USB Debugging
 
 - It is advised to not install LumiaUSBKm when using USB debugging (it is under Device Specifics/DeviceName/USB)
