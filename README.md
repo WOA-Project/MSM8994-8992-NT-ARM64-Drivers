@@ -43,45 +43,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+**Cellular disclaimers**
+
+We've also been telling people on engineering devices to make backups, this is especially true here.
+Flashing an entire eMMC img on engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
+Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
+You have been warned.
+
 ## Project Status
 
-The following items are not functional yet on specific devices, reason when available is specified:
-
-Hapanero (Any revision):
-
-- Fingerprint reader (missing drivers)
-- Cameras (missing drivers)
-- Any kind of sensor (except ALS)
-- Audio volume control for Speakers (stuck at 100%)
-- Vibration motor
-- x86 DirectX support is missing.
-- FM Radio
-
-Cityman:
-
-- Iris biometric sensor (missing drivers)
-- Cameras (missing drivers)
-- Any kind of sensor (except ALS)
-- Audio volume control for Speakers (stuck at 100%)
-- Vibration motor
-- HDMI out via USB-C
-- x86 DirectX support is missing.
-- FM Radio
-
-Talkman:
-
-- PEP (root cause of every difference with other devices right now)
-- GPU
-- Iris biometric sensor (missing drivers)
-- Cameras (missing drivers)
-- Any kind of sensor (except ALS)
-- Audio
-- Microphones
-- Vibration motor
-- WLAN (requires PEP)
-- HDMI out via USB-C
-- Cellular
-- FM Radio
+Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Status.
 
 ## Installing manually
 
@@ -97,10 +68,4 @@ Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Insta
 
 To install on Hapaneros using Qualcomm's UEFI, refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Getting-started-on-Hapanero-(Qualcomm-UEFI). It is highly recommended to avoid using this on EB2 Hapanero devices, and using Lumia950XlPkg instead.
   
-## Cellular disclaimers
-
-We've also been telling people on engineering devices to make backups, this is especially true here.
-Flashing an entire eMMC img on engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
-Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
-You have been warned.
 
