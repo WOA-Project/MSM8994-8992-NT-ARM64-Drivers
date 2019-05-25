@@ -89,33 +89,20 @@ Talkman:
 
 Packages below are 'cumulative', you can stack them if applicable.
 
-- For Qualcomm Snapdragon 810 devices, install everything under MSM8994
-- For Qualcomm Snapdragon 808 devices, install everything under MSM8992
+- For Qualcomm Snapdragon 808 and 810 devices, install everything under msm8992-8994
 
 ---
 
-- For Microsoft Mobile Oy Devices, install everything under Device Specifics\MMO
+- For Qualcomm Snapdragon 810 devices, install everything under msm8994
+- For Qualcomm Snapdragon 808 devices, install everything under msm8992
 
 ---
 
-- For Microsoft Lumia 950 XL Devices, install everything under Device Specifics\Cityman\Common
-- For Microsoft Lumia 950 Devices, install everything under Device Specifics\Talkman\Common
+- Follow configurations\installation-notes.md for installing specific configurations matching your device
 
 ---
 
-- For Microsoft Lumia 950 XL Single SIM Devices, install everything under Device Specifics\Cityman\SingleSIM
-- For Microsoft Lumia 950 XL Dual SIM Devices, install everything under Device Specifics\Cityman\DualSIM
-
----
-
-- For Microsoft Lumia 950 Single SIM Devices, install everything under Device Specifics\Talkman\SingleSIM
-- For Microsoft Lumia 950 Dual SIM Devices, install everything under Device Specifics\Talkman\DualSIM
-
----
-
-- For Microsoft Hapanero EB2.0+ Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg\EB2
-- For Microsoft Hapanero EB2.0+ Devices running Lumia950XlPkg UEFI, install everything under Device Specifics\Hapanero\Lumia950XlPkg\EB2
-- For Microsoft Hapanero EB0.5+ (< EB2.0) Devices running Qualcomm UEFI, install everything under Device Specifics\Hapanero\QcomPkg\EB1
+- If your device is an Hapanero running QcomPkg (Qualcomm ARM64 UEFI), you want to install configurations\graphics-hapanero using Remote Desktop once Windows is fully installed since the screen will go black during installation.
 
 ---
 
