@@ -83,7 +83,7 @@ Talkman:
 - Cellular
 - FM Radio
 
-## Readme
+## Installing manually
 
 ### Packages
 
@@ -95,6 +95,10 @@ Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Insta
   ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
   nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
   
+### Hapanero 
+
+To install on Hapaneros using Qualcomm's UEFI, refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Getting-started-on-Hapanero-(Qualcomm-UEFI). It is highly recommended to avoid using this on EB2 Hapanero devices, and using Lumia950XlPkg instead.
+  
 ## Cellular disclaimers
 
 We've also been telling people on engineering devices to make backups, this is especially true here.
@@ -102,9 +106,3 @@ Flashing an entire eMMC img on engineering devices will not only risk you damagi
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
 
-## Hapanero setup
-
-It is highly recommended you do not install the leaked ARM64 firmware on Hapanero devices. This firmware is really buggy and is prone to lots of overheating problems and may ultimately damage your device.
-Instead, please install Lumia950XLPkg like on Citymans and Talkmans, on a RnD firmware specifically made for Hapanero (like 10586, 10240) and use the Hapanero2 drivers.
-
-On Hapanero pre-EB2 devices, you'll currently have to use the leaked ARM64 firmware. The ARM64 Windows 10 Mobile present will not boot, and will crash in qcsubsys.
