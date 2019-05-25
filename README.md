@@ -85,15 +85,13 @@ Talkman:
 
 ## Installing manually
 
-### Packages
+### Drivers
 
 Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Installing-drivers-manually.
 
 ### Notes
 
-- To install drivers, you'll need to follow the usual Dism procedure before first boot of the operating system.
-  ie: Dism /Image:DriveLetterOfOS /Add-Driver /Driver:PathToDeviceFolder\Pre-OOBE /Recurse
-  nointegritychecks and testsigning must be enabled in the OSLoader entry in BCD for the operating system
+- nointegritychecks and testsigning must be enabled in the BCD, otherwise, the OS won't boot.
   
 ### Hapanero 
 
