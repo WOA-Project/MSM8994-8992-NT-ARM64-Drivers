@@ -102,17 +102,6 @@ Flashing an entire eMMC img on engineering devices will not only risk you damagi
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
 
-## USB Debugging
-
-- It is advised to not install LumiaUSBKm when using USB debugging (it is under Device Specifics/DeviceName/USB)
-- In order to enable USB debugging, you must have your phone put in mass storage mode and have access to the WoA ESP desktop
-  partition.
-  You need to go to /EFI/Microsoft/Boot/ (there you'll find a BCD file)
-  Run the following commands from a command prompt running as administrator inside that directory:
-  
-  bcdedit /store BCD /dbgsettings usb TARGETNAME:WOATARGET
-  bcdedit /store BCD /set {default} debug on
-
 ## Hapanero setup
 
 It is highly recommended you do not install the leaked ARM64 firmware on Hapanero devices. This firmware is really buggy and is prone to lots of overheating problems and may ultimately damage your device.
