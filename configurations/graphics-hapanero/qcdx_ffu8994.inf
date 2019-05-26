@@ -55,8 +55,9 @@ qcvidencarm32mfthevc8994.dll  = 0,,
 qcvidencarm64mftmpeg48994.dll = 0,,
 qcvidencarm32mftmpeg48994.dll = 0,,
 
+qcdx11arm32um8996.dll         = 0,,
 qcdx11arm64um8994.dll         = 0,,
-qcdx11arm32um8994.dll         = 0,,
+qcdx11x86um8998.dll           = 0,,
 
 qcdxarm64compiler850.dll   = 0,,
 qcdxarm32compiler850.dll   = 0,,
@@ -67,7 +68,8 @@ QcWicEncoder8994.dll       = 0,,
 
 [SignatureAttributes]
 qcdx11arm64um8994.dll        = SignatureAttributes.PETrust
-qcdx11arm32um8994.dll        = SignatureAttributes.PETrust
+qcdx11arm32um8996.dll        = SignatureAttributes.PETrust
+qcdx11x86um8998.dll          = SignatureAttributes.PETrust
 
 qcdxarm64compiler850.dll    = SignatureAttributes.PETrust
 qcdxarm32compiler850.dll    = SignatureAttributes.PETrust
@@ -427,6 +429,7 @@ KmdfLibraryVersion = 1.15
 HKR, , InstalledDisplayDrivers    , %REG_MULTI_SZ%,  qcdx11um8994, qcdx11um8994, qcdx11um8994
 HKR, , VgaCompatible              , %REG_DWORD%   ,  0
 HKR, , UserModeDriverName         , %REG_MULTI_SZ%,  <>, %11%\qcdx11um8994.dll, %11%\qcdx11um8994.dll, %11%\qcdx11um8994.dll
+HKR, , UserModeDriverNameWow      , %REG_MULTI_SZ%,  <>, %10%\SysWow64\qcdx11um8994.dll, %10%\SysWow64\qcdx11um8994.dll, %10%\SysWow64\qcdx11um8994.dll
 HKR, , UserModeDriverNameWow2     , %REG_MULTI_SZ%,  <>, %10%\SysArm32\qcdx11um8994.dll, %10%\SysArm32\qcdx11um8994.dll, %10%\SysArm32\qcdx11um8994.dll
 HKR, , ContentProtectionDriverName, %REG_SZ%      ,        qchdcpumd8994.dll
 
@@ -450,7 +453,7 @@ qcvss8994.mbn,                              , , 0x00004000,
 
 ; SysArm32
 [QCDX.Files.NTarm_10]
-qcdx11um8994.dll, qcdx11arm32um8994.dll        , , 0x00004000,
+qcdx11um8994.dll, qcdx11arm32um8996.dll        , , 0x00004000,
 qcdx11compiler8994.dll, qcdxarm32compiler850.dll  , , 0x00004000,
 qcvidencum8994.dll, qcvidencarm32um8994.dll      , , 0x00004000,
 qcvidencmfth2638994.dll, qcvidencarm32mfth2638994.dll , , 0x00004000,
@@ -461,7 +464,8 @@ qcviddecmft8994.dll, qcviddecarm32mft8994.dll     , , 0x00004000,
 
 ; SysWow64
 [QCDX.Files.NTarm_13]
-qcdx11compiler8994.dll, qcdxx86compiler850.dll  , , 0x00004000,
+qcdxx86compiler8998.dll, qcdxx86compiler850.dll  , , 0x00004000,
+qcdx11um8994.dll,     qcdx11x86um8998.dll,    , , 0x00004000,
 
 ; SyChpe32
 [QCDX.Files.NTarm_14]
