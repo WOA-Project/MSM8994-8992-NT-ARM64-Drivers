@@ -18,7 +18,7 @@ If you are deploying this driver pack using WOA Deployer for Lumia, make sure WO
 **Cellular disclaimers**
 
 We've also been telling people on engineering devices to make backups, this is especially true here.
-Flashing an entire eMMC img on engineering devices will not only risk you damaging the device, but you will also lose for *ever* the modem partitions for *your* phone.
+Flashing an entire eMMC image on engineering devices will not only risk damaging the device, it will also lose for *ever* the modem partitions for *your* phone.
 Those are unique, there's ways to recover them but it's borderline legal. If you do not have the correct modem partitions for your device, you will *never* get Cellular to work on your device.
 You have been warned.
 
@@ -59,10 +59,6 @@ Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Statu
 ### Drivers
 
 Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Installing-drivers-manually.
-
-### Notes
-
-- nointegritychecks and testsigning must be enabled in the BCD, otherwise, the OS won't boot.
   
 ### Hapanero 
 
