@@ -1,0 +1,60 @@
+;
+; NfcResources.inf
+;
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SYSTEM
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QC%
+DriverVer   = 09/09/2015,1.0.1067.0000
+CatalogFile = NfcResources.cat
+
+[DestinationDirs]
+NfcResources.Files = 10,OEM
+
+[SourceDisksNames]
+0 = "Disk"
+
+[SourceDisksFiles]
+NXPPN547.inf_ = 0,,
+nxppn547fw.dat = 0,,
+InstallNfc.cmd = 0,,
+
+MSNfcI2C547.1803.dll = 0,1803,
+nxppn547.1803.cat_ = 0,1803,
+
+MSNfcI2C547.1809.dll = 0,1809,
+nxppn547.1809.cat_ = 0,1809,
+
+MSNfcI2C547.1903.dll = 0,1903,
+nxppn547.1903.cat_ = 0,1903,
+
+[DefaultInstall.NTARM]
+CopyFiles = NfcResources.Files
+
+[DefaultInstall.NTARM64]
+CopyFiles = NfcResources.Files
+
+[NfcResources.Files]
+NXPPN547.inf_, NXPPN547.inf, , 0x00004000,
+nxppn547fw.dat
+InstallNfc.cmd
+
+MSNfcI2C547.1803.dll
+nxppn547.1803.cat_, nxppn547.1803.cat, , 0x00004000,
+
+MSNfcI2C547.1809.dll
+nxppn547.1809.cat_, nxppn547.1809.cat, , 0x00004000,
+
+MSNfcI2C547.1903.dll
+nxppn547.1903.cat_, nxppn547.1903.cat, , 0x00004000,
+
+[Strings]
+QC            = "Qualcomm"
+
+REG_SZ        = 0x00000000
+REG_MULTI_SZ  = 0x00010000
+REG_EXPAND_SZ = 0x00020000
+REG_DWORD     = 0x00010001
+REG_BINARY    = 0x00000001
+

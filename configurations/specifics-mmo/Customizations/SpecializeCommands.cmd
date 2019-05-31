@@ -25,3 +25,5 @@ dism.exe /Online /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Pro
 
 cd \
 \Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
+
+call \Windows\OEM\InstallNfc.cmd
