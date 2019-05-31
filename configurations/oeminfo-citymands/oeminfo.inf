@@ -38,7 +38,7 @@ HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneHardwareRevision"         , 0
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneHardwareVariant"          , 0x0,  "RM-1116"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturer"             , 0x0,  "MicrosoftMDG"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturerDisplayName"  , 0x0,  "Microsoft"
-HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturerModelName"    , 0x0,  "RM-1116_1000"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneManufacturerModelName"    , 0x0,  "RM-1116_12732"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneMobileOperatorDisplayName", 0x0,  "Operator"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneMobileOperatorName"       , 0x0,  "000-88"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneModelName"                , 0x0,  "Lumia 950 XL Dual SIM"
