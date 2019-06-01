@@ -20,14 +20,14 @@ NXPPN547.inf_ = 0,,
 nxppn547fw.dat = 0,,
 InstallNfc.cmd = 0,,
 
-MSNfcI2C547.1803.dll = 0,1803,
-nxppn547.1803.cat_ = 0,1803,
+MSNfcI2C547.1803.dll = 0,,
+nxppn547.1803.cat_ = 0,,
 
-MSNfcI2C547.1809.dll = 0,1809,
-nxppn547.1809.cat_ = 0,1809,
+MSNfcI2C547.1809.dll = 0,,
+nxppn547.1809.cat_ = 0,,
 
-MSNfcI2C547.1903.dll = 0,1903,
-nxppn547.1903.cat_ = 0,1903,
+MSNfcI2C547.1903.dll = 0,,
+nxppn547.1903.cat_ = 0,,
 
 [DefaultInstall.NTARM]
 CopyFiles = NfcResources.Files
