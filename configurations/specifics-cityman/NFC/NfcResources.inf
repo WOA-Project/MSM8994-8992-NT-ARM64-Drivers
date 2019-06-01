@@ -36,18 +36,18 @@ CopyFiles = NfcResources.Files
 CopyFiles = NfcResources.Files
 
 [NfcResources.Files]
-NXPPN547.inf_, NXPPN547.inf, , 0x00004000,
+NXPPN547.inf, NXPPN547.inf_, , 0x00004000,
 nxppn547fw.dat
 InstallNfc.cmd
 
 MSNfcI2C547.1803.dll
-nxppn547.1803.cat_, nxppn547.1803.cat, , 0x00004000,
+nxppn547.1803.cat, nxppn547.1803.cat_, , 0x00004000,
 
 MSNfcI2C547.1809.dll
-nxppn547.1809.cat_, nxppn547.1809.cat, , 0x00004000,
+nxppn547.1809.cat, nxppn547.1809.cat_, , 0x00004000,
 
 MSNfcI2C547.1903.dll
-nxppn547.1903.cat_, nxppn547.1903.cat, , 0x00004000,
+nxppn547.1903.cat, nxppn547.1903.cat_, , 0x00004000,
 
 [Strings]
 QC            = "Qualcomm"
