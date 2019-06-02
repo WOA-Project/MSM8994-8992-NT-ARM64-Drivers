@@ -9,6 +9,3 @@ if %osbuild% gtr 17763 set ossupport=1903
 
 copy \Windows\OEM\MSNfcI2C547.%ossupport%.dll \Windows\OEM\MSNfcI2C547.dll
 copy \Windows\OEM\nxppn547.%ossupport%.cat \Windows\OEM\nxppn547.cat
-
-cd \
-\Windows\OEM\devcon.exe update \Windows\OEM\NXPPN547.inf ACPI\PN547
