@@ -20,6 +20,7 @@ Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = QCSSM8994.cat                                ; This file is given when a driver passes WHQL testing
 PnpLockDown = 1
+BootCritical = 1
 
 [DestinationDirs]
 DefaultDestDir = 12                                        ; This is a directory id (dirid)

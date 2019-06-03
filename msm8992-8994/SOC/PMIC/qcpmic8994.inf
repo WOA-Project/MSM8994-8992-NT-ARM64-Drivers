@@ -17,6 +17,7 @@ Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = qcpmic8994.cat
 PnPLockdown = 1
+BootCritical = 1
 
 [SourceDisksNames]
 1 = %DiskId1%

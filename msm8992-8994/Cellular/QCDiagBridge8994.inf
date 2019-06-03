@@ -16,6 +16,7 @@ Provider    = %ManufacturerName%
 CatalogFile = QCDiagBridge8994.cat
 PnpLockDown = 1
 DriverVer   = 07/02/2015,1.0.1067.0000
+BootCritical = 1
 
 [DestinationDirs]
 DefaultDestDir = 12
