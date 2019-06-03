@@ -19,7 +19,6 @@ Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = qcgpio.cat
 PnpLockDown = 1
-BootCritical = 1
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]

@@ -17,7 +17,6 @@ Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = qcspmi8994.cat
 PnpLockDown = 1
-BootCritical = 1
 
 [DestinationDirs]
 DefaultDestDir = 12

@@ -19,7 +19,6 @@ Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0
 CatalogFile = qcabd8994.cat
 PnPLockdown = 1
-BootCritical = 1
 
 [DestinationDirs]
 DefaultDestDir = 12

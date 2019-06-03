@@ -18,7 +18,6 @@ Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0
 PnPLockdown = 1
 CatalogFile = "HalExtQCWdogTimer.cat"
-BootCritical = 1
 
 [ControlFlags]
 ExcludeFromSelect = *

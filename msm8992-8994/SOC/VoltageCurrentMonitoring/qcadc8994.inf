@@ -19,7 +19,6 @@ Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
 CatalogFile = qcadc8994.cat
 PnpLockDown = 1
-BootCritical = 1
 
 [SourceDisksNames]
 1 = %DiskId1%
