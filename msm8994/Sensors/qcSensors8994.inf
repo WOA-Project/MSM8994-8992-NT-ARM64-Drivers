@@ -86,7 +86,7 @@ UmdfExtensions     = SensorsCx0102
 
 [WdfExt_AddReg]
 HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\qcSensors"           , "WdfExtensions", 0x00010000, "SensorsCx0102"
-HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\qcSensors\Parameters", "ConfFile1"    , 0x00000000, "C:\Windows\System32\qcSensorsDefaults_CHI.conf"
+HKLM, "SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\qcSensors\Parameters", "ConfFile1"    , 0x00000000, "%%SystemRoot%%\System32\qcSensorsDefaults_CHI.conf"
 
 [Sensor_Inst_SecurityAddReg]
 HKR, , DeviceCharacteristics, 0x10001, 0x00000100                               ; FILE_DEVICE_SECURE_OPEN

@@ -29,10 +29,6 @@ CopyFiles = qcsocket.Files.NTarm_11
 [qcsocket.Files.NTarm_11]
 qsocketipcrum8994.dll
 
-;-------------- Service installation
-[qcsocket_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

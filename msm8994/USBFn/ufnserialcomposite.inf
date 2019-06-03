@@ -47,23 +47,23 @@ DefaultDestDir = 12
 %QCCompositeDevice.DeviceDesc2_DPL% = UfnBus_Child_02_DPL, USBFN\RMNET
 %QCCompositeDevice.DeviceDesc3_DPL% = UfnBus_Child_03_DPL, USBFN\DPL
 
-[UfnBus_Child_00_SER]
-CopyFiles = UfnBus_Child.Copy
-[UfnBus_Child_01_SER]
-CopyFiles = UfnBus_Child.Copy
-[UfnBus_Child_02_SER]
-CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_00_SER]
+;CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_01_SER]
+;CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_02_SER]
+;CopyFiles = UfnBus_Child.Copy
 [UfnBus_Child_03_SER]
 CopyFiles = UfnBus_Child.Copy
 
-[UfnBus_Child_00_NET]
-CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_00_NET]
+;CopyFiles = UfnBus_Child.Copy
 [UfnBus_Child_01_NET]
 CopyFiles = UfnBus_Child.Copy
-[UfnBus_Child_02_NET]
-CopyFiles = UfnBus_Child.Copy
-[UfnBus_Child_03_NET]
-CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_02_NET]
+;CopyFiles = UfnBus_Child.Copy
+;[UfnBus_Child_03_NET]
+;CopyFiles = UfnBus_Child.Copy
 
 [UfnBus_Child_00_DPL]
 CopyFiles = UfnBus_Child.Copy
@@ -78,23 +78,23 @@ CopyFiles = UfnBus_Child.Copy
 ufnserialclass.sys
 
 ;-------------- Interface specific information
-[UfnBus_Child_00_SER.HW]
-AddReg = UfnBus_DIAG_AddReg
-[UfnBus_Child_01_SER.HW]
-AddReg = UfnBus_MODEM_AddReg
-[UfnBus_Child_02_SER.HW]
-AddReg = UfnBus_NMEA_AddReg
+;[UfnBus_Child_00_SER.HW]
+;AddReg = UfnBus_DIAG_AddReg
+;[UfnBus_Child_01_SER.HW]
+;AddReg = UfnBus_MODEM_AddReg
+;[UfnBus_Child_02_SER.HW]
+;AddReg = UfnBus_NMEA_AddReg
 [UfnBus_Child_03_SER.HW]
 AddReg = UfnBus_TRACE_AddReg
 
-[UfnBus_Child_00_NET.HW]
-AddReg = UfnBus_DIAG_AddReg
+;[UfnBus_Child_00_NET.HW]
+;AddReg = UfnBus_DIAG_AddReg
 [UfnBus_Child_01_NET.HW]
 AddReg = UfnBus_NMEA_AddReg
-[UfnBus_Child_02_NET.HW]
-AddReg = UfnBus_MODEM_AddReg
-[UfnBus_Child_03_NET.HW]
-AddReg = UfnBus_RMNET_AddReg
+;[UfnBus_Child_02_NET.HW]
+;AddReg = UfnBus_MODEM_AddReg
+;[UfnBus_Child_03_NET.HW]
+;AddReg = UfnBus_RMNET_AddReg
 
 [UfnBus_Child_00_DPL.HW]
 AddReg = UfnBus_DIAG_AddReg
@@ -150,22 +150,22 @@ HKR, , DeviceNames         , 0x10000, "\Device\USB_DPL"
 
 
 ;-------------- Service installation
-[UfnBus_Child_00_SER.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
-[UfnBus_Child_01_SER.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
-[UfnBus_Child_02_SER.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_00_SER.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_01_SER.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_02_SER.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
 [UfnBus_Child_03_SER.Services]
 AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
-[UfnBus_Child_00_NET.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_00_NET.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
 [UfnBus_Child_01_NET.Services]
 AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
-[UfnBus_Child_02_NET.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
-[UfnBus_Child_03_NET.Services]
-AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_02_NET.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
+;[UfnBus_Child_03_NET.Services]
+;AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
 [UfnBus_Child_00_DPL.Services]
 AddService = ufnserialclass, 0x00000002, ufnserialclass_Service_Inst
 [UfnBus_Child_01_DPL.Services]
@@ -302,57 +302,57 @@ hklm, system\currentcontrolset\control\wmi\autologger\ufnserial\{d5393b53-8aae-4
 hklm, system\currentcontrolset\control\wmi\autologger\ufnserial\{d5393b53-8aae-40b1-938b-c207e999605f}           , EnableLevel                   , 0x00010001, 0x00000004
 hklm, system\currentcontrolset\control\wmi\autologger\ufnserial\{d5393b53-8aae-40b1-938b-c207e999605f}           , MatchAnyKeyword               , 0x00010001, 0xFFFFFFFF
 
-[ufnserialclass_Service_Inst.AddReg]
+;[ufnserialclass_Service_Inst.AddReg]
 
 ; Device setting
 ; Run EanbleQCComp.bat to modify the Device settings
 
 ; SerialCompositeConfig (PID_319B)
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , bmAttributes       , %REG_DWORD%   ,  0x80
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , bMaxPower          , %REG_DWORD%   , 0xFA
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , InterfaceList      , %REG_MULTI_SZ%, "DIAG","MODEM","NMEA","TRACE"
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , bmAttributes       , %REG_DWORD%   ,  0x80
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , bMaxPower          , %REG_DWORD%   , 0xFA
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\SerialCompositeConfig"                     , InterfaceList      , %REG_MULTI_SZ%, "DIAG","MODEM","NMEA","TRACE"
 
 ; RmNetCompositeConfig (PID_9001)
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , bmAttributes       , %REG_DWORD%   ,  0x80
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , bMaxPower          , %REG_DWORD%   , 0xFA
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , InterfaceList      , %REG_MULTI_SZ%, "DIAG","NMEA","MODEM","RMNET"
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , bmAttributes       , %REG_DWORD%   ,  0x80
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , bMaxPower          , %REG_DWORD%   , 0xFA
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\RmNetCompositeConfig"                      , InterfaceList      , %REG_MULTI_SZ%, "DIAG","NMEA","MODEM","RMNET"
 
 ; DplCompositeConfig (PID_90B7)
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , bmAttributes       , %REG_DWORD%   ,  0x80
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , bMaxPower          , %REG_DWORD%   , 0xFA
-HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , InterfaceList      , %REG_MULTI_SZ%, "DIAG","MODEM","RMNET","DPL"
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , bmAttributes       , %REG_DWORD%   ,  0x80
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , bMaxPower          , %REG_DWORD%   , 0xFA
+;HKLM, "System\CurrentControlSet\Control\USBFN\Configurations\DplCompositeConfig"                        , InterfaceList      , %REG_MULTI_SZ%, "DIAG","MODEM","RMNET","DPL"
 
 ; Interface DIAG
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DIAG"                                          , InterfaceDescriptor, %REG_BINARY%  , 09,04,00,00,02,FF,FF,FF,00,07,05,81,02,00,02,00,07,05,02,02,00,02,00
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DIAG"                                          , InterfaceGUID      , %REG_SZ%      , {3641691D-B4BD-4715-BB46-641FD214E147}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DIAG"                                          , InterfaceDescriptor, %REG_BINARY%  , 09,04,00,00,02,FF,FF,FF,00,07,05,81,02,00,02,00,07,05,02,02,00,02,00
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DIAG"                                          , InterfaceGUID      , %REG_SZ%      , {3641691D-B4BD-4715-BB46-641FD214E147}
 ; Interface MODEM
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\MODEM"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,01,00,03,02,FF,FF,00,07,05,83,02,00,02,00,07,05,04,02,00,02,00,07,05,85,03,40,00,0C
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\MODEM"                                         , InterfaceGUID      , %REG_SZ%      , {A01FDE7F-640E-4981-BB7C-58FC4860896B}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\MODEM"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,01,00,03,02,FF,FF,00,07,05,83,02,00,02,00,07,05,04,02,00,02,00,07,05,85,03,40,00,0C
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\MODEM"                                         , InterfaceGUID      , %REG_SZ%      , {A01FDE7F-640E-4981-BB7C-58FC4860896B}
 ; Interface NMEA
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\NMEA"                                          , InterfaceDescriptor, %REG_BINARY%  , 09,04,02,00,02,FF,FF,FF,00,07,05,86,02,00,02,00,07,05,07,02,00,02,00
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\NMEA"                                          , InterfaceGUID      , %REG_SZ%      , {A15D6AFA-C85D-426F-A79A-1DBBF17CFD2F}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\NMEA"                                          , InterfaceDescriptor, %REG_BINARY%  , 09,04,02,00,02,FF,FF,FF,00,07,05,86,02,00,02,00,07,05,07,02,00,02,00
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\NMEA"                                          , InterfaceGUID      , %REG_SZ%      , {A15D6AFA-C85D-426F-A79A-1DBBF17CFD2F}
 ; Interface TRACE
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\TRACE"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,03,00,02,FF,FF,FF,00,07,05,88,02,00,02,00,07,05,09,02,00,02,00
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\TRACE"                                         , InterfaceGUID      , %REG_SZ%      , {23238082-6DB8-4A76-8693-635F0093282A}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\TRACE"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,03,00,02,FF,FF,FF,00,07,05,88,02,00,02,00,07,05,09,02,00,02,00
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\TRACE"                                         , InterfaceGUID      , %REG_SZ%      , {23238082-6DB8-4A76-8693-635F0093282A}
 ; Interface RMNET
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\RMNET"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,03,00,03,FF,FF,FF,00,07,05,88,02,00,02,00,07,05,09,02,00,02,00,07,05,8A,03,40,00,0C
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\RMNET"                                         , InterfaceGUID      , %REG_SZ%      , {26884C7E-E24A-4FB6-8C75-00F8CD924A3D}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\RMNET"                                         , InterfaceDescriptor, %REG_BINARY%  , 09,04,03,00,03,FF,FF,FF,00,07,05,88,02,00,02,00,07,05,09,02,00,02,00,07,05,8A,03,40,00,0C
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\RMNET"                                         , InterfaceGUID      , %REG_SZ%      , {26884C7E-E24A-4FB6-8C75-00F8CD924A3D}
 ; Interface DPL
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DPL"                                           , InterfaceDescriptor, %REG_BINARY%  , 09,04,02,00,01,FF,FF,FF,00,07,05,85,02,00,02,00
-HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DPL"                                           , InterfaceGUID      , %REG_SZ%      , {873852F2-0D2A-4442-80A9-2DD869F41A5C}
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DPL"                                           , InterfaceDescriptor, %REG_BINARY%  , 09,04,02,00,01,FF,FF,FF,00,07,05,85,02,00,02,00
+;HKLM, "System\CurrentControlSet\Control\USBFN\Interfaces\DPL"                                           , InterfaceGUID      , %REG_SZ%      , {873852F2-0D2A-4442-80A9-2DD869F41A5C}
 
 
 
 ; Adding WPP Debug
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , BufferSize         , %REG_DWORD%   ,  0x00000003
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , LogFileMode        , %REG_DWORD%   ,  0x00080100
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , Guid               , %REG_Sz%      ,  {7b431b06-d6a3-4f82-b307-bc6b28f7ab94}
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , ClockType          , %REG_DWORD%   ,  0x00000001
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , Start              , %REG_DWORD%   ,  0x00000000
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", Enabled            , %REG_DWORD%   ,  0x00000000
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableFlags        , %REG_DWORD%   ,  0x00000000
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", MatchAnyKeyword    , %REG_DWORD%   ,  0xFFFFFFFF
-HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableLevel        , %REG_DWORD%   ,  0x00000004
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , BufferSize         , %REG_DWORD%   ,  0x00000003
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , LogFileMode        , %REG_DWORD%   ,  0x00080100
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , Guid               , %REG_Sz%      ,  {7b431b06-d6a3-4f82-b307-bc6b28f7ab94}
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , ClockType          , %REG_DWORD%   ,  0x00000001
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial"                                       , Start              , %REG_DWORD%   ,  0x00000000
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", Enabled            , %REG_DWORD%   ,  0x00000000
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableFlags        , %REG_DWORD%   ,  0x00000000
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", MatchAnyKeyword    , %REG_DWORD%   ,  0xFFFFFFFF
+;HKLM, "System\CurrentControlSet\Control\WMI\Autologger\UfnSerial\{D5393B53-8AAE-40B1-938B-C207E999605F}", EnableLevel        , %REG_DWORD%   ,  0x00000004
 
 [SourceDisksNames]
 1 = %DiskId1%,,,""

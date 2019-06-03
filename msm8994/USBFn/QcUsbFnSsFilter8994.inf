@@ -47,9 +47,6 @@ AddService = QcUsbFnSSFilter,, QcUsbFnSSFilter_Service_Inst
 [QcUsbFnSSFilter.CopyFile]
 QcUsbFnSsFilter8994.sys
 
-[QcUsbFnSSFilter.NT.HW]
-AddReg = QcUsbFnSSFilter_AddReg
-
 [QcUsbFnSSFilter_AddReg]
 HKR, , "LowerFilters", 0x00010000, QcUsbFnSSFilter
 
@@ -61,6 +58,7 @@ StartType     = 0               ; SERVICE_BOOT_START
 ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
 Group         = filter          ; Needed for boot-critical loading per ServiceGroupOrder
 ServiceBinary = %12%\QcUsbFnSsFilter8994.sys
+AddReg        = QcUsbFnSSFilter_AddReg
 
 [Strings]
 Company             = "Qualcomm Technologies, Inc."

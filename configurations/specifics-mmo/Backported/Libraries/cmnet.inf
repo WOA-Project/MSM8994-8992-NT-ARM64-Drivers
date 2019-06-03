@@ -34,10 +34,6 @@ CopyFiles = cmnet.Files.NTarm_11
 CmOemUtil.dll
 cmnet.dll
 
-;-------------- Service installation
-[cmnet_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

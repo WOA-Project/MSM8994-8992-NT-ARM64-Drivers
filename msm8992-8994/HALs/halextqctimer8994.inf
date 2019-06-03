@@ -41,9 +41,6 @@ HKLM, "%OSEDB%\VEN_QCOM&DEV_100A", "HALExtension", , "HalExtQCTimer.dll"
 [QC_TIMERS_CopyFiles]
 HalExtQCTimer.dll, , , 0x00001000,
 
-[QC_TIMERS.Services]
-AddService = , %SPSVCINST_ASSOCSERVICE%
-
 [Strings]
 
 ;Non-localizable

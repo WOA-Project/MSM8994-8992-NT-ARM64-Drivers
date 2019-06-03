@@ -66,7 +66,6 @@ HKLM, System\ControlSet001\Services\libadsprpc            , Start          , %RE
 HKLM, System\ControlSet001\Services\libadsprpc            , ErrorControl   , %REG_DWORD%    ,  0x0001
 HKLM, System\ControlSet001\Services\libadsprpc\Parameters , ServiceDll     , %REG_EXPAND_SZ%,  "%%SystemRoot%%\System32\libadsprpc.dll"
 HKLM, Software\Microsoft\Windows NT\CurrentVersion\Svchost, libadsprpcGroup, %REG_MULTI_SZ% ,  "libadsprpc"
-[libadsprpc.AddReg]
 
 [libadsprpc.Files]
 libadsprpc.dll

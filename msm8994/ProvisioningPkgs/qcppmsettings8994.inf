@@ -30,10 +30,6 @@ CopyFiles = qcppmsettings.Files.NTarm
 [qcppmsettings.Files.NTarm]
 PPMSettings-8994Profiles.ppkg
 
-;-------------- Service installation
-[qcppmsettings_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

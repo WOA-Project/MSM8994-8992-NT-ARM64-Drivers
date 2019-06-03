@@ -30,10 +30,6 @@ CopyFiles = qcppmpee.Files.NTarm
 [qcppmpee.Files.NTarm]
 Power.EnergyEstimationEngine.CPU.SD810.ppkg
 
-;-------------- Service installation
-[qcppmsettings_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

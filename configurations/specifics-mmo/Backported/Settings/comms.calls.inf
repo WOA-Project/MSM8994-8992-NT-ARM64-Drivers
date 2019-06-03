@@ -151,8 +151,8 @@ HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement", ,0x10
 HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\BlockingApp", "DefaultBlockingAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
 HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\CallOriginApp", "ActiveCallOriginAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
 HKLM, "SOFTWARE\Microsoft\CallAndMessagingEnhancement\CallOriginApp", "DefaultCallOriginAppUserModelId", 0x0, "Microsoft.BlockandFilterglobal_8wekyb3d8bbwe!x59553c14y5701y49a2y9909y264d034deb3dx"
-HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "DefaultSound", 0x0, "C:\Windows\Media\default.wav"
-HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "Directory", 0x0, "C:\Windows\Media\"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "DefaultSound", 0x0, "%%SystemRoot%%\Media\default.wav"
+HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "Directory", 0x0, "%%SystemRoot%%\Media\"
 HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "InitVol", 0x10001, 0x55
 HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "Script", 0x0, "p"
 HKLM, "SOFTWARE\Microsoft\EventSounds\SoundCategories\SystemNotification", "StreamClassId", 0x10001, 0x3
@@ -163,7 +163,7 @@ HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "BeepScript", 0x0, "p"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Category", 0x0, "SystemNotification"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Disabled", 0x10001, 0x0
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "InitVol", 0x10001, 0x32
-HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Sound", 0x0, "C:\Windows\Media\HWandSW.wav"
+HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress", "Sound", 0x0, "%%SystemRoot%%\Media\HWandSW.wav"
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress\RingerOffVibrateOff", "InitVol", 0x10001, 0x0
 HKLM, "SOFTWARE\Microsoft\EventSounds\Sounds\Keypress\RingerOffVibrateOn", "InitVol", 0x10001, 0x0
 

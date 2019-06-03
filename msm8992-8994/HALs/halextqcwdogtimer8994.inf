@@ -47,9 +47,6 @@ HKLM, "%OSEDB%\VEN_QCOM&DEV_100B", "HALExtension", , "HalExtQCWdogTimer.dll"
 [QC_TIMERS_CopyFiles]
 HalExtQCWdogTimer.dll, , , 0x00001000,
 
-[QC_TIMERS.Services]
-AddService = , %SPSVCINST_ASSOCSERVICE%
-
 [Strings]
 
 ;Non-localizable

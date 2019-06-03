@@ -85,10 +85,6 @@ HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath18, %REG_
 HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath19, %REG_SZ%,  ""
 HKLM, System\CurrentControlSet\Control\AudioCalibSettings, AcbdFilePath20, %REG_SZ%,  ""
 
-;-------------- Service installation
-[ACSP_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

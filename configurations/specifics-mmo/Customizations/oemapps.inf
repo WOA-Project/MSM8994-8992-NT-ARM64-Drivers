@@ -30,10 +30,6 @@ CopyFiles = oemapps.Files.NTarm
 [oemapps.Files.NTarm]
 OEMApps.ppkg
 
-;-------------- Service installation
-[oemapps_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

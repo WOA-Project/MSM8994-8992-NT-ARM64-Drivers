@@ -64,11 +64,11 @@ HKLM, "SYSTEM\Versions", "ParentBranchBuild", 0x0, "13169"
 HKLM, "SYSTEM\Versions", "QFELevel", 0x0, "13169"
 HKLM, "SYSTEM\Versions", "TimeStamp", 0x0, "20160505-1801"
 
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 0, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 1, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 2, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 3, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
-HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 4, %REG_SZ%, "C:\windows\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 0, %REG_SZ%, "%%systemroot%%\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 1, %REG_SZ%, "%%systemroot%%\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 2, %REG_SZ%, "%%systemroot%%\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 3, %REG_SZ%, "%%systemroot%%\System32\QxdmFilter.bin"
+HKLM, SYSTEM\ControlSet001\Services\RILAdaptation\Parameters\ModemFilters, 4, %REG_SZ%, "%%systemroot%%\System32\QxdmFilter.bin"
 
 [RILAdaptation.Files]
 RILAdaptationService.exe

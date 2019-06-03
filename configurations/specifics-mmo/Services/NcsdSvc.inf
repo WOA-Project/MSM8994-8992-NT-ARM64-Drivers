@@ -51,8 +51,8 @@ ServiceBinary = "%%systemroot%%\system32\svchost.exe -k NsgExtUti"
 
 [NcsdSvc_Reg]
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", , ,"NcsdEtw"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", "ResourceFileName", 0x0, "C:\windows\System32\NcsdRes.dll"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", "MessageFileName", 0x0, "C:\windows\System32\NcsdRes.dll"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", "ResourceFileName", 0x0, "%%SystemRoot%%\System32\NcsdRes.dll"
+HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", "MessageFileName", 0x0, "%%SystemRoot%%\System32\NcsdRes.dll"
 HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Publishers\{2FCD7DFB-BE81-4973-B188-DEAD27F82088}", "Enabled", 0x10001, 0x1
 
 HKLM, "SOFTWARE\OEM\Nokia\NokiaSvcHost\Plugins\NsgExtUti\NcsdPluginSvc", "Path", 0x0, "NcsdPluginSvc.dll"
@@ -72,7 +72,7 @@ HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "ErrorControl", 0x10001, 0x
 HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "DisplayName", 0x0, "NcsdPluginSvc"
 HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "Description", 0x0, "Native Care Service"
 HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "FailureActions", 0x1, 80,51,01,00,00,00,00,00,00,00,00,00,04,00,00,00,14,00,00,00,01,00,00,00,E8,03,00,00,01,00,00,00,E8,03,00,00,01,00,00,00,E8,03,00,00,00,00,00,00,00,00,00,00
-HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "ImagePath", 0x20000, "C:\windows\System32\svchost.exe -k NsgExtUti"
+HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc", "ImagePath", 0x20000, "%%SystemRoot%%\System32\svchost.exe -k NsgExtUti"
 HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc\Parameters", "ServiceDll", 0x20000, "%%SystemRoot%%\System32\NcsdPluginSvc.dll"
 HKLM, "SYSTEM\ControlSet001\Services\NcsdPluginSvc\Parameters", "ServiceDllUnloadOnStop", 0x10001, 0x1
 

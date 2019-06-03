@@ -2369,7 +2369,7 @@ HKLM, SYSTEM\ControlSet001\Services\QCAUD\WaveSpeakerHeadset\StreamType2        
 HKLM, SYSTEM\ControlSet001\Services\QCAUD\WaveSpeakerHeadset\StreamType2\streamConfig                            , COPPAppType                             , 0x00010001, 0x00000000
 HKLM, SYSTEM\ControlSet001\Services\QCAUD\WaveSpeakerHeadset\StreamType2\streamConfig                            , FeatureStreamType                       ,           , "LowLatencyPushModeLoopback"
 HKLM, SYSTEM\ControlSet001\Services\QCAUD\WaveSpeakerHeadset\StreamType2\streamConfig                            , POPPAppType                             , 0x00010001, 0x0001113B
-HKLM, SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig                                              , AudioResourceConstraintExamplePath      ,           , "C:\windows\System32\AudioResourceConstraints_8994.xml"
+HKLM, SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig                                              , AudioResourceConstraintExamplePath      ,           , "%%SystemRoot%%\System32\AudioResourceConstraints_8994.xml"
 
 
 [QCAUD_A.NT.HW]

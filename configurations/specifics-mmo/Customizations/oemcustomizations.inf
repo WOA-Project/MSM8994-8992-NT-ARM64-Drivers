@@ -31,7 +31,7 @@ Oobe.cmd                           = 0,,
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles = Panther.Files,MMO.Files,PstDrv.Files,PreOobe.Files
+CopyFiles = Panther.Files,PstDrv.Files,PreOobe.Files
 AddReg    = oemcustomizations_reg
 
 [oemcustomizations_reg]

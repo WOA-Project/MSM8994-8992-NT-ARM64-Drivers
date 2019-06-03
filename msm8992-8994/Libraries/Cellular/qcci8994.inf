@@ -38,10 +38,6 @@ qccium8994.dll, qcciarm64um8994.dll, , 0x00004000,
 [qcci.Files.NTarm_10]
 qccium8994.dll, qcciarm32um8994.dll, , 0x00004000,
 
-;-------------- Service installation
-[qcci_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002

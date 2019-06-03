@@ -43,10 +43,6 @@ msvcr120.dll, msvcarm64r120.dll, , 0x00004000,
 msvcp120.dll, msvcarm32p120.dll, , 0x00004000,
 msvcr120.dll, msvcarm32r120.dll, , 0x00004000,
 
-;-------------- Service installation
-[MSVC120_Device.Services]
-AddService = ,%SPSVCINST_ASSOCSERVICE%;
-
 [Strings]
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002
