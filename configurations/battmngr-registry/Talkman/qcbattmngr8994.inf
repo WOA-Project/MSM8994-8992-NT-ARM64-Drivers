@@ -46,9 +46,6 @@ Copyfiles   = BATTMNGRCopyFiles
 AddProperty = WDTFSOCDeviceCategory
 Reboot
 
-[BATTMNGR_Inst.NT.HW]
-Addreg = BMACL,BMREG
-
 [BMACL]
 HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)" ;built in admin and local sys access
 
@@ -140,6 +137,7 @@ ServiceType   = %SERVICE_KERNEL_DRIVER%
 StartType     = %SERVICE_DEMAND_START%
 ErrorControl  = %SERVICE_ERROR_NORMAL%
 ServiceBinary = %12%\qcbattmngr8994.sys
+Addreg        = BMACL,BMREG
 
 [Strings]
 ;Localizable Strings

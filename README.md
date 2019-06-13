@@ -1,5 +1,5 @@
 # Microsoft Mobile ARM64 Windows Driver pack
-## For Lumia 950 (incomplete), Lumia 950 XL, RX-130/id330-1 (EB0.X/EB1.X/EB2.X)
+## For Lumia 950, Lumia 950 XL, RX-130/id330-1 (EB0.X/EB1.X/EB2.X)
 
 ![Devices](banner.png)
 
