@@ -31,8 +31,8 @@ Addreg    = usbhostReg
 [Workaround.Files]
 
 [usbhostReg]
-HKLM, "SYSTEM\ControlSet001\Control\USB", "DualRoleFeatures"       , 0x0,  0xe
-HKLM, "SYSTEM\ControlSet001\Control\USB", "OsDefaultRoleSwitchMode", 0x0,  0x1
+HKLM, "SYSTEM\ControlSet001\Control\USB", "DualRoleFeatures", 0x0,  0xe
+HKLM, "SYSTEM\ControlSet001\Control\USB", "RoleSwitchMode"  , 0x0,  0x1
 
 [Strings]
 REG_SZ                 = 0x00000000
