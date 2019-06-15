@@ -56,6 +56,11 @@ Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Statu
 
 ## Installing manually
 
+For preserving charset encoding, please checkout with using:
+```
+git clone -c core.autocrlf=false https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers
+```
+
 ### Drivers
 
 Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Installing-drivers-manually.
