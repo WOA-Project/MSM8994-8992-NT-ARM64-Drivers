@@ -58,9 +58,7 @@ Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Statu
 
 For preserving charset encoding, please checkout with using:
 ```
-
 git clone -c core.autocrlf=false https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers
-
 ```
 
 ### Drivers
