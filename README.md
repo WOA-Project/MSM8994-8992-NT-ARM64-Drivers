@@ -1,7 +1,7 @@
 # Microsoft Mobile ARM64 Windows Driver pack
 ## For Lumia 950, Lumia 950 XL, RX-130/id330-1 (EB0.X/EB1.X/EB2.X)
 
-![Devices](assets\banner.png)
+![Devices](assets/banner.png)
 
 This pack is a work in progress and may be getting updates at a later time.
 
@@ -52,7 +52,7 @@ SOFTWARE.
 
 ## Project Status
 
-![Real life phones](assets\real_life_phones.jpg)
+![Real life phones](assets/real_life_phones.jpg)
 
 Refer to https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki/Status.
 
