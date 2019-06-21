@@ -23,6 +23,7 @@ PreOobe.Files = 10,Setup\Scripts
 [SourceDisksFiles]
 Unattend.xml                       = 0,,
 SpecializeCommands.cmd             = 0,,
+SilentProvisioner.exe              = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 
@@ -60,6 +61,7 @@ Oobe.cmd
 ; Windows/OEM
 [PstDrv.Files]
 SpecializeCommands.cmd
+SilentProvisioner.exe
 devcon.exe
 
 NXPPN547.inf,        NXPPN547.inf_,      , 0x00004000,

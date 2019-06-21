@@ -40,7 +40,7 @@
       <RunSynchronous>
         <RunSynchronousCommand wcm:action="add">
           <Order>1</Order>
-          <Path>cmd.exe /c \Windows\OEM\SpecializeCommands.cmd</Path>
+          <Path>\Windows\OEM\SilentProvisioner.exe</Path>
           <Description>Commands </Description>
         </RunSynchronousCommand>
       </RunSynchronous>
