@@ -51,6 +51,7 @@ LumiaNull.sys = 1,,
 %EnoEmNull.DeviceDesc%      = LumiaNull_Device, ACPI\NOKIA_ENOEM
 %WPCrasherNull.DeviceDesc%  = LumiaNull_Device, ACPI\WP_CRASHER
 %QcGPUNull.DeviceDesc%      = LumiaNull_Device, ACPI\QCOM_GPU
+%BIFBattNull.DeviceDesc%    = LumiaNull_Device, ACPI\QCOM24C2
 %1001Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1001
 %1002Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1002
 %1006Null.DeviceDesc%       = LumiaNull_Device, ACPI\MSHW1006
@@ -131,6 +132,8 @@ EnoGpioNull.DeviceDesc    = "Nokia Care Diagnostic ENO GPIO Device"
 EnoEmNull.DeviceDesc      = "Nokia Care Diagnostic ENO EM Device"
 WPCrasherNull.DeviceDesc  = "Nokia Windows Phone Crasher Device"
 TouchPowerNull.DeviceDesc = "Touch Panel Power Stub Device"
+
+BIFBattNull.DeviceDesc    = "Qualcomm BIF Battery Device"
 
 1001Null.DeviceDesc       = "mmo security driver"
 1002Null.DeviceDesc       = "Origa2Auth Device"
