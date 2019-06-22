@@ -47,7 +47,7 @@ HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneRadioHardwareRevision"    , 0
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneRadioSoftwareRevision"    , 0x0,  "0096.0004"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneROMLanguage"              , 0x0,  "0"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneROMVersion"               , 0x0,  "0"
-HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSOCVersion"               , 0x0,  "8994"
+HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSOCVersion"               , 0x0,  "8992"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSupportLink"              , 0x0,  "https://microsoft.sharepoint.com/teams/osg_core_sigma/siplat/QualcommPages/Hapanero.aspx"
 HKLM, "SYSTEM\Platform\DeviceTargetingInfo", "PhoneSupportPhoneNumber"       , 0x0,  "0"
 
