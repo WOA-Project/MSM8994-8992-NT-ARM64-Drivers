@@ -16,6 +16,7 @@ CatalogFile = oemcustomizations.cat
 Panther.Files = 10,Panther
 PstDrv.Files  = 10,OEM
 PreOobe.Files = 10,Setup\Scripts
+Oobe.Files    = 11,Oobe\Info
 
 [SourceDisksNames]
 0 = %DiskId1%
@@ -36,13 +37,17 @@ nxppn547.1809.cat_                 = 0,,
 MSNfcI2C547.1903.dll               = 0,,
 nxppn547.1903.cat_                 = 0,,
 
+Oobe.xml                           = 0,,
+license.html                       = 0,,
+license.rtf                        = 0,,
+
 
 ;*****************************************
 ; oemcustomizations  Install Section
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles = Panther.Files,PstDrv.Files,PreOobe.Files
+CopyFiles = Panther.Files,PstDrv.Files,PreOobe.Files,Oobe.Files
 AddReg    = oemcustomizations_reg
 
 [oemcustomizations_reg]
@@ -57,6 +62,11 @@ Unattend.xml
 
 [PreOobe.Files]
 Oobe.cmd
+
+[Oobe.Files]
+Oobe.xml
+license.rtf
+license.html
 
 ; Windows/OEM
 [PstDrv.Files]
