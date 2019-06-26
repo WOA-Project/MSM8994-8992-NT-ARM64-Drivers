@@ -27,13 +27,9 @@ PnpLockDown = 1
 
 [SourceDisksFiles]
 qcauddev8994.sys = 1
-qccpe8992.mbn    = 1
 
 [DestinationDirs]
 Drivers_Dir = 12
-Sys32_Dir   = 11
-
-
 
 ;*****************************************
 ; Audio Device Driver Install Section
@@ -48,13 +44,9 @@ Sys32_Dir   = 11
 
 [AUDIODEVICE.NT]
 CopyFiles = Drivers_Dir
-CopyFiles = Sys32_Dir
 
 [Drivers_Dir]
 qcauddev8994.sys
-
-[Sys32_Dir]
-qccpe8992.mbn
 
 ;-------------- Service installation
 [AUDIODEVICE.NT.Services]
@@ -92,7 +84,7 @@ HKR, Parameters, "T04"       , %REG_DWORD%, 0x7fffffff
 ;CPE Default Image Path
 HKR, Parameters, "CpeImagePath"       , %REG_SZ%   , "\SystemRoot\system32\"
 ;CPE Default Image Name - can take string with regular expression
-HKR, Parameters, "CpeImageName"       , %REG_SZ%   , "qccpe8992.mbn"
+HKR, Parameters, "CpeImageName"       , %REG_SZ%   , "qccpe????.mbn"
 ;CPESSR RamDump collection enable flag, By default it is disabled.
 HKR, Parameters, "EnableCPESSRRamDump", %REG_DWORD%, 0x0
 ;CPESSR Restart enable flag, By default it is disabled.
