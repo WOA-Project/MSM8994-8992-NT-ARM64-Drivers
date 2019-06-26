@@ -1,0 +1,1 @@
+This is the official qualcomm sensor driver, and not the MMO version
