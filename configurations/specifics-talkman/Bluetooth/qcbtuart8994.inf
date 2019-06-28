@@ -21,6 +21,8 @@ BTUART.Files = 12
 
 [SourceDisksFiles]
 qcbtuart8994.sys     = 1,,
+nvm_tlv_3.2.bin      = 1,,
+rampatch_tlv_3.2.tlv = 1,,
 
 [ControlFlags]
 ExcludeFromSelect = *
@@ -36,6 +38,8 @@ CopyFiles = BTUART.Files
 
 [BTUART.Files]
 qcbtuart8994.sys
+nvm_tlv_3.2.bin
+rampatch_tlv_3.2.tlv
 
 [QCABTUART.NT.HW]
 AddReg = BTUART.HW.AddReg
