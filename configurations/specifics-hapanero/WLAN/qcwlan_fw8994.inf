@@ -6,7 +6,7 @@
 ;    WLANFW.INF
 ;
 ;Abstract:
-;    INF file for installing the WLANFW Package for the Bluetooth UART Driver.
+;    INF file for installing the WLANFW Package for the QCLWAN Driver.
 ;
 ;Installation Notes: 
 ;    
@@ -19,7 +19,7 @@ Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QCOM%
 DriverVer   = 07/02/2015,1.0.1067.0
-CatalogFile = qcwlanfw8994.cat
+CatalogFile = qcwlan_fw8994.cat
 
 [DestinationDirs]
 Drivers_Dir_24 = 12
