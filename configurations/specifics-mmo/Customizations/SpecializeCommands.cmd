@@ -36,4 +36,5 @@ REM System apps
 dism.exe /Online /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
 
 cd \
+\Windows\OEM\devcon.exe update \Windows\OEM\qcaud8994.inf AUDD\QCOM2451
 \Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
