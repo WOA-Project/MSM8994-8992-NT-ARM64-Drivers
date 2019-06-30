@@ -43,6 +43,7 @@ HKLM, SYSTEM\CurrentControlSet\Services\qcSubsystemLoad\{A5FA4C42-185D-48E8-BF69
 
 [Strings]
 REG_SZ                 = 0x00000000
+REG_DWORD              = 0x00010001
 SPSVCINST_ASSOCSERVICE = 0x00000002
 QCOM                   = "Qualcomm"
 StdMfg                 = "Qualcomm Technologies, INC"

@@ -99,4 +99,7 @@ ClassName              = "Qualcomm Camera JPEG Encoder Driver"
 JpegE.DeviceDesc       = "Qualcomm Camera JPEG Encoder Driver"
 Desc_x860              = "Data"
 
+REG_SZ        = 0x00000000
+REG_EXPAND_SZ = 0x00020000
+
 
