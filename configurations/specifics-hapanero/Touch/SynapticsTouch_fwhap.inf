@@ -8,7 +8,7 @@ Class       = HIDClass
 ClassGUID   = {745A17A0-74D3-11D0-B6FE-00A0C90F57DA}
 Provider    = %MSFT%
 DriverVer   = 05/01/2019,4.5.7.776
-CatalogFile = SynapticsTouch.cat
+CatalogFile = SynapticsTouch_fwhap.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -17,45 +17,29 @@ DefaultDestDir = 12
 1 = %Installation_Disk%,,,""
 
 [SourceDisksFiles]
-SynapticsTouch.sys = 1,,
 SynaFWVendor1.img  = 1,,
 SynaFWVendor2.img  = 1,,
-
-[Manufacturer]
-%Manufacturer_Name% = Standard,NTarm64
-
-[Standard.NTarm64]
-%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\MSHW1003
-%TchDriver_Device_Desc% = TchDriver_Device.NT, ACPI\NOKIA_TOUCH
 
 ;*****************************************
 ; TchDriver client driver Install Section
 ;*****************************************
 
-[TchDriver_Device.NT]
-CopyFiles = TchDriver_Device.NT.CopyFiles
-
 [TchDriver_Device.NT.CopyFiles]
 SynaFWVendor1.img, , , 0x100,
 SynaFWVendor2.img, , , 0x100,
-SynapticsTouch.sys, , , 0x100,
 
-[TchDriver_Device.NT.HW]
-AddReg = FilterInst.NT.HW.AddReg
-AddReg = CapButtons.NT.HW.AddReg
-AddReg = PowerConfig.NT.HW.AddReg
-AddReg = Configuration.NT.HW.AddReg
-AddReg = Resolutions.NT.HW.AddReg
-AddReg = DisplaySize.NT.HW.AddReg
-AddReg = ButtonBacklights.NT.HW.AddReg
-AddReg = LegacyTouchScaling.NT.HW.AddReg
+[DefaultInstall.NTARM64]
+AddReg    = CapButtons.NT.HW.AddReg
+AddReg    = PowerConfig.NT.HW.AddReg
+AddReg    = Configuration.NT.HW.AddReg
+AddReg    = Resolutions.NT.HW.AddReg
+AddReg    = DisplaySize.NT.HW.AddReg
+AddReg    = ButtonBacklights.NT.HW.AddReg
+AddReg    = LegacyTouchScaling.NT.HW.AddReg
+CopyFiles = TchDriver_Device.NT.CopyFiles
 
 [LegacyTouchScaling.NT.HW.AddReg]
 HKR, , "LegacyTouchScaling", 0x00010001,  0x0
-
-[FilterInst.NT.HW.AddReg]
-HKR, , "UpperFilters"   , %REG_MULTI_SZ%,  %HIDKMDF_Service%
-HKR, , "MultiportDevice", %REG_DWORD%   ,     0
 
 [CapButtons.NT.HW.AddReg]
 HKLM, "SYSTEM\TOUCH\BUTTONS"  , "Count", %REG_DWORD%        ,  0x3
@@ -163,19 +147,6 @@ HKLM, "SYSTEM\TOUCH\BUTTONS\BACKLIGHT", "IntensityMappings1", %REG_MULTI_SZ%,  "
 HKLM, "SYSTEM\TOUCH\BUTTONS\BACKLIGHT", "IntensityMappings2", %REG_MULTI_SZ%,  "12","0"
 
 HKLM, "SYSTEM\TOUCH\BUTTONS\BACKLIGHT", "MilliLuxRanges"    , %REG_MULTI_SZ%,  "100000","4294967295"
-
-;-------------- Service installation
-[TchDriver_Device.NT.Services]
-AddService = %TchDriver_Service%, %SPSVCINST_ASSOCSERVICE%, TchDriver_Service_Inst
-
-; ------------- TchDriver driver install section
-[TchDriver_Service_Inst]
-DisplayName    = %TchDriver_Service_Desc%
-ServiceType    = %SERVICE_KERNEL_DRIVER%
-StartType      = %SERVICE_DEMAND_START%
-ErrorControl   = %SERVICE_ERROR_NORMAL%
-ServiceBinary  = %12%\SynapticsTouch.sys
-LoadOrderGroup = Base
 
 ; ------------- Strings section
 [Strings]
