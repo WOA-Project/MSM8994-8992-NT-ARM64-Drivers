@@ -12,23 +12,45 @@ CatalogFile = oemapps.cat
 [DestinationDirs]
 ; 10 = Windows
 oemapps.Files.NTarm = 10,Provisioning\Packages
+PstDrv.Files        = 10,OEM
 
 [SourceDisksNames]
 0 = %DiskId1%
 
 [SourceDisksFiles]
 OEMApps.ppkg = 0,,
+OEMApps.ps1 = 0,,
+
+CommsPhone.appxbundle = 0,,
+AdvancedInfo.appxbundle = 0,,
+
+Microsoft.NET.Native.Framework.2.2.appx = 0,,
+Microsoft.NET.Native.Runtime.2.2.appx = 0,,
+Microsoft.VCLibs.ARM64.14.00.appx = 0,,
+
 
 ;*****************************************
 ; oemapps  Install Section
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles = oemapps.Files.NTarm
+CopyFiles = oemapps.Files.NTarm,PstDrv.Files
 
 ; System32
 [oemapps.Files.NTarm]
 OEMApps.ppkg
+
+[PstDrv.Files]
+OEMApps.ppkg
+OEMApps.ps1
+
+CommsPhone.appxbundle
+AdvancedInfo.appxbundle
+
+Microsoft.NET.Native.Framework.2.2.appx
+Microsoft.NET.Native.Runtime.2.2.appx
+Microsoft.VCLibs.ARM64.14.00.appx
+
 
 [Strings]
 REG_SZ                 = 0x00000000
