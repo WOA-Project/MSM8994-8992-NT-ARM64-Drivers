@@ -32,10 +32,6 @@ if %osbuild% gtr 17763 set ossupport=1903
 copy \Windows\OEM\MSNfcI2C547.%ossupport%.dll \Windows\OEM\MSNfcI2C547.dll
 copy \Windows\OEM\nxppn547.%ossupport%.cat \Windows\OEM\nxppn547.cat
 
-REM System apps
-dism.exe /Online /Add-ProvisioningPackage /PackagePath:%SystemDrive%\Windows\Provisioning\Packages\OEMApps.ppkg
-powershell -ExecutionPolicy Bypass -File \Windows\OEM\OEMApps.ps1
-
 cd \
 \Windows\OEM\devcon.exe update \Windows\OEM\qcaud8994.inf AUDD\QCOM2451
 \Windows\OEM\devcon.exe update \Windows\OEM\oempanel.inf ACPI\MSHW1004
