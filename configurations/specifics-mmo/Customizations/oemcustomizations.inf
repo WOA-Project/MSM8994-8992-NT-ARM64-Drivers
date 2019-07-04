@@ -24,6 +24,7 @@ Oobe.Files    = 11,Oobe\Info
 [SourceDisksFiles]
 Unattend.xml                       = 0,,
 SpecializeCommands.cmd             = 0,,
+FirstLogon.cmd                     = 0,, 
 SilentProvisioner.exe              = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
@@ -78,6 +79,7 @@ license.html
 SpecializeCommands.cmd
 SilentProvisioner.exe
 devcon.exe
+FirstLogon.cmd
 
 NXPPN547.inf,        NXPPN547.inf_,      , 0x00004000,
 nxppn547.1803.cat,   nxppn547.1803.cat_, , 0x00004000,

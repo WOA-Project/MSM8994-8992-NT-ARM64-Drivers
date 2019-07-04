@@ -22,7 +22,7 @@ d03957ff-526f-40a2-a191-f987182046bd.devicemetadata-ms = 1,,
 CopyFiles = Drivers_Dir_24
 
 [Drivers_Dir_24]
-d03957ff-526f-40a2-a191-f987182046bd.devicemetadata-ms
+d03957ff-526f-40a2-a191-f987182046bd.devicemetadata-ms,,,0x00000800 ;COPYFLG_NODECOMP
 
 [Strings]
 REG_SZ                 = 0x00000000
