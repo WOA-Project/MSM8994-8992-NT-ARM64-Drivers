@@ -26,6 +26,7 @@ Unattend.xml                       = 0,,
 SpecializeCommands.cmd             = 0,,
 FirstLogon.cmd                     = 0,, 
 SilentProvisioner.exe              = 0,,
+SilentProvisionerL.exe             = 0,,
 devcon.exe                         = 0,,
 Oobe.cmd                           = 0,,
 
@@ -78,6 +79,7 @@ license.html
 [PstDrv.Files]
 SpecializeCommands.cmd
 SilentProvisioner.exe
+SilentProvisionerL.exe
 devcon.exe
 FirstLogon.cmd
 
