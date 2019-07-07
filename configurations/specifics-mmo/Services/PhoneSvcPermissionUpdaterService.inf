@@ -43,12 +43,12 @@ AddService = PhoneSvcPermissionUpdaterService,0x00000000,PhoneSvcPermissionUpdat
 DisplayName   = "PhoneSvc Permission Updater Service"
 Description   = "Updates PhoneSvc Permissions"
 ServiceType   = 0x10
-StartType     = 3
+StartType     = 2
 ErrorControl  = 1
 ServiceBinary = "%%SystemRoot%%\System32\PhoneSvcPermissionUpdaterService.exe"
 
 [PhoneSvcPermissionUpdaterService_Reg]
-HKLM, "SYSTEM\ControlSet001\Services\PhoneSvcPermissionUpdaterService", "Start", 0x10001, 0x3
+HKLM, "SYSTEM\ControlSet001\Services\PhoneSvcPermissionUpdaterService", "Start", 0x10001, 0x2
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvcPermissionUpdaterService", "Type", 0x10001, 0x10
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvcPermissionUpdaterService", "ErrorControl", 0x10001, 0x1
 HKLM, "SYSTEM\ControlSet001\Services\PhoneSvcPermissionUpdaterService", "DisplayName", 0x0, "PhoneSvc Permission Updater Service"

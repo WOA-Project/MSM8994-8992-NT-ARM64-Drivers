@@ -43,12 +43,12 @@ AddService = DataManagementSvc,0x00000000,DataManagementSvc_Service,
 DisplayName   = "Data Management Service"
 Description   = "Enables data connection on multi sim devices"
 ServiceType   = 0x10
-StartType     = 3
+StartType     = 2
 ErrorControl  = 1
 ServiceBinary = "%%SystemRoot%%\System32\DataManagementSvc.exe"
 
 [DataManagementSvc_Reg]
-HKLM, "SYSTEM\ControlSet001\Services\DataManagementSvc", "Start", 0x10001, 0x3
+HKLM, "SYSTEM\ControlSet001\Services\DataManagementSvc", "Start", 0x10001, 0x2
 HKLM, "SYSTEM\ControlSet001\Services\DataManagementSvc", "Type", 0x10001, 0x10
 HKLM, "SYSTEM\ControlSet001\Services\DataManagementSvc", "ErrorControl", 0x10001, 0x1
 HKLM, "SYSTEM\ControlSet001\Services\DataManagementSvc", "DisplayName", 0x0, "Data Management Service"

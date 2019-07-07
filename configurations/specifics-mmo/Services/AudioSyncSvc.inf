@@ -43,12 +43,12 @@ AddService = AudioSyncSvc,0x00000000,AudioSyncSvc_Service,
 DisplayName   = "Audio Syncing Service"
 Description   = "Audio Syncing Service"
 ServiceType   = 0x10
-StartType     = 3
+StartType     = 2
 ErrorControl  = 1
 ServiceBinary = "%%SystemRoot%%\System32\AudioSyncSvc.exe"
 
 [AudioSyncSvc_Reg]
-HKLM, "SYSTEM\ControlSet001\Services\AudioSyncSvc", "Start", 0x10001, 0x3
+HKLM, "SYSTEM\ControlSet001\Services\AudioSyncSvc", "Start", 0x10001, 0x2
 HKLM, "SYSTEM\ControlSet001\Services\AudioSyncSvc", "Type", 0x10001, 0x10
 HKLM, "SYSTEM\ControlSet001\Services\AudioSyncSvc", "ErrorControl", 0x10001, 0x1
 HKLM, "SYSTEM\ControlSet001\Services\AudioSyncSvc", "DisplayName", 0x0, "Audio Syncing Service"
