@@ -40,8 +40,8 @@ AddService = DataManagementSvc,0x00000000,DataManagementSvc_Service,
 ;The startup program logs the error in the event log but continues the startup operation.
 
 [DataManagementSvc_Service]
-DisplayName   = "PhoneSvc Permission Updater Service"
-Description   = "Updates PhoneSvc Permissions"
+DisplayName   = "Data Management Service"
+Description   = "Enables data connection on multi sim devices"
 ServiceType   = 0x10
 StartType     = 3
 ErrorControl  = 1
