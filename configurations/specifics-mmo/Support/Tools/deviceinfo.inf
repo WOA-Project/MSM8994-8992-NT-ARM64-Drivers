@@ -10,32 +10,42 @@ DriverVer   = 09/09/2015,1.0.1077.0000
 CatalogFile = deviceinfo.cat
 
 [DestinationDirs]
-DefaultDestDir = 11, OEM
+Drivers_Dir_24 = 11, OEM
+PstDrv.Files   = 10,OEM
 
 [SourceDisksNames]
 0 = %DiskId1%
 
 [SourceDisksFiles]
 MMO.bmp = 0,,
+citymands.reg = 0,,
+citymanss.reg = 0,,
+hapaneroeb1.reg = 0,,
+hapaneroeb2.reg = 0,,
+talkmands.reg = 0,,
+talkmanss.reg = 0,,
+setoeminfo.cmd = 0,,
+dat.cmd = 0,,
 
 ;*****************************************
 ; Deviceinfo  Install Section
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-Addreg    = DeviceinfoReg
-CopyFiles = Drivers_Dir_24
+CopyFiles = Drivers_Dir_24,PstDrv.Files
 
 [Drivers_Dir_24]
 MMO.bmp
 
-[DeviceinfoReg]
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Manufacturer", %REG_SZ%, "Microsoft"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Model"       , %REG_SZ%, "Microsoft Lumia 950"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportHours", %REG_SZ%, "Monday through Friday, 5:00 AM - 9:00 PM Pacific Time and Saturday and Sunday, 6:00 AM - 3:00 PM Pacific Time"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportPhone", %REG_SZ%, "1-800-Microsoft (642-7676), TTY: 1-800-892-5234"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "SupportURL"  , %REG_SZ%, "http://lumia.linkmicrosoft.com/device/entry/van/nsupport"
-HKLM, "SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation", "Logo"        , %REG_SZ%, "%%SystemRoot%%\OEM\MMO.bmp"
+[PstDrv.Files]
+citymands.reg
+citymanss.reg
+hapaneroeb1.reg
+hapaneroeb2.reg
+talkmands.reg
+talkmanss.reg
+setoeminfo.cmd
+dat.cmd
 
 [Strings]
 MSFT                   = "LumiaWOA Authors"
