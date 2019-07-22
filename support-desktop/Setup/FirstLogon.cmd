@@ -1,2 +1,2 @@
 @echo off
-call \Windows\OEM\IHVSettingsFirstLogon.cmd
+start /wait \Windows\OEM\IHVSettingsFirstLogon.cmd
