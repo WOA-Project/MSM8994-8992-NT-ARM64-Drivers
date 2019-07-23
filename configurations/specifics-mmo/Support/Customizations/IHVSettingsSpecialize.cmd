@@ -7,4 +7,4 @@ powercfg /setdcvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 33
 powercfg /setacvalueindex OVERLAY_SCHEME_MAX SUB_PROCESSOR PERFEPP 25
 
 REM OEMInfo
-call \Windows\OEM\setoeminfo.cmd
+cmd.exe /c \Windows\OEM\setoeminfo.cmd
