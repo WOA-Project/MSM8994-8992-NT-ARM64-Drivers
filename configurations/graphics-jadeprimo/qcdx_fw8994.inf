@@ -1,0 +1,52 @@
+;/*++
+;
+;Copyright (c) 2012-2013  Qualcomm Technologies, Inc.
+;
+;Module Name:
+;    qcdx_fw.inf
+;
+;Abstract:
+;    INF file for installing the VSS Package for the DirectX Driver.
+;
+;Installation Notes: 
+;    
+;
+;--*/
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = SYSTEM
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %QCOM%
+DriverVer   = 07/02/2015,1.0.1067.0
+CatalogFile = qcdx_fw8994.cat
+
+[DestinationDirs]
+Drivers_Dir_24 = 11
+
+[SourceDisksNames]
+1 = %DiskId1%
+
+[SourceDisksFiles]
+qcvss8994.mbn = 1
+
+[DefaultInstall.NTARM64]
+CopyFiles = Drivers_Dir_24
+AddReg = DXReg
+
+[Drivers_Dir_24]
+qcvss8994.mbn
+
+[DXReg]
+HKLM, SYSTEM\CurrentControlSet\Services\qcSubsystemLoad\{A5FA4C42-185D-48E8-BF69-50CEAA8E0D82}, MemoryReservation     , %REG_DWORD%    , 0x00500000
+HKLM, SYSTEM\CurrentControlSet\Services\qcSubsystemLoad\{A5FA4C42-185D-48E8-BF69-50CEAA8E0D82}, MemoryAlignment       , %REG_DWORD%    , 0x00000000
+
+[Strings]
+REG_SZ                 = 0x00000000
+REG_DWORD              = 0x00010001
+SPSVCINST_ASSOCSERVICE = 0x00000002
+QCOM                   = "Qualcomm"
+StdMfg                 = "Qualcomm Technologies, INC"
+DiskId1                = "VSS Installation Disk #1"
+CPE.DeviceDesc         = "VSS Package"
+
