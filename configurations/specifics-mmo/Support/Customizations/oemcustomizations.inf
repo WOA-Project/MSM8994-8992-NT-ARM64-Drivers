@@ -14,7 +14,6 @@ CatalogFile = oemcustomizations.cat
 ; 10 = Windows
 ; 12 = Drivers
 PstDrv.Files  = 10,OEM
-Oobe.Files    = 11,Oobe\Info
 
 [SourceDisksNames]
 0 = %DiskId1%
@@ -22,9 +21,6 @@ Oobe.Files    = 11,Oobe\Info
 [SourceDisksFiles]
 IHVSettingsFirstLogon.cmd          = 0,,
 IHVSettingsSpecialize.cmd          = 0,,
-Oobe.xml                           = 0,,
-license.html                       = 0,,
-license.rtf                        = 0,,
 
 
 ;*****************************************
@@ -32,12 +28,7 @@ license.rtf                        = 0,,
 ;*****************************************
 
 [DefaultInstall.NTARM64]
-CopyFiles = PstDrv.Files,Oobe.Files
-
-[Oobe.Files]
-Oobe.xml
-license.rtf
-license.html
+CopyFiles = PstDrv.Files
 
 ; Windows/OEM
 [PstDrv.Files]

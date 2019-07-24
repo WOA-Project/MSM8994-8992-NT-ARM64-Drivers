@@ -18,10 +18,6 @@ qcfmslminiport.Files = 11 ; \system32 directory on Windows 2000 and later versio
 [SourceDisksFiles]
 qcfmslminiport.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = qcfmslminiport.Files
-AddReg    = qcfmslminiport_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = qcfmslminiport.Files
 AddReg    = qcfmslminiport_Reg

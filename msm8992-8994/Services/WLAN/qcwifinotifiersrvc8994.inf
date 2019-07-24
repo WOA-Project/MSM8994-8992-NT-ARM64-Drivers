@@ -27,16 +27,9 @@ WifiNotifierSrvc.Files = 11 ; \system32 directory on Windows 2000 and later vers
 [SourceDisksFiles]
 qcwifinotifiersrvc8994.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = WifiNotifierSrvc.Files
-AddReg    = WifiNotifierSrvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = WifiNotifierSrvc.Files
 AddReg    = WifiNotifierSrvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = WifiNotifierSrvc,0x00000000,WifiNotifierSrvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = WifiNotifierSrvc,0x00000000,WifiNotifierSrvc_Service,

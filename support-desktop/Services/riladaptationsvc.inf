@@ -20,16 +20,9 @@ RILAdaptationService.exe = 0,,
 phoneinfo.dll = 0,,
 QxdmFilter.bin = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = RILAdaptation.Files
-AddReg    = RILAdaptation_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = RILAdaptation.Files
 AddReg    = RILAdaptation_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = RILAdaptation,0x00000000,RILAdaptation_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = RILAdaptation,0x00000000,RILAdaptation_Service,

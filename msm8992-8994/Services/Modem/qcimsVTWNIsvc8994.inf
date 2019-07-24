@@ -18,16 +18,9 @@ qcimsVTWNIsvc8994.Files = 11 ; \system32 directory on Windows 2000 and later ver
 [SourceDisksFiles]
 qcimsVTWNIsvc8994.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = qcimsVTWNIsvc8994.Files
-AddReg    = qcimsVTWNIsvc8994_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = qcimsVTWNIsvc8994.Files
 AddReg    = qcimsVTWNIsvc8994_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = VTSvc,0x00000000,qcimsVTWNIsvc8994_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = VTSvc,0x00000000,qcimsVTWNIsvc8994_Service,

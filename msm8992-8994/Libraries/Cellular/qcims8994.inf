@@ -22,10 +22,6 @@ qcimsVT8994.dll = 0,,
 qcimsvtmf8994.dll = 0,,
 vcel8994.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = qcims8994.Files
-AddReg    = qcims8994_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = qcims8994.Files
 AddReg    = qcims8994_Reg

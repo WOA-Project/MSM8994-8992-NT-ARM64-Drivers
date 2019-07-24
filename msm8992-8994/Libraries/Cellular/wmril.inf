@@ -18,10 +18,6 @@ WMRil.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 WMRil.dll                = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = WMRil.Files
-AddReg    = WMRil_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = WMRil.Files
 AddReg    = WMRil_Reg

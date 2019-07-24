@@ -19,16 +19,9 @@ NvUpdaterSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 nvupdater.exe = 0,,
 nvupdater.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = NvUpdaterSvc.Files
-AddReg    = NvUpdaterSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = NvUpdaterSvc.Files
 AddReg    = NvUpdaterSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = NvUpdater,0x00000000,NvUpdaterSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = NvUpdater,0x00000000,NvUpdaterSvc_Service,

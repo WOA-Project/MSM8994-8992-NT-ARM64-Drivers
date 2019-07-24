@@ -18,16 +18,9 @@ DataManagementSvc.Files = 11 ; \system32 directory on Windows 2000 and later ver
 [SourceDisksFiles]
 DataManagementSvc.exe = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = DataManagementSvc.Files
-AddReg    = DataManagementSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = DataManagementSvc.Files
 AddReg    = DataManagementSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = DataManagementSvc,0x00000000,DataManagementSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = DataManagementSvc,0x00000000,DataManagementSvc_Service,

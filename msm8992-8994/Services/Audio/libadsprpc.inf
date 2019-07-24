@@ -27,16 +27,9 @@ libadsprpc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 libadsprpc.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = libadsprpc.Files
-AddReg    = libadsprpc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = libadsprpc.Files
 AddReg    = libadsprpc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = libadsprpc,0x00000000,libadsprpc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = libadsprpc,0x00000000,libadsprpc_Service,

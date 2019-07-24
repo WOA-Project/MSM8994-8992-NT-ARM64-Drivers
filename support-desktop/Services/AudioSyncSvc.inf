@@ -18,16 +18,9 @@ AudioSyncSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 AudioSyncSvc.exe = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = AudioSyncSvc.Files
-AddReg    = AudioSyncSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = AudioSyncSvc.Files
 AddReg    = AudioSyncSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = AudioSyncSvc,0x00000000,AudioSyncSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = AudioSyncSvc,0x00000000,AudioSyncSvc_Service,

@@ -18,10 +18,6 @@ HapticsNotifications.Files = 11 ; \system32 directory on Windows 2000 and later 
 [SourceDisksFiles]
 HapticsNotifications.exe = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = HapticsNotifications.Files
-AddReg    = HapticsNotifications_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = HapticsNotifications.Files
 AddReg    = HapticsNotifications_Reg

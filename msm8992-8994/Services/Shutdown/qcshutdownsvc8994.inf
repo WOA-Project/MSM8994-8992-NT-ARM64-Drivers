@@ -27,16 +27,9 @@ ShutdownSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 QcShutdownSvc8994.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = ShutdownSvc.Files
-AddReg    = ShutdownSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = ShutdownSvc.Files
 AddReg    = ShutdownSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = QcShutdownSvc,0x00000000,ShutdownSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = QcShutdownSvc,0x00000000,ShutdownSvc_Service,

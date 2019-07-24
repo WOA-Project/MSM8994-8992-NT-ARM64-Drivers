@@ -18,16 +18,9 @@ qcimsRTPSvc8994.Files = 11 ; \system32 directory on Windows 2000 and later versi
 [SourceDisksFiles]
 qcimsRTPSvc8994.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = qcimsRTPSvc8994.Files
-AddReg    = qcimsRTPSvc8994_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = qcimsRTPSvc8994.Files
 AddReg    = qcimsRTPSvc8994_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = RTPSvc,0x00000000,qcimsRTPSvc8994_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = RTPSvc,0x00000000,qcimsRTPSvc8994_Service,

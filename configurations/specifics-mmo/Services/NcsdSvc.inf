@@ -20,16 +20,9 @@ NcsdRes.dll = 0,,
 Ncsd.dll = 0,,
 NcsdPluginSvc.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = NcsdSvc.Files
-AddReg    = NcsdSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = NcsdSvc.Files
 AddReg    = NcsdSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = NcsdPluginSvc,0x00000000,NcsdSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = NcsdPluginSvc,0x00000000,NcsdSvc_Service,

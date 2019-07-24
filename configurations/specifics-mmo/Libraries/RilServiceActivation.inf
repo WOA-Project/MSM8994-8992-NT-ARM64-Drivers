@@ -18,9 +18,6 @@ RilServiceActivation.Files = 11 ; \system32 directory on Windows 2000 and later 
 [SourceDisksFiles]
 RilServiceActivation.exe = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = RilServiceActivation.Files
-
 [DefaultInstall.NTARM64]
 CopyFiles = RilServiceActivation.Files
 

@@ -19,9 +19,6 @@ APPerso.Files = 11 ; \system32 directory on Windows 2000 and later versions
 apperso.dll              = 0,,
 npetsec.dll              = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = APPerso.Files
-
 [DefaultInstall.NTARM64]
 CopyFiles = APPerso.Files
 

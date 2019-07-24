@@ -27,16 +27,9 @@ QcGnssSvc.Files = 11 ; \system32 directory on Windows 2000 and later versions
 [SourceDisksFiles]
 QcGnssSvc.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = QcGnssSvc.Files
-AddReg    = QcGnssSvc_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = QcGnssSvc.Files
 AddReg    = QcGnssSvc_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = QcGnssSvc,0x00000000,QcGnssSvc_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = QcGnssSvc,0x00000000,QcGnssSvc_Service,

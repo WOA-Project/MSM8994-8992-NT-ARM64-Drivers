@@ -22,9 +22,6 @@ oempanel.inf_ = 0,,
 oempanel.sys = 0,,
 oempanel_etw.dll = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = PanelResources.Files
-
 [DefaultInstall.NTARM64]
 CopyFiles = PanelResources.Files
 

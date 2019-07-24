@@ -20,9 +20,6 @@ qcmbb8994.cat_ = 0,,
 qcmbb.wp8994.inf_ = 0,,
 qcmbb8994.sys = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = ModemResources.Files
-
 [DefaultInstall.NTARM64]
 CopyFiles = ModemResources.Files
 

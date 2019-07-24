@@ -18,16 +18,9 @@ PhoneSvcPermissionUpdaterService.Files = 11 ; \system32 directory on Windows 200
 [SourceDisksFiles]
 PhoneSvcPermissionUpdaterService.exe = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = PhoneSvcPermissionUpdaterService.Files
-AddReg    = PhoneSvcPermissionUpdaterService_Reg
-
 [DefaultInstall.NTARM64]
 CopyFiles = PhoneSvcPermissionUpdaterService.Files
 AddReg    = PhoneSvcPermissionUpdaterService_Reg
-
-[DefaultInstall.NTARM.Services]
-AddService = PhoneSvcPermissionUpdaterService,0x00000000,PhoneSvcPermissionUpdaterService_Service,
 
 [DefaultInstall.NTARM64.Services]
 AddService = PhoneSvcPermissionUpdaterService,0x00000000,PhoneSvcPermissionUpdaterService_Service,

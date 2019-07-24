@@ -21,9 +21,6 @@ qcaud8994.cat_ = 0,,
 qcaud8994.inf_ = 0,,
 qcaud8994.sys  = 0,,
 
-[DefaultInstall.NTARM]
-CopyFiles = AudioResources.Files
-
 [DefaultInstall.NTARM64]
 CopyFiles = AudioResources.Files
 
