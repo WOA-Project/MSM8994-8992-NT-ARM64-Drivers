@@ -12,11 +12,12 @@ if "%type%"=="RM-1118" reg import \Windows\OEM\talkmands.reg
 
 if "%type%"=="RX-127" reg import \Windows\OEM\hapaneroeb1.reg
 
+for /f "delims=" %%a in ('call \Windows\OEM\dat.cmd %SystemDrive%\DPP\MMO\product.dat HWID') do (
+    set hwid=%%a
+)
+if "%hwid%"=="" goto :eof
+
 if "%type%"=="RX-130" (
-    for /f "delims=" %%a in ('call \Windows\OEM\dat.cmd %SystemDrive%\DPP\MMO\product.dat HWID') do (
-        set hwid=%%a
-    )
-    if "%hwid%"=="" goto :eof
     if %hwid% GEQ 2000 reg import \Windows\OEM\hapaneroeb2.reg
     if NOT %hwid% GEQ 2000 reg import \Windows\OEM\hapaneroeb1.reg
 )
