@@ -1,13 +1,23 @@
 # ARM64 Windows Driver pack for Qualcomm Snapdragon 808/810 platforms
 ## For Microsoft Mobile Lumia 950, Lumia 950 XL, RX-130/id330-1 (EB0.X/EB1.X/EB2.X) and Acer Jade Primo
 
-[Telegram group](https://t.me/joinchat/Ey6mehEPg0Fe4utQNZ9yjA)
-
 ![Devices](assets/banner.png)
 
 This pack is a work in progress and may be getting updates at a later time.
 
 If you are deploying this driver pack using WOA Deployer for Lumia, make sure WOA Deployer version is greater or equal than 2.6.
+
+## Resources
+
+[Telegram group](https://t.me/joinchat/Ey6mehEPg0Fe4utQNZ9yjA)
+
+[Forum](https://woaproject.net)
+
+[WOA Deployer](https://github.com/WOA-Project/WOA-Deployer-Lumia)
+
+[WPInternals](http://wpinternals.net)
+
+[Wiki](https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki)
 
 ## Copyright, License, Disclaimers and end of user license agreement
 
