@@ -7,3 +7,15 @@
 [submodule "configurations/specifics-acer"]
 	path = configurations/specifics-acer
 	url = https://github.com/WOA-Project/Specifics-Acer-Drivers.git
+[submodule "configurations/specifics-cityman"]
+	path = configurations/specifics-cityman
+	url = https://github.com/WOA-Project/Specifics-Cityman.git
+[submodule "configurations/specifics-talkman"]
+	path = configurations/specifics-talkman
+	url = https://github.com/WOA-Project/Specifics-Talkman.git
+[submodule "configurations/specifics-hapanero"]
+	path = configurations/specifics-hapanero
+	url = https://github.com/WOA-Project/Specifics-Hapanero.git
+[submodule "configurations/specifics-jadeprimo"]
+	path = configurations/specifics-jadeprimo
+	url = https://github.com/WOA-Project/Specifics-JadePrimo.git
