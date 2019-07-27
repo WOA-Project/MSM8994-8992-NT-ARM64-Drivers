@@ -1,0 +1,3 @@
+[submodule "supplemental"]
+	path = supplemental
+	url = https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers-Supplemental.git
