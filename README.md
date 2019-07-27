@@ -7,6 +7,18 @@ This pack is a work in progress and may be getting updates at a later time.
 
 If you are deploying this driver pack using WOA Deployer for Lumia, make sure WOA Deployer version is greater or equal than 2.6.
 
+## Resources
+
+[Telegram group](https://t.me/joinchat/Ey6mehEPg0Fe4utQNZ9yjA)
+
+[Forum](https://woaproject.net)
+
+[WOA Deployer](https://github.com/WOA-Project/WOA-Deployer-Lumia)
+
+[WPInternals](http://wpinternals.net)
+
+[Wiki](https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki)
+
 ## Copyright, License, Disclaimers and end of user license agreement
 
 **Below notice must be present in all redistributed portions of this software**
