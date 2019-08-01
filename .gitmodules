@@ -1,6 +1,9 @@
 [submodule "supplemental"]
 	path = supplemental
 	url = https://github.com/WOA-Project/Supplemental-Drivers.git
+[submodule "support-desktop"]
+	path = support-desktop
+	url = https://github.com/WOA-Project/Support-Desktop-Drivers.git
 [submodule "configurations/specifics-mmo"]
 	path = configurations/specifics-mmo
 	url = https://github.com/WOA-Project/Specifics-MMO-Drivers.git
