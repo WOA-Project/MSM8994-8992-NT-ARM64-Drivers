@@ -1,0 +1,95 @@
+;
+; qcnull.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = Null
+ClassGuid   = {84bcdf85-adb1-420a-a40f-cd71df4b0ccd}
+Provider    = %ManufacturerName%
+CatalogFile = qcnull.cat
+DriverVer   = 10/06/2018,18.13.19.793
+
+[DestinationDirs]
+DefaultDestDir                         = 12
+qcnull_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg = SampleClassReg
+
+[SampleClassReg]
+HKR, ,     , 0, %ClassName%
+HKR, , Icon,  , -15
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+qcnull.sys = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTARM64
+
+[Standard.NTARM64]
+%QcGPUNull.DeviceDesc%      = qcnull_Device, ACPI\QCOM_GPU
+%BIFBattNull.DeviceDesc%    = qcnull_Device, ACPI\QCOM24C2
+%25A0Null.DeviceDesc%       = qcnull_Device, ACPI\QCOM25A0
+
+[qcnull_Device.NT]
+CopyFiles = Drivers_Dir
+
+[Drivers_Dir]
+qcnull.sys
+
+;-------------- Service installation
+[qcnull_Device.NT.Services]
+AddService = qcnull,%SPSVCINST_ASSOCSERVICE%, qcnull_Service_Inst
+
+; -------------- qcnull driver install sections
+[qcnull_Service_Inst]
+DisplayName   = %qcnull.SVCDESC%
+ServiceType   = 1               ; SERVICE_KERNEL_DRIVER
+StartType     = 3               ; SERVICE_DEMAND_START
+ErrorControl  = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\qcnull.sys
+
+;
+;--- qcnull_Device Coinstaller installation ------
+;
+
+[qcnull_Device.NT.CoInstallers]
+AddReg    = qcnull_Device_CoInstaller_AddReg
+CopyFiles = qcnull_Device_CoInstaller_CopyFiles
+
+[qcnull_Device_CoInstaller_AddReg]
+;
+
+
+[qcnull_Device_CoInstaller_CopyFiles]
+;
+
+
+[qcnull_Device.NT.Wdf]
+KmdfService = qcnull, qcnull_wdfsect
+[qcnull_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE    = 0x00000002
+ManufacturerName          = "Lumia Community"
+ClassName                 = "Nulled devices"
+DiskName                  = "Qualcomm Null Installation Disk"
+qcnull.DeviceDesc         = "Qualcomm Null Device"
+qcnull.SVCDESC            = "Qualcomm Null Service"
+
+QcGPUNull.DeviceDesc      = "Qualcomm GPU Device"
+BIFBattNull.DeviceDesc    = "Qualcomm BIF Battery Device"
+25A0Null.DeviceDesc       = "Qualcomm App Profiler Device" 
