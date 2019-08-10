@@ -12,9 +12,10 @@
 ;
 [Version]
 Signature   = "$Windows NT$"
-Class       = SYSTEM
-ClassGUID   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Class       = Extension
+ClassGUID   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
 Provider    = %QC%
+ExtensionId = {B952ACCB-CC64-4E71-B871-BC632B77F7A6}
 DriverVer   = 03/02/2012,1.0.1067.0000
 CatalogFile = "QCListenSoundModel.cat"
 
@@ -73,7 +74,13 @@ itITVoiceActivationModel.bin = 0,,
 jaJPconfig                   = 0,,
 jaJPVoiceActivationModel.bin = 0,,
 
-[DefaultInstall.NTARM64]
+[Manufacturer]
+%MfgName%=Extensions,NTARM64
+
+[Extensions.NTARM64]
+%QCLSM% = QCListenSoundModel_Inst, AUDD\QCOM2451
+
+[QCListenSoundModel_Inst]
 CopyFiles = QCListenSoundModel.Files,VoiceActivationenUSConfig.Files,VoiceActivationenUSBin.Files,VoiceActivationenGBConfig.Files,VoiceActivationenGBBin.Files,VoiceActivationzhCNConfig.Files,VoiceActivationzhCNBin.Files,VoiceActivationdeDEConfig.Files,VoiceActivationdeDEBin.Files,VoiceActivationenAUConfig.Files,VoiceActivationenAUBin.Files,VoiceActivationenCAConfig.Files,VoiceActivationenCABin.Files,VoiceActivationenINConfig.Files,VoiceActivationenINBin.Files,VoiceActivationesESConfig.Files,VoiceActivationesESBin.Files,VoiceActivationfrFRConfig.Files,VoiceActivationfrFRBin.Files,VoiceActivationitITConfig.Files,VoiceActivationitITBin.Files,VoiceActivationjaJPConfig.Files,VoiceActivationjaJPBin.Files
 AddReg    = QCListenSoundModel_Reg
 
@@ -175,7 +182,9 @@ VoiceActivationModel.bin, jaJPVoiceActivationModel.bin,
 
 [Strings]
 QC            = "Qualcomm Technologies, Inc."
+MfgName       = "QUALCOMM"
 Disk          = "Disk"
+QCLSM         = "QCListenSoundModel"
 
 REG_SZ        = 0x00000000
 REG_MULTI_SZ  = 0x00010000
