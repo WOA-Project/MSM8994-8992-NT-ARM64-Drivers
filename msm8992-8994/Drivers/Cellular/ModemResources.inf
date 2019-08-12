@@ -10,7 +10,7 @@ DriverVer   = 09/09/2015,1.0.1067.0000
 CatalogFile = ModemResources.cat
 
 [DestinationDirs]
-ModemResources.Files = 10,OEM
+ModemResources.Files = 10,OEM\Drivers
 
 [SourceDisksNames]
 0 = "Disk"
