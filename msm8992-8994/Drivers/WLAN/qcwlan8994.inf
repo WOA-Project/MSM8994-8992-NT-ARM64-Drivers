@@ -19,7 +19,7 @@ PnpLockDown = 1
 %ATHEROS%   = ATHEROS,NTARM64
 
 ;[ControlFlags]
-:ExcludeFromSelect = *
+;ExcludeFromSelect = *
 
 [Atheros.NTARM64]
 ; DisplayName               Section                 DeviceID
