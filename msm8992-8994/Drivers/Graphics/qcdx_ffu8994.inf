@@ -15,7 +15,8 @@ Signature   = "$Windows NT$"
 Class       = Display
 ClassGUID   = {4d36e968-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
-DriverVer   = 07/02/2015,11.19.1067.0000
+DriverVer   = 07/02/2015,11.18.1067.0000
+;DriverVer.NTARM32   = 07/02/2015,11.18.1078.0046
 CatalogFile = qcdx_ffu8994.cat
 
 [DestinationDirs]

@@ -9,7 +9,7 @@ Signature      = "$Windows NT$"
 Class          = System
 ClassGuid      = {4D36E97D-E325-11CE-BFC1-08002BE10318}
 Provider       = %QCA%
-DriverVer      = 07/02/2015,1.0.1067.0000
+DriverVer      = 07/02/2015,2.3.0.6
 CatalogFile.NT = qcbtuart8994.cat
 PnpLockDown    = 1
 
