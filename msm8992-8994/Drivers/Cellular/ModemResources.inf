@@ -5,8 +5,8 @@
 Signature   = "$WINDOWS NT$"
 Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
-Provider    = %QC%
-DriverVer   = 09/09/2015,1.0.1067.0000
+Provider    = %IHV%
+DriverVer   = 08/08/2019,1.0.0.0
 CatalogFile = ModemResources.cat
 
 [DestinationDirs]
@@ -29,11 +29,4 @@ qcmbb.wp8994.inf, qcmbb.wp8994.inf_, , 0x00004000,
 qcmbb8994.sys
 
 [Strings]
-QC            = "Qualcomm"
-
-REG_SZ        = 0x00000000
-REG_MULTI_SZ  = 0x00010000
-REG_EXPAND_SZ = 0x00020000
-REG_DWORD     = 0x00010001
-REG_BINARY    = 0x00000001
-
+IHV = "LumiaWoA authors"
