@@ -6,7 +6,7 @@ Signature   = "$WINDOWS NT$"
 Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
-DriverVer   = 07/02/2015,30.1.1.0
+DriverVer   = 07/02/2015,30.0.0.0
 CatalogFile = wmril.cat
 
 [DestinationDirs]
