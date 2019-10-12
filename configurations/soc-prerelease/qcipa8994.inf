@@ -33,7 +33,7 @@ qcipa8994.sys = 1                                             ; The source files
 %QUALCOMM% = Standard,NTARM64                                   ; QCOM drivers may need to follow same process here?
 
 [Standard.NTARM64]                                            ; Decorated model section take precedence over undecorated
-%ipa.DeviceDesc% = ipa_Device, ACPI\QCOM24B0
+%ipa.DeviceDesc% = ipa_Device, ACPI\PLUE24B0
 
 [ipa_Device.NT]
 CopyFiles   = Drivers_Dir
