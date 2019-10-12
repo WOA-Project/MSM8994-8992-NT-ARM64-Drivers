@@ -42,6 +42,7 @@ qcnull.sys = 1,,
 %QcGPUNull.DeviceDesc%      = qcnull_Device, ACPI\QCOM_GPU
 %BIFBattNull.DeviceDesc%    = qcnull_Device, ACPI\QCOM24C2
 %25A0Null.DeviceDesc%       = qcnull_Device, ACPI\QCOM25A0
+%24B0Null.DeviceDesc%       = qcnull_Device, ACPI\PLUE24B0
 
 [qcnull_Device.NT]
 CopyFiles = Drivers_Dir
@@ -93,3 +94,4 @@ qcnull.SVCDESC            = "Qualcomm Null Service"
 QcGPUNull.DeviceDesc      = "Qualcomm GPU Device"
 BIFBattNull.DeviceDesc    = "Qualcomm BIF Battery Device"
 25A0Null.DeviceDesc       = "Qualcomm App Profiler Device" 
+24B0Null.DeviceDesc       = "Qualcomm IPA Device" 
