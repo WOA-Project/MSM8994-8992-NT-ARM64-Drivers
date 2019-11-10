@@ -15,11 +15,22 @@
 
 [Version]
 Signature   = "$WINDOWS NT$"
-Class       = SYSTEM
-ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Class       = Extension
+ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
 Provider    = %QCOM%
+ExtensionId = {21E3E289-3E58-469D-B9DF-65339CD11F4D}
 DriverVer   = 07/02/2015,1.0.1067.0
 CatalogFile = qcaudresconst8994.cat
+
+[Manufacturer]
+%MfgName% = DeviceExtensions,NTarm64
+
+[DeviceExtensions.NTarm64]
+%QCAUD_A.DeviceDesc% = DeviceExtension_Install, AUDD\VEN_QCOM&DEV_2451
+
+[DeviceExtension_Install]
+Addreg    = audresconstReg
+CopyFiles = AudioResourceConstraints.CopyList
 
 [DestinationDirs]
 AudioResourceConstraints.CopyList = 11; windows\system32
@@ -29,10 +40,6 @@ AudioResourceConstraints.CopyList = 11; windows\system32
 
 [SourceDisksFiles]
 AudioResourceConstraints_8994.xml = 1
-
-[DefaultInstall.NTARM64]
-Addreg    = audresconstReg
-CopyFiles = AudioResourceConstraints.CopyList
 
 [AudioResourceConstraints.CopyList]
 AudioResourceConstraints_8994.xml
@@ -44,7 +51,9 @@ HKLM, SYSTEM\MultiMedia\DeviceCapability\ResourceSettings\XMLConfig, AudioResour
 REG_SZ                 = 0x00000000
 SPSVCINST_ASSOCSERVICE = 0x00000002
 QCOM                   = "Qualcomm"
+MfgName                = "QUALCOMM"
 StdMfg                 = "Qualcomm Technologies, INC"
 DiskId1                = "AudResConst Installation Disk #1"
 audresconst.DeviceDesc = "AudResConst Settings Package"
+QCAUD_A.DeviceDesc     = "QCAUD Real Time (WaveRT) Driver for Qualcomm SoC"
 
