@@ -51,6 +51,7 @@ ExcludeFromSelect = *
 
 [SUBSYS_Device.NT]
 CopyFiles   = Drivers_Dir_12
+AddReg      = SUBSYSReg
 AddProperty = WDTFSOCDeviceCategory
 
 [WDTFSOCDeviceCategory]
@@ -60,6 +61,23 @@ AddReg = SUBSYSACL
 
 [SUBSYSACL]
 HKR, , Security, , "D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;S-1-5-84-0-0-0-0-0)"
+
+[SUBSYSReg]
+; ADSP registry values
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AdspImagePath"         , %REG_SZ%   , "\SystemRoot\system32\qcadsp8994.mbn"
+
+; AMSS registry values
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssFwImagePath"       , %REG_SZ%   , "\SystemRoot\system32\qcdsp1v28994.mbn"
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssSwImagePath"       , %REG_SZ%   , "\SystemRoot\system32\qcdsp28994.mbn"
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssOverideFwImagePath", %REG_SZ%   , "\SystemRoot\system32\qcdsp1v28926.mbn"
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssOverideSwImagePath", %REG_SZ%   , "\SystemRoot\system32\qcdsp28926.mbn"
+
+; Image Paths for APQ variants
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssAPQFWImagePath"    , %REG_SZ%   , "\SystemRoot\system32\"
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "AmssAPQSWImagePath"    , %REG_SZ%   , "\SystemRoot\system32\"
+
+; WCN registry values
+HKLM, SYSTEM\CurrentControlSet\services\qcsubsys                                              , "WcnImagePath"          , %REG_SZ%   , "\SystemRoot\system32\qcwcnss8994.mbn"
 
 [Drivers_Dir_12]
 qcsubsys8994.sys
