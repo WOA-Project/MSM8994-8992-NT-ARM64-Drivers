@@ -4,8 +4,8 @@
 
 [Version]
 Signature   = "$WINDOWS NT$"
-Class       = Null
-ClassGuid   = {84bcdf85-adb1-420a-a40f-cd71df4b0ccd}
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %ManufacturerName%
 CatalogFile = qcnull.cat
 DriverVer   = 10/06/2018,18.13.19.793
@@ -15,13 +15,6 @@ DefaultDestDir                         = 12
 qcnull_Device_CoInstaller_CopyFiles = 11
 
 ; ================= Class section =====================
-
-[ClassInstall32]
-Addreg = SampleClassReg
-
-[SampleClassReg]
-HKR, ,     , 0, %ClassName%
-HKR, , Icon,  , -15
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
@@ -85,11 +78,10 @@ KmdfLibraryVersion = 1.15
 [Strings]
 SPSVCINST_ASSOCSERVICE    = 0x00000002
 ManufacturerName          = "LumiaWoA authors"
-ClassName                 = "Nulled devices"
 DiskName                  = "Qualcomm Null Installation Disk"
 qcnull.DeviceDesc         = "Qualcomm Null Device"
 qcnull.SVCDESC            = "Qualcomm Null Service"
 
-QcGPUNull.DeviceDesc      = "Qualcomm GPU Device"
-BIFBattNull.DeviceDesc    = "Qualcomm BIF Battery Device"
-25A0Null.DeviceDesc       = "Qualcomm App Profiler Device" 
+QcGPUNull.DeviceDesc      = "Qualcomm GPU Device (Null)"
+BIFBattNull.DeviceDesc    = "Qualcomm BIF Battery Device (Null)"
+25A0Null.DeviceDesc       = "Qualcomm App Profiler Device (Null)" 
