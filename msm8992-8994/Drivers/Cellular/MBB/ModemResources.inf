@@ -10,23 +10,31 @@ DriverVer   = 08/08/2019,1.0.0.0
 CatalogFile = ModemResources.cat
 
 [DestinationDirs]
-ModemResources.Files = 10,OEM\Drivers
+ModemResourcesWP.Files = 10,OEM\Drivers\WP
+ModemResourcesWA.Files = 10,OEM\Drivers\WA
 
 [SourceDisksNames]
 0 = "Disk"
 
 [SourceDisksFiles]
-qcmbb8994.cat_ = 0,,
+qcmbb8994.wa.cat_ = 0,,
+qcmbb8994.wp.cat_ = 0,,
 qcmbb.wp8994.inf_ = 0,,
-qcmbb8994.sys = 0,,
+qcmbb8994.wa.sys = 0,,
+qcmbb8994.wp.sys = 0,,
 
 [DefaultInstall.NTARM64]
-CopyFiles = ModemResources.Files
+CopyFiles = ModemResourcesWP.Files,ModemResourcesWA.Files
 
-[ModemResources.Files]
-qcmbb8994.cat, qcmbb8994.cat_, , 0x00004000,
+[ModemResourcesWP.Files]
+qcmbb8994.cat, qcmbb8994.wp.cat_, , 0x00004000,
 qcmbb.wp8994.inf, qcmbb.wp8994.inf_, , 0x00004000,
-qcmbb8994.sys
+qcmbb8994.sys, qcmbb8994.wp.sys, , 0x00004000,
+
+[ModemResourcesWA.Files]
+qcmbb8994.cat, qcmbb8994.wa.cat_, , 0x00004000,
+qcmbb.wp8994.inf, qcmbb.wp8994.inf_, , 0x00004000,
+qcmbb8994.sys, qcmbb8994.wa.sys, , 0x00004000,
 
 [Strings]
 IHV = "LumiaWoA authors"
