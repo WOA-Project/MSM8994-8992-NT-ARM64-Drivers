@@ -4,21 +4,21 @@
 [submodule "support-desktop"]
 	path = support-desktop
 	url = https://github.com/WOA-Project/Support-Desktop-Drivers.git
-[submodule "configurations/specifics-mmo"]
-	path = configurations/specifics-mmo
+[submodule "configurations/oems/specifics-mmo"]
+	path = configurations/oems/specifics-mmo
 	url = https://github.com/WOA-Project/Specifics-MMO-Drivers.git
-[submodule "configurations/specifics-acer"]
-	path = configurations/specifics-acer
+[submodule "configurations/oems/specifics-acer"]
+	path = configurations/oems/specifics-acer
 	url = https://github.com/WOA-Project/Specifics-Acer-Drivers.git
-[submodule "configurations/specifics-cityman"]
-	path = configurations/specifics-cityman
+[submodule "configurations/devices/specifics-cityman"]
+	path = configurations/devices/specifics-cityman
 	url = https://github.com/WOA-Project/Specifics-Cityman.git
-[submodule "configurations/specifics-talkman"]
-	path = configurations/specifics-talkman
+[submodule "configurations/devices/specifics-talkman"]
+	path = configurations/devices/specifics-talkman
 	url = https://github.com/WOA-Project/Specifics-Talkman.git
-[submodule "configurations/specifics-hapanero"]
-	path = configurations/specifics-hapanero
+[submodule "configurations/devices/specifics-hapanero"]
+	path = configurations/devices/specifics-hapanero
 	url = https://github.com/WOA-Project/Specifics-Hapanero.git
-[submodule "configurations/specifics-jadeprimo"]
-	path = configurations/specifics-jadeprimo
+[submodule "configurations/devices/specifics-jadeprimo"]
+	path = configurations/devices/specifics-jadeprimo
 	url = https://github.com/WOA-Project/Specifics-JadePrimo.git
