@@ -1,9 +1,3 @@
-[submodule "supplemental"]
-	path = supplemental
-	url = https://github.com/WOA-Project/Supplemental-Drivers.git
-[submodule "support-desktop"]
-	path = support-desktop
-	url = https://github.com/WOA-Project/Support-Desktop-Drivers.git
 [submodule "configurations/oems/specifics-mmo"]
 	path = configurations/oems/specifics-mmo
 	url = https://github.com/WOA-Project/Specifics-MMO-Drivers.git
@@ -22,3 +16,9 @@
 [submodule "configurations/devices/specifics-jadeprimo"]
 	path = configurations/devices/specifics-jadeprimo
 	url = https://github.com/WOA-Project/Specifics-JadePrimo.git
+[submodule "support-desktop"]
+	path = support-desktop
+	url = https://github.com/WOA-Project/Support-Desktop.git
+[submodule "supplemental"]
+	path = supplemental
+	url = https://github.com/WOA-Project/Supplemental-Drivers.git
