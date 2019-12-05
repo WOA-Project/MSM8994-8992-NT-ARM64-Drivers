@@ -19,7 +19,7 @@ If you are deploying this driver pack using WOA Deployer for Lumia, make sure WO
 
 [Wiki](https://github.com/WOA-Project/MSM8994-8992-NT-ARM64-Drivers/wiki)
 
-## Copyright, License, Disclaimers and end of user license agreement
+## Copyright, License, Disclaimers and end user license agreement
 
 **Below notice must be present in all redistributed portions of this software**
 
