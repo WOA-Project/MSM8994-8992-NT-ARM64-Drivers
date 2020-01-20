@@ -16,8 +16,10 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QCOM%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcrmnetbridge8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcrmnetbridge8994.arm.cat
+CatalogFile.NTARM64 = qcrmnetbridge8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -25,11 +27,17 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskId1%,,,""
 
-[SourceDisksFiles]
-qcrmnetbridge8994.sys = 1,,
+[SourceDisksFiles.ARM]
+qcrmnetbridge8994.sys = 1,arm,
+
+[SourceDisksFiles.ARM64]
+qcrmnetbridge8994.sys = 1,arm64,
 
 [Manufacturer]
-%QCOM% = QCOM, NTARM64
+%QCOM% = QCOM, NTARM, NTARM64
+
+[QCOM.NTARM]
+%RMNBRG.DeviceDesc% = RMNBRG_Device, ACPI\QCOM2148
 
 [QCOM.NTARM64]
 %RMNBRG.DeviceDesc% = RMNBRG_Device, ACPI\QCOM2148

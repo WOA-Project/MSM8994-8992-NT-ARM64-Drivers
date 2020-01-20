@@ -17,14 +17,19 @@ Class       = System
 ClassGuid   = {4D36E97D-E325-11CE-BFC1-08002BE10318}
 Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcremotefs8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM = qcremotefs8994.arm.cat
+CatalogFile.NTARM64 = qcremotefs8994.arm64.cat
 
 [SourceDisksNames]
 1 = %DiskId%
 
-[SourceDisksFiles]
-qcremotefs8994.sys = 1
+[SourceDisksFiles.ARM]
+qcremotefs8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcremotefs8994.sys = 1,arm64
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -35,7 +40,10 @@ DefaultDestDir = 12
 ;*****************************************
 
 [Manufacturer]
-%COMP% = Qualcomm,NTARM64
+%COMP% = Qualcomm,NTARM,NTARM64
+
+[Qualcomm.NTARM]
+%REMOTEFS.DeviceDesc% = REMOTEFS_Device,ACPI\QCOM2423
 
 [Qualcomm.NTARM64]
 %REMOTEFS.DeviceDesc% = REMOTEFS_Device,ACPI\QCOM2423

@@ -19,8 +19,10 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcsmmu8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcsmmu8994.arm.cat
+CatalogFile.NTARM64 = qcsmmu8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -28,16 +30,22 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskId%
 
-[SourceDisksFiles]
-qcsmmu8994.sys = 1
+[SourceDisksFiles.ARM]
+qcsmmu8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcsmmu8994.sys = 1,arm64
 
 [ControlFlags]
 ExcludeFromSelect = *
 
 [Manufacturer]
-%QC% = QC, NTarm64
+%QC% = QC, NTARM, NTARM64
 
-[QC.NTarm64]
+[QC.NTARM]
+%SMMU.DeviceDesc% = SMMU_Device, ACPI\QCOM2400
+
+[QC.NTARM64]
 %SMMU.DeviceDesc% = SMMU_Device, ACPI\QCOM2400
 
 [SMMU_Device.NT]

@@ -19,14 +19,19 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qchwnled8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qchwnled8994.arm.cat
+CatalogFile.NTARM64 = qchwnled8994.arm64.cat
 
 [SourceDisksNames]
 1 = %DiskId1%
 
-[SourceDisksFiles]
-qchwnled8994.sys = 1
+[SourceDisksFiles.ARM]
+qchwnled8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qchwnled8994.sys = 1,arm64
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -40,7 +45,10 @@ ExcludeFromSelect = *
 ;*****************************************
 
 [Manufacturer]
-%QC% = Qualcomm,NTARM64
+%QC% = Qualcomm,NTARM,NTARM64
+
+[Qualcomm.NTARM]
+%hwnled.DeviceDesc% = hwnled_Device, ACPI\QCOM24A3
 
 [Qualcomm.NTARM64]
 %hwnled.DeviceDesc% = hwnled_Device, ACPI\QCOM24A3

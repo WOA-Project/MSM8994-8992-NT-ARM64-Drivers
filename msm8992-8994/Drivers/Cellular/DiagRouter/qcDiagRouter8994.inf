@@ -18,8 +18,10 @@ Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QC%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = QCDIAGROUTER8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = QCDIAGROUTER8994.arm.cat
+CatalogFile.NTARM64 = QCDIAGROUTER8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -27,13 +29,19 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskId1%
 
-[SourceDisksFiles]
-QCDIAGROUTER8994.sys = 1
+[SourceDisksFiles.ARM]
+QCDIAGROUTER8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+QCDIAGROUTER8994.sys = 1,arm64
 
 [Manufacturer]
-%QC% = QC,NTARM64
+%QC% = QC,NTARM,NTARM64
 
-[QC.NTARM64]                                   ; NTARM is set to ARM/ARM64 at runtime. Its needed to generate correct inf file.
+[QC.NTARM]                                   ; NTARM is set to ARM/ARM64 at runtime. Its needed to generate correct inf file.
+%DIAGROUTER.DeviceDesc% = DiagRouter_Device, ACPI\QCOM2413
+
+[QC.NTARM64]                                 ; NTARM64 is set to ARM/ARM64 at runtime. Its needed to generate correct inf file.
 %DIAGROUTER.DeviceDesc% = DiagRouter_Device, ACPI\QCOM2413
 
 [DiagRouter_Device.NT]

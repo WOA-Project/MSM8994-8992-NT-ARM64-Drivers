@@ -15,8 +15,10 @@ Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcspmi8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcspmi8994.arm.cat
+CatalogFile.NTARM64 = qcspmi8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -27,17 +29,23 @@ ExcludeFromSelect = *
 [SourceDisksNames]
 1 = %DiskName%,,,""
 
-[SourceDisksFiles]
-qcspmi8994.sys = 1,,
+[SourceDisksFiles.ARM]
+qcspmi8994.sys = 1,arm,
+
+[SourceDisksFiles.ARM64]
+qcspmi8994.sys = 1,arm64,
 
 ;*****************************************
 ; Install Section
 ;*****************************************
 
 [Manufacturer]
-%QUALCOMM% = Standard,NTarm64
+%QUALCOMM% = Standard,NTARM,NTARM64
 
-[Standard.NTarm64]
+[Standard.NTARM]
+%qcspmi.DeviceDesc% = qcspmi_Device, ACPI\QCOM2404
+
+[Standard.NTARM64]
 %qcspmi.DeviceDesc% = qcspmi_Device, ACPI\QCOM2404
 
 [qcspmi_Device.NT]

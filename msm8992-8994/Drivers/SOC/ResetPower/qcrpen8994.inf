@@ -16,8 +16,10 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcrpen8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcrpen8994.arm.cat
+CatalogFile.NTARM64 = qcrpen8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -25,13 +27,19 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskId1%
 
-[SourceDisksFiles]
-qcrpen8994.sys = 1
+[SourceDisksFiles.ARM]
+qcrpen8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcrpen8994.sys = 1,arm64
 
 [Manufacturer]
-%QUALCOMM% = Standard,NTarm64
+%QUALCOMM% = Standard,NTARM,NTARM64
 
-[Standard.NTarm64]                                    
+[Standard.NTARM]                                    
+%RPEN.DeviceDesc% = RPEN_Device, ACPI\QCOM245C
+
+[Standard.NTARM64]                                    
 %RPEN.DeviceDesc% = RPEN_Device, ACPI\QCOM245C
 
 [RPEN_Device.NT]

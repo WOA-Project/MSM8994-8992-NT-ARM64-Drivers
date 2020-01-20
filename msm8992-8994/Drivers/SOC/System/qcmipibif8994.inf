@@ -17,14 +17,19 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcmipibif8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcmipibif8994.arm.cat
+CatalogFile.NTARM64 = qcmipibif8994.arm64.cat
 
 [SourceDisksNames]
 3426 = windows cd
 
-[SourceDisksFiles]
-qcmipibif8994.sys = 3426
+[SourceDisksFiles.ARM]
+qcmipibif8994.sys = 3426,arm
+
+[SourceDisksFiles.ARM64]
+qcmipibif8994.sys = 3426,arm64
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -38,7 +43,10 @@ ExcludeFromSelect = *
 ;*****************************************
 
 [Manufacturer]
-%COMP% = %COMP%,NTARM64
+%COMP% = %COMP%,NTARM,NTARM64
+
+[Qualcomm.NTARM]
+%DeviceDesc% = MipiBif_Inst,ACPI\QCOM2459
 
 [Qualcomm.NTARM64]
 %DeviceDesc% = MipiBif_Inst,ACPI\QCOM2459

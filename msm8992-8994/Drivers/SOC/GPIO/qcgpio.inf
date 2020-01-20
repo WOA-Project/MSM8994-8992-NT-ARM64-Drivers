@@ -17,8 +17,10 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcgpio.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcgpio.arm.cat
+CatalogFile.NTARM64 = qcgpio.arm64.cat
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -27,8 +29,11 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskId%
 
-[SourceDisksFiles]
-qcgpio.sys = 1
+[SourceDisksFiles.ARM]
+qcgpio.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcgpio.sys = 1,arm64
 
 [ControlFlags]
 ExcludeFromSelect = *
@@ -38,9 +43,12 @@ ExcludeFromSelect = *
 ;*****************************************
 
 [Manufacturer]
-%COMP% = QcGpioComp,NTarm64
+%COMP% = QcGpioComp,NTARM,NTARM64
 
-[QcGpioComp.NTarm64]
+[QcGpioComp.NTARM]
+%GPIO.DeviceDesc% = GPIO_Inst,ACPI\QCOM2405
+
+[QcGpioComp.NTARM64]
 %GPIO.DeviceDesc% = GPIO_Inst,ACPI\QCOM2405
 
 [GPIO_Inst.NT]

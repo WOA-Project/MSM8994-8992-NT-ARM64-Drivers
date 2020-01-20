@@ -13,9 +13,11 @@ Signature   = "$Windows NT$"
 Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %ManufacturerName%
-CatalogFile = QCDiagBridge8994.cat
 PnpLockDown = 1
 DriverVer   = 07/02/2015,1.0.1070.0000
+
+CatalogFile.NTARM   = QCDiagBridge8994.arm.cat
+CatalogFile.NTARM64 = QCDiagBridge8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -23,14 +25,20 @@ DefaultDestDir = 12
 [SourceDisksNames]
 1 = %DiskName%
 
-[SourceDisksFiles]
-QCDiagBridge8994.sys = 1
+[SourceDisksFiles.ARM]
+QCDiagBridge8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+QCDiagBridge8994.sys = 1,arm64
 
 [ControlFlags]
 ExcludeFromSelect = *
 
 [Manufacturer]
-%ManufacturerName% = Standard,NTARM64
+%ManufacturerName% = Standard,NTARM,NTARM64
+
+[Standard.NTARM]
+%QCDiagBridge.DeviceDesc% = QCDiagBridge_Device, ACPI\QCOM248B
 
 [Standard.NTARM64]
 %QCDiagBridge.DeviceDesc% = QCDiagBridge_Device, ACPI\QCOM248B

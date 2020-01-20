@@ -16,14 +16,19 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcpmicgpio8994.cat
 PnPLockdown = 1
+
+CatalogFile.NTARM   = qcpmicgpio8994.arm.cat
+CatalogFile.NTARM64 = qcpmicgpio8994.arm64.cat
 
 [SourceDisksNames]
 1 = %DiskId%
 
-[SourceDisksFiles]
-qcpmicgpio8994.sys = 1
+[SourceDisksFiles.ARM]
+qcpmicgpio8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcpmicgpio8994.sys = 1,arm64
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -37,9 +42,12 @@ ExcludeFromSelect = *
 ;*****************************************
 
 [Manufacturer]
-%COMP% = Qualcomm,NTarm64
+%COMP% = Qualcomm,NTARM,NTARM64
 
-[Qualcomm.NTarm64]
+[Qualcomm.NTARM]
+%DeviceDesc% = PMIO_Inst,ACPI\QCOM2458
+
+[Qualcomm.NTARM64]
 %DeviceDesc% = PMIO_Inst,ACPI\QCOM2458
 
 [PMIO_Inst.NT]

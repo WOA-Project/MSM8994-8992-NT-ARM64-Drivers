@@ -20,12 +20,17 @@ ClassGuid   = {e2f84ce7-8efa-411c-aa69-97454ca4cb57}
 Provider    = %QCOM%
 ExtensionId = {21E3E289-3E58-469D-B9DF-65339CD11F4D}
 DriverVer   = 07/02/2015,1.0.1067.0
-CatalogFile = qcaudresconst8994.cat
+
+CatalogFile.NTARM   = qcaudresconst8994.arm.cat
+CatalogFile.NTARM64 = qcaudresconst8994.arm64.cat
 
 [Manufacturer]
-%MfgName% = DeviceExtensions,NTarm64
+%MfgName% = DeviceExtensions,NTARM,NTARM64
 
-[DeviceExtensions.NTarm64]
+[DeviceExtensions.NTARM]
+%QCAUD_A.DeviceDesc% = DeviceExtension_Install, AUDD\QCOM2451
+
+[DeviceExtensions.NTARM64]
 %QCAUD_A.DeviceDesc% = DeviceExtension_Install, AUDD\QCOM2451
 
 [DeviceExtension_Install]

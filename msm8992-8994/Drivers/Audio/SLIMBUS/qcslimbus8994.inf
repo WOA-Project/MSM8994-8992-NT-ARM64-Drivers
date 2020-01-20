@@ -18,9 +18,11 @@ Signature   = "$WINDOWS NT$"
 Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %ManufacturerName%
-CatalogFile = qcslimbus8994.cat
 DriverVer   = 07/02/2015,1.0.1067.0000
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcslimbus8994.arm.cat
+CatalogFile.NTARM64 = qcslimbus8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -31,15 +33,21 @@ ExcludeFromSelect = *
 [SourceDisksNames]
 1 = %DiskName%
 
-[SourceDisksFiles]
-qcslimbus8994.sys = 1
+[SourceDisksFiles.ARM]
+qcslimbus8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcslimbus8994.sys = 1,arm64
 
 ;*****************************************
 ; Install Section
 ;*****************************************
 
 [Manufacturer]
-%ManufacturerName% = Standard,NTARM64
+%ManufacturerName% = Standard,NTARM,NTARM64
+
+[Standard.NTARM]
+%qcslimbus.DeviceDesc% = qcslimbus_Device,ADSP\QCOM240D
 
 [Standard.NTARM64]
 %qcslimbus.DeviceDesc% = qcslimbus_Device,ADSP\QCOM240D

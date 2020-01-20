@@ -10,8 +10,10 @@ Class       = SYSTEM
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %QUALCOMM%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcBCryptCipherKM8994.cat
 PnpLockDown = 1
+
+CatalogFile.NTARM   = qcBCryptCipherKM8994.arm.cat
+CatalogFile.NTARM64 = qcBCryptCipherKM8994.arm64.cat
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -22,15 +24,21 @@ ExcludeFromSelect = *
 [SourceDisksNames]
 1 = %DiskName%
 
-[SourceDisksFiles]
-qcBCryptCipherKM8994.sys = 1
+[SourceDisksFiles.ARM]
+qcBCryptCipherKM8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcBCryptCipherKM8994.sys = 1,arm64
 
 ;*****************************************
 ; Install Section
 ;*****************************************
 
 [Manufacturer]
-%QUALCOMM% = Standard,NTARM64
+%QUALCOMM% = Standard,NTARM,NTARM64
+
+[Standard.NTARM]
+%BCryptCipher_KM.DeviceDesc% = BCryptCipher_KM_Device, ACPI\QCOM241D
 
 [Standard.NTARM64]
 %BCryptCipher_KM.DeviceDesc% = BCryptCipher_KM_Device, ACPI\QCOM241D

@@ -15,14 +15,19 @@ Class       = System
 ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider    = %COMP%
 DriverVer   = 07/02/2015,1.0.1067.0000
-CatalogFile = qcpmicapps8994.cat
 PnPLockdown = 1
+
+CatalogFile.NTARM   = qcpmicapps8994.arm.cat
+CatalogFile.NTARM64 = qcpmicapps8994.arm64.cat
 
 [SourceDisksNames]
 1 = %DiskId%
 
-[SourceDisksFiles]
-qcpmicapps8994.sys = 1
+[SourceDisksFiles.ARM]
+qcpmicapps8994.sys = 1,arm
+
+[SourceDisksFiles.ARM64]
+qcpmicapps8994.sys = 1,arm64
 
 ;12 == Windows\System32\Drivers
 [DestinationDirs]
@@ -36,9 +41,12 @@ ExcludeFromSelect = *
 ;*****************************************
 
 [Manufacturer]
-%COMP% = Qualcomm,NTarm64
+%COMP% = Qualcomm,NTARM,NTARM64
 
-[Qualcomm.NTarm64]
+[Qualcomm.NTARM]
+%DeviceDesc% = PMIC_Inst,ACPI\QCOM2457
+
+[Qualcomm.NTARM64]
 %DeviceDesc% = PMIC_Inst,ACPI\QCOM2457
 
 [PMIC_Inst.NT]
